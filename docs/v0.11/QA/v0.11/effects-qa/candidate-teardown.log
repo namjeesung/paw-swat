@@ -1,0 +1,39 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+[pool-teardown] PASS cycle 0 every family remains within its cap
+[pool-teardown] PASS cycle 0 parent, pool and RefCounted slots are freed
+[pool-teardown] PASS cycle 0 shell counter returns to zero
+[pool-teardown] PASS cycle 1 every family remains within its cap
+[pool-teardown] PASS cycle 1 completed popup drops Tween reference
+[pool-teardown] PASS cycle 1 parent, pool and RefCounted slots are freed
+[pool-teardown] PASS cycle 1 shell counter returns to zero
+[pool-teardown] PASS cycle 2 every family remains within its cap
+[pool-teardown] PASS cycle 2 parent, pool and RefCounted slots are freed
+[pool-teardown] PASS cycle 2 shell counter returns to zero
+[pool-teardown] PASS cycle 3 every family remains within its cap
+[pool-teardown] PASS cycle 3 completed popup drops Tween reference
+[pool-teardown] PASS cycle 3 parent, pool and RefCounted slots are freed
+[pool-teardown] PASS cycle 3 shell counter returns to zero
+[pool-teardown] PASS cycle 4 every family remains within its cap
+[pool-teardown] PASS cycle 4 parent, pool and RefCounted slots are freed
+[pool-teardown] PASS cycle 4 shell counter returns to zero
+[pool-teardown] PASS cycle 5 every family remains within its cap
+[pool-teardown] PASS cycle 5 completed popup drops Tween reference
+[pool-teardown] PASS cycle 5 parent, pool and RefCounted slots are freed
+[pool-teardown] PASS cycle 5 shell counter returns to zero
+[pool-teardown] PASS cycle 6 every family remains within its cap
+[pool-teardown] PASS cycle 6 parent, pool and RefCounted slots are freed
+[pool-teardown] PASS cycle 6 shell counter returns to zero
+[pool-teardown] PASS cycle 7 every family remains within its cap
+[pool-teardown] PASS cycle 7 completed popup drops Tween reference
+[pool-teardown] PASS cycle 7 parent, pool and RefCounted slots are freed
+[pool-teardown] PASS cycle 7 shell counter returns to zero
+[pool-teardown] PASS cycle 8 every family remains within its cap
+[pool-teardown] PASS cycle 8 parent, pool and RefCounted slots are freed
+[pool-teardown] PASS cycle 8 shell counter returns to zero
+[pool-teardown] PASS cycle 9 every family remains within its cap
+[pool-teardown] PASS cycle 9 completed popup drops Tween reference
+[pool-teardown] PASS cycle 9 parent, pool and RefCounted slots are freed
+[pool-teardown] PASS cycle 9 shell counter returns to zero
+[pool-teardown] PASS post-warm object/node/resource/orphan counters plateau across restarts
+[pool-teardown] RESULT PASS final counters={"nodes":48,"objects":1768,"orphans":0,"resources":95,"shell_count":0}

@@ -1,0 +1,30 @@
+# Godot import cache and local export output
+.godot/
+build/
+export/
+*.tmp
+
+# Local dependencies and service state
+node_modules/
+.wrangler/
+.venv/
+__pycache__/
+*.pyc
+
+# Credentials and signing files
+.env
+.env.*
+!.env.example
+.dev.vars
+*.jks
+*.keystore
+*.p12
+*.pfx
+*.pem
+export_credentials.cfg
+
+# Editor and OS files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

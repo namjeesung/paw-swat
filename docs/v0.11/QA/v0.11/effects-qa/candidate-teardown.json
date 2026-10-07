@@ -1,0 +1,223 @@
+{
+	"checks": [
+		{
+			"check": "cycle 0 every family remains within its cap",
+			"pass": true
+		},
+		{
+			"check": "cycle 0 parent, pool and RefCounted slots are freed",
+			"pass": true
+		},
+		{
+			"check": "cycle 0 shell counter returns to zero",
+			"pass": true
+		},
+		{
+			"check": "cycle 1 every family remains within its cap",
+			"pass": true
+		},
+		{
+			"check": "cycle 1 completed popup drops Tween reference",
+			"pass": true
+		},
+		{
+			"check": "cycle 1 parent, pool and RefCounted slots are freed",
+			"pass": true
+		},
+		{
+			"check": "cycle 1 shell counter returns to zero",
+			"pass": true
+		},
+		{
+			"check": "cycle 2 every family remains within its cap",
+			"pass": true
+		},
+		{
+			"check": "cycle 2 parent, pool and RefCounted slots are freed",
+			"pass": true
+		},
+		{
+			"check": "cycle 2 shell counter returns to zero",
+			"pass": true
+		},
+		{
+			"check": "cycle 3 every family remains within its cap",
+			"pass": true
+		},
+		{
+			"check": "cycle 3 completed popup drops Tween reference",
+			"pass": true
+		},
+		{
+			"check": "cycle 3 parent, pool and RefCounted slots are freed",
+			"pass": true
+		},
+		{
+			"check": "cycle 3 shell counter returns to zero",
+			"pass": true
+		},
+		{
+			"check": "cycle 4 every family remains within its cap",
+			"pass": true
+		},
+		{
+			"check": "cycle 4 parent, pool and RefCounted slots are freed",
+			"pass": true
+		},
+		{
+			"check": "cycle 4 shell counter returns to zero",
+			"pass": true
+		},
+		{
+			"check": "cycle 5 every family remains within its cap",
+			"pass": true
+		},
+		{
+			"check": "cycle 5 completed popup drops Tween reference",
+			"pass": true
+		},
+		{
+			"check": "cycle 5 parent, pool and RefCounted slots are freed",
+			"pass": true
+		},
+		{
+			"check": "cycle 5 shell counter returns to zero",
+			"pass": true
+		},
+		{
+			"check": "cycle 6 every family remains within its cap",
+			"pass": true
+		},
+		{
+			"check": "cycle 6 parent, pool and RefCounted slots are freed",
+			"pass": true
+		},
+		{
+			"check": "cycle 6 shell counter returns to zero",
+			"pass": true
+		},
+		{
+			"check": "cycle 7 every family remains within its cap",
+			"pass": true
+		},
+		{
+			"check": "cycle 7 completed popup drops Tween reference",
+			"pass": true
+		},
+		{
+			"check": "cycle 7 parent, pool and RefCounted slots are freed",
+			"pass": true
+		},
+		{
+			"check": "cycle 7 shell counter returns to zero",
+			"pass": true
+		},
+		{
+			"check": "cycle 8 every family remains within its cap",
+			"pass": true
+		},
+		{
+			"check": "cycle 8 parent, pool and RefCounted slots are freed",
+			"pass": true
+		},
+		{
+			"check": "cycle 8 shell counter returns to zero",
+			"pass": true
+		},
+		{
+			"check": "cycle 9 every family remains within its cap",
+			"pass": true
+		},
+		{
+			"check": "cycle 9 completed popup drops Tween reference",
+			"pass": true
+		},
+		{
+			"check": "cycle 9 parent, pool and RefCounted slots are freed",
+			"pass": true
+		},
+		{
+			"check": "cycle 9 shell counter returns to zero",
+			"pass": true
+		},
+		{
+			"check": "post-warm object/node/resource/orphan counters plateau across restarts",
+			"pass": true
+		}
+	],
+	"cycles": [
+		{
+			"nodes": 48,
+			"objects": 1769,
+			"orphans": 0,
+			"resources": 95,
+			"shell_count": 0
+		},
+		{
+			"nodes": 48,
+			"objects": 1770,
+			"orphans": 0,
+			"resources": 95,
+			"shell_count": 0
+		},
+		{
+			"nodes": 48,
+			"objects": 1770,
+			"orphans": 0,
+			"resources": 95,
+			"shell_count": 0
+		},
+		{
+			"nodes": 48,
+			"objects": 1770,
+			"orphans": 0,
+			"resources": 95,
+			"shell_count": 0
+		},
+		{
+			"nodes": 48,
+			"objects": 1770,
+			"orphans": 0,
+			"resources": 95,
+			"shell_count": 0
+		},
+		{
+			"nodes": 48,
+			"objects": 1770,
+			"orphans": 0,
+			"resources": 95,
+			"shell_count": 0
+		},
+		{
+			"nodes": 48,
+			"objects": 1770,
+			"orphans": 0,
+			"resources": 95,
+			"shell_count": 0
+		},
+		{
+			"nodes": 48,
+			"objects": 1770,
+			"orphans": 0,
+			"resources": 95,
+			"shell_count": 0
+		},
+		{
+			"nodes": 48,
+			"objects": 1770,
+			"orphans": 0,
+			"resources": 95,
+			"shell_count": 0
+		},
+		{
+			"nodes": 48,
+			"objects": 1770,
+			"orphans": 0,
+			"resources": 95,
+			"shell_count": 0
+		}
+	],
+	"failures": [],
+	"kind": "headless repeated parent exit/restart and pooled state lifecycle",
+	"result": "PASS"
+}

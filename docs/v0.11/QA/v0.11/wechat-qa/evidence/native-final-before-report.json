@@ -1,0 +1,324 @@
+{
+	"checks": [
+		{
+			"details": {
+				"size": "(2400.0, 1080.0)",
+				"viewport": "(2400.0, 1080.0)"
+			},
+			"name": "production_touch_controls_present",
+			"passed": true
+		},
+		{
+			"details": {
+				"move": "(0.0, 0.0)",
+				"owner": -2147483647
+			},
+			"name": "signed_browser_touch_id_can_move",
+			"passed": false
+		},
+		{
+			"details": {
+				"move": "(0.0, 0.0)",
+				"owner": -1
+			},
+			"name": "minus_one_browser_touch_id_can_move",
+			"passed": false
+		},
+		{
+			"details": {
+				"move": "(0.666667, -0.5)",
+				"owner": 8
+			},
+			"name": "hidden_controls_cannot_drive_player",
+			"passed": false
+		},
+		{
+			"details": {
+
+			},
+			"name": "simultaneous_move_and_fire_native_events",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "new_move_takes_over_after_lost_release",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "late_old_move_release_preserves_new_owners",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "new_fire_takes_over_after_lost_release",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "late_old_fire_release_preserves_new_owners",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "lock_mode_fire_cancel_preserves_move",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "move_cancel_releases_move",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "hidden_grenade_button_not_hit",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "hidden_grenade_position_falls_through_to_fire",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "available_grenade_button_is_hit",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "grenade_touch_queues_production_action",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "hidden_held_button_clears_owner",
+			"passed": false
+		},
+		{
+			"details": {
+
+			},
+			"name": "new_touch_after_grenade_hidden_uses_valid_fire_zone",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "hidden_weapon_button_not_hit",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "hidden_weapon_position_falls_through_to_fire",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "available_weapon_touch_queues_switch",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "hidden_interact_button_not_hit",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "hidden_interact_position_falls_through_to_fire",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "release_mode_hold_does_not_shoot",
+			"passed": true
+		},
+		{
+			"details": {
+				"burst_remaining": 0.352857142857143,
+				"shoot": true
+			},
+			"name": "release_mode_cancel_does_not_fire_burst",
+			"passed": false
+		},
+		{
+			"details": {
+
+			},
+			"name": "manual_native_back_notification_opens_pause",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "manual_native_back_notification_resumes",
+			"passed": true
+		},
+		{
+			"details": {
+				"fire_owner": 71,
+				"move": "(0.666667, -0.5)",
+				"move_owner": 70,
+				"shoot": true
+			},
+			"name": "released_while_paused_does_not_resume_stale_input",
+			"passed": false
+		},
+		{
+			"details": {
+
+			},
+			"name": "manual_application_paused_notification_opens_pause",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "pause_menu_close_resumes_after_background_notification",
+			"passed": true
+		},
+		{
+			"details": {
+				"fire_owner": 81,
+				"move": "(0.666667, -0.5)",
+				"move_owner": 80,
+				"shoot": true
+			},
+			"name": "focus_out_clears_both_owners_and_cache",
+			"passed": false
+		},
+		{
+			"details": {
+
+			},
+			"name": "reused_id_moves_to_fire_without_dual_ownership",
+			"passed": false
+		},
+		{
+			"details": {
+
+			},
+			"name": "signed_minus_one_fire_contact_is_active",
+			"passed": false
+		},
+		{
+			"details": {
+
+			},
+			"name": "signed_minus_one_fire_cancel_releases",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "far_drag_keeps_floating_stick_active",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "rotation_coordinate_change_clears_cache_immediately",
+			"passed": false
+		},
+		{
+			"details": {
+
+			},
+			"name": "hidden_reload_button_is_not_hit",
+			"passed": false
+		},
+		{
+			"details": {
+
+			},
+			"name": "nonfinite_drag_does_not_corrupt_movement",
+			"passed": false
+		},
+		{
+			"details": {
+
+			},
+			"name": "nonfinite_press_does_not_claim_input",
+			"passed": false
+		},
+		{
+			"details": {
+
+			},
+			"name": "ordinary_release_still_fires_burst",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "already_visible_portrait_overlay_still_pauses_level",
+			"passed": false
+		},
+		{
+			"details": {
+
+			},
+			"name": "landscape_resume_uses_fresh_contacts",
+			"passed": true
+		}
+	],
+	"engine": {
+		"build": "official",
+		"hash": "7d41c59c457bd5a245092b4e7eb2d833e3b3f8c3",
+		"hex": 263683,
+		"major": 4,
+		"minor": 6,
+		"patch": 3,
+		"status": "stable",
+		"string": "4.6.3-stable (official)",
+		"timestamp": 0
+	},
+	"failed": 14,
+	"mode": "Linux headless synthetic Input.parse_input_event dispatch plus manual Object.notification; not Android device events, rendered UI, GPU or audible audio",
+	"observations": [
+		{
+			"button_hit_after_hidden": "",
+			"mode": "one-shot queued action observed; player physics disabled for state isolation",
+			"name": "button_becomes_hidden_while_held",
+			"old_button_owner_retained": true
+		}
+	],
+	"passed": false
+}

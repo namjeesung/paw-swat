@@ -1,0 +1,149 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+WARNING: Property agent_height is ceiled to cell_height voxel units and loses precision.
+     at: generator_bake_from_source_geometry_data (modules/navigation_3d/3d/nav_mesh_generator_3d.cpp:366)
+     GDScript backtrace (most recent call first):
+         [0] _bake_boss_nav (res://scripts/world/level.gd:302)
+         [1] _bake_nav (res://scripts/world/level.gd:288)
+         [2] _ready (res://scripts/world/level.gd:140)
+         [3] setup (res://qa/teleport_fixture.gd:54)
+         [4] blocked_recovery (res://qa/teleport_fixture.gd:136)
+         [5] run_all (res://qa/teleport_fixture.gd:349)
+[teleport-qa] PASS initial_exact_capsule_clear {}
+[teleport-qa] PASS stationary_blockage_repaths_then_warns {"forced_repaths":3,"warning_seconds":2.65}
+[teleport-qa] PASS one_second_visible_marker {}
+[teleport-qa] PASS warning_no_early_jump {}
+[teleport-qa] PASS warning_has_no_invulnerability {}
+[teleport-qa] PASS lands_beside_player_clear_and_reachable {"destination":[-2.6,0.0,16.0],"distance":2.59999990463257,"landing":[-2.6,0.0,16.0]}
+[teleport-qa] PASS teleport_preserves_hp_speed_sets_cooldown {}
+[teleport-qa] PASS recovery_has_no_invulnerability {}
+[teleport-qa] PASS recovery_prevents_attack_for_half_second {}
+[teleport-qa] PASS attacks_resume_after_brief_recovery {}
+WARNING: Property agent_height is ceiled to cell_height voxel units and loses precision.
+     at: generator_bake_from_source_geometry_data (modules/navigation_3d/3d/nav_mesh_generator_3d.cpp:366)
+     GDScript backtrace (most recent call first):
+         [0] _bake_boss_nav (res://scripts/world/level.gd:302)
+         [1] _bake_nav (res://scripts/world/level.gd:288)
+         [2] _ready (res://scripts/world/level.gd:140)
+         [3] setup (res://qa/teleport_fixture.gd:54)
+         [4] moving_and_blocked_landing (res://qa/teleport_fixture.gd:175)
+         [5] run_all (res://qa/teleport_fixture.gd:350)
+         [6] blocked_recovery (res://qa/teleport_fixture.gd:172)
+         [7] teardown (res://qa/teleport_fixture.gd:73)
+         [8] step (res://qa/teleport_fixture.gd:46)
+[teleport-qa] PASS moving_target_initial_warning {}
+[teleport-qa] PASS warning_expiry_revalidates_player_position {}
+[teleport-qa] PASS retarget_after_cancel_gets_new_warning {}
+[teleport-qa] PASS warning_expiry_revalidates_new_wall {}
+[teleport-qa] PASS moving_target_recovery_eventually_safe {}
+WARNING: Property agent_height is ceiled to cell_height voxel units and loses precision.
+     at: generator_bake_from_source_geometry_data (modules/navigation_3d/3d/nav_mesh_generator_3d.cpp:366)
+     GDScript backtrace (most recent call first):
+         [0] _bake_boss_nav (res://scripts/world/level.gd:302)
+         [1] _bake_nav (res://scripts/world/level.gd:288)
+         [2] _ready (res://scripts/world/level.gd:140)
+         [3] setup (res://qa/teleport_fixture.gd:54)
+         [4] no_safe_spot (res://qa/teleport_fixture.gd:196)
+         [5] run_all (res://qa/teleport_fixture.gd:351)
+         [6] moving_and_blocked_landing (res://qa/teleport_fixture.gd:193)
+         [7] teardown (res://qa/teleport_fixture.gd:73)
+         [8] step (res://qa/teleport_fixture.gd:46)
+[teleport-qa] PASS no_safe_destination_never_forces_teleport {"forced_repaths":12,"position":[-7.85,0.0,16.0]}
+[teleport-qa] PASS invalid_player_overlap_wall_infinite_spots_rejected {}
+WARNING: Property agent_height is ceiled to cell_height voxel units and loses precision.
+     at: generator_bake_from_source_geometry_data (modules/navigation_3d/3d/nav_mesh_generator_3d.cpp:366)
+     GDScript backtrace (most recent call first):
+         [0] _bake_boss_nav (res://scripts/world/level.gd:302)
+         [1] _bake_nav (res://scripts/world/level.gd:288)
+         [2] _ready (res://scripts/world/level.gd:140)
+         [3] setup (res://qa/teleport_fixture.gd:54)
+         [4] oscillation (res://qa/teleport_fixture.gd:206)
+         [5] run_all (res://qa/teleport_fixture.gd:352)
+         [6] no_safe_spot (res://qa/teleport_fixture.gd:203)
+         [7] teardown (res://qa/teleport_fixture.gd:73)
+         [8] step (res://qa/teleport_fixture.gd:46)
+[teleport-qa] PASS oscillation_detected_by_net_progress {"net":0.109273910522461,"travelled":2.29120445251465,"warning":true}
+WARNING: Property agent_height is ceiled to cell_height voxel units and loses precision.
+     at: generator_bake_from_source_geometry_data (modules/navigation_3d/3d/nav_mesh_generator_3d.cpp:366)
+     GDScript backtrace (most recent call first):
+         [0] _bake_boss_nav (res://scripts/world/level.gd:302)
+         [1] _bake_nav (res://scripts/world/level.gd:288)
+         [2] _ready (res://scripts/world/level.gd:140)
+         [3] setup (res://qa/teleport_fixture.gd:54)
+         [4] cooldown (res://qa/teleport_fixture.gd:225)
+         [5] run_all (res://qa/teleport_fixture.gd:353)
+         [6] oscillation (res://qa/teleport_fixture.gd:222)
+         [7] teardown (res://qa/teleport_fixture.gd:73)
+         [8] step (res://qa/teleport_fixture.gd:46)
+[teleport-qa] PASS cooldown_prevents_repeat_teleport_for_seven_seconds {}
+[teleport-qa] PASS cooldown_allows_later_warned_recovery {"warning_after_seven_seconds":1.06666666666667,"warning_duration":1.0}
+WARNING: Property agent_height is ceiled to cell_height voxel units and loses precision.
+     at: generator_bake_from_source_geometry_data (modules/navigation_3d/3d/nav_mesh_generator_3d.cpp:366)
+     GDScript backtrace (most recent call first):
+         [0] _bake_boss_nav (res://scripts/world/level.gd:302)
+         [1] _bake_nav (res://scripts/world/level.gd:288)
+         [2] _ready (res://scripts/world/level.gd:140)
+         [3] setup (res://qa/teleport_fixture.gd:54)
+         [4] suppressed_states (res://qa/teleport_fixture.gd:240)
+         [5] run_all (res://qa/teleport_fixture.gd:354)
+         [6] cooldown (res://qa/teleport_fixture.gd:237)
+         [7] teardown (res://qa/teleport_fixture.gd:73)
+         [8] step (res://qa/teleport_fixture.gd:46)
+[teleport-qa] PASS attack_windup_never_counts_as_stuck {}
+[teleport-qa] PASS stun_never_counts_as_stuck {}
+[teleport-qa] PASS rise_never_counts_as_stuck {}
+[teleport-qa] PASS pause_preserves_warning_without_jump {}
+[teleport-qa] PASS stun_cancels_pending_warning {}
+[teleport-qa] PASS player_death_cancels_pending_warning {}
+[teleport-qa] PASS level_finish_cancels_pending_warning {}
+[teleport-qa] PASS boss_death_cancels_pending_warning {}
+WARNING: Property agent_height is ceiled to cell_height voxel units and loses precision.
+     at: generator_bake_from_source_geometry_data (modules/navigation_3d/3d/nav_mesh_generator_3d.cpp:366)
+     GDScript backtrace (most recent call first):
+         [0] _bake_boss_nav (res://scripts/world/level.gd:302)
+         [1] _bake_nav (res://scripts/world/level.gd:288)
+         [2] _ready (res://scripts/world/level.gd:140)
+         [3] setup (res://qa/teleport_fixture.gd:54)
+         [4] suppressed_states (res://qa/teleport_fixture.gd:278)
+         [5] teardown (res://qa/teleport_fixture.gd:73)
+         [6] step (res://qa/teleport_fixture.gd:46)
+[teleport-qa] PASS new_actor_resets_recovery_state {}
+WARNING: Property agent_height is ceiled to cell_height voxel units and loses precision.
+     at: generator_bake_from_source_geometry_data (modules/navigation_3d/3d/nav_mesh_generator_3d.cpp:366)
+     GDScript backtrace (most recent call first):
+         [0] _bake_boss_nav (res://scripts/world/level.gd:302)
+         [1] _bake_nav (res://scripts/world/level.gd:288)
+         [2] _ready (res://scripts/world/level.gd:140)
+         [3] setup (res://qa/teleport_fixture.gd:54)
+         [4] normal_and_door (res://qa/teleport_fixture.gd:284)
+         [5] run_all (res://qa/teleport_fixture.gd:355)
+         [6] suppressed_states (res://qa/teleport_fixture.gd:281)
+         [7] teardown (res://qa/teleport_fixture.gd:73)
+         [8] step (res://qa/teleport_fixture.gd:46)
+[teleport-qa] PASS ordinary_stall_repaths_without_teleport {}
+WARNING: Property agent_height is ceiled to cell_height voxel units and loses precision.
+     at: generator_bake_from_source_geometry_data (modules/navigation_3d/3d/nav_mesh_generator_3d.cpp:366)
+     GDScript backtrace (most recent call first):
+         [0] _bake_boss_nav (res://scripts/world/level.gd:302)
+         [1] _bake_nav (res://scripts/world/level.gd:288)
+         [2] _ready (res://scripts/world/level.gd:140)
+         [3] setup (res://qa/teleport_fixture.gd:54)
+         [4] normal_and_door (res://qa/teleport_fixture.gd:290)
+         [5] teardown (res://qa/teleport_fixture.gd:73)
+         [6] step (res://qa/teleport_fixture.gd:46)
+[teleport-qa] PASS unblocked_door_route_walks_normally {"position":[-1.997,0.0,9.598],"travelled":6.5781440671999}
+WARNING: Property agent_height is ceiled to cell_height voxel units and loses precision.
+     at: generator_bake_from_source_geometry_data (modules/navigation_3d/3d/nav_mesh_generator_3d.cpp:366)
+     GDScript backtrace (most recent call first):
+         [0] _bake_boss_nav (res://scripts/world/level.gd:302)
+         [1] _bake_nav (res://scripts/world/level.gd:288)
+         [2] _ready (res://scripts/world/level.gd:140)
+         [3] setup (res://qa/teleport_fixture.gd:54)
+         [4] continuous_moving_player (res://qa/teleport_fixture.gd:305)
+         [5] run_all (res://qa/teleport_fixture.gd:356)
+         [6] normal_and_door (res://qa/teleport_fixture.gd:302)
+         [7] teardown (res://qa/teleport_fixture.gd:73)
+         [8] step (res://qa/teleport_fixture.gd:46)
+[teleport-qa] FAIL continuous_physical_player_door_pursuit {"boss_position":[13.649,0.0,17.65],"boss_travelled":23.0104820906445,"player_travelled":24.8930676457094,"teleports":0,"unsafe_landings":0}
+[teleport-qa] PASS normal_progress_does_not_false_teleport {}
+[teleport-qa] RESULT {"checks":33,"failed":1,"report":"/workspace/scratch/b4c1b123f420/paw-swat-work/v011/boss-qa/evidence/teleport-report.json"}

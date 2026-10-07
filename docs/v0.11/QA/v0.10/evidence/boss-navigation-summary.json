@@ -1,0 +1,168 @@
+{
+  "engine": "4.6.3.stable.official.7d41c59c4",
+  "physics_hz": 60,
+  "fixed_fps": 60,
+  "boss_teleport_recovery_used": false,
+  "experiments": {
+    "baseline-quick": {
+      "cases": 4,
+      "failed_cases": [],
+      "unreached_cases": [],
+      "wall_blocked_windups": 0,
+      "load_ms": [
+        70.916
+      ],
+      "spawn_checks": 0,
+      "spawn_overlaps": 0,
+      "dedicated_maps_removed": true,
+      "wall_seconds": 1.551,
+      "physics_hz": 120
+    },
+    "baseline-ready-mobile-quick": {
+      "cases": 4,
+      "failed_cases": [
+        "near_wall_inside_out",
+        "near_wall_outside_in"
+      ],
+      "unreached_cases": [],
+      "wall_blocked_windups": 2,
+      "load_ms": [
+        68.885
+      ],
+      "spawn_checks": 0,
+      "spawn_overlaps": 0,
+      "dedicated_maps_removed": true,
+      "wall_seconds": 1.573,
+      "physics_hz": 60
+    },
+    "prototype-ready-mobile-quick": {
+      "cases": 4,
+      "failed_cases": [],
+      "unreached_cases": [],
+      "wall_blocked_windups": 0,
+      "load_ms": [
+        200.332
+      ],
+      "spawn_checks": 0,
+      "spawn_overlaps": 0,
+      "dedicated_maps_removed": true,
+      "wall_seconds": 1.415,
+      "physics_hz": 60
+    },
+    "baseline-full": {
+      "cases": 30,
+      "failed_cases": [
+        "near_wall_inside_out",
+        "near_wall_outside_in"
+      ],
+      "unreached_cases": [],
+      "wall_blocked_windups": 2,
+      "load_ms": [
+        69.455,
+        26.538,
+        32.611,
+        35.305
+      ],
+      "spawn_checks": 0,
+      "spawn_overlaps": 0,
+      "dedicated_maps_removed": true,
+      "wall_seconds": 9.025,
+      "physics_hz": 60
+    },
+    "prototype-full": {
+      "cases": 30,
+      "failed_cases": [],
+      "unreached_cases": [],
+      "wall_blocked_windups": 0,
+      "load_ms": [
+        175.076,
+        148.318,
+        141.914,
+        145.865
+      ],
+      "spawn_checks": 0,
+      "spawn_overlaps": 0,
+      "dedicated_maps_removed": true,
+      "wall_seconds": 9.212,
+      "physics_hz": 60
+    },
+    "baseline-tight": {
+      "cases": 6,
+      "failed_cases": [],
+      "unreached_cases": [],
+      "wall_blocked_windups": 0,
+      "load_ms": [
+        76.193
+      ],
+      "spawn_checks": 16,
+      "spawn_overlaps": 6,
+      "dedicated_maps_removed": true,
+      "wall_seconds": 1.843,
+      "physics_hz": 60
+    },
+    "prototype-tight": {
+      "cases": 6,
+      "failed_cases": [],
+      "unreached_cases": [],
+      "wall_blocked_windups": 0,
+      "load_ms": [
+        449.258
+      ],
+      "spawn_checks": 16,
+      "spawn_overlaps": 0,
+      "dedicated_maps_removed": true,
+      "wall_seconds": 5.711,
+      "physics_hz": 60
+    }
+  },
+  "source_hashes": {
+    "baseline-project": {
+      "scripts/world/level.gd": {
+        "sha256": "c75675308a37c1d520920fa1bf2801eb057fdf2a5224334abd84ad5edb4ac90a",
+        "bytes": 33564
+      },
+      "scripts/actors/zombie.gd": {
+        "sha256": "60220530b44566e39b5f3641bd24a2c4ff30e73e1d422a65ecfc54a516be69dc",
+        "bytes": 5901
+      },
+      "scripts/world/map_builder.gd": {
+        "sha256": "d7fdbaf707fad37f504d2738f744828edcf42e86de447c45fe1fdc16ebfdca0f",
+        "bytes": 17354
+      },
+      "scripts/actors/actor.gd": {
+        "sha256": "c8bb15426d59b576ec461190f446f46d7a75f88548282ab09dedc4cbd342b798",
+        "bytes": 2038
+      }
+    },
+    "project": {
+      "scripts/world/level.gd": {
+        "sha256": "8855182f5ef1013bd84a85cd304aad921e5abc617ad579b6d70fd5e76481c134",
+        "bytes": 37292
+      },
+      "scripts/actors/zombie.gd": {
+        "sha256": "bb3a8a992fadff38021f16a9de59fa23a6357fa2ded8bee00a5180a1eea0c449",
+        "bytes": 6128
+      },
+      "scripts/world/map_builder.gd": {
+        "sha256": "d7fdbaf707fad37f504d2738f744828edcf42e86de447c45fe1fdc16ebfdca0f",
+        "bytes": 17354
+      },
+      "scripts/actors/actor.gd": {
+        "sha256": "c8bb15426d59b576ec461190f446f46d7a75f88548282ab09dedc4cbd342b798",
+        "bytes": 2038
+      }
+    }
+  },
+  "supported_claims": [
+    "Candidate passes all tested physically simulated entrance/tight-door routes",
+    "Candidate removes blocked-wall melee windup/hits in the fixture",
+    "Candidate validates spawn footprint so all16chosen seeded spawns are clear",
+    "Dedicated boss navigation RID freed on exit across tested restarts"
+  ],
+  "unsupported_claims": [
+    "Permanent main storefront stall reproduced",
+    "Baseline invalid spawn proven permanently immobile",
+    "Phone/Web GPU or audible audio tested",
+    "Headless timing is device performance"
+  ]
+}

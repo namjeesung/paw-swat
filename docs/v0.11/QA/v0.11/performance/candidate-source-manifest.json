@@ -1,0 +1,920 @@
+{
+  "files": {
+    "export_presets.cfg": {
+      "bytes": 14442,
+      "sha256": "82252d43806d1e5f27ac9c385b746a7a8562570536a47a048dceee28828bb59a"
+    },
+    ".gitignore": {
+      "bytes": 23,
+      "sha256": "2478e2958b840d7d5b832b5d22d08a842a570614f91b0273dcf85743262f9325"
+    },
+    "README.md": {
+      "bytes": 7962,
+      "sha256": "648e62de03faee2cf37910eafb0c3c7716d5afcffb81c0c4e685c3db36258fb5"
+    },
+    "icon.svg": {
+      "bytes": 526,
+      "sha256": "1902b3313ad47dcbd8fd19247693567836a23b06e38438ce20c2c3071ccdff84"
+    },
+    "project.godot": {
+      "bytes": 1675,
+      "sha256": "6c7055b97cfb86dfcc30979299523a353ee7cb5471104562dfdbe3777ef78d40"
+    },
+    "icon.svg.import": {
+      "bytes": 1012,
+      "sha256": "ab619433bfe030a9e6ef6f0f628a61f551e826155ae8e4d72418e984247e35ce"
+    },
+    "\u8bf4\u660e.txt": {
+      "bytes": 295,
+      "sha256": "dcaffd653158071f2fe0deb701029e051321d435e05399a93597af8a5e01372a"
+    },
+    "leaderboard.cfg": {
+      "bytes": 250,
+      "sha256": "8f6ddc596b9df150f9c87efe5fb4f79bef8634e1a41a9c6a9dfc0d938c84c00c"
+    },
+    "scenes/main.tscn": {
+      "bytes": 157,
+      "sha256": "0f3e7841c066ab2afea19c13e3ea695a636b5279533bef31eb536f427c301161"
+    },
+    "web/head_include.html": {
+      "bytes": 12165,
+      "sha256": "81d25a95d033b49f2da0111975f151835033ff565be9b02d666e4810cb75bac0"
+    },
+    "web/sync_head_include.py": {
+      "bytes": 714,
+      "sha256": "4e57fc304b1a70164da098ed0de0f9f70e0da4a262b147d72390387be376d3ba"
+    },
+    "shaders/cork.gdshader": {
+      "bytes": 1039,
+      "sha256": "e25e7e82df2d76bb377390773356a60a1c4d2265b29bd4bd8906ccd91a439e56"
+    },
+    "shaders/blur.gdshader.uid": {
+      "bytes": 20,
+      "sha256": "b2b0077de8347c0025afe00f95771ff27aadebd1146d3920d417faa941cab205"
+    },
+    "shaders/tape.gdshader.uid": {
+      "bytes": 20,
+      "sha256": "f7977a008507ad7277540cea8d118ef05de2d4c4c84348667192de0f061424e4"
+    },
+    "shaders/paper.gdshader": {
+      "bytes": 493,
+      "sha256": "e08e0d13fd8be577cf759f85d0bc302fd7f9687b604c3fc0ca56ad028586e3a9"
+    },
+    "shaders/paper.gdshader.uid": {
+      "bytes": 20,
+      "sha256": "738e671957be851b4783de6ad1aa0a847d38af061ebcba32cd25282955d1aacc"
+    },
+    "shaders/scanlines.gdshader": {
+      "bytes": 412,
+      "sha256": "0f1c42b171f823f69d6478a37a0f798ccc1deee203f8c3e111d34149a9afe464"
+    },
+    "shaders/scanlines.gdshader.uid": {
+      "bytes": 20,
+      "sha256": "817e985326affd8278b0f7a02b3c0d26a7c76b98d7950289c9cd2cd922aaf4f7"
+    },
+    "shaders/cork.gdshader.uid": {
+      "bytes": 19,
+      "sha256": "9e11aad9bfe3fd2dadcc9cd3b3e9b2f34060c463c72523cb624e6cf04b49a72b"
+    },
+    "shaders/blur.gdshader": {
+      "bytes": 763,
+      "sha256": "40e25855f62206d0f9d73a12ed7163104e9ee5c7932d8e785ac64c9bb6032262"
+    },
+    "shaders/tape.gdshader": {
+      "bytes": 589,
+      "sha256": "7097340d608739e9332c6bc4b1a855c1127399125281e2a02978ff6008abe285"
+    },
+    "shaders/screen_fx.gdshader": {
+      "bytes": 1111,
+      "sha256": "c0504828c2c1049ab8dab8fdd8e766b09b44e7a2df9a93564228d9bc3400c90a"
+    },
+    "shaders/screen_fx.gdshader.uid": {
+      "bytes": 20,
+      "sha256": "938918c6b598c2d6695c3e7e5f89a2b2d8c368dd4b65d1856aaac20cff50c256"
+    },
+    "scripts/main.gd.uid": {
+      "bytes": 20,
+      "sha256": "adf1d98f3f747835338fbe46eece6b6e11381ac02d7c82f56490221135e0f13b"
+    },
+    "scripts/main.gd": {
+      "bytes": 109,
+      "sha256": "13fe85f213836c16d3a0b0af0b9a3ac5a6d107d1f41005ce8866a918703b6472"
+    },
+    "scripts/test/autotest.gd.uid": {
+      "bytes": 20,
+      "sha256": "a849d1fe1d913fd64867a270a86cb6782d69bb0a8d77c25c278aa4f0df61f885"
+    },
+    "scripts/test/autotest.gd": {
+      "bytes": 16126,
+      "sha256": "a7bec941da47695794ae9df99857ec4abdeb1dd85720e8387d8c0f42c4d63e95"
+    },
+    "scripts/world/door.gd": {
+      "bytes": 4053,
+      "sha256": "fcd15ab61d1eac1631f506f0c051e5568b59999ccf01129d3383f346bd839052"
+    },
+    "scripts/world/level.gd": {
+      "bytes": 39819,
+      "sha256": "de54404f8def0814dbe544ca86eb0e9099843c6375152b1a215f7ac55b7f262c"
+    },
+    "scripts/world/game_camera.gd": {
+      "bytes": 3697,
+      "sha256": "80957836936001d68ac9cbe3422bf6f3aa4d65ab8b613598fc4f1d9558392a3d"
+    },
+    "scripts/world/pickup.gd.uid": {
+      "bytes": 20,
+      "sha256": "7f3338413445acc230be39e5333e40e8f9cee32e71c29e622358ff8bc7658f4e"
+    },
+    "scripts/world/ground_guide.gd": {
+      "bytes": 2811,
+      "sha256": "e1f9c429c7ac18d2bd14d15e8d71ff811d9ce421cffd2b0d5ec2c96968797ac5"
+    },
+    "scripts/world/map_builder.gd": {
+      "bytes": 17354,
+      "sha256": "d7fdbaf707fad37f504d2738f744828edcf42e86de447c45fe1fdc16ebfdca0f"
+    },
+    "scripts/world/map_builder.gd.uid": {
+      "bytes": 20,
+      "sha256": "d0bb32b96d37cbde5a98e5191c228ea025dbf857470bddaf63bd953b015f88a5"
+    },
+    "scripts/world/pickup.gd": {
+      "bytes": 5047,
+      "sha256": "45fdbc633bc17912bb81e2659758da5c201f781771ebe697d5159c4da106e6e2"
+    },
+    "scripts/world/door.gd.uid": {
+      "bytes": 20,
+      "sha256": "c9d57f0a751d3f9b346aa5efef25c40a5d4524e821dde068d12d4bdf39cf9e69"
+    },
+    "scripts/world/ground_guide.gd.uid": {
+      "bytes": 20,
+      "sha256": "97cd6154274ab171b4d5dbdd0f41b3c790d2d8ad201c2b50fc995a28a2325be7"
+    },
+    "scripts/world/level.gd.uid": {
+      "bytes": 20,
+      "sha256": "d2bd6bea3154c52c697ac214165cbd7178a94cf484c73749af105651f9c7c8ad"
+    },
+    "scripts/world/game_camera.gd.uid": {
+      "bytes": 20,
+      "sha256": "1e9163655124d62f4883712bea6d22354b1f04d108163579470f85a7327b4a90"
+    },
+    "scripts/ui/touch_controls.gd": {
+      "bytes": 20340,
+      "sha256": "023044da29a4a74caac6e8086e23cf3c0d541f754ddd4f5788b4d42d94be840e"
+    },
+    "scripts/ui/main_menu.gd.uid": {
+      "bytes": 20,
+      "sha256": "be2a89cb3c41d88f06cd0bd5db836316383d16273b15802197bfaac450b7c5bf"
+    },
+    "scripts/ui/leaderboard_screen.gd": {
+      "bytes": 12776,
+      "sha256": "ff9765eb79a7e7575b51b9a0bd1db97d9e04a3cc457fbcf7abed33590f7f97eb"
+    },
+    "scripts/ui/hud.gd.uid": {
+      "bytes": 19,
+      "sha256": "d64b5670e06c2d70ccc2fa35aa1402cc53c9e3bb2fc0c2dc86545b516faa38f2"
+    },
+    "scripts/ui/sticker_button.gd.uid": {
+      "bytes": 20,
+      "sha256": "920b728f3f56f3e0e620f6ccc098e70a612989b203148388247fce43222d0232"
+    },
+    "scripts/ui/case_card.gd": {
+      "bytes": 6749,
+      "sha256": "ed96c488231031d97356585f79ac2bb8c3368dbb5606fe80e3f49b74903bd43d"
+    },
+    "scripts/ui/radio.gd.uid": {
+      "bytes": 19,
+      "sha256": "14109706594101260134c06ccd4e30db12f48183365126774222cf56e59152a1"
+    },
+    "scripts/ui/portrait.gd": {
+      "bytes": 6704,
+      "sha256": "5f8bf77992ef47ef7e47f8c31ac1fba2c7a557cd2036d8cd6ea4e73f37a8e2db"
+    },
+    "scripts/ui/pause_menu.gd.uid": {
+      "bytes": 20,
+      "sha256": "5bc31742ee7440a0e4c0ea0b6b33e4a6d6fbc0b2f7c9f98cdf8e0afecac1c7d8"
+    },
+    "scripts/ui/sticker_button.gd": {
+      "bytes": 2435,
+      "sha256": "7956f74421f905a529337830e522279de7649c3259d0d528f6db9de257400503"
+    },
+    "scripts/ui/pause_menu.gd": {
+      "bytes": 10563,
+      "sha256": "da4fbaadd06b1f88b65d3e4d1d2d2be3e8aac59967853842dc3495ae794ff3c8"
+    },
+    "scripts/ui/cutscene.gd": {
+      "bytes": 9047,
+      "sha256": "37c662383c61eac22cf4ccd41173ae14f840aba89c313376ce90b6747f8136cd"
+    },
+    "scripts/ui/results.gd.uid": {
+      "bytes": 19,
+      "sha256": "19c1a8b7cf69bc8e7023cb82d8daf1d7158a21414373832d8ba7847e9499fcf7"
+    },
+    "scripts/ui/cutscene.gd.uid": {
+      "bytes": 20,
+      "sha256": "9fefd9f915773bb676329e97c5dd89b045451505cce0c0c37fda5dd9e25a952b"
+    },
+    "scripts/ui/hud_widgets.gd": {
+      "bytes": 19673,
+      "sha256": "d29a42b66f71fecd6a4a9db4ca5a53fb097f7a375289531a82e39d41fd1c864a"
+    },
+    "scripts/ui/results.gd": {
+      "bytes": 17237,
+      "sha256": "9eaae7aee2c95ef7df2fca440217e35cf9740be53ce3cba27a737f6268bad125"
+    },
+    "scripts/ui/radio.gd": {
+      "bytes": 4319,
+      "sha256": "8b74d6106d709021e6ac9748f86dbbdb625264d53d0a71ce981b3b539b29bd67"
+    },
+    "scripts/ui/main_menu.gd": {
+      "bytes": 9963,
+      "sha256": "73f96b69844981156973e6ffcbebaa5d04b2f4eedf28f7bc44a0c83b6798d92f"
+    },
+    "scripts/ui/briefing.gd.uid": {
+      "bytes": 20,
+      "sha256": "cba82c7bd68aa0273b6cb21ee1d60656e45c45c522aeb04894506676e510094d"
+    },
+    "scripts/ui/tip_cards.gd": {
+      "bytes": 3951,
+      "sha256": "76da03a0d9bd1b4bc94e28ef54c328c532e7eade378976886f1a8a4b0fc34e2a"
+    },
+    "scripts/ui/leaderboard_screen.gd.uid": {
+      "bytes": 19,
+      "sha256": "767fd9ab93af3bc3494f754485e50ce7d67dce37935f8ddb1574797bf7cf6d10"
+    },
+    "scripts/ui/case_card.gd.uid": {
+      "bytes": 20,
+      "sha256": "2ceae37b204b049be5f561c134da3fed16668b5cba16cc936165d38953d418e5"
+    },
+    "scripts/ui/hud.gd": {
+      "bytes": 18568,
+      "sha256": "4cac11e0c099b0869041395517e54849b34e66285b9e99e963206bf26a5c64ee"
+    },
+    "scripts/ui/touch_controls.gd.uid": {
+      "bytes": 20,
+      "sha256": "6c4ff8f608c7bed914f4a2a1997727029db6eff9d096d0b93fedb729ee081adc"
+    },
+    "scripts/ui/portrait.gd.uid": {
+      "bytes": 20,
+      "sha256": "8d4a955ec65ab3e2c5ee6d488021db53eaee9e3107c626d9e18ea4d41015cd45"
+    },
+    "scripts/ui/briefing.gd": {
+      "bytes": 19508,
+      "sha256": "a49ab253606a417db4ba05719ead34e151dca10b64a76255109e42de6afb01cb"
+    },
+    "scripts/ui/hud_widgets.gd.uid": {
+      "bytes": 20,
+      "sha256": "9fe2a0bc4c22a609feab134a0564addb8580b677c64a6d7fe77af426535d4f57"
+    },
+    "scripts/ui/tip_cards.gd.uid": {
+      "bytes": 20,
+      "sha256": "083acd2d2bbe37a928d511dba7bb03e9f24f702af16eec9692893ac20fd28f5e"
+    },
+    "scripts/core/style.gd.uid": {
+      "bytes": 20,
+      "sha256": "5545e8fd2e2c4f07d0a87eebb8c76b4f250842a73cd88e3d82d54a986192a58b"
+    },
+    "scripts/core/toon.gd.uid": {
+      "bytes": 19,
+      "sha256": "6519e5e5f982cd08824e81f72cfd2bd5a7418a8f15c584e56abbd5b8d6310b4b"
+    },
+    "scripts/core/fx.gd": {
+      "bytes": 15461,
+      "sha256": "3e9c6b60ece5bac8bc174f2b74cbc482dca41e4e2c410d10673997c65a6e7506"
+    },
+    "scripts/core/weapons.gd.uid": {
+      "bytes": 19,
+      "sha256": "be54a45540ea5fb609ee092d9f09c9af8c4476b6be91974e5c8d2b2498b29932"
+    },
+    "scripts/core/style.gd": {
+      "bytes": 3852,
+      "sha256": "440d18a6b190a79d24b9500d68b4ae2261488e372cf6dfe1415c9d22e854141f"
+    },
+    "scripts/core/models.gd": {
+      "bytes": 16206,
+      "sha256": "7a831c4181f427dda582a74f95b273cb375ca7faa06f5ff42499855b00cfcc58"
+    },
+    "scripts/core/tips.gd.uid": {
+      "bytes": 20,
+      "sha256": "708545771124c9ac5739fd4237a91952cabeecf5909aa80e09a56b922b7f21e4"
+    },
+    "scripts/core/pal.gd": {
+      "bytes": 1137,
+      "sha256": "74032f8b9a1f573ed0f05d616a5460e405a719e548c7e6de1b6726719464de65"
+    },
+    "scripts/core/models.gd.uid": {
+      "bytes": 20,
+      "sha256": "b013fb1899907973023c9c68fb5f319fe753177d57081dd633b98473e355dcd0"
+    },
+    "scripts/core/char_model.gd.uid": {
+      "bytes": 19,
+      "sha256": "8a944e36e1b8f2315a3db4816de92e96f75e47b46d05e57cbc66771c3795b0aa"
+    },
+    "scripts/core/fx.gd.uid": {
+      "bytes": 20,
+      "sha256": "5dcb3f3d286d8317698183c0cc5e3d0a860823bfba6d50149ef18fee1e1e228a"
+    },
+    "scripts/core/toon.gd": {
+      "bytes": 2656,
+      "sha256": "5033198b01352a2c1df88d4b693f538521107086380dafa0e1d89e627e531312"
+    },
+    "scripts/core/weapons.gd": {
+      "bytes": 3827,
+      "sha256": "1647e21ce710a20d8990f5d03a30390c6e0391471ad148693df1b4d54f3df4a0"
+    },
+    "scripts/core/char_model.gd": {
+      "bytes": 6841,
+      "sha256": "bbda100ebd341afc064ce3ee77fd91b041104216350c96aab9be612bc96f323b"
+    },
+    "scripts/core/tips.gd": {
+      "bytes": 9485,
+      "sha256": "c20605212d66fb0d41fb800882bd7c5e0c7a4c0c742e3c6fb5dbcde4900aaaf1"
+    },
+    "scripts/core/pal.gd.uid": {
+      "bytes": 20,
+      "sha256": "e342181b1be72c8acfcdce3cbd6ade559781165ce6aeae486d2e2f6c0ea56cb6"
+    },
+    "scripts/autoload/online.gd": {
+      "bytes": 7388,
+      "sha256": "7ba6d6a84d40221ab0b0a21aa4dfa46ce4b40e463c5369d89a48dab9cb18e66d"
+    },
+    "scripts/autoload/game.gd.uid": {
+      "bytes": 19,
+      "sha256": "11f7f116244acb0c37dd96b2d606d4b5e7bd770fa74aea74feaf57ff354182c7"
+    },
+    "scripts/autoload/sfx.gd.uid": {
+      "bytes": 19,
+      "sha256": "abb3791a7f115c899a843a5b4f1b9a8b191a1f1c7acf57f85446101a8cdfc1eb"
+    },
+    "scripts/autoload/game.gd": {
+      "bytes": 15537,
+      "sha256": "68dd1991dda2d5069dcba2aae2cd9db7835721b57eb75ebd43f0537320644bf6"
+    },
+    "scripts/autoload/online.gd.uid": {
+      "bytes": 20,
+      "sha256": "3d692ff27cff79453a0300dd82b56b228624df7d4b03e8b28ea5b9445e6b4394"
+    },
+    "scripts/autoload/sfx.gd": {
+      "bytes": 17648,
+      "sha256": "d8b7148254b6aaff353d46c6d165f7aaa8a0e9801e3207011599f35473d6a887"
+    },
+    "scripts/tools/bake_audio.gd": {
+      "bytes": 1311,
+      "sha256": "39bb6614bc1de4cd80ba17273dd13f547e853fd0ad5a9a5fd51b29f0db8535f1"
+    },
+    "scripts/tools/bake_audio.gd.uid": {
+      "bytes": 19,
+      "sha256": "63e9467e3b2ad70d92281c5f2d6bd5e8b571faceca616011d14c756a66211b6f"
+    },
+    "scripts/actors/hostage.gd.uid": {
+      "bytes": 20,
+      "sha256": "14b7f1f7795a0af46b3e4562da1930548fb9b71b8cb65647995f5fb8ea26a779"
+    },
+    "scripts/actors/enemy.gd": {
+      "bytes": 15473,
+      "sha256": "07cdba5c9420f2c58cace94048d8515c08ca689f3c8e83b541351f9d5276c33e"
+    },
+    "scripts/actors/grenade.gd.uid": {
+      "bytes": 19,
+      "sha256": "3ee984a52edfab2dbb3fb157e7612b0eac5bdeade2c6de1ab11c2a411771369f"
+    },
+    "scripts/actors/bullet.gd": {
+      "bytes": 6332,
+      "sha256": "722ed7de3930e37ab0c506d28af910a140d02593d84c0f227a736b1c4e12b5a7"
+    },
+    "scripts/actors/zombie.gd": {
+      "bytes": 15384,
+      "sha256": "5b6a54a74e1dc2c36ae0bba5663267126c0e5c4661f2ed8532cfb6cde1d8376c"
+    },
+    "scripts/actors/grenade.gd": {
+      "bytes": 2892,
+      "sha256": "c0c38263811ab1a349a3fe7fb0f3f6089467f04b9aabd538e6a126ea5406d316"
+    },
+    "scripts/actors/player.gd": {
+      "bytes": 20256,
+      "sha256": "f5ed425393a58257eb87f7a01a5a24339509e11330a198b62631fc773bc6f307"
+    },
+    "scripts/actors/zombie.gd.uid": {
+      "bytes": 20,
+      "sha256": "39638cff3eacfe9c230b4db788f6936dbcb4d90071ee833bd35d27edbc195a3d"
+    },
+    "scripts/actors/actor.gd.uid": {
+      "bytes": 19,
+      "sha256": "042367a6c68f0f32a4ea3ffa5f0036ffe8ca13a06e503e3aaf1b7cdb4833a6ca"
+    },
+    "scripts/actors/hostage.gd": {
+      "bytes": 4373,
+      "sha256": "57da84a6d2d09dc3315e2f93e3f175e0d83648470867ff9d873e9a29c2d918c8"
+    },
+    "scripts/actors/enemy.gd.uid": {
+      "bytes": 20,
+      "sha256": "417c30b6b48a28b9c57d25bd7d26a1c98aff8a433fec3bfbc021826827068891"
+    },
+    "scripts/actors/actor.gd": {
+      "bytes": 2038,
+      "sha256": "c8bb15426d59b576ec461190f446f46d7a75f88548282ab09dedc4cbd342b798"
+    },
+    "scripts/actors/player.gd.uid": {
+      "bytes": 19,
+      "sha256": "404cae10591d1f41bbb8fddf7b27789a1999ee5c2c1e304a6760fe148bc5719f"
+    },
+    "scripts/actors/bullet.gd.uid": {
+      "bytes": 20,
+      "sha256": "380a34b0d245f5807d790f55cec7d577ccc967813bfb3017cc3c80e26e122a74"
+    },
+    "scripts/test/qa/heal_tip_metrics.gd": {
+      "bytes": 2594,
+      "sha256": "080da5a13f34a4ef1f7e6b301698032f3c8791ed0569fb6c7ddcb764593225c2"
+    },
+    "scripts/test/qa/shield_regression.gd.uid": {
+      "bytes": 19,
+      "sha256": "498aec0c7c2c30914d76deba9b15d3290a10277547cdb38d17ea14947cf8ba55"
+    },
+    "scripts/test/qa/heal_tip_metrics.gd.uid": {
+      "bytes": 20,
+      "sha256": "13ffe9f3eaab04e129f5704c07d4ace2ad03853d1502f455a61eb3ca24fa554e"
+    },
+    "scripts/test/qa/visual_driver.gd.uid": {
+      "bytes": 20,
+      "sha256": "02dd965c00c6a3e7e93100856d3953b26e44f4e917e587f02ae6b4eefb4c5148"
+    },
+    "scripts/test/qa/README.md": {
+      "bytes": 3560,
+      "sha256": "bd2108bd33c5cc4084dafb721c81d960d87fcb617fc3ba334bcaf963c9c9d4e5"
+    },
+    "scripts/test/qa/heal_budget_regression.gd.uid": {
+      "bytes": 20,
+      "sha256": "c306050142bfb401714d27da4615ceffa20e360dca6664a6b3be2d3fb7c9f328"
+    },
+    "scripts/test/qa/visual_driver.gd": {
+      "bytes": 4178,
+      "sha256": "447c3730ecb55dfc4fd4caf56bf866c8bb2e6619826bd44a158f08e9ce580f68"
+    },
+    "scripts/test/qa/heal_budget_regression.tscn": {
+      "bytes": 194,
+      "sha256": "8dab92279bfe804b617f5b3f0ce5931fa567e15a81ba2b20dec87beea173a548"
+    },
+    "scripts/test/qa/heal_budget_regression.gd": {
+      "bytes": 12989,
+      "sha256": "abc4437a9314b95631dc2d93fab81719ad84816c1c7329e4bde323cfdf93650f"
+    },
+    "scripts/test/qa/heal_tip_metrics.tscn": {
+      "bytes": 192,
+      "sha256": "87cac568443fe108055acf13143aee58923c0348e2fddfb9024d57eebb7dfce2"
+    },
+    "scripts/test/qa/visual_driver.tscn": {
+      "bytes": 178,
+      "sha256": "9de8ce5904623f0ccbb98052920e20b2a424cbd1c5d02146ca74d04279b694fb"
+    },
+    "scripts/test/qa/shield_regression.gd": {
+      "bytes": 10423,
+      "sha256": "0a05cb03e826e2b143412d3a79e418b093aa115663f0f5d6fccbce6768a38b0d"
+    },
+    "scripts/test/qa/shield_regression.tscn": {
+      "bytes": 184,
+      "sha256": "fba267542890d21a1a6dc233c8be86dd27ac09db989d3ba1b06e1ba9dafc12bb"
+    },
+    "assets/sfx/type.wav.import": {
+      "bytes": 481,
+      "sha256": "7e96c570974b8ae1c0a53a4e8122d2347c7ee6b39d0c318f99ed8379f2fd9e40"
+    },
+    "assets/sfx/shot.wav.import": {
+      "bytes": 481,
+      "sha256": "b1136f86916be30597a967f7b2f2292289e65f4d08ce55e2ba15e4b50d0e2001"
+    },
+    "assets/sfx/heartbeat.wav": {
+      "bytes": 22094,
+      "sha256": "fcf116951b7f782c2716a780efdbfa7bfeae617c2926d7dc3004e350a564832c"
+    },
+    "assets/sfx/ui_deny.wav": {
+      "bytes": 8864,
+      "sha256": "953355edd91d7393818979bb3d4ca5fc515b6f344485aae340317f7d82e01c9e"
+    },
+    "assets/sfx/radio.wav.import": {
+      "bytes": 483,
+      "sha256": "d675ba86af15b7e845821fdeeef19d4ad950d152f1a19b9b53858c8ce6e8fb34"
+    },
+    "assets/sfx/dash.wav.import": {
+      "bytes": 481,
+      "sha256": "0aa8cf7b1d91425268b743c7db9df545cc94b673451912a47c9c4663fdc36a18"
+    },
+    "assets/sfx/alert.wav.import": {
+      "bytes": 483,
+      "sha256": "d81b427bacb4aac178643db57aef86a77eab6d5ff97f0b814b5bc2fc76c32804"
+    },
+    "assets/sfx/perfect.wav": {
+      "bytes": 22094,
+      "sha256": "09e79ff09d94cab65e20a6177cd373101f916c4cde0e8ff9a46ea1f38297e9e8"
+    },
+    "assets/sfx/radio.wav": {
+      "bytes": 9746,
+      "sha256": "3cec3ca5c31c6a70aa539bcd425f3154d0f379986c118b0df675e453a4b912c2"
+    },
+    "assets/sfx/ui_deny.wav.import": {
+      "bytes": 490,
+      "sha256": "5bc035777e70486490e1c78dc818feed3022872339b82c9b3b523dd891708b44"
+    },
+    "assets/sfx/dodge.wav.import": {
+      "bytes": 484,
+      "sha256": "e2cdbd6c68dc1f386beaed3a1cb9b7c491d99c1c613a715559dc3bc9c5f0209a"
+    },
+    "assets/sfx/wake.wav": {
+      "bytes": 13274,
+      "sha256": "9b900d37c60473baf2723d032871f59a5ab2e705599413521c17112ed2cf5a65"
+    },
+    "assets/sfx/transform.wav": {
+      "bytes": 52964,
+      "sha256": "1fbffc8814fdc20ffef1fc82d26ce08ab0a8a54a9a7239ab9780f3a6012efb31"
+    },
+    "assets/sfx/laser.wav": {
+      "bytes": 8864,
+      "sha256": "fec04d7efe292bc5bdae3aa0df65f94f5030f1dc42ef42f2e873f4cff4487876"
+    },
+    "assets/sfx/explosion.wav.import": {
+      "bytes": 496,
+      "sha256": "870dc663b4b184a3b80481989df49d96f954678153c5ee4e711d5d2b83c2d274"
+    },
+    "assets/sfx/explosion.wav": {
+      "bytes": 48554,
+      "sha256": "a122df441cda35e0b5c08c8e2a4185b08fee43613e6e24649dc54492af749d14"
+    },
+    "assets/sfx/cuff.wav": {
+      "bytes": 13274,
+      "sha256": "3a1310cbd0eaac7db0ff2f07a34b8d94f8200902be18d2a2ab8885f1ecda7acc"
+    },
+    "assets/sfx/music_wave.wav": {
+      "bytes": 282284,
+      "sha256": "09c60c4c08060e2b268b2a58daeb46fa3300cf7b7843979908781d22d95661a0"
+    },
+    "assets/sfx/groan.wav.import": {
+      "bytes": 484,
+      "sha256": "b5e62a0ccc13b690c429a34b02f78df731851ac1fefd02aa6211addb8b6735e4"
+    },
+    "assets/sfx/chime.wav": {
+      "bytes": 70604,
+      "sha256": "5d56e3ba8558130eb5f66251f79b1806f65286d9ac60107ac55e32ad3a42498e"
+    },
+    "assets/sfx/music_menu.wav": {
+      "bytes": 504044,
+      "sha256": "adbc451a2e6f18fb6cfe8e12f5d364a1a4c1026122fba5c931cab6a8b9cc5581"
+    },
+    "assets/sfx/enemy_shot.wav.import": {
+      "bytes": 499,
+      "sha256": "7e5d94db5da43f6865ceb779861cf52e57c8d45f4dae5d3cf584c4e9da7956a7"
+    },
+    "assets/sfx/shot_buff.wav.import": {
+      "bytes": 496,
+      "sha256": "e6f6a5fb25105455c4265f553ab5f3233e2ccd95c5d501baecd84569c49773e8"
+    },
+    "assets/sfx/victory.wav.import": {
+      "bytes": 490,
+      "sha256": "0fd623571dcee8fa2ac8132e91b11e83cfb081f099a3d01311ce633b6d3eef68"
+    },
+    "assets/sfx/dodge.wav": {
+      "bytes": 8864,
+      "sha256": "2e0444355b5ae952f06631f1a0a57f1050fab755c7e3f5fb73b9ad60014bfacc"
+    },
+    "assets/sfx/roll.wav": {
+      "bytes": 13274,
+      "sha256": "9942aa77ac33ab16968d11c14a4b875b628336576432a111eb2cac2833fe3efe"
+    },
+    "assets/sfx/empty.wav": {
+      "bytes": 2690,
+      "sha256": "bf68debd73355b38109e5b5a1f1d43e4b359836d0f363202717f17bf1bdcfa2f"
+    },
+    "assets/sfx/block.wav.import": {
+      "bytes": 484,
+      "sha256": "78fae77aaf234455f74fe5ff7d1fffcaf9a129fcd74a7d8998d16ea4ee3aeaf0"
+    },
+    "assets/sfx/music_menu.wav.import": {
+      "bytes": 499,
+      "sha256": "0ef53451626bff0f7c7fadc32c658385d64735a13da2cab590f7d3873716b65a"
+    },
+    "assets/sfx/score.wav": {
+      "bytes": 4454,
+      "sha256": "1a73e4670edccb71696c213376d3b91217075ca747fb606b9213ffc61b6d2e54"
+    },
+    "assets/sfx/swing.wav": {
+      "bytes": 8864,
+      "sha256": "8081d51d0a23415f0812c964113ac5098ef7ece273c6c0119b5236f302d09dd1"
+    },
+    "assets/sfx/breach.wav.import": {
+      "bytes": 486,
+      "sha256": "6d8e56f71fd4c33794d9587dd420a92143cd1df5af1294c6bd5eff4a8ff74494"
+    },
+    "assets/sfx/stamp.wav.import": {
+      "bytes": 483,
+      "sha256": "2e4e531ea6e76bae3345e23374e26b10fb7fceec9636f9e05ba30104824346bf"
+    },
+    "assets/sfx/wake.wav.import": {
+      "bytes": 481,
+      "sha256": "bf612ab20563ff5db014d72d1031b6832ab018c811352097e2708bedf13cc77b"
+    },
+    "assets/sfx/block.wav": {
+      "bytes": 7982,
+      "sha256": "5fd1e4c848ef9a2e4cd6a8d8c63e42e71f372d5c84a2eb2dc23d3d532f46d338"
+    },
+    "assets/sfx/music_wave.wav.import": {
+      "bytes": 499,
+      "sha256": "c0c86b1b376ca8bf8dc3ac7d09407e7a8eec6f9180a7504381bd078036c632aa"
+    },
+    "assets/sfx/rocket.wav.import": {
+      "bytes": 487,
+      "sha256": "0531eca4bfec145f8cff25651617840acd923fe2c11965fc069403140191bc00"
+    },
+    "assets/sfx/hit.wav": {
+      "bytes": 3572,
+      "sha256": "031f7af08f781be9b2012e7727f60539a746a72fcd4fc39044e30f7796835f30"
+    },
+    "assets/sfx/transform.wav.import": {
+      "bytes": 496,
+      "sha256": "64d93fd688b752762cf86415287db9de22ad2cc91b2498d7fa2f4a791d1713d7"
+    },
+    "assets/sfx/cuff.wav.import": {
+      "bytes": 481,
+      "sha256": "a9b644b2385a30d73e0989699ccc5965a55ce1cc0ec4e9f7eae4aa09c4274823"
+    },
+    "assets/sfx/rocket.wav": {
+      "bytes": 22094,
+      "sha256": "2b178661fd272583a9d1f5cf0ddc23b858e0e27c6373a0566cd3fbd4585e38b2"
+    },
+    "assets/sfx/roll.wav.import": {
+      "bytes": 480,
+      "sha256": "5e590279cc4cc6bdab30995629b652ef060cb397d425f31019a309950249f554"
+    },
+    "assets/sfx/alert.wav": {
+      "bytes": 8864,
+      "sha256": "ee2b4ff6ddccbef84b6ae7dc474410babc33707a71fc55e0bcbcbda69b19d2c7"
+    },
+    "assets/sfx/chime.wav.import": {
+      "bytes": 484,
+      "sha256": "848ec6b78dd87afe2bede573043f1e25637a448999093c3617d2686317098a8d"
+    },
+    "assets/sfx/ui_click.wav.import": {
+      "bytes": 493,
+      "sha256": "3e03260c418c12e056d3af5beb95c224be8eed8a4eb377d1b52b787a6e3b695c"
+    },
+    "assets/sfx/shotgun.wav": {
+      "bytes": 19888,
+      "sha256": "098f07dfb59bfec955d27bc4b70a48e2fc2011cb5621fd9b6f4965adb8e637ce"
+    },
+    "assets/sfx/ui_click.wav": {
+      "bytes": 5336,
+      "sha256": "193e7e723a6a16ac07090a8bc3301796b44f3d638caeaa4867ef5d7df4f1140d"
+    },
+    "assets/sfx/jam.wav.import": {
+      "bytes": 477,
+      "sha256": "cff587c95edb83e74c7d6d0e8bdf8ada5d263106674949a11294220d7fb3bc0f"
+    },
+    "assets/sfx/shotgun.wav.import": {
+      "bytes": 490,
+      "sha256": "15497a8f59790b5d739772bb35c436d20ffa8399a836577b9a2479222e603ecf"
+    },
+    "assets/sfx/clank.wav": {
+      "bytes": 11068,
+      "sha256": "d7036013c7e4fc37a5e56d0ad622a2ca8ac995a734353229e0c40b9371343324"
+    },
+    "assets/sfx/hit.wav.import": {
+      "bytes": 478,
+      "sha256": "f2cfde87f7e949c95bdd2ea428d0e4c9fc6e9789a25e15a141e83c36b140dbbc"
+    },
+    "assets/sfx/jam.wav": {
+      "bytes": 13274,
+      "sha256": "88fd019415752c101fbb2df3acf9da9de80ae276066c4c272ae0911e409b6ff5"
+    },
+    "assets/sfx/telegraph.wav.import": {
+      "bytes": 496,
+      "sha256": "63dab948b6009256310c9716bdc44f7913b7f9ff6a02fa0243be39037f8d13db"
+    },
+    "assets/sfx/shot_buff.wav": {
+      "bytes": 11068,
+      "sha256": "f7a26de7abc2539f3273d376f258000b47bd1768c2af47558d101d5ce22dd728"
+    },
+    "assets/sfx/reload_done.wav.import": {
+      "bytes": 502,
+      "sha256": "a581d1bba33efc8bfb59daa237be28efa59657b9394468f62ffc1cefd48daa62"
+    },
+    "assets/sfx/powerup.wav": {
+      "bytes": 44144,
+      "sha256": "3c97c2e140bfea36b083ff9ec50e7b5b68d96f9c50b22fb24cd3a752512e27eb"
+    },
+    "assets/sfx/perfect.wav.import": {
+      "bytes": 489,
+      "sha256": "8b91546e841bd3b8c41b3be8890925fe47193459a6cca88f391e310a4f5f8ccd"
+    },
+    "assets/sfx/fail.wav": {
+      "bytes": 61782,
+      "sha256": "d6dfea4d3ec169e600b15ed092e4a3d890853902b8f03f76d4bde1ba1d3b55bf"
+    },
+    "assets/sfx/reload_start.wav": {
+      "bytes": 6658,
+      "sha256": "360c270aa3a262d8f860abfc5ea951fde7b5cbe2a24faae03b54cf7fe1306c3c"
+    },
+    "assets/sfx/bonk.wav.import": {
+      "bytes": 481,
+      "sha256": "73ece671a02ca7a98d3fc1d63d1f07e83e388a84045e6b11fd1dbaeed7d4af1a"
+    },
+    "assets/sfx/enemy_shot.wav": {
+      "bytes": 8864,
+      "sha256": "7f05c88815bd01ae2bc7413961e33dc959c4c662de308d25b81e4960c45b1971"
+    },
+    "assets/sfx/reload_start.wav.import": {
+      "bytes": 505,
+      "sha256": "7c7e900891d68ffd75101cb64a3790500db692971385159bba28fde9f34c1a2b"
+    },
+    "assets/sfx/dash.wav": {
+      "bytes": 19888,
+      "sha256": "50268cde8e31ea4b0c3b77d000c8c903950d70ea50495822f77d766605e8bcc9"
+    },
+    "assets/sfx/empty.wav.import": {
+      "bytes": 484,
+      "sha256": "8384f7c58407d40abb148f0ef9349d4023d737133b193c496cf5b3747ca88174"
+    },
+    "assets/sfx/ui_hover.wav.import": {
+      "bytes": 493,
+      "sha256": "9302cd877e2e47f59f8ca863a7d4d20fb92f2b285f99ae956eee7e39de36a92f"
+    },
+    "assets/sfx/pickup.wav": {
+      "bytes": 30912,
+      "sha256": "09d97dde5c450010ee6b67eccd8371d8d2df47fdb0dcad27f5a46629c787f698"
+    },
+    "assets/sfx/slowmo.wav": {
+      "bytes": 52964,
+      "sha256": "716b7268142f17f9f2faa587debd1d161fa1d05f4eda13fbd960835f2c339635"
+    },
+    "assets/sfx/stamp.wav": {
+      "bytes": 15478,
+      "sha256": "1c84858343d34af8f62457f6ea3e0a2870db967981dc59dc8415947ad7888d59"
+    },
+    "assets/sfx/powerup.wav.import": {
+      "bytes": 490,
+      "sha256": "ffb1d5bfe73bb5ec8fe07c2769779928ae113ac1b00de14d7ef61b3af11fa181"
+    },
+    "assets/sfx/pickup.wav.import": {
+      "bytes": 486,
+      "sha256": "70e9269f574d02c8480dd31e30ff1f027724ed3ae13f00c834fbb4c7f17b897f"
+    },
+    "assets/sfx/alarm.wav": {
+      "bytes": 70604,
+      "sha256": "0feaab9e189005c3442dcd376475b974c838d049ded3fb53f2dfa1fd80db7479"
+    },
+    "assets/sfx/paper.wav.import": {
+      "bytes": 484,
+      "sha256": "8d59a2152c85376ea7ff90ab97a08101869f001b4d28ed819115d9c1f015947c"
+    },
+    "assets/sfx/heartbeat.wav.import": {
+      "bytes": 495,
+      "sha256": "d541c26218082167cd83667940d4038b876caf0cf19ee6220a79b477c54fbc0a"
+    },
+    "assets/sfx/swing.wav.import": {
+      "bytes": 484,
+      "sha256": "3c1ffc43aebcbb7d641bf96145c3a5147e736dbbe3c940a3f63254d0eaace4b4"
+    },
+    "assets/sfx/type.wav": {
+      "bytes": 1366,
+      "sha256": "d91dfea88b804fcb2bccfbe9c71b66b1860869938d125e9efb46809b25f1831c"
+    },
+    "assets/sfx/shot.wav": {
+      "bytes": 9746,
+      "sha256": "69e00c39e4a756049508c25b07ad58099262b3da51b3855f8b1a23c74df5cd95"
+    },
+    "assets/sfx/score.wav.import": {
+      "bytes": 483,
+      "sha256": "cfcaafbe6ce34394b75d96e74524b0bcf8cd75d1a0f33e999988e0d3d9f8cbd0"
+    },
+    "assets/sfx/telegraph.wav": {
+      "bytes": 11068,
+      "sha256": "c1b375c7b901f2391f172ae61be7724012d82a3279016c9fe0639e4346df8689"
+    },
+    "assets/sfx/bonk.wav": {
+      "bytes": 19888,
+      "sha256": "3d9094fd0c3ca1d6d15b29029dfa3049155a0308441b9c05bdd35a3edb0d8953"
+    },
+    "assets/sfx/breach.wav": {
+      "bytes": 44144,
+      "sha256": "cdbb410630a5eef84a37edeaa2639b69b8c4de01e534bbe4f30b85b2c6607424"
+    },
+    "assets/sfx/hit_player.wav": {
+      "bytes": 11068,
+      "sha256": "be27add4e5180aab7c9663d89f37d214bfa977019937f6c2c84648b681515f6c"
+    },
+    "assets/sfx/reload_done.wav": {
+      "bytes": 7100,
+      "sha256": "2a4b190584f85a0a0212e3f5c35bb2a16c0d9f65e84309f2a3bd875469717b77"
+    },
+    "assets/sfx/paper.wav": {
+      "bytes": 19888,
+      "sha256": "b7a59f432b9b41187a099f639286f24765a3b73c7c395fb3bc7dc4ad5c03c305"
+    },
+    "assets/sfx/bite.wav.import": {
+      "bytes": 481,
+      "sha256": "b1daeffca0a55cc60830887376390c7aa338690f8c9fc6bc9244ed9e43857037"
+    },
+    "assets/sfx/fail.wav.import": {
+      "bytes": 481,
+      "sha256": "ba9539047623b0bc08b2e52daea1e0549e1e770fa974d6dc16e1d61d91666502"
+    },
+    "assets/sfx/bite.wav": {
+      "bytes": 4454,
+      "sha256": "ee5cf3fd9f0e378b820a828f1cbc1c71c87056d4b780795bf741532c913e60c6"
+    },
+    "assets/sfx/shout_fire.wav.import": {
+      "bytes": 499,
+      "sha256": "01ac71f071fd05798be3817e2bb8979283061c899698c0c447b9ece801a929a9"
+    },
+    "assets/sfx/clank.wav.import": {
+      "bytes": 484,
+      "sha256": "dca09fc39f3f697cae6b20c97e5cabb04bf1bf8919f282f967519e467ac75779"
+    },
+    "assets/sfx/laser.wav.import": {
+      "bytes": 484,
+      "sha256": "3b83266d9677afc171e6c9e285c78a5e9d5502a11c5a7d3b9415007d8a5f6e4a"
+    },
+    "assets/sfx/music_combat.wav": {
+      "bytes": 358822,
+      "sha256": "5067c5ce50b083eef3f06f00b1c878f926d193dffde2f369d1acf7bee75b8041"
+    },
+    "assets/sfx/slowmo.wav.import": {
+      "bytes": 487,
+      "sha256": "bb449b02ae28cc2cf4da76a39515e9b03717ee9d8636a2c6a117e0ea89e55b62"
+    },
+    "assets/sfx/victory.wav": {
+      "bytes": 61782,
+      "sha256": "026c7b31298852acc425177cd39b468e13e4e3dcdf1a95e0f7d45e68aaa513b8"
+    },
+    "assets/sfx/music_combat.wav.import": {
+      "bytes": 505,
+      "sha256": "6454cd92436ed4d8648c2ca14783df0494df57ff512fe62ac342d93a82ff9672"
+    },
+    "assets/sfx/alarm.wav.import": {
+      "bytes": 484,
+      "sha256": "440cb0a7667ad2b768feb01a06c8c50fa54c1d6d2e5bc83e10bea65ffdd70c46"
+    },
+    "assets/sfx/shout_fire.wav": {
+      "bytes": 39734,
+      "sha256": "68193f410a69ba225335780ee06e3f1ec8b668bc04e0d7478e01e970a224bf3a"
+    },
+    "assets/sfx/splat.wav": {
+      "bytes": 13274,
+      "sha256": "26d4853c4fd38dd3474ab7d131f1795a764ecb8d4feba268337f2d7c1b9b3096"
+    },
+    "assets/sfx/ui_hover.wav": {
+      "bytes": 2248,
+      "sha256": "4c44d245b119c2af816a57abb451ffe63c896826001458a7813b1e5f97112de2"
+    },
+    "assets/sfx/hit_player.wav.import": {
+      "bytes": 499,
+      "sha256": "59b44e6ec38471292181931a3b9404e3eb0b8917acc9c26b1b16204051bd7710"
+    },
+    "assets/sfx/splat.wav.import": {
+      "bytes": 484,
+      "sha256": "2d2e980b73d7ec7b712165da891dff11a44c376248353da0bd06e03e6cf45edf"
+    },
+    "assets/sfx/groan.wav": {
+      "bytes": 30912,
+      "sha256": "d941588a76e61a10f3d45fc4e24db1fce354beda847cdb0535d0923a5aca32de"
+    },
+    "assets/fonts/ZCOOLKuaiLe-Regular.ttf.import": {
+      "bytes": 795,
+      "sha256": "69a33d3d2f696e2f0cf1ac33d02f26365fa09c907dbe832a04e6039a34af14e7"
+    },
+    "assets/fonts/NotoSansSC-Black.ttf.import": {
+      "bytes": 786,
+      "sha256": "46c3b7a32916f908140188fb8698b4907c5e00053e9a8a16501b65a1d4c7b0dc"
+    },
+    "assets/fonts/ZCOOLKuaiLe-Regular.ttf": {
+      "bytes": 1514968,
+      "sha256": "812a6fc1fe54b6d73a419245c32dfeba8aa33104d5be90d1cf6af082007cb71d"
+    },
+    "assets/fonts/OFL-notosanssc.txt": {
+      "bytes": 4388,
+      "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9"
+    },
+    "assets/fonts/Bungee-Regular.ttf": {
+      "bytes": 118996,
+      "sha256": "c4f5361ce120af3e6b9156d0bf379fa19cda2ea0cd18ac01fd99596c6bf66e3f"
+    },
+    "assets/fonts/Bungee-Regular.ttf.import": {
+      "bytes": 779,
+      "sha256": "6de8cefce876cae020060335917c887ee8ccc447e52c0babe05f9942d254bc9b"
+    },
+    "assets/fonts/OFL-zcoolkuaile.txt": {
+      "bytes": 4398,
+      "sha256": "538078469839b4a2e7ad22bef4ebe41681a4e53749bb2a072144024f1d6d703d"
+    },
+    "assets/fonts/OFL-bungee.txt": {
+      "bytes": 4473,
+      "sha256": "d5787a50dde5be6c6daecab9ed459939b1bc37cff0d0e00257eaf1ec2cf4c16c"
+    },
+    "assets/fonts/NotoSansSC-Black.ttf": {
+      "bytes": 1215044,
+      "sha256": "0f9b6a23b7551a2b76b22a28a6d79ec20d46c3cd743c56c89c45c5638d1ee7c5"
+    },
+    "assets/fonts/NotoSansSC-Medium.ttf": {
+      "bytes": 1215920,
+      "sha256": "f24b21c851d6c944ae6268f43c87ebc09b65a69a656a78cee8e31358ea8301e4"
+    },
+    "assets/fonts/NotoSansSC-Medium.ttf.import": {
+      "bytes": 788,
+      "sha256": "a07b684a045b26aa869584cac434cccbb8efa8a7561a95e019dabd2c71e0287c"
+    }
+  }
+}

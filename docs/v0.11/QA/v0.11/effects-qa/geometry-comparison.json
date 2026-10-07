@@ -1,0 +1,163 @@
+{
+  "kind": "source/candidate authored geometry equivalence, not an FPS test",
+  "models": {
+    "boss": {
+      "animated": {
+        "checks": {
+          "same_material_groups": true,
+          "same_triangle_count_and_winding": true,
+          "positions_UVs_outline_vertices_within_0.00001": true,
+          "normals_within_engine_uint16_packing_precision_0.0002": true,
+          "same_AABB_within_0.00001": true,
+          "same_colors_shading_outline_widths": true,
+          "same_head_body_foot_tail_animation_transforms": true
+        },
+        "maximum_vertex_attribute_error": 0.00010490417480496506,
+        "attribute_errors": {
+          "position": 1.1920929021691506e-07,
+          "normal": 0.00010490417480496506,
+          "UV": 0.0,
+          "outline_vertex": 2.5331974030096127e-06
+        },
+        "AABB_error": 1.1920929021691506e-07,
+        "triangles_before": 8936,
+        "triangles_after": 8936,
+        "visible_meshes_before": 31,
+        "visible_meshes_after": 14,
+        "visible_base_outline_passes_before": 54,
+        "visible_base_outline_passes_after": 26
+      },
+      "rest": {
+        "checks": {
+          "same_material_groups": true,
+          "same_triangle_count_and_winding": true,
+          "positions_UVs_outline_vertices_within_0.00001": true,
+          "normals_within_engine_uint16_packing_precision_0.0002": true,
+          "same_AABB_within_0.00001": true,
+          "same_colors_shading_outline_widths": true,
+          "same_head_body_foot_tail_animation_transforms": true
+        },
+        "maximum_vertex_attribute_error": 0.00010849535465201621,
+        "attribute_errors": {
+          "position": 1.1920928999487046e-07,
+          "normal": 0.00010849535465201621,
+          "UV": 0.0,
+          "outline_vertex": 2.6077032088955843e-06
+        },
+        "AABB_error": 1.1920928999487046e-07,
+        "triangles_before": 8936,
+        "triangles_after": 8936,
+        "visible_meshes_before": 31,
+        "visible_meshes_after": 14,
+        "visible_base_outline_passes_before": 54,
+        "visible_base_outline_passes_after": 26
+      }
+    },
+    "normal": {
+      "animated": {
+        "checks": {
+          "same_material_groups": true,
+          "same_triangle_count_and_winding": true,
+          "positions_UVs_outline_vertices_within_0.00001": true,
+          "normals_within_engine_uint16_packing_precision_0.0002": true,
+          "same_AABB_within_0.00001": true,
+          "same_colors_shading_outline_widths": true,
+          "same_head_body_foot_tail_animation_transforms": true
+        },
+        "maximum_vertex_attribute_error": 0.00010490417480496506,
+        "attribute_errors": {
+          "position": 1.1920929021691506e-07,
+          "normal": 0.00010490417480496506,
+          "UV": 0.0,
+          "outline_vertex": 2.5331974030096127e-06
+        },
+        "AABB_error": 0.0,
+        "triangles_before": 8788,
+        "triangles_after": 8788,
+        "visible_meshes_before": 25,
+        "visible_meshes_after": 13,
+        "visible_base_outline_passes_before": 42,
+        "visible_base_outline_passes_after": 24
+      },
+      "rest": {
+        "checks": {
+          "same_material_groups": true,
+          "same_triangle_count_and_winding": true,
+          "positions_UVs_outline_vertices_within_0.00001": true,
+          "normals_within_engine_uint16_packing_precision_0.0002": true,
+          "same_AABB_within_0.00001": true,
+          "same_colors_shading_outline_widths": true,
+          "same_head_body_foot_tail_animation_transforms": true
+        },
+        "maximum_vertex_attribute_error": 0.00010849535465201621,
+        "attribute_errors": {
+          "position": 1.1920928999487046e-07,
+          "normal": 0.00010849535465201621,
+          "UV": 0.0,
+          "outline_vertex": 2.6077032088955843e-06
+        },
+        "AABB_error": 0.0,
+        "triangles_before": 8788,
+        "triangles_after": 8788,
+        "visible_meshes_before": 25,
+        "visible_meshes_after": 13,
+        "visible_base_outline_passes_before": 42,
+        "visible_base_outline_passes_after": 24
+      }
+    }
+  },
+  "checks": [
+    {
+      "check": "normal second instance has no flash leakage",
+      "pass": true
+    },
+    {
+      "check": "normal every registered mesh retains own flash material",
+      "pass": true
+    },
+    {
+      "check": "normal outline xray is instance-local",
+      "pass": true
+    },
+    {
+      "check": "boss second instance has no flash leakage",
+      "pass": true
+    },
+    {
+      "check": "boss every registered mesh retains own flash material",
+      "pass": true
+    },
+    {
+      "check": "boss outline xray is instance-local",
+      "pass": true
+    },
+    {
+      "check": "normal second instance has no flash leakage",
+      "pass": true
+    },
+    {
+      "check": "normal every registered mesh retains own flash material",
+      "pass": true
+    },
+    {
+      "check": "normal outline xray is instance-local",
+      "pass": true
+    },
+    {
+      "check": "boss second instance has no flash leakage",
+      "pass": true
+    },
+    {
+      "check": "boss every registered mesh retains own flash material",
+      "pass": true
+    },
+    {
+      "check": "boss outline xray is instance-local",
+      "pass": true
+    }
+  ],
+  "normal_tolerance_note": "ArrayMesh read-back normals are encoded/decoded through Godot uint16 octahedral packing; 0.0002 covers that representation precision. Authored triangle positions/UVs/outline positions use the stricter 0.00001 threshold. No geometry is simplified or normals regenerated.",
+  "normal_precision_source": "https://github.com/godotengine/godot/blob/4.6-stable/servers/rendering/rendering_server.cpp#L557-L574",
+  "result": "PASS",
+  "maximum_normal_angular_error_degrees": 0.00670900000282045
+}

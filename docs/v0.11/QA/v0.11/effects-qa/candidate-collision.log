@@ -1,0 +1,13 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+[bullet-qa] PASS shooter excluded; player damage exactly 1.25
+[bullet-qa] PASS low cover within 1.8m is passed
+[bullet-qa] PASS distant low cover blocks the shot
+[bullet-qa] PASS world walls block shots
+[bullet-qa] PASS pierce=2 damages exactly three unique targets
+[bullet-qa] PASS hostage collision safe=true
+[bullet-qa] PASS hostage collision safe=false
+[bullet-qa] PASS invulnerable target is excluded and ray continues
+[bullet-qa] PASS enemy mask ignores enemies and hits player
+[bullet-qa] PASS rocket max range calls unchanged explosion radius and damage
+[bullet-qa] RESULT PASS

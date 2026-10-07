@@ -1,0 +1,23 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+[ranking-qa] PASS repeated results do not duplicate local run
+[ranking-qa] PASS repeat result is cached
+[ranking-qa] PASS native runtime does not claim Toy support
+[ranking-qa] PASS native defaults offline
+[ranking-qa] PASS native defaults to clearly labeled local tab
+[ranking-qa] PASS local score visible
+[ranking-qa] PASS native global tab explains platform requirement
+[ranking-qa] PASS native result says only local record
+[ranking-qa] PASS native does not show Toy retry
+[ranking-qa] PASS results reopening keeps local score once
+[ranking-qa] PASS offline Toy mock selects public tab
+[ranking-qa] PASS offline Toy mock displays two public rows
+[ranking-qa] PASS offline Toy mock displays platform nickname
+[ranking-qa] PASS offline Toy mock explains login error
+[ranking-qa] PASS offline Toy mock offers explicit retry
+[ranking-qa] PASS failed Toy mock submit keeps local record
+[ranking-qa] PASS 16 assertions; offline native and SDK mock, no live Toy calls
+WARNING: ObjectDB instances leaked at exit (run with --verbose for details).
+   at: cleanup (core/object/object.cpp:2663)
+ERROR: 3 resources still in use at exit (run with --verbose for details).
+   at: clear (core/io/resource.cpp:810)

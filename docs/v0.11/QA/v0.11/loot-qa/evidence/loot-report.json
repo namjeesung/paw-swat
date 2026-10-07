@@ -1,0 +1,332 @@
+{
+	"checks": [
+		{
+			"details": {
+
+			},
+			"id": "central_caps_and_interval",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"id": "first_grenade_roll_guaranteed_without_spending",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"id": "full_inventory_rejects_spawn_without_spending",
+			"passed": true
+		},
+		{
+			"details": {
+				"enemies_down": 6,
+				"ground": 1,
+				"spawned": 1
+			},
+			"id": "burst_enemy_drops_one_successful_crate",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"id": "duplicate_ground_spawn_does_not_spend",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"id": "enemy_airdrop_overlap_shares_ground_and_budget",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"id": "first_grenade_collection_gives_two_without_refund",
+			"passed": true
+		},
+		{
+			"details": {
+				"successes_in_10000_seeded_rolls": 1178
+			},
+			"id": "later_enemy_roll_is_rare_and_nonspending",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"id": "airdrop_spends_second_shared_successful_spawn",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"id": "existing_crate_left_on_ground_when_inventory_full",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"id": "partial_inventory_collection_caps_at_three",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"id": "all_sources_stop_at_two_even_after_use",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"id": "airdrop_not_before_24_seconds",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"id": "airdrop_after_24_seconds",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"id": "optional_weapon_1_spends_successful_spawn",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"id": "optional_weapon_1_ground_rejection_nonspending",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"id": "optional_weapon_1_collect_keeps_budget",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"id": "optional_weapon_2_spends_successful_spawn",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"id": "optional_weapon_2_ground_rejection_nonspending",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"id": "optional_weapon_2_collect_keeps_budget",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"id": "optional_weapon_3_spends_successful_spawn",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"id": "optional_weapon_3_ground_rejection_nonspending",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"id": "optional_weapon_3_collect_keeps_budget",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"id": "optional_weapon_cap_three",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"id": "four_type_optional_ground_cap_reached",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"id": "full_optional_cap_rejects_without_spending",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"id": "essential_gatling_bypasses_full_optional_cap",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"id": "essential_gatling_no_ttl_and_no_optional_budget",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"id": "grenade_ttl_survives_before_deadline",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"id": "grenade_ttl_erases_pickup_list_at_deadline",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"id": "grenade_ttl_node_freed",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"id": "weapon_ttl_survives_before_deadline",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"id": "weapon_ttl_erases_pickup_list_at_deadline",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"id": "weapon_ttl_node_freed",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"id": "shield_ttl_survives_before_deadline",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"id": "shield_ttl_erases_pickup_list_at_deadline",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"id": "shield_ttl_node_freed",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"id": "expiration_does_not_refund_spawn_budgets",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"id": "heal_and_essential_remain_persistent",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"id": "falling_pickup_ttl_waits_for_landing",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"id": "actual_pause_freezes_ground_ttl",
+			"passed": true
+		},
+		{
+			"details": {
+				"ground_t_elapsed": 1.0,
+				"timescale": 0.25
+			},
+			"id": "actual_slowmo_does_not_extend_ground_ttl",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"id": "finished_rejections_spend_no_budget",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"id": "dead_player_rejections_spend_no_budget",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"id": "pre_restart_budgets_are_spent",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"id": "actual_restart_clears_budgets_and_ground_loot",
+			"passed": true
+		}
+	],
+	"failed": 0,
+	"scope": "Actual production Level/Enemy/Pickup/Player central loot logic and real pause/slowmo/restart in isolated candidate copy; no production changes, rank saves or performance claim",
+	"wall_seconds": 2.249
+}

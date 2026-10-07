@@ -1,0 +1,17 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+WARNING: Property agent_height is ceiled to cell_height voxel units and loses precision.
+     at: generator_bake_from_source_geometry_data (modules/navigation_3d/3d/nav_mesh_generator_3d.cpp:366)
+     GDScript backtrace (most recent call first):
+         [0] _bake_boss_nav (res://scripts/world/level.gd:277)
+         [1] _bake_nav (res://scripts/world/level.gd:263)
+         [2] _ready (res://scripts/world/level.gd:130)
+         [3] setup_level (res://qa/boss_navigation_fixture.gd:56)
+         [4] _run (res://qa/boss_navigation_fixture.gd:204)
+[boss-qa] PASS native_inside_outside {"damage":0.0,"difficulty":"normal","elapsed":2.4,"final":[{"collisions":[],"distance":2.15711379051208,"line_of_sight":true,"path":[[-0.506,0.5,8.509],[-0.506,0.5,8.509],[-0.49,0.5,8.589],[-0.486,0.5,8.61],[-0.477,0.5,8.65],[-0.47,0.5,8.687],[-0.465,0.5,8.712],[-0.457,0.5,8.75],[-0.455,0.5,8.763],[-0.452,0.5,8.775],[-0.45,0.5,8.786],[-0.317,0.5,9.439],[-0.308,0.5,9.485],[-0.082,0.5,10.597],[-0.045,0.5,10.778],[0.0,0.5,11.0]],"path_index":11,"position":[-0.43,0.0,8.886],"velocity":[0.418,0.0,2.058],"wind":0.0}],"reached":true,"wall_winds":0}
+[boss-qa] PASS native_outside_inside {"damage":22.0,"difficulty":"normal","elapsed":3.42,"final":[{"collisions":[],"distance":1.87733674049377,"line_of_sight":true,"path":[[0.602,0.5,7.832],[0.598,0.5,7.815],[0.594,0.5,7.8],[0.593,0.5,7.792],[0.571,0.5,7.7],[0.568,0.5,7.688],[0.547,0.5,7.6],[0.543,0.5,7.584],[0.523,0.5,7.5],[0.518,0.5,7.48],[0.499,0.5,7.4],[0.497,0.5,7.389],[0.494,0.5,7.378],[0.475,0.5,7.3],[0.472,0.5,7.287],[0.464,0.5,7.25],[0.46,0.5,7.236],[0.452,0.5,7.2],[0.448,0.5,7.185],[0.44,0.5,7.15],[0.436,0.5,7.134],[0.428,0.5,7.1],[0.0,0.5,5.3]],"path_index":22,"position":[0.434,0.0,7.126],"velocity":[-0.378,0.0,-1.589],"wind":-0.000000000000000506539254985228}],"reached":true,"wall_winds":0}
+[boss-qa] RESULT {"cases":2,"failed":0,"lifecycle_failed":0,"report":"/workspace/scratch/b4c1b123f420/paw-swat-work/boss-qa/evidence/native-mode-parse-check.json","wall_seconds":1.323}
+WARNING: ObjectDB instances leaked at exit (run with --verbose for details).
+   at: cleanup (core/object/object.cpp:2663)
+ERROR: 5 resources still in use at exit (run with --verbose for details).
+   at: clear (core/io/resource.cpp:810)

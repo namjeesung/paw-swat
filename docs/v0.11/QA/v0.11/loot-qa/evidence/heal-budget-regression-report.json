@@ -1,0 +1,865 @@
+{
+	"checks": [
+		{
+			"details": {
+				"arguments": []
+			},
+			"name": "no_god_arguments",
+			"passed": true
+		},
+		{
+			"details": {
+				"limit": 1,
+				"spawned": 0
+			},
+			"name": "easy_captured_limit_1",
+			"passed": true
+		},
+		{
+			"details": {
+				"ground": 1,
+				"spawned": 1
+			},
+			"name": "easy_spawn_1_spends_budget",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "easy_spawn_1_single_ground_cap",
+			"passed": true
+		},
+		{
+			"details": {
+				"spawned": 1,
+				"taken": false
+			},
+			"name": "easy_spawn_1_full_hp_keeps_loot",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "easy_spawn_1_full_hp_notice_only_once",
+			"passed": true
+		},
+		{
+			"details": {
+				"expected_hp": 175.0,
+				"hp": 175.0,
+				"spawned": 1
+			},
+			"name": "easy_spawn_1_heals_once_35",
+			"passed": true
+		},
+		{
+			"details": {
+				"new_plus_35_labels": 1
+			},
+			"name": "easy_spawn_1_feedback_actual_35",
+			"passed": true
+		},
+		{
+			"details": {
+				"hp": 175.0,
+				"labels_after": 37,
+				"labels_before": 37
+			},
+			"name": "easy_spawn_1_repeated_collection_is_idempotent",
+			"passed": true
+		},
+		{
+			"details": {
+				"limit": 1,
+				"spawned": 1
+			},
+			"name": "easy_global_spawn_cap_exhausted",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "easy_heal_cap_does_not_block_shield_or_weapon",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "easy_shield_grant_independent_of_heal_budget",
+			"passed": true
+		},
+		{
+			"details": {
+				"limit": 2,
+				"spawned": 0
+			},
+			"name": "normal_captured_limit_2",
+			"passed": true
+		},
+		{
+			"details": {
+				"ground": 1,
+				"spawned": 1
+			},
+			"name": "normal_spawn_1_spends_budget",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "normal_spawn_1_single_ground_cap",
+			"passed": true
+		},
+		{
+			"details": {
+				"spawned": 1,
+				"taken": false
+			},
+			"name": "normal_spawn_1_full_hp_keeps_loot",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "normal_spawn_1_full_hp_notice_only_once",
+			"passed": true
+		},
+		{
+			"details": {
+				"expected_hp": 75.0,
+				"hp": 75.0,
+				"spawned": 1
+			},
+			"name": "normal_spawn_1_heals_once_35",
+			"passed": true
+		},
+		{
+			"details": {
+				"new_plus_35_labels": 1
+			},
+			"name": "normal_spawn_1_feedback_actual_35",
+			"passed": true
+		},
+		{
+			"details": {
+				"hp": 75.0,
+				"labels_after": 41,
+				"labels_before": 41
+			},
+			"name": "normal_spawn_1_repeated_collection_is_idempotent",
+			"passed": true
+		},
+		{
+			"details": {
+				"ground": 1,
+				"spawned": 2
+			},
+			"name": "normal_spawn_2_spends_budget",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "normal_spawn_2_single_ground_cap",
+			"passed": true
+		},
+		{
+			"details": {
+				"spawned": 2,
+				"taken": false
+			},
+			"name": "normal_spawn_2_full_hp_keeps_loot",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "normal_spawn_2_full_hp_notice_only_once",
+			"passed": true
+		},
+		{
+			"details": {
+				"expected_hp": 75.0,
+				"hp": 75.0,
+				"spawned": 2
+			},
+			"name": "normal_spawn_2_heals_once_35",
+			"passed": true
+		},
+		{
+			"details": {
+				"new_plus_35_labels": 1
+			},
+			"name": "normal_spawn_2_feedback_actual_35",
+			"passed": true
+		},
+		{
+			"details": {
+				"hp": 75.0,
+				"labels_after": 43,
+				"labels_before": 43
+			},
+			"name": "normal_spawn_2_repeated_collection_is_idempotent",
+			"passed": true
+		},
+		{
+			"details": {
+				"limit": 2,
+				"spawned": 2
+			},
+			"name": "normal_global_spawn_cap_exhausted",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "normal_heal_cap_does_not_block_shield_or_weapon",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "normal_shield_grant_independent_of_heal_budget",
+			"passed": true
+		},
+		{
+			"details": {
+				"limit": 3,
+				"spawned": 0
+			},
+			"name": "hard_captured_limit_3",
+			"passed": true
+		},
+		{
+			"details": {
+				"ground": 1,
+				"spawned": 1
+			},
+			"name": "hard_spawn_1_spends_budget",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "hard_spawn_1_single_ground_cap",
+			"passed": true
+		},
+		{
+			"details": {
+				"spawned": 1,
+				"taken": false
+			},
+			"name": "hard_spawn_1_full_hp_keeps_loot",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "hard_spawn_1_full_hp_notice_only_once",
+			"passed": true
+		},
+		{
+			"details": {
+				"expected_hp": 105.0,
+				"hp": 105.0,
+				"spawned": 1
+			},
+			"name": "hard_spawn_1_heals_once_35",
+			"passed": true
+		},
+		{
+			"details": {
+				"new_plus_35_labels": 1
+			},
+			"name": "hard_spawn_1_feedback_actual_35",
+			"passed": true
+		},
+		{
+			"details": {
+				"hp": 105.0,
+				"labels_after": 51,
+				"labels_before": 51
+			},
+			"name": "hard_spawn_1_repeated_collection_is_idempotent",
+			"passed": true
+		},
+		{
+			"details": {
+				"ground": 1,
+				"spawned": 2
+			},
+			"name": "hard_spawn_2_spends_budget",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "hard_spawn_2_single_ground_cap",
+			"passed": true
+		},
+		{
+			"details": {
+				"spawned": 2,
+				"taken": false
+			},
+			"name": "hard_spawn_2_full_hp_keeps_loot",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "hard_spawn_2_full_hp_notice_only_once",
+			"passed": true
+		},
+		{
+			"details": {
+				"expected_hp": 105.0,
+				"hp": 105.0,
+				"spawned": 2
+			},
+			"name": "hard_spawn_2_heals_once_35",
+			"passed": true
+		},
+		{
+			"details": {
+				"new_plus_35_labels": 1
+			},
+			"name": "hard_spawn_2_feedback_actual_35",
+			"passed": true
+		},
+		{
+			"details": {
+				"hp": 105.0,
+				"labels_after": 53,
+				"labels_before": 53
+			},
+			"name": "hard_spawn_2_repeated_collection_is_idempotent",
+			"passed": true
+		},
+		{
+			"details": {
+				"ground": 1,
+				"spawned": 3
+			},
+			"name": "hard_spawn_3_spends_budget",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "hard_spawn_3_single_ground_cap",
+			"passed": true
+		},
+		{
+			"details": {
+				"spawned": 3,
+				"taken": false
+			},
+			"name": "hard_spawn_3_full_hp_keeps_loot",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "hard_spawn_3_full_hp_notice_only_once",
+			"passed": true
+		},
+		{
+			"details": {
+				"expected_hp": 105.0,
+				"hp": 105.0,
+				"spawned": 3
+			},
+			"name": "hard_spawn_3_heals_once_35",
+			"passed": true
+		},
+		{
+			"details": {
+				"new_plus_35_labels": 1
+			},
+			"name": "hard_spawn_3_feedback_actual_35",
+			"passed": true
+		},
+		{
+			"details": {
+				"hp": 105.0,
+				"labels_after": 55,
+				"labels_before": 55
+			},
+			"name": "hard_spawn_3_repeated_collection_is_idempotent",
+			"passed": true
+		},
+		{
+			"details": {
+				"limit": 3,
+				"spawned": 3
+			},
+			"name": "hard_global_spawn_cap_exhausted",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "hard_heal_cap_does_not_block_shield_or_weapon",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "hard_shield_grant_independent_of_heal_budget",
+			"passed": true
+		},
+		{
+			"details": {
+				"limit": 4,
+				"spawned": 0
+			},
+			"name": "insane_captured_limit_4",
+			"passed": true
+		},
+		{
+			"details": {
+				"ground": 1,
+				"spawned": 1
+			},
+			"name": "insane_spawn_1_spends_budget",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "insane_spawn_1_single_ground_cap",
+			"passed": true
+		},
+		{
+			"details": {
+				"spawned": 1,
+				"taken": false
+			},
+			"name": "insane_spawn_1_full_hp_keeps_loot",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "insane_spawn_1_full_hp_notice_only_once",
+			"passed": true
+		},
+		{
+			"details": {
+				"expected_hp": 65.0,
+				"hp": 65.0,
+				"spawned": 1
+			},
+			"name": "insane_spawn_1_heals_once_35",
+			"passed": true
+		},
+		{
+			"details": {
+				"new_plus_35_labels": 1
+			},
+			"name": "insane_spawn_1_feedback_actual_35",
+			"passed": true
+		},
+		{
+			"details": {
+				"hp": 65.0,
+				"labels_after": 65,
+				"labels_before": 65
+			},
+			"name": "insane_spawn_1_repeated_collection_is_idempotent",
+			"passed": true
+		},
+		{
+			"details": {
+				"ground": 1,
+				"spawned": 2
+			},
+			"name": "insane_spawn_2_spends_budget",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "insane_spawn_2_single_ground_cap",
+			"passed": true
+		},
+		{
+			"details": {
+				"spawned": 2,
+				"taken": false
+			},
+			"name": "insane_spawn_2_full_hp_keeps_loot",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "insane_spawn_2_full_hp_notice_only_once",
+			"passed": true
+		},
+		{
+			"details": {
+				"expected_hp": 65.0,
+				"hp": 65.0,
+				"spawned": 2
+			},
+			"name": "insane_spawn_2_heals_once_35",
+			"passed": true
+		},
+		{
+			"details": {
+				"new_plus_35_labels": 1
+			},
+			"name": "insane_spawn_2_feedback_actual_35",
+			"passed": true
+		},
+		{
+			"details": {
+				"hp": 65.0,
+				"labels_after": 67,
+				"labels_before": 67
+			},
+			"name": "insane_spawn_2_repeated_collection_is_idempotent",
+			"passed": true
+		},
+		{
+			"details": {
+				"ground": 1,
+				"spawned": 3
+			},
+			"name": "insane_spawn_3_spends_budget",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "insane_spawn_3_single_ground_cap",
+			"passed": true
+		},
+		{
+			"details": {
+				"spawned": 3,
+				"taken": false
+			},
+			"name": "insane_spawn_3_full_hp_keeps_loot",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "insane_spawn_3_full_hp_notice_only_once",
+			"passed": true
+		},
+		{
+			"details": {
+				"expected_hp": 65.0,
+				"hp": 65.0,
+				"spawned": 3
+			},
+			"name": "insane_spawn_3_heals_once_35",
+			"passed": true
+		},
+		{
+			"details": {
+				"new_plus_35_labels": 1
+			},
+			"name": "insane_spawn_3_feedback_actual_35",
+			"passed": true
+		},
+		{
+			"details": {
+				"hp": 65.0,
+				"labels_after": 69,
+				"labels_before": 69
+			},
+			"name": "insane_spawn_3_repeated_collection_is_idempotent",
+			"passed": true
+		},
+		{
+			"details": {
+				"ground": 1,
+				"spawned": 4
+			},
+			"name": "insane_spawn_4_spends_budget",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "insane_spawn_4_single_ground_cap",
+			"passed": true
+		},
+		{
+			"details": {
+				"spawned": 4,
+				"taken": false
+			},
+			"name": "insane_spawn_4_full_hp_keeps_loot",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "insane_spawn_4_full_hp_notice_only_once",
+			"passed": true
+		},
+		{
+			"details": {
+				"expected_hp": 65.0,
+				"hp": 65.0,
+				"spawned": 4
+			},
+			"name": "insane_spawn_4_heals_once_35",
+			"passed": true
+		},
+		{
+			"details": {
+				"new_plus_35_labels": 1
+			},
+			"name": "insane_spawn_4_feedback_actual_35",
+			"passed": true
+		},
+		{
+			"details": {
+				"hp": 65.0,
+				"labels_after": 71,
+				"labels_before": 71
+			},
+			"name": "insane_spawn_4_repeated_collection_is_idempotent",
+			"passed": true
+		},
+		{
+			"details": {
+				"limit": 4,
+				"spawned": 4
+			},
+			"name": "insane_global_spawn_cap_exhausted",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "insane_heal_cap_does_not_block_shield_or_weapon",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "insane_shield_grant_independent_of_heal_budget",
+			"passed": true
+		},
+		{
+			"details": {
+				"hp": 100.0,
+				"max_hp": 100.0
+			},
+			"name": "near_full_health_capped_at_max",
+			"passed": true
+		},
+		{
+			"details": {
+				"new_plus_10_labels": 1,
+				"new_plus_35_labels": 0
+			},
+			"name": "near_full_feedback_reports_actual_10",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "periodic_source_spends_shared_budget",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "boss_source_cannot_overlap_periodic_ground_loot",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "boss_source_spends_same_global_budget",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "future_central_source_cannot_overlap_boss_ground_loot",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "future_central_source_uses_shared_budget",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "periodic_source_reaches_four_spawn_cap",
+			"passed": true
+		},
+		{
+			"details": {
+				"ground": 0,
+				"spawned": 4
+			},
+			"name": "all_sources_reject_after_global_budget_exhausted",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "uncollected_spawn_already_counts_against_budget",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "discarded_uncollected_loot_does_not_refund_budget",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "pause_retains_spawn_budget_and_ground_loot",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "resume_retains_spawn_budget",
+			"passed": true
+		},
+		{
+			"details": {
+				"limit": 3,
+				"run_difficulty": "hard",
+				"selected_difficulty": "insane"
+			},
+			"name": "midrun_difficulty_change_does_not_change_captured_budget",
+			"passed": true
+		},
+		{
+			"details": {
+				"ground": 0,
+				"limit": 4,
+				"paused": false,
+				"spawned": 0
+			},
+			"name": "actual_restart_captures_selected_budget_and_resets_spawns",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "new_run_resets_selected_normal_budget",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "finished_state_rejects_new_heal_without_spending",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "dead_player_rejects_new_heal_without_spending",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "missing_player_rejects_new_heal_without_spending",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "dead_player_cannot_collect_stale_heal",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "finished_level_cannot_collect_stale_heal",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "resumed_valid_state_collects_once_without_spending_again",
+			"passed": true
+		},
+		{
+			"details": {
+				"executed_behavior_assertions": 109,
+				"expected": 109
+			},
+			"name": "all_109_behavior_assertions_executed",
+			"passed": true
+		}
+	],
+	"engine": {
+		"build": "official",
+		"hash": "7d41c59c457bd5a245092b4e7eb2d833e3b3f8c3",
+		"hex": 263683,
+		"major": 4,
+		"minor": 6,
+		"patch": 3,
+		"status": "stable",
+		"string": "4.6.3-stable (official)",
+		"timestamp": 0
+	},
+	"failed": 0,
+	"passed": true,
+	"scope": "Actual production healing logic in isolated headless copy; no audible audio or browser claim"
+}

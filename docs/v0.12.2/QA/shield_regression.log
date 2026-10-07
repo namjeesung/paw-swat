@@ -1,0 +1,74 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+WARNING: Property agent_height is ceiled to cell_height voxel units and loses precision.
+     at: generator_bake_from_source_geometry_data (modules/navigation_3d/3d/nav_mesh_generator_3d.cpp:366)
+     GDScript backtrace (most recent call first):
+         [0] _bake_boss_nav (res://scripts/world/level.gd:326)
+         [1] _bake_nav (res://scripts/world/level.gd:312)
+         [2] _ready (res://scripts/world/level.gd:151)
+         [3] start_level (res://scripts/test/qa/shield_regression.gd:39)
+         [4] _run (res://scripts/test/qa/shield_regression.gd:60)
+[regression] PASS no_god_arguments {"arguments":["--lite"]}
+[regression] PASS normal_initial_health {"hp":100.0}
+[regression] PASS damage_phase_0 {"damage":5.0,"hp":95.0}
+[regression] PASS damage_phase_1 {"damage":5.0,"hp":95.0}
+[regression] PASS damage_phase_2 {"damage":5.0,"hp":95.0}
+[regression] PASS damage_phase_3 {"damage":5.0,"hp":95.0}
+[regression] PASS damage_phase_4 {"damage":5.0,"hp":95.0}
+[regression] PASS damage_phase_5 {"damage":5.0,"hp":95.0}
+[regression] PASS post_hit_grace_blocks_burst {"hp":95.0}
+[regression] PASS post_hit_grace_expires {"hp":90.0}
+[regression] PASS existing_roll_protection {"hp":100.0}
+[regression] PASS existing_dash_protection {"hp":100.0}
+[regression] PASS zombie_melee_damage {"expected_hp":95.0,"hp":95.0}
+[regression] PASS boss_melee_damage {"expected_hp":78.0,"hp":78.0}
+[regression] PASS regen_waits_normal_5sec {"hp":50.0}
+[regression] PASS regen_is_heal_not_immunity {"hp":52.4,"regen_rate":12.0}
+[regression] PASS fresh_shield_inactive {}
+[regression] PASS grant_shield_exact_5sec {"remaining":5.0}
+[regression] PASS shield_blocks_damage_and_stat {"damage":0.0,"hp":100.0}
+[regression] PASS shield_counts_down {"remaining":3.0}
+[regression] PASS active_shield_cannot_stack_or_refresh {"remaining":3.0}
+[regression] PASS shield_one_sec_warning {"remaining":0.9}
+[regression] PASS shield_protects_until_deadline {"hp":100.0,"remaining":0.0099999999999999}
+[regression] PASS shield_expiry_clears_visual {}
+[regression] PASS damage_resumes_after_shield {"hp":95.0}
+[regression] PASS pause_freezes_shield_real_runtime {"after":4.93333333333333,"before":4.93333333333333}
+[regression] PASS resume_continues_countdown {"after":4.66666666666667,"before":4.93333333333333}
+[regression] PASS slowmo_does_not_extend_shield {"shield_elapsed":0.599999999999998,"timescale":0.25}
+[regression] PASS one_ground_shield_detected {}
+[regression] PASS pickup_grants_and_is_consumed {"remaining":5.0,"taken":true}
+[regression] PASS active_shield_leaves_extra_loot_unconsumed {"remaining":3.0,"taken":false}
+[regression] PASS ground_shield_lives_below_12sec {}
+[regression] PASS ground_shield_expires_after_12sec {}
+[regression] PASS rare_opportunity_spawns_one_ground_shield {"ground_shields":1}
+[regression] PASS ground_shield_cap_skips_next_opportunity {"banked_time":0.0,"ground_shields":1}
+[regression] PASS active_shield_skips_drop_without_banking {"banked_time":0.0,"ground_shields":0}
+[regression] PASS skipped_opportunity_cannot_chain_on_expiry {"ground_shields":0}
+[regression] PASS finished_level_cannot_spawn_shield {}
+[regression] PASS finished_run_rejects_shield {}
+[regression] PASS death_clears_shield {}
+[regression] PASS dead_player_rejects_shield {}
+WARNING: Property agent_height is ceiled to cell_height voxel units and loses precision.
+     at: generator_bake_from_source_geometry_data (modules/navigation_3d/3d/nav_mesh_generator_3d.cpp:366)
+     GDScript backtrace (most recent call first):
+         [0] _bake_boss_nav (res://scripts/world/level.gd:326)
+         [1] _bake_nav (res://scripts/world/level.gd:312)
+         [2] _ready (res://scripts/world/level.gd:151)
+         [3] start_level (res://scripts/test/qa/shield_regression.gd:39)
+         [4] test_shield (res://scripts/test/qa/shield_regression.gd:240)
+         [5] wait_real (res://scripts/test/qa/shield_regression.gd:28)
+[regression] PASS new_run_resets_shield_and_hp {"hp":100.0,"remaining":0.0}
+WARNING: Property agent_height is ceiled to cell_height voxel units and loses precision.
+     at: generator_bake_from_source_geometry_data (modules/navigation_3d/3d/nav_mesh_generator_3d.cpp:366)
+     GDScript backtrace (most recent call first):
+         [0] _bake_boss_nav (res://scripts/world/level.gd:326)
+         [1] _bake_nav (res://scripts/world/level.gd:312)
+         [2] _ready (res://scripts/world/level.gd:151)
+         [3] _show (res://scripts/autoload/game.gd:442)
+         [4] goto (res://scripts/autoload/game.gd:417)
+         [5] _tape (res://scripts/autoload/game.gd:537)
+[regression] PASS actual_restart_clears_shield_and_pause {"hp":100.0,"paused":false,"remaining":0.0,"timescale":1.0}
+[regression] RESULT {"checks":43,"failed":0,"passed":true,"report":"/workspace/scratch/b4c1b123f420/paw_edge_fix/qa-home/data/godot/app_userdata/爪爪特警 PAW S.W.A.T/qa-regression-report.json"}
+WARNING: ObjectDB instances leaked at exit (run with --verbose for details).
+   at: cleanup (core/object/object.cpp:2663)

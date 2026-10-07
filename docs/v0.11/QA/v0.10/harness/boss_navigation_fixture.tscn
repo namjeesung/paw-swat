@@ -1,0 +1,4 @@
+[gd_scene load_steps=2 format=3]
+[ext_resource type="Script" path="res://qa/boss_navigation_fixture.gd" id="1"]
+[node name="BossNavigationFixture" type="Node"]
+script = ExtResource("1")

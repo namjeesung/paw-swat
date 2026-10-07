@@ -1,0 +1,12 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+[packed-qa] baked audio alarm=true
+[packed-qa] baked audio music_wave=true
+[packed-qa] baked audio transform=true
+[packed-qa] baked audio clank=true
+[packed-qa] baked audio powerup=true
+[packed-qa] baked audio shout_fire=true
+[packed-qa] baked audio explosion=true
+[packed-qa] excluded res://scripts/test=true
+[packed-qa] excluded res://scripts/tools=true
+[packed-qa] version=0.12.2 PASS=true

@@ -1,0 +1,782 @@
+{
+	"checks": [
+		{
+			"detail": {
+				"required": 1
+			},
+			"id": "easy_new_level_reset",
+			"passed": true
+		},
+		{
+			"detail": {
+
+			},
+			"id": "easy_failed_spawn_stays_pending",
+			"passed": true
+		},
+		{
+			"detail": {
+
+			},
+			"id": "easy_deadline_caps_stops_spawns_supplies",
+			"passed": true
+		},
+		{
+			"detail": {
+				"progress": "剩余 1 只 · 00秒",
+				"title": "消灭剩余鼠王"
+			},
+			"id": "easy_deadline_hud_remaining_zero_timer",
+			"passed": true
+		},
+		{
+			"detail": {
+				"spawned": 1,
+				"zombies": 1
+			},
+			"id": "easy_skipped_schedule_retries_all_configured",
+			"passed": true
+		},
+		{
+			"detail": {
+
+			},
+			"id": "easy_expiry_alive_boss_no_finale_or_result",
+			"passed": true
+		},
+		{
+			"detail": {
+				"defeated": 1,
+				"duplicate_score_delta": 0
+			},
+			"id": "easy_death_1_counted_once",
+			"passed": true
+		},
+		{
+			"detail": {
+				"after": {
+					"effect_children": 176,
+					"heal_drops": 1,
+					"hud_combo": 1,
+					"hud_combo_text": "×1",
+					"hud_feed_ids": [
+						273518955769
+					],
+					"kills": 1,
+					"pickup_ids": [
+						273737059597
+					],
+					"score": 500
+				},
+				"before": {
+					"effect_children": 176,
+					"heal_drops": 1,
+					"hud_combo": 1,
+					"hud_combo_text": "×1",
+					"hud_feed_ids": [
+						273518955769
+					],
+					"kills": 1,
+					"pickup_ids": [
+						273737059597
+					],
+					"score": 500
+				}
+			},
+			"id": "easy_death_1_duplicate_no_side_effects",
+			"passed": true
+		},
+		{
+			"detail": {
+
+			},
+			"id": "easy_rescue_prerequisite",
+			"passed": true
+		},
+		{
+			"detail": {
+
+			},
+			"id": "easy_dead_player_cannot_win",
+			"passed": true
+		},
+		{
+			"detail": {
+
+			},
+			"id": "easy_all_real_boss_deaths_enable_finish",
+			"passed": true
+		},
+		{
+			"detail": {
+
+			},
+			"id": "easy_finale_starts_once",
+			"passed": true
+		},
+		{
+			"detail": {
+				"routes": [
+					{
+						"data": {
+							"success": true
+						},
+						"screen": "results"
+					}
+				]
+			},
+			"id": "easy_results_success_exactly_once",
+			"passed": true
+		},
+		{
+			"detail": {
+				"boss_cleanup_requests": 0,
+				"ordinary_cleanup_requests": 1
+			},
+			"id": "easy_cleanup_excludes_every_boss",
+			"passed": true
+		},
+		{
+			"detail": {
+				"required": 1
+			},
+			"id": "normal_new_level_reset",
+			"passed": true
+		},
+		{
+			"detail": {
+
+			},
+			"id": "normal_failed_spawn_stays_pending",
+			"passed": true
+		},
+		{
+			"detail": {
+
+			},
+			"id": "normal_deadline_caps_stops_spawns_supplies",
+			"passed": true
+		},
+		{
+			"detail": {
+				"progress": "剩余 1 只 · 00秒",
+				"title": "消灭剩余鼠王"
+			},
+			"id": "normal_deadline_hud_remaining_zero_timer",
+			"passed": true
+		},
+		{
+			"detail": {
+				"spawned": 1,
+				"zombies": 1
+			},
+			"id": "normal_skipped_schedule_retries_all_configured",
+			"passed": true
+		},
+		{
+			"detail": {
+
+			},
+			"id": "normal_expiry_alive_boss_no_finale_or_result",
+			"passed": true
+		},
+		{
+			"detail": {
+
+			},
+			"id": "pause_holds_wave_and_boss_counts",
+			"passed": true
+		},
+		{
+			"detail": {
+				"wave_t": 58.5
+			},
+			"id": "resume_advances_without_reset",
+			"passed": true
+		},
+		{
+			"detail": {
+				"defeated": 1,
+				"duplicate_score_delta": 0
+			},
+			"id": "normal_death_1_counted_once",
+			"passed": true
+		},
+		{
+			"detail": {
+				"after": {
+					"effect_children": 180,
+					"heal_drops": 1,
+					"hud_combo": 1,
+					"hud_combo_text": "×1",
+					"hud_feed_ids": [
+						618055863676
+					],
+					"kills": 1,
+					"pickup_ids": [
+						618257190570
+					],
+					"score": 500
+				},
+				"before": {
+					"effect_children": 180,
+					"heal_drops": 1,
+					"hud_combo": 1,
+					"hud_combo_text": "×1",
+					"hud_feed_ids": [
+						618055863676
+					],
+					"kills": 1,
+					"pickup_ids": [
+						618257190570
+					],
+					"score": 500
+				}
+			},
+			"id": "normal_death_1_duplicate_no_side_effects",
+			"passed": true
+		},
+		{
+			"detail": {
+
+			},
+			"id": "early_boss_clear_waits_for_timer",
+			"passed": true
+		},
+		{
+			"detail": {
+
+			},
+			"id": "normal_rescue_prerequisite",
+			"passed": true
+		},
+		{
+			"detail": {
+
+			},
+			"id": "normal_dead_player_cannot_win",
+			"passed": true
+		},
+		{
+			"detail": {
+
+			},
+			"id": "normal_all_real_boss_deaths_enable_finish",
+			"passed": true
+		},
+		{
+			"detail": {
+
+			},
+			"id": "normal_finale_starts_once",
+			"passed": true
+		},
+		{
+			"detail": {
+				"routes": [
+					{
+						"data": {
+							"success": true
+						},
+						"screen": "results"
+					}
+				]
+			},
+			"id": "normal_results_success_exactly_once",
+			"passed": true
+		},
+		{
+			"detail": {
+				"boss_cleanup_requests": 0,
+				"ordinary_cleanup_requests": 1
+			},
+			"id": "normal_cleanup_excludes_every_boss",
+			"passed": true
+		},
+		{
+			"detail": {
+				"required": 2
+			},
+			"id": "hard_new_level_reset",
+			"passed": true
+		},
+		{
+			"detail": {
+
+			},
+			"id": "hard_failed_spawn_stays_pending",
+			"passed": true
+		},
+		{
+			"detail": {
+
+			},
+			"id": "hard_deadline_caps_stops_spawns_supplies",
+			"passed": true
+		},
+		{
+			"detail": {
+				"progress": "剩余 2 只 · 00秒",
+				"title": "消灭剩余鼠王"
+			},
+			"id": "hard_deadline_hud_remaining_zero_timer",
+			"passed": true
+		},
+		{
+			"detail": {
+				"spawned": 2,
+				"zombies": 2
+			},
+			"id": "hard_skipped_schedule_retries_all_configured",
+			"passed": true
+		},
+		{
+			"detail": {
+
+			},
+			"id": "hard_expiry_alive_boss_no_finale_or_result",
+			"passed": true
+		},
+		{
+			"detail": {
+				"defeated": 1,
+				"duplicate_score_delta": 0
+			},
+			"id": "hard_death_1_counted_once",
+			"passed": true
+		},
+		{
+			"detail": {
+				"after": {
+					"effect_children": 184,
+					"heal_drops": 1,
+					"hud_combo": 1,
+					"hud_combo_text": "×1",
+					"hud_feed_ids": [
+						960378179522
+					],
+					"kills": 1,
+					"pickup_ids": [
+						960579506098
+					],
+					"score": 500
+				},
+				"before": {
+					"effect_children": 184,
+					"heal_drops": 1,
+					"hud_combo": 1,
+					"hud_combo_text": "×1",
+					"hud_feed_ids": [
+						960378179522
+					],
+					"kills": 1,
+					"pickup_ids": [
+						960579506098
+					],
+					"score": 500
+				}
+			},
+			"id": "hard_death_1_duplicate_no_side_effects",
+			"passed": true
+		},
+		{
+			"detail": {
+
+			},
+			"id": "hard_partial_boss_clear_no_win",
+			"passed": true
+		},
+		{
+			"detail": {
+				"defeated": 2,
+				"duplicate_score_delta": 0
+			},
+			"id": "hard_death_2_counted_once",
+			"passed": true
+		},
+		{
+			"detail": {
+				"after": {
+					"effect_children": 189,
+					"heal_drops": 1,
+					"hud_combo": 2,
+					"hud_combo_text": "×2",
+					"hud_feed_ids": [
+						960378179522,
+						961871351781
+					],
+					"kills": 2,
+					"pickup_ids": [
+						960579506098
+					],
+					"score": 1000
+				},
+				"before": {
+					"effect_children": 189,
+					"heal_drops": 1,
+					"hud_combo": 2,
+					"hud_combo_text": "×2",
+					"hud_feed_ids": [
+						960378179522,
+						961871351781
+					],
+					"kills": 2,
+					"pickup_ids": [
+						960579506098
+					],
+					"score": 1000
+				}
+			},
+			"id": "hard_death_2_duplicate_no_side_effects",
+			"passed": true
+		},
+		{
+			"detail": {
+
+			},
+			"id": "hard_rescue_prerequisite",
+			"passed": true
+		},
+		{
+			"detail": {
+
+			},
+			"id": "hard_dead_player_cannot_win",
+			"passed": true
+		},
+		{
+			"detail": {
+
+			},
+			"id": "hard_all_real_boss_deaths_enable_finish",
+			"passed": true
+		},
+		{
+			"detail": {
+
+			},
+			"id": "hard_finale_starts_once",
+			"passed": true
+		},
+		{
+			"detail": {
+				"routes": [
+					{
+						"data": {
+							"success": true
+						},
+						"screen": "results"
+					}
+				]
+			},
+			"id": "hard_results_success_exactly_once",
+			"passed": true
+		},
+		{
+			"detail": {
+				"boss_cleanup_requests": 0,
+				"ordinary_cleanup_requests": 1
+			},
+			"id": "hard_cleanup_excludes_every_boss",
+			"passed": true
+		},
+		{
+			"detail": {
+				"required": 3
+			},
+			"id": "insane_new_level_reset",
+			"passed": true
+		},
+		{
+			"detail": {
+
+			},
+			"id": "insane_failed_spawn_stays_pending",
+			"passed": true
+		},
+		{
+			"detail": {
+
+			},
+			"id": "insane_deadline_caps_stops_spawns_supplies",
+			"passed": true
+		},
+		{
+			"detail": {
+				"progress": "剩余 3 只 · 00秒",
+				"title": "消灭剩余鼠王"
+			},
+			"id": "insane_deadline_hud_remaining_zero_timer",
+			"passed": true
+		},
+		{
+			"detail": {
+				"spawned": 3,
+				"zombies": 3
+			},
+			"id": "insane_skipped_schedule_retries_all_configured",
+			"passed": true
+		},
+		{
+			"detail": {
+
+			},
+			"id": "insane_expiry_alive_boss_no_finale_or_result",
+			"passed": true
+		},
+		{
+			"detail": {
+				"defeated": 1,
+				"duplicate_score_delta": 0
+			},
+			"id": "insane_death_1_counted_once",
+			"passed": true
+		},
+		{
+			"detail": {
+				"after": {
+					"effect_children": 192,
+					"heal_drops": 1,
+					"hud_combo": 1,
+					"hud_combo_text": "×1",
+					"hud_feed_ids": [
+						1314981417381
+					],
+					"kills": 1,
+					"pickup_ids": [
+						1315182743960
+					],
+					"score": 500
+				},
+				"before": {
+					"effect_children": 192,
+					"heal_drops": 1,
+					"hud_combo": 1,
+					"hud_combo_text": "×1",
+					"hud_feed_ids": [
+						1314981417381
+					],
+					"kills": 1,
+					"pickup_ids": [
+						1315182743960
+					],
+					"score": 500
+				}
+			},
+			"id": "insane_death_1_duplicate_no_side_effects",
+			"passed": true
+		},
+		{
+			"detail": {
+
+			},
+			"id": "insane_partial_boss_clear_no_win",
+			"passed": true
+		},
+		{
+			"detail": {
+				"defeated": 2,
+				"duplicate_score_delta": 0
+			},
+			"id": "insane_death_2_counted_once",
+			"passed": true
+		},
+		{
+			"detail": {
+				"after": {
+					"effect_children": 197,
+					"heal_drops": 1,
+					"hud_combo": 2,
+					"hud_combo_text": "×2",
+					"hud_feed_ids": [
+						1314981417381,
+						1316474589667
+					],
+					"kills": 2,
+					"pickup_ids": [
+						1315182743960
+					],
+					"score": 1000
+				},
+				"before": {
+					"effect_children": 197,
+					"heal_drops": 1,
+					"hud_combo": 2,
+					"hud_combo_text": "×2",
+					"hud_feed_ids": [
+						1314981417381,
+						1316474589667
+					],
+					"kills": 2,
+					"pickup_ids": [
+						1315182743960
+					],
+					"score": 1000
+				}
+			},
+			"id": "insane_death_2_duplicate_no_side_effects",
+			"passed": true
+		},
+		{
+			"detail": {
+
+			},
+			"id": "insane_partial_boss_clear_no_win",
+			"passed": true
+		},
+		{
+			"detail": {
+				"defeated": 3,
+				"duplicate_score_delta": 0
+			},
+			"id": "insane_death_3_counted_once",
+			"passed": true
+		},
+		{
+			"detail": {
+				"after": {
+					"effect_children": 202,
+					"heal_drops": 1,
+					"hud_combo": 3,
+					"hud_combo_text": "×3",
+					"hud_feed_ids": [
+						1314981417381,
+						1316474589667,
+						1317246341647
+					],
+					"kills": 3,
+					"pickup_ids": [
+						1315182743960
+					],
+					"score": 1500
+				},
+				"before": {
+					"effect_children": 202,
+					"heal_drops": 1,
+					"hud_combo": 3,
+					"hud_combo_text": "×3",
+					"hud_feed_ids": [
+						1314981417381,
+						1316474589667,
+						1317246341647
+					],
+					"kills": 3,
+					"pickup_ids": [
+						1315182743960
+					],
+					"score": 1500
+				}
+			},
+			"id": "insane_death_3_duplicate_no_side_effects",
+			"passed": true
+		},
+		{
+			"detail": {
+
+			},
+			"id": "insane_rescue_prerequisite",
+			"passed": true
+		},
+		{
+			"detail": {
+
+			},
+			"id": "insane_dead_player_cannot_win",
+			"passed": true
+		},
+		{
+			"detail": {
+
+			},
+			"id": "insane_all_real_boss_deaths_enable_finish",
+			"passed": true
+		},
+		{
+			"detail": {
+
+			},
+			"id": "insane_finale_starts_once",
+			"passed": true
+		},
+		{
+			"detail": {
+				"routes": [
+					{
+						"data": {
+							"success": true
+						},
+						"screen": "results"
+					}
+				]
+			},
+			"id": "insane_results_success_exactly_once",
+			"passed": true
+		},
+		{
+			"detail": {
+				"boss_cleanup_requests": 0,
+				"ordinary_cleanup_requests": 1
+			},
+			"id": "insane_cleanup_excludes_every_boss",
+			"passed": true
+		},
+		{
+			"detail": {
+
+			},
+			"id": "failure_before_victory_locks_success_gate",
+			"passed": true
+		},
+		{
+			"detail": {
+				"routes": [
+					{
+						"data": {
+							"reason": "被僵尸鼠淹没了",
+							"success": false
+						},
+						"screen": "results"
+					}
+				]
+			},
+			"id": "player_death_routes_failure_only",
+			"passed": true
+		}
+	],
+	"failed": 0,
+	"scope": "Production Level mission-rule execution; actual spawned and take_hit-defeated bosses; Game.goto recorder in fixture copy; frozen actor physics; not difficulty or navigation proof",
+	"transitions": [
+		{
+			"data": {
+				"success": true
+			},
+			"screen": "results"
+		},
+		{
+			"data": {
+				"success": true
+			},
+			"screen": "results"
+		},
+		{
+			"data": {
+				"success": true
+			},
+			"screen": "results"
+		},
+		{
+			"data": {
+				"success": true
+			},
+			"screen": "results"
+		},
+		{
+			"data": {
+				"reason": "被僵尸鼠淹没了",
+				"success": false
+			},
+			"screen": "results"
+		}
+	],
+	"wall_seconds": 7.751
+}

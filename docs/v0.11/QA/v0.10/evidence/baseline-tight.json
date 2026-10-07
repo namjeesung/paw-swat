@@ -1,0 +1,2257 @@
+{
+	"boss_initial_attack_cd": 0,
+	"boss_teleport_recovery_used": false,
+	"complete": true,
+	"engine": {
+		"build": "official",
+		"hash": "7d41c59c457bd5a245092b4e7eb2d833e3b3f8c3",
+		"hex": 263683,
+		"major": 4,
+		"minor": 6,
+		"patch": 3,
+		"status": "stable",
+		"string": "4.6.3-stable (official)",
+		"timestamp": 0
+	},
+	"fixture_target": "Static actual Player, finite100000HP; initial and side-switch placement only; no --god or gameplay acceptance",
+	"lifecycle": [
+		{
+			"difficulty": "normal",
+			"load_ms": 76.193,
+			"maps": 1,
+			"nav_meshes": [
+				{
+					"cell_size": 0.25,
+					"height": 1.25,
+					"map_id": 296352743424,
+					"polygons": 116,
+					"radius": 0.5
+				}
+			],
+			"stage": "level_ready"
+		},
+		{
+			"body_removed_from_tree": true,
+			"done": true,
+			"stage": "real_staff_door_breach"
+		},
+		{
+			"boss_map_removed": true,
+			"had_dedicated_boss_map": false,
+			"maps_remaining": 1,
+			"stage": "level_exit"
+		}
+	],
+	"mode": "tight",
+	"physics_enabled": true,
+	"physics_hz": 60,
+	"results": [
+		{
+			"boss_count": 1,
+			"capsule_radius": 0.7,
+			"collision_samples": 0,
+			"crossing_plane": {
+				"axis": "z",
+				"plane": 0.0
+			},
+			"damage_to_finite_target": 0.0,
+			"difficulty": "normal",
+			"elapsed_sim_seconds": 2.18,
+			"final": [
+				{
+					"collisions": [],
+					"distance": 2.20355725288391,
+					"line_of_sight": true,
+					"path": [
+						[
+							8.912,
+							0.5,
+							-0.287
+						],
+						[
+							8.966,
+							0.5,
+							-0.5
+						],
+						[
+							9.04,
+							0.5,
+							-0.79
+						],
+						[
+							9.315,
+							0.5,
+							-1.876
+						],
+						[
+							9.6,
+							0.5,
+							-3.0
+						]
+					],
+					"path_index": 3,
+					"position": [
+						9.058,
+						0.0,
+						-0.864
+					],
+					"velocity": [
+						0.517,
+						0.0,
+						-2.035
+					],
+					"wind": 0.0
+				}
+			],
+			"id": "staff_enter_left_skew",
+			"initial_positions": [
+				[
+					8.0,
+					0.0,
+					3.4
+				]
+			],
+			"reached": true,
+			"speed": 2.1,
+			"target": [
+				9.6,
+				0.0,
+				-3.0
+			],
+			"trace": [
+				{
+					"bosses": [
+						{
+							"collisions": [],
+							"distance": 5.69653511047363,
+							"line_of_sight": true,
+							"path": [
+								[
+									8.312,
+									0.5,
+									2.836
+								],
+								[
+									8.424,
+									0.5,
+									2.294
+								],
+								[
+									8.5,
+									0.5,
+									1.926
+								],
+								[
+									8.77,
+									0.5,
+									0.615
+								],
+								[
+									8.887,
+									0.5,
+									0.048
+								],
+								[
+									9.0,
+									0.5,
+									-0.5
+								],
+								[
+									9.079,
+									0.5,
+									-0.829
+								],
+								[
+									9.331,
+									0.5,
+									-1.881
+								],
+								[
+									9.6,
+									0.5,
+									-3.0
+								]
+							],
+							"path_index": 2,
+							"position": [
+								8.369,
+								0.0,
+								2.562
+							],
+							"velocity": [
+								0.424,
+								0.0,
+								-2.057
+							],
+							"wind": 0.0
+						}
+					],
+					"t": 0.52
+				},
+				{
+					"bosses": [
+						{
+							"collisions": [],
+							"distance": 4.68166589736938,
+							"line_of_sight": true,
+							"path": [
+								[
+									8.482,
+									0.5,
+									2.013
+								],
+								[
+									8.5,
+									0.5,
+									1.926
+								],
+								[
+									8.77,
+									0.5,
+									0.615
+								],
+								[
+									8.887,
+									0.5,
+									0.048
+								],
+								[
+									9.0,
+									0.5,
+									-0.5
+								],
+								[
+									9.079,
+									0.5,
+									-0.829
+								],
+								[
+									9.331,
+									0.5,
+									-1.881
+								],
+								[
+									9.6,
+									0.5,
+									-3.0
+								]
+							],
+							"path_index": 2,
+							"position": [
+								8.574,
+								0.0,
+								1.568
+							],
+							"velocity": [
+								0.424,
+								0.0,
+								-2.057
+							],
+							"wind": 0.0
+						}
+					],
+					"t": 1.0
+				},
+				{
+					"bosses": [
+						{
+							"collisions": [],
+							"distance": 3.59688758850098,
+							"line_of_sight": true,
+							"path": [
+								[
+									8.779,
+									0.5,
+									0.574
+								],
+								[
+									8.887,
+									0.5,
+									0.048
+								],
+								[
+									9.0,
+									0.5,
+									-0.5
+								],
+								[
+									9.079,
+									0.5,
+									-0.829
+								],
+								[
+									9.331,
+									0.5,
+									-1.881
+								],
+								[
+									9.6,
+									0.5,
+									-3.0
+								]
+							],
+							"path_index": 1,
+							"position": [
+								8.793,
+								0.0,
+								0.505
+							],
+							"velocity": [
+								0.424,
+								0.0,
+								-2.057
+							],
+							"wind": 0.0
+						}
+					],
+					"t": 1.52
+				},
+				{
+					"bosses": [
+						{
+							"collisions": [],
+							"distance": 2.5535581111908,
+							"line_of_sight": true,
+							"path": [
+								[
+									8.912,
+									0.5,
+									-0.287
+								],
+								[
+									8.966,
+									0.5,
+									-0.5
+								],
+								[
+									9.04,
+									0.5,
+									-0.79
+								],
+								[
+									9.315,
+									0.5,
+									-1.876
+								],
+								[
+									9.6,
+									0.5,
+									-3.0
+								]
+							],
+							"path_index": 3,
+							"position": [
+								8.972,
+								0.0,
+								-0.525
+							],
+							"velocity": [
+								0.517,
+								0.0,
+								-2.035
+							],
+							"wind": 0.0
+						}
+					],
+					"t": 2.02
+				}
+			],
+			"wall_blocked_windups": 0
+		},
+		{
+			"boss_count": 1,
+			"capsule_radius": 0.7,
+			"collision_samples": 0,
+			"crossing_plane": {
+				"axis": "z",
+				"plane": 0.0
+			},
+			"damage_to_finite_target": 0.0,
+			"difficulty": "normal",
+			"elapsed_sim_seconds": 2.0,
+			"final": [
+				{
+					"collisions": [],
+					"distance": 2.54696774482727,
+					"line_of_sight": true,
+					"path": [
+						[
+							8.762,
+							0.5,
+							0.534
+						],
+						[
+							8.744,
+							0.5,
+							0.628
+						],
+						[
+							8.5,
+							0.5,
+							1.924
+						],
+						[
+							8.427,
+							0.5,
+							2.312
+						],
+						[
+							8.25,
+							0.5,
+							3.25
+						],
+						[
+							8.0,
+							0.5,
+							3.4
+						]
+					],
+					"path_index": 2,
+					"position": [
+						8.684,
+						0.0,
+						0.947
+					],
+					"velocity": [
+						-0.389,
+						0.0,
+						2.064
+					],
+					"wind": 0.0
+				}
+			],
+			"id": "staff_exit_right_skew",
+			"initial_positions": [
+				[
+					9.6,
+					0.0,
+					-3.0
+				]
+			],
+			"reached": true,
+			"speed": 2.1,
+			"target": [
+				8.0,
+				0.0,
+				3.4
+			],
+			"trace": [
+				{
+					"bosses": [
+						{
+							"collisions": [],
+							"distance": 5.65201759338379,
+							"line_of_sight": true,
+							"path": [
+								[
+									9.396,
+									0.5,
+									-2.149
+								],
+								[
+									9.331,
+									0.5,
+									-1.881
+								],
+								[
+									9.079,
+									0.5,
+									-0.829
+								],
+								[
+									9.0,
+									0.5,
+									-0.5
+								],
+								[
+									8.889,
+									0.5,
+									0.056
+								],
+								[
+									8.778,
+									0.5,
+									0.611
+								],
+								[
+									8.5,
+									0.5,
+									2.0
+								],
+								[
+									8.432,
+									0.5,
+									2.341
+								],
+								[
+									8.25,
+									0.5,
+									3.25
+								],
+								[
+									8.0,
+									0.5,
+									3.4
+								]
+							],
+							"path_index": 2,
+							"position": [
+								9.379,
+								0.0,
+								-2.081
+							],
+							"velocity": [
+								-0.49,
+								0.0,
+								2.042
+							],
+							"wind": 0.0
+						}
+					],
+					"t": 0.52
+				},
+				{
+					"bosses": [
+						{
+							"collisions": [],
+							"distance": 4.6370906829834,
+							"line_of_sight": true,
+							"path": [
+								[
+									9.159,
+									0.5,
+									-1.162
+								],
+								[
+									9.079,
+									0.5,
+									-0.829
+								],
+								[
+									9.0,
+									0.5,
+									-0.5
+								],
+								[
+									8.889,
+									0.5,
+									0.056
+								],
+								[
+									8.778,
+									0.5,
+									0.611
+								],
+								[
+									8.5,
+									0.5,
+									2.0
+								],
+								[
+									8.432,
+									0.5,
+									2.341
+								],
+								[
+									8.25,
+									0.5,
+									3.25
+								],
+								[
+									8.0,
+									0.5,
+									3.4
+								]
+							],
+							"path_index": 2,
+							"position": [
+								9.143,
+								0.0,
+								-1.094
+							],
+							"velocity": [
+								-0.49,
+								0.0,
+								2.042
+							],
+							"wind": 0.0
+						}
+					],
+					"t": 1.0
+				},
+				{
+					"bosses": [
+						{
+							"collisions": [],
+							"distance": 3.55930805206299,
+							"line_of_sight": true,
+							"path": [
+								[
+									8.892,
+									0.5,
+									-0.154
+								],
+								[
+									8.868,
+									0.5,
+									-0.028
+								],
+								[
+									8.744,
+									0.5,
+									0.628
+								],
+								[
+									8.5,
+									0.5,
+									1.924
+								],
+								[
+									8.427,
+									0.5,
+									2.312
+								],
+								[
+									8.25,
+									0.5,
+									3.25
+								],
+								[
+									8.0,
+									0.5,
+									3.4
+								]
+							],
+							"path_index": 2,
+							"position": [
+								8.872,
+								0.0,
+								-0.051
+							],
+							"velocity": [
+								-0.389,
+								0.0,
+								2.064
+							],
+							"wind": 0.0
+						}
+					],
+					"t": 1.52
+				}
+			],
+			"wall_blocked_windups": 0
+		},
+		{
+			"boss_count": 1,
+			"capsule_radius": 0.7,
+			"collision_samples": 0,
+			"crossing_plane": {
+				"axis": "z",
+				"plane": 0.0
+			},
+			"damage_to_finite_target": 0.0,
+			"difficulty": "normal",
+			"elapsed_sim_seconds": 1.48,
+			"final": [
+				{
+					"collisions": [],
+					"distance": 2.22302412986755,
+					"line_of_sight": true,
+					"path": [
+						[
+							8.753,
+							0.5,
+							-0.394
+						],
+						[
+							8.75,
+							0.5,
+							-0.5
+						],
+						[
+							8.75,
+							0.5,
+							-0.5
+						],
+						[
+							8.422,
+							0.5,
+							-1.594
+						],
+						[
+							8.0,
+							0.5,
+							-3.0
+						]
+					],
+					"path_index": 3,
+					"position": [
+						8.623,
+						0.0,
+						-0.866
+					],
+					"velocity": [
+						-0.559,
+						0.0,
+						-2.024
+					],
+					"wind": 0.0
+				}
+			],
+			"id": "staff_enter_right_skew",
+			"initial_positions": [
+				[
+					9.4,
+					0.0,
+					2.0
+				]
+			],
+			"reached": true,
+			"speed": 2.1,
+			"target": [
+				8.0,
+				0.0,
+				-3.0
+			],
+			"trace": [
+				{
+					"bosses": [
+						{
+							"collisions": [],
+							"distance": 4.24739217758179,
+							"line_of_sight": true,
+							"path": [
+								[
+									9.175,
+									0.5,
+									1.155
+								],
+								[
+									9.0,
+									0.5,
+									0.5
+								],
+								[
+									8.75,
+									0.5,
+									-0.5
+								],
+								[
+									8.75,
+									0.5,
+									-0.5
+								],
+								[
+									8.422,
+									0.5,
+									-1.594
+								],
+								[
+									8.0,
+									0.5,
+									-3.0
+								]
+							],
+							"path_index": 1,
+							"position": [
+								9.157,
+								0.0,
+								1.087
+							],
+							"velocity": [
+								-0.541,
+								0.0,
+								-2.029
+							],
+							"wind": 0.0
+						}
+					],
+					"t": 0.52
+				},
+				{
+					"bosses": [
+						{
+							"collisions": [],
+							"distance": 3.23730254173279,
+							"line_of_sight": true,
+							"path": [
+								[
+									8.92,
+									0.5,
+									0.322
+								],
+								[
+									8.75,
+									0.5,
+									-0.5
+								],
+								[
+									8.75,
+									0.5,
+									-0.5
+								],
+								[
+									8.422,
+									0.5,
+									-1.594
+								],
+								[
+									8.0,
+									0.5,
+									-3.0
+								]
+							],
+							"path_index": 1,
+							"position": [
+								8.877,
+								0.0,
+								0.116
+							],
+							"velocity": [
+								-0.425,
+								0.0,
+								-2.057
+							],
+							"wind": 0.0
+						}
+					],
+					"t": 1.0
+				}
+			],
+			"wall_blocked_windups": 0
+		},
+		{
+			"boss_count": 1,
+			"capsule_radius": 0.7,
+			"collision_samples": 0,
+			"crossing_plane": {
+				"axis": "z",
+				"plane": 0.0
+			},
+			"damage_to_finite_target": 22.0,
+			"difficulty": "normal",
+			"elapsed_sim_seconds": 2.72,
+			"final": [
+				{
+					"collisions": [],
+					"distance": 1.18551230430603,
+					"line_of_sight": true,
+					"path": [
+						[
+							8.9,
+							0.5,
+							0.188
+						],
+						[
+							8.988,
+							0.5,
+							0.506
+						],
+						[
+							8.994,
+							0.5,
+							0.528
+						],
+						[
+							9.4,
+							0.5,
+							2.0
+						]
+					],
+					"path_index": 3,
+					"position": [
+						9.074,
+						0.0,
+						0.86
+					],
+					"velocity": [
+						0.577,
+						0.0,
+						2.019
+					],
+					"wind": -0.000000000000000506539254985228
+				}
+			],
+			"id": "staff_exit_left_skew",
+			"initial_positions": [
+				[
+					8.0,
+					0.0,
+					-3.0
+				]
+			],
+			"reached": true,
+			"speed": 2.1,
+			"target": [
+				9.4,
+				0.0,
+				2.0
+			],
+			"trace": [
+				{
+					"bosses": [
+						{
+							"collisions": [],
+							"distance": 4.24749517440796,
+							"line_of_sight": true,
+							"path": [
+								[
+									8.211,
+									0.5,
+									-2.296
+								],
+								[
+									8.422,
+									0.5,
+									-1.594
+								],
+								[
+									8.75,
+									0.5,
+									-0.5
+								],
+								[
+									9.0,
+									0.5,
+									0.5
+								],
+								[
+									9.0,
+									0.5,
+									0.5
+								],
+								[
+									9.4,
+									0.5,
+									2.0
+								]
+							],
+							"path_index": 1,
+							"position": [
+								8.272,
+								0.0,
+								-2.095
+							],
+							"velocity": [
+								0.603,
+								0.0,
+								2.011
+							],
+							"wind": 0.0
+						}
+					],
+					"t": 0.52
+				},
+				{
+					"bosses": [
+						{
+							"collisions": [],
+							"distance": 3.23283195495605,
+							"line_of_sight": true,
+							"path": [
+								[
+									8.422,
+									0.5,
+									-1.592
+								],
+								[
+									8.75,
+									0.5,
+									-0.5
+								],
+								[
+									9.0,
+									0.5,
+									0.5
+								],
+								[
+									9.0,
+									0.5,
+									0.5
+								],
+								[
+									9.4,
+									0.5,
+									2.0
+								]
+							],
+							"path_index": 1,
+							"position": [
+								8.563,
+								0.0,
+								-1.123
+							],
+							"velocity": [
+								0.603,
+								0.0,
+								2.011
+							],
+							"wind": 0.0
+						}
+					],
+					"t": 1.0
+				},
+				{
+					"bosses": [
+						{
+							"collisions": [],
+							"distance": 2.14796829223633,
+							"line_of_sight": true,
+							"path": [
+								[
+									8.706,
+									0.5,
+									-0.618
+								],
+								[
+									8.75,
+									0.5,
+									-0.5
+								],
+								[
+									9.0,
+									0.5,
+									0.5
+								],
+								[
+									9.0,
+									0.5,
+									0.5
+								],
+								[
+									9.4,
+									0.5,
+									2.0
+								]
+							],
+							"path_index": 2,
+							"position": [
+								8.848,
+								0.0,
+								-0.076
+							],
+							"velocity": [
+								0.534,
+								0.0,
+								2.031
+							],
+							"wind": 0.0
+						}
+					],
+					"t": 1.52
+				},
+				{
+					"bosses": [
+						{
+							"collisions": [],
+							"distance": 1.98630213737488,
+							"line_of_sight": true,
+							"path": [
+								[
+									8.706,
+									0.5,
+									-0.618
+								],
+								[
+									8.75,
+									0.5,
+									-0.5
+								],
+								[
+									9.0,
+									0.5,
+									0.5
+								],
+								[
+									9.0,
+									0.5,
+									0.5
+								],
+								[
+									9.4,
+									0.5,
+									2.0
+								]
+							],
+							"path_index": 2,
+							"position": [
+								8.89,
+								0.0,
+								0.08
+							],
+							"velocity": [
+								0.0,
+								0.0,
+								0.0
+							],
+							"wind": 0.249999999999999
+						}
+					],
+					"t": 2.02
+				},
+				{
+					"bosses": [
+						{
+							"collisions": [],
+							"distance": 1.6055121421814,
+							"line_of_sight": true,
+							"path": [
+								[
+									8.9,
+									0.5,
+									0.188
+								],
+								[
+									8.988,
+									0.5,
+									0.506
+								],
+								[
+									8.994,
+									0.5,
+									0.528
+								],
+								[
+									9.4,
+									0.5,
+									2.0
+								]
+							],
+							"path_index": 3,
+							"position": [
+								8.959,
+								0.0,
+								0.456
+							],
+							"velocity": [
+								0.577,
+								0.0,
+								2.019
+							],
+							"wind": -0.000000000000000506539254985228
+						}
+					],
+					"t": 2.52
+				}
+			],
+			"wall_blocked_windups": 0
+		},
+		{
+			"boss_count": 1,
+			"capsule_radius": 0.7,
+			"collision_samples": 1,
+			"crossing_plane": {
+				"axis": "x",
+				"plane": 5.0
+			},
+			"damage_to_finite_target": 0.0,
+			"difficulty": "normal",
+			"elapsed_sim_seconds": 1.25,
+			"final": [
+				{
+					"collisions": [
+						{
+							"box_size": [
+								1.0,
+								0.25,
+								1.0
+							],
+							"collider": "/root/BossNavigationFixture/@Node@45/@Node3D@46/@NavigationRegion3D@49/@StaticBody3D@213",
+							"collider_center": [
+								6.0,
+								0.125,
+								7.3
+							],
+							"normal": [
+								0.0,
+								0.741,
+								-0.672
+							],
+							"position": [
+								5.942,
+								0.25,
+								6.8
+							]
+						},
+						{
+							"box_size": [
+								1.0,
+								0.25,
+								1.0
+							],
+							"collider": "/root/BossNavigationFixture/@Node@45/@Node3D@46/@NavigationRegion3D@49/@StaticBody3D@213",
+							"collider_center": [
+								6.0,
+								0.125,
+								7.3
+							],
+							"normal": [
+								0.0,
+								0.752,
+								-0.659
+							],
+							"position": [
+								5.963,
+								0.25,
+								6.8
+							]
+						}
+					],
+					"distance": 2.54602217674255,
+					"line_of_sight": true,
+					"path": [
+						[
+							5.167,
+							0.5,
+							6.049
+						],
+						[
+							5.75,
+							0.5,
+							6.355
+						],
+						[
+							5.791,
+							0.5,
+							6.377
+						],
+						[
+							5.891,
+							0.5,
+							6.43
+						],
+						[
+							6.5,
+							0.75,
+							6.75
+						],
+						[
+							6.5,
+							0.75,
+							6.75
+						],
+						[
+							8.25,
+							0.5,
+							6.75
+						],
+						[
+							8.25,
+							0.5,
+							6.75
+						],
+						[
+							8.4,
+							0.5,
+							5.6
+						]
+					],
+					"path_index": 4,
+					"position": [
+						5.963,
+						0.0,
+						6.338
+					],
+					"velocity": [
+						1.689,
+						0.0,
+						1.249
+					],
+					"wind": 0.0
+				}
+			],
+			"id": "storage_enter",
+			"initial_positions": [
+				[
+					3.7,
+					0.0,
+					5.7
+				]
+			],
+			"reached": true,
+			"speed": 2.1,
+			"target": [
+				8.4,
+				0.0,
+				5.6
+			],
+			"trace": [
+				{
+					"bosses": [
+						{
+							"collisions": [],
+							"distance": 3.83952617645264,
+							"line_of_sight": true,
+							"path": [
+								[
+									4.29,
+									0.5,
+									5.921
+								],
+								[
+									4.393,
+									0.5,
+									5.96
+								],
+								[
+									4.5,
+									0.5,
+									6.0
+								],
+								[
+									4.659,
+									0.5,
+									6.06
+								],
+								[
+									5.75,
+									0.5,
+									6.469
+								],
+								[
+									5.759,
+									0.5,
+									6.472
+								],
+								[
+									5.786,
+									0.5,
+									6.482
+								],
+								[
+									6.5,
+									0.75,
+									6.75
+								],
+								[
+									6.5,
+									0.75,
+									6.75
+								],
+								[
+									8.25,
+									0.5,
+									6.75
+								],
+								[
+									8.25,
+									0.5,
+									6.75
+								],
+								[
+									8.4,
+									0.5,
+									5.6
+								]
+							],
+							"path_index": 4,
+							"position": [
+								4.585,
+								0.0,
+								6.032
+							],
+							"velocity": [
+								1.966,
+								0.0,
+								0.737
+							],
+							"wind": 0.0
+						}
+					],
+					"t": 0.52
+				},
+				{
+					"bosses": [
+						{
+							"collisions": [
+								{
+									"box_size": [
+										0.3,
+										1.4,
+										1.4
+									],
+									"collider": "/root/BossNavigationFixture/@Node@45/@Node3D@46/@NavigationRegion3D@49/@StaticBody3D@115",
+									"collider_center": [
+										5.0,
+										0.7,
+										7.45
+									],
+									"normal": [
+										0.566,
+										0.0,
+										-0.825
+									],
+									"position": [
+										5.15,
+										1.4,
+										6.75
+									]
+								}
+							],
+							"distance": 2.90102362632751,
+							"line_of_sight": true,
+							"path": [
+								[
+									5.167,
+									0.5,
+									6.049
+								],
+								[
+									5.75,
+									0.5,
+									6.355
+								],
+								[
+									5.791,
+									0.5,
+									6.377
+								],
+								[
+									5.891,
+									0.5,
+									6.43
+								],
+								[
+									6.5,
+									0.75,
+									6.75
+								],
+								[
+									6.5,
+									0.75,
+									6.75
+								],
+								[
+									8.25,
+									0.5,
+									6.75
+								],
+								[
+									8.25,
+									0.5,
+									6.75
+								],
+								[
+									8.4,
+									0.5,
+									5.6
+								]
+							],
+							"path_index": 3,
+							"position": [
+								5.557,
+								0.0,
+								6.179
+							],
+							"velocity": [
+								1.684,
+								0.0,
+								1.255
+							],
+							"wind": 0.0
+						}
+					],
+					"t": 1.0
+				}
+			],
+			"wall_blocked_windups": 0
+		},
+		{
+			"boss_count": 1,
+			"capsule_radius": 0.7,
+			"collision_samples": 4,
+			"crossing_plane": {
+				"axis": "x",
+				"plane": 5.0
+			},
+			"damage_to_finite_target": 22.0,
+			"difficulty": "normal",
+			"elapsed_sim_seconds": 3.45,
+			"final": [
+				{
+					"collisions": [],
+					"distance": 0.451621770858765,
+					"line_of_sight": true,
+					"path": [
+						[
+							4.489,
+							0.5,
+							5.42
+						],
+						[
+							4.452,
+							0.5,
+							5.434
+						],
+						[
+							4.25,
+							0.5,
+							5.505
+						],
+						[
+							3.7,
+							0.5,
+							5.7
+						]
+					],
+					"path_index": 3,
+					"position": [
+						4.126,
+						0.0,
+						5.549
+					],
+					"velocity": [
+						-1.979,
+						0.0,
+						0.702
+					],
+					"wind": -0.000000000000000506539254985228
+				}
+			],
+			"id": "storage_exit",
+			"initial_positions": [
+				[
+					8.4,
+					0.0,
+					5.6
+				]
+			],
+			"reached": true,
+			"speed": 2.1,
+			"target": [
+				3.7,
+				0.0,
+				5.7
+			],
+			"trace": [
+				{
+					"bosses": [
+						{
+							"collisions": [
+								{
+									"box_size": [
+										1.0,
+										0.9,
+										1.0
+									],
+									"collider": "/root/BossNavigationFixture/@Node@45/@Node3D@46/@NavigationRegion3D@49/@StaticBody3D@203",
+									"collider_center": [
+										7.4,
+										0.45,
+										5.7
+									],
+									"normal": [
+										0.784,
+										0.0,
+										-0.62
+									],
+									"position": [
+										7.9,
+										0.9,
+										5.2
+									]
+								}
+							],
+							"distance": 4.82607269287109,
+							"line_of_sight": true,
+							"path": [
+								[
+									8.579,
+									0.5,
+									5.022
+								],
+								[
+									8.5,
+									0.5,
+									4.75
+								],
+								[
+									6.5,
+									0.5,
+									4.5
+								],
+								[
+									5.827,
+									0.5,
+									4.788
+								],
+								[
+									5.75,
+									0.5,
+									4.821
+								],
+								[
+									5.657,
+									0.5,
+									4.861
+								],
+								[
+									4.5,
+									0.5,
+									5.357
+								],
+								[
+									4.458,
+									0.5,
+									5.375
+								],
+								[
+									4.25,
+									0.5,
+									5.464
+								],
+								[
+									3.7,
+									0.5,
+									5.7
+								]
+							],
+							"path_index": 2,
+							"position": [
+								8.43,
+								0.0,
+								4.74
+							],
+							"velocity": [
+								-2.081,
+								0.0,
+								-0.284
+							],
+							"wind": 0.0
+						}
+					],
+					"t": 0.52
+				},
+				{
+					"bosses": [
+						{
+							"collisions": [
+								{
+									"box_size": [
+										1.0,
+										0.9,
+										1.0
+									],
+									"collider": "/root/BossNavigationFixture/@Node@45/@Node3D@46/@NavigationRegion3D@49/@StaticBody3D@203",
+									"collider_center": [
+										7.4,
+										0.45,
+										5.7
+									],
+									"normal": [
+										0.0,
+										0.0,
+										-1.0
+									],
+									"position": [
+										7.49,
+										0.9,
+										5.2
+									]
+								}
+							],
+							"distance": 3.97594594955444,
+							"line_of_sight": true,
+							"path": [
+								[
+									8.049,
+									0.5,
+									4.514
+								],
+								[
+									6.5,
+									0.5,
+									4.5
+								],
+								[
+									5.827,
+									0.5,
+									4.788
+								],
+								[
+									5.75,
+									0.5,
+									4.821
+								],
+								[
+									5.657,
+									0.5,
+									4.861
+								],
+								[
+									4.5,
+									0.5,
+									5.357
+								],
+								[
+									4.458,
+									0.5,
+									5.375
+								],
+								[
+									4.25,
+									0.5,
+									5.464
+								],
+								[
+									3.7,
+									0.5,
+									5.7
+								]
+							],
+							"path_index": 1,
+							"position": [
+								7.49,
+								0.0,
+								4.499
+							],
+							"velocity": [
+								-2.1,
+								0.0,
+								0.002
+							],
+							"wind": 0.0
+						}
+					],
+					"t": 1.0
+				},
+				{
+					"bosses": [
+						{
+							"collisions": [],
+							"distance": 2.93085241317749,
+							"line_of_sight": true,
+							"path": [
+								[
+									6.691,
+									0.5,
+									4.524
+								],
+								[
+									6.5,
+									0.5,
+									4.5
+								],
+								[
+									5.827,
+									0.5,
+									4.788
+								],
+								[
+									5.75,
+									0.5,
+									4.821
+								],
+								[
+									5.657,
+									0.5,
+									4.861
+								],
+								[
+									4.5,
+									0.5,
+									5.357
+								],
+								[
+									4.458,
+									0.5,
+									5.375
+								],
+								[
+									4.25,
+									0.5,
+									5.464
+								],
+								[
+									3.7,
+									0.5,
+									5.7
+								]
+							],
+							"path_index": 2,
+							"position": [
+								6.421,
+								0.0,
+								4.611
+							],
+							"velocity": [
+								-2.013,
+								0.0,
+								0.6
+							],
+							"wind": 0.0
+						}
+					],
+					"t": 1.52
+				},
+				{
+					"bosses": [
+						{
+							"collisions": [
+								{
+									"box_size": [
+										0.3,
+										1.4,
+										4.6
+									],
+									"collider": "/root/BossNavigationFixture/@Node@45/@Node3D@46/@NavigationRegion3D@49/@StaticBody3D@110",
+									"collider_center": [
+										5.0,
+										0.7,
+										2.15
+									],
+									"normal": [
+										0.593,
+										0.0,
+										0.805
+									],
+									"position": [
+										5.15,
+										1.4,
+										4.45
+									]
+								}
+							],
+							"distance": 1.98721957206726,
+							"line_of_sight": true,
+							"path": [
+								[
+									5.956,
+									0.5,
+									4.763
+								],
+								[
+									5.858,
+									0.5,
+									4.804
+								],
+								[
+									5.75,
+									0.5,
+									4.849
+								],
+								[
+									5.624,
+									0.5,
+									4.901
+								],
+								[
+									4.5,
+									0.5,
+									5.368
+								],
+								[
+									4.457,
+									0.5,
+									5.386
+								],
+								[
+									4.25,
+									0.5,
+									5.472
+								],
+								[
+									3.7,
+									0.5,
+									5.7
+								]
+							],
+							"path_index": 4,
+							"position": [
+								5.565,
+								0.0,
+								5.014
+							],
+							"velocity": [
+								-0.094,
+								0.0,
+								0.035
+							],
+							"wind": 0.633333333333333
+						}
+					],
+					"t": 2.02
+				},
+				{
+					"bosses": [
+						{
+							"collisions": [
+								{
+									"box_size": [
+										0.3,
+										1.4,
+										4.6
+									],
+									"collider": "/root/BossNavigationFixture/@Node@45/@Node3D@46/@NavigationRegion3D@49/@StaticBody3D@110",
+									"collider_center": [
+										5.0,
+										0.7,
+										2.15
+									],
+									"normal": [
+										0.593,
+										0.0,
+										0.805
+									],
+									"position": [
+										5.15,
+										1.4,
+										4.45
+									]
+								}
+							],
+							"distance": 1.98734128475189,
+							"line_of_sight": true,
+							"path": [
+								[
+									5.956,
+									0.5,
+									4.763
+								],
+								[
+									5.858,
+									0.5,
+									4.804
+								],
+								[
+									5.75,
+									0.5,
+									4.849
+								],
+								[
+									5.624,
+									0.5,
+									4.901
+								],
+								[
+									4.5,
+									0.5,
+									5.368
+								],
+								[
+									4.457,
+									0.5,
+									5.386
+								],
+								[
+									4.25,
+									0.5,
+									5.472
+								],
+								[
+									3.7,
+									0.5,
+									5.7
+								]
+							],
+							"path_index": 4,
+							"position": [
+								5.565,
+								0.0,
+								5.015
+							],
+							"velocity": [
+								0.0,
+								0.0,
+								0.0
+							],
+							"wind": 0.133333333333333
+						}
+					],
+					"t": 2.52
+				},
+				{
+					"bosses": [
+						{
+							"collisions": [],
+							"distance": 1.36162257194519,
+							"line_of_sight": true,
+							"path": [
+								[
+									5.247,
+									0.5,
+									5.152
+								],
+								[
+									4.5,
+									0.5,
+									5.416
+								],
+								[
+									4.452,
+									0.5,
+									5.434
+								],
+								[
+									4.25,
+									0.5,
+									5.505
+								],
+								[
+									3.7,
+									0.5,
+									5.7
+								]
+							],
+							"path_index": 1,
+							"position": [
+								4.983,
+								0.0,
+								5.245
+							],
+							"velocity": [
+								-1.979,
+								0.0,
+								0.702
+							],
+							"wind": -0.000000000000000506539254985228
+						}
+					],
+					"t": 3.02
+				}
+			],
+			"wall_blocked_windups": 0
+		}
+	],
+	"spawn_checks": [
+		{
+			"clear": true,
+			"overlaps": [],
+			"position": [
+				0.152,
+				0.0,
+				15.727
+			],
+			"seed": 1000,
+			"spawned": true
+		},
+		{
+			"clear": false,
+			"overlaps": [
+				{
+					"collider": "/root/BossNavigationFixture/@Node@45/@Node3D@46/@NavigationRegion3D@49/@StaticBody3D@248",
+					"position": [
+						-6.5,
+						0.7,
+						13.4
+					]
+				}
+			],
+			"position": [
+				-7.766,
+				0.0,
+				14.995
+			],
+			"seed": 1001,
+			"spawned": true
+		},
+		{
+			"clear": true,
+			"overlaps": [],
+			"position": [
+				-8.764,
+				0.0,
+				15.381
+			],
+			"seed": 1002,
+			"spawned": true
+		},
+		{
+			"clear": true,
+			"overlaps": [],
+			"position": [
+				-11.068,
+				0.0,
+				-4.353
+			],
+			"seed": 1003,
+			"spawned": true
+		},
+		{
+			"clear": false,
+			"overlaps": [
+				{
+					"collider": "/root/BossNavigationFixture/@Node@45/@Node3D@46/@NavigationRegion3D@49/@StaticBody3D@248",
+					"position": [
+						-6.5,
+						0.7,
+						13.4
+					]
+				}
+			],
+			"position": [
+				-8.401,
+				0.0,
+				14.928
+			],
+			"seed": 1004,
+			"spawned": true
+		},
+		{
+			"clear": true,
+			"overlaps": [],
+			"position": [
+				-0.15,
+				0.0,
+				16.713
+			],
+			"seed": 1005,
+			"spawned": true
+		},
+		{
+			"clear": true,
+			"overlaps": [],
+			"position": [
+				-8.046,
+				0.0,
+				15.531
+			],
+			"seed": 1006,
+			"spawned": true
+		},
+		{
+			"clear": true,
+			"overlaps": [],
+			"position": [
+				-10.509,
+				0.0,
+				6.927
+			],
+			"seed": 1007,
+			"spawned": true
+		},
+		{
+			"clear": false,
+			"overlaps": [
+				{
+					"collider": "/root/BossNavigationFixture/@Node@45/@Node3D@46/@NavigationRegion3D@49/@StaticBody3D@75",
+					"position": [
+						-12.0,
+						1.2,
+						1.0
+					]
+				}
+			],
+			"position": [
+				-11.769,
+				0.0,
+				-4.414
+			],
+			"seed": 1008,
+			"spawned": true
+		},
+		{
+			"clear": false,
+			"overlaps": [
+				{
+					"collider": "/root/BossNavigationFixture/@Node@45/@Node3D@46/@NavigationRegion3D@49/@StaticBody3D@75",
+					"position": [
+						-12.0,
+						1.2,
+						1.0
+					]
+				}
+			],
+			"position": [
+				-11.662,
+				0.0,
+				-4.09
+			],
+			"seed": 1009,
+			"spawned": true
+		},
+		{
+			"clear": false,
+			"overlaps": [
+				{
+					"collider": "/root/BossNavigationFixture/@Node@45/@Node3D@46/@NavigationRegion3D@49/@StaticBody3D@248",
+					"position": [
+						-6.5,
+						0.7,
+						13.4
+					]
+				}
+			],
+			"position": [
+				-7.973,
+				0.0,
+				14.793
+			],
+			"seed": 1010,
+			"spawned": true
+		},
+		{
+			"clear": true,
+			"overlaps": [],
+			"position": [
+				-0.256,
+				0.0,
+				16.299
+			],
+			"seed": 1011,
+			"spawned": true
+		},
+		{
+			"clear": true,
+			"overlaps": [],
+			"position": [
+				-10.218,
+				0.0,
+				-3.753
+			],
+			"seed": 1012,
+			"spawned": true
+		},
+		{
+			"clear": false,
+			"overlaps": [
+				{
+					"collider": "/root/BossNavigationFixture/@Node@45/@Node3D@46/@NavigationRegion3D@49/@StaticBody3D@154",
+					"position": [
+						-10.0,
+						1.05,
+						-5.5
+					]
+				},
+				{
+					"collider": "/root/BossNavigationFixture/@Node@45/@Node3D@46/@NavigationRegion3D@49/@StaticBody3D@75",
+					"position": [
+						-12.0,
+						1.2,
+						1.0
+					]
+				}
+			],
+			"position": [
+				-11.461,
+				0.0,
+				-4.653
+			],
+			"seed": 1013,
+			"spawned": true
+		},
+		{
+			"clear": true,
+			"overlaps": [],
+			"position": [
+				-11.036,
+				0.0,
+				6.501
+			],
+			"seed": 1014,
+			"spawned": true
+		},
+		{
+			"clear": true,
+			"overlaps": [],
+			"position": [
+				-0.063,
+				0.0,
+				15.629
+			],
+			"seed": 1015,
+			"spawned": true
+		}
+	],
+	"wall_seconds": 1.843
+}

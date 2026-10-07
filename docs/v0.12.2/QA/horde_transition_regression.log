@@ -1,0 +1,50 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+[horde-qa] PASS glyph rasterization spread across frames
+[horde-qa] PASS cached fill 僵
+[horde-qa] PASS cached outline 僵
+[horde-qa] PASS cached fill 尸
+[horde-qa] PASS cached outline 尸
+[horde-qa] PASS cached fill 鼠
+[horde-qa] PASS cached outline 鼠
+[horde-qa] PASS cached fill 来
+[horde-qa] PASS cached outline 来
+[horde-qa] PASS cached fill 袭
+[horde-qa] PASS cached outline 袭
+[horde-qa] PASS cached fill ！
+[horde-qa] PASS cached outline ！
+[horde-qa] PASS real drawing reuses complete cache: 僵尸鼠来袭！
+[horde-qa] PASS real drawing reuses complete cache: 实验罐头泄漏 · 保护小米
+[horde-qa] PASS real drawing reuses complete cache: FIRE!
+[horde-qa] PASS real drawing reuses complete cache: 神器组装中...
+[horde-qa] PASS real drawing reuses complete cache: 神器装备！
+[horde-qa] PASS real drawing reuses complete cache: 罐头加特林
+[horde-qa] PASS real drawing reuses complete cache: FIRE!
+[horde-qa] PASS prewarm owner can be freed safely
+WARNING: Property agent_height is ceiled to cell_height voxel units and loses precision.
+     at: generator_bake_from_source_geometry_data (modules/navigation_3d/3d/nav_mesh_generator_3d.cpp:366)
+     GDScript backtrace (most recent call first):
+         [0] _bake_boss_nav (res://scripts/world/level.gd:326)
+         [1] _bake_nav (res://scripts/world/level.gd:312)
+         [2] _ready (res://scripts/world/level.gd:151)
+         [3] _show (res://scripts/autoload/game.gd:442)
+         [4] goto (res://scripts/autoload/game.gd:417)
+         [5] _tape (res://scripts/autoload/game.gd:537)
+[horde-qa] PASS production level ready
+[horde-qa] PASS fog shader path active from level creation
+[horde-qa] PASS clear air before horde
+[horde-qa] PASS no height fog added
+[horde-qa] PASS prewarming does not start gameplay
+[horde-qa] PASS horde starts after original 3.4 second dialogue
+[horde-qa] PASS 60 second countdown still waits for artifact
+[horde-qa] PASS same fog variant across horde onset
+[horde-qa] PASS original fog density tween runs
+[horde-qa] PASS game clock is not paused to hide preparation
+[horde-qa] PASS story-critical gatling drop preserved
+[horde-qa] PASS final fog density unchanged
+[horde-qa] PASS horde duration unchanged
+[horde-qa] PASS boss requirement unchanged
+[horde-frame] worst_transition_ms=10.90
+[horde-qa] PASS deadline does not bypass required boss kills
+[horde-qa] PASS victory allowed after all required boss kills
+[horde-qa] RESULT checks=37 failed=0 renderer=forward_plus

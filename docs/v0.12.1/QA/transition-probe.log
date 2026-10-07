@@ -1,0 +1,9 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+{ "name": "font_get_glyph_index", "args": [{ "name": "font_rid", "class_name": &"", "type": 23, "hint": 0, "hint_string": "", "usage": 6 }, { "name": "size", "class_name": &"", "type": 2, "hint": 0, "hint_string": "", "usage": 6 }, { "name": "char", "class_name": &"", "type": 2, "hint": 0, "hint_string": "", "usage": 6 }, { "name": "variation_selector", "class_name": &"", "type": 2, "hint": 0, "hint_string": "", "usage": 6 }], "default_args": [], "flags": 5, "id": 1629, "return": { "name": "", "class_name": &"", "type": 2, "hint": 0, "hint_string": "", "usage": 6 } }
+{ "name": "font_has_char", "args": [{ "name": "font_rid", "class_name": &"", "type": 23, "hint": 0, "hint_string": "", "usage": 6 }, { "name": "char", "class_name": &"", "type": 2, "hint": 0, "hint_string": "", "usage": 6 }], "default_args": [], "flags": 5, "id": 1631, "return": { "name": "", "class_name": &"", "type": 1, "hint": 0, "hint_string": "", "usage": 6 } }
+{ "name": "font_render_glyph", "args": [{ "name": "font_rid", "class_name": &"", "type": 23, "hint": 0, "hint_string": "", "usage": 6 }, { "name": "size", "class_name": &"", "type": 6, "hint": 0, "hint_string": "", "usage": 6 }, { "name": "index", "class_name": &"", "type": 2, "hint": 0, "hint_string": "", "usage": 6 }], "default_args": [], "flags": 1, "id": 1635, "return": { "name": "", "class_name": &"", "type": 0, "hint": 0, "hint_string": "", "usage": 6 } }
+[transition-probe] text=僵尸鼠来袭！ pass=0 total_us=4265 max_glyph_us=1688
+[transition-probe] text=僵尸鼠来袭！ pass=1 total_us=17 max_glyph_us=0
+[transition-probe] text=FIRE! pass=0 total_us=4039 max_glyph_us=1747
+[transition-probe] text=FIRE! pass=1 total_us=23 max_glyph_us=0

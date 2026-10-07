@@ -1,0 +1,51 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+[effects-qa] spark {"estimated_geometry_passes":64,"labels":0,"lights":0,"meshes":0,"nodes":66,"particle_amount":448,"particle_emitters":64,"shadow_casting_geometry":0,"shadow_casting_particle_amount":0,"triangles_in_geometry":5376,"unique_material_resources":1,"unique_mesh_resources":1,"visible_nodes":66}
+[effects-qa] PASS spark owns a parent-local pool
+[effects-qa] PASS spark pauses without recycling/freeing
+[effects-qa] PASS spark expires and returns every slot
+[effects-qa] PASS spark repeats without new effect nodes
+[effects-qa] PASS spark cosmetic geometry casts no shadows
+[effects-qa] dust {"estimated_geometry_passes":48,"labels":0,"lights":0,"meshes":0,"nodes":50,"particle_amount":288,"particle_emitters":48,"shadow_casting_geometry":0,"shadow_casting_particle_amount":0,"triangles_in_geometry":23040,"unique_material_resources":1,"unique_mesh_resources":1,"visible_nodes":50}
+[effects-qa] PASS dust owns a parent-local pool
+[effects-qa] PASS dust pauses without recycling/freeing
+[effects-qa] PASS dust expires and returns every slot
+[effects-qa] PASS dust repeats without new effect nodes
+[effects-qa] PASS dust cosmetic geometry casts no shadows
+[effects-qa] muzzle {"estimated_geometry_passes":16,"labels":0,"lights":8,"meshes":16,"nodes":26,"particle_amount":0,"particle_emitters":0,"shadow_casting_geometry":0,"shadow_casting_particle_amount":0,"triangles_in_geometry":32,"unique_material_resources":1,"unique_mesh_resources":1,"visible_nodes":26}
+[effects-qa] PASS muzzle owns a parent-local pool
+[effects-qa] PASS muzzle pauses without recycling/freeing
+[effects-qa] PASS muzzle expires and returns every slot
+[effects-qa] PASS muzzle repeats without new effect nodes
+[effects-qa] ring {"estimated_geometry_passes":24,"labels":0,"lights":0,"meshes":24,"nodes":26,"particle_amount":0,"particle_emitters":0,"shadow_casting_geometry":0,"shadow_casting_particle_amount":0,"triangles_in_geometry":48,"unique_material_resources":24,"unique_mesh_resources":1,"visible_nodes":26}
+[effects-qa] PASS ring owns a parent-local pool
+[effects-qa] PASS ring pauses without recycling/freeing
+[effects-qa] PASS ring expires and returns every slot
+[effects-qa] PASS ring repeats without new effect nodes
+[effects-qa] ghost {"estimated_geometry_passes":32,"labels":0,"lights":0,"meshes":32,"nodes":50,"particle_amount":0,"particle_emitters":0,"shadow_casting_geometry":0,"shadow_casting_particle_amount":0,"triangles_in_geometry":19136,"unique_material_resources":16,"unique_mesh_resources":2,"visible_nodes":50}
+[effects-qa] PASS ghost owns a parent-local pool
+[effects-qa] PASS ghost pauses without recycling/freeing
+[effects-qa] PASS ghost expires and returns every slot
+[effects-qa] PASS ghost repeats without new effect nodes
+[effects-qa] PASS ghost cosmetic geometry casts no shadows
+[effects-qa] popup {"estimated_geometry_passes":0,"labels":48,"lights":0,"meshes":0,"nodes":50,"particle_amount":0,"particle_emitters":0,"shadow_casting_geometry":0,"shadow_casting_particle_amount":0,"triangles_in_geometry":0,"unique_material_resources":0,"unique_mesh_resources":0,"visible_nodes":50}
+[effects-qa] PASS popup owns a parent-local pool
+[effects-qa] PASS popup pauses without recycling/freeing
+[effects-qa] PASS popup expires and returns every slot
+[effects-qa] PASS popup repeats without new effect nodes
+[effects-qa] notice {"estimated_geometry_passes":0,"labels":32,"lights":0,"meshes":0,"nodes":34,"particle_amount":0,"particle_emitters":0,"shadow_casting_geometry":0,"shadow_casting_particle_amount":0,"triangles_in_geometry":0,"unique_material_resources":0,"unique_mesh_resources":0,"visible_nodes":34}
+[effects-qa] PASS notice owns a parent-local pool
+[effects-qa] PASS notice pauses without recycling/freeing
+[effects-qa] PASS notice expires and returns every slot
+[effects-qa] PASS notice repeats without new effect nodes
+[effects-qa] shell {"estimated_geometry_passes":36,"labels":0,"lights":0,"meshes":36,"nodes":38,"particle_amount":0,"particle_emitters":0,"shadow_casting_geometry":0,"shadow_casting_particle_amount":0,"triangles_in_geometry":1296,"unique_material_resources":1,"unique_mesh_resources":1,"visible_nodes":38}
+[effects-qa] PASS shell owns a parent-local pool
+[effects-qa] PASS shell expires and returns every slot
+[effects-qa] PASS shell repeats without new effect nodes
+[effects-qa] PASS all shells returned and level count restored
+[effects-qa] bullets bullet {"estimated_geometry_passes":100,"labels":0,"lights":0,"meshes":100,"nodes":201,"particle_amount":0,"particle_emitters":0,"shadow_casting_geometry":0,"shadow_casting_particle_amount":0,"triangles_in_geometry":1200,"unique_material_resources":1,"unique_mesh_resources":1,"visible_nodes":101}
+[effects-qa] bullets rocket {"estimated_geometry_passes":300,"labels":0,"lights":0,"meshes":200,"nodes":301,"particle_amount":0,"particle_emitters":0,"shadow_casting_geometry":0,"shadow_casting_particle_amount":0,"triangles_in_geometry":119600,"unique_material_resources":3,"unique_mesh_resources":2,"visible_nodes":301}
+[effects-qa] PASS 100 rockets share exactly base/outline/tip materials
+[effects-qa] bullets enemy {"estimated_geometry_passes":200,"labels":0,"lights":0,"meshes":200,"nodes":301,"particle_amount":0,"particle_emitters":0,"shadow_casting_geometry":0,"shadow_casting_particle_amount":0,"triangles_in_geometry":45200,"unique_material_resources":2,"unique_mesh_resources":2,"visible_nodes":301}
+[effects-qa] PASS pool teardown completed
+[effects-qa] RESULT PASS output=/workspace/scratch/b4c1b123f420/paw-swat-work/v011/effects-qa/candidate-counts.json

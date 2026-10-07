@@ -1,0 +1,261 @@
+{
+	"dust": [
+		{
+			"align_y": false,
+			"amount": 6,
+			"class": "CPUParticles3D",
+			"damping_max": 5.0,
+			"damping_min": 3.0,
+			"direction": [
+				0.0,
+				1.0,
+				0.0
+			],
+			"explosiveness": 0.899999976158142,
+			"gravity": [
+				0.0,
+				0.600000023841858,
+				0.0
+			],
+			"lifetime": 0.55,
+			"material": {
+				"albedo": [
+					1.0,
+					0.959999978542328,
+					0.879999995231628,
+					0.800000011920929
+				],
+				"billboard": 0,
+				"blend": 0,
+				"cull": 0,
+				"shading": 1,
+				"transparent": 1
+			},
+			"mesh": {
+				"class": "SphereMesh",
+				"height": 0.5,
+				"radius": 0.25,
+				"rings": 4,
+				"segments": 8,
+				"triangles": 80
+			},
+			"one_shot": true,
+			"scale_max": 1.0,
+			"scale_min": 1.0,
+			"spread": 80.0,
+			"velocity_max": 2.0,
+			"velocity_min": 0.800000011920929
+		}
+	],
+	"ghost": [
+		{
+			"class": "MeshInstance3D",
+			"material": {
+				"albedo": [
+					1.0,
+					0.550000011920929,
+					0.150000005960464,
+					0.449999988079071
+				],
+				"billboard": 0,
+				"blend": 1,
+				"cull": 0,
+				"shading": 0,
+				"transparent": 1
+			},
+			"mesh": {
+				"class": "CapsuleMesh",
+				"height": 0.800000011920929,
+				"radius": 0.300000011920929,
+				"rings": 6,
+				"segments": 18,
+				"triangles": 756
+			},
+			"scale": [
+				1.0,
+				1.0,
+				1.0
+			]
+		},
+		{
+			"class": "MeshInstance3D",
+			"material": {
+				"albedo": [
+					1.0,
+					0.550000011920929,
+					0.150000005960464,
+					0.449999988079071
+				],
+				"billboard": 0,
+				"blend": 1,
+				"cull": 0,
+				"shading": 0,
+				"transparent": 1
+			},
+			"mesh": {
+				"class": "SphereMesh",
+				"height": 0.720000028610229,
+				"radius": 0.360000014305115,
+				"rings": 10,
+				"segments": 20,
+				"triangles": 440
+			},
+			"scale": [
+				1.0,
+				1.0,
+				1.0
+			]
+		}
+	],
+	"muzzle": [
+		{
+			"class": "MeshInstance3D",
+			"material": {
+				"albedo": [
+					3.0,
+					2.46000003814697,
+					1.20000004768372,
+					1.0
+				],
+				"billboard": 1,
+				"blend": 1,
+				"cull": 2,
+				"shading": 0,
+				"texture_sha256": "2823c51e7cf789995b654acba98898b07d52daac4d46ae024240c366065b763c",
+				"transparent": 1
+			},
+			"mesh": {
+				"class": "QuadMesh",
+				"size": [
+					1.0,
+					1.0
+				],
+				"triangles": 2
+			},
+			"scale": [
+				0.972554326057434,
+				0.972554326057434,
+				0.972554326057434
+			]
+		},
+		{
+			"class": "OmniLight3D",
+			"color": [
+				1.0,
+				0.819999992847443,
+				0.400000005960464,
+				1.0
+			],
+			"energy": 3.0,
+			"range": 4.5
+		}
+	],
+	"popup": [
+		{
+			"billboard": 1,
+			"class": "Label3D",
+			"double_sided": true,
+			"font_path": "res://assets/fonts/Bungee-Regular.ttf",
+			"font_size": 64,
+			"modulate": [
+				1.0,
+				0.95686274766922,
+				0.878431379795074,
+				1.0
+			],
+			"no_depth_test": true,
+			"outline_color": [
+				0.0784313753247261,
+				0.10196078568697,
+				0.149019613862038,
+				1.0
+			],
+			"outline_priority": 19,
+			"outline_size": 14,
+			"pixel_size": 0.00600000005215406,
+			"render_priority": 20,
+			"text": "10"
+		}
+	],
+	"ring": [
+		{
+			"class": "MeshInstance3D",
+			"material": {
+				"albedo": [
+					2.0,
+					0.95686274766922,
+					0.20392157137394,
+					1.0
+				],
+				"billboard": 0,
+				"blend": 1,
+				"cull": 2,
+				"shading": 0,
+				"texture_sha256": "43cbbefc3d3d26ff9c0952d5ed3961c9ee76563d00e56018274726ffeb0a20b9",
+				"transparent": 1
+			},
+			"mesh": {
+				"class": "PlaneMesh",
+				"size": [
+					2.0,
+					2.0
+				],
+				"triangles": 2
+			},
+			"scale": [
+				0.200000002980232,
+				0.200000002980232,
+				0.200000002980232
+			]
+		}
+	],
+	"spark": [
+		{
+			"align_y": true,
+			"amount": 7,
+			"class": "CPUParticles3D",
+			"damping_max": 0.0,
+			"damping_min": 0.0,
+			"direction": [
+				0.0,
+				1.0,
+				0.0
+			],
+			"explosiveness": 1.0,
+			"gravity": [
+				0.0,
+				-14.0,
+				0.0
+			],
+			"lifetime": 0.35,
+			"material": {
+				"albedo": [
+					2.5,
+					2.375,
+					2.125,
+					1.0
+				],
+				"billboard": 0,
+				"blend": 0,
+				"cull": 0,
+				"shading": 0,
+				"transparent": 0
+			},
+			"mesh": {
+				"class": "BoxMesh",
+				"size": [
+					0.0500000007450581,
+					0.0500000007450581,
+					0.159999996423721
+				],
+				"triangles": 12
+			},
+			"one_shot": true,
+			"scale_max": 1.20000004768372,
+			"scale_min": 0.600000023841858,
+			"spread": 55.0,
+			"velocity_max": 5.0,
+			"velocity_min": 2.5
+		}
+	]
+}

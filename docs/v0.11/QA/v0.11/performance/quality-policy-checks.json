@@ -1,0 +1,457 @@
+{
+	"checks": 77,
+	"classification": "headless actual-class property and mapping checks; no rendered-buffer, FPS, browser or phone claim",
+	"failed": 0,
+	"native": false,
+	"records": [
+		{
+			"expected_scale": 1.0,
+			"logical_viewport": "(1920.0, 1080.0)",
+			"msaa_3d": 0,
+			"profile": {
+				"fxaa": false,
+				"hud_native_resolution": true,
+				"msaa": 0,
+				"pixels_3d": 230400,
+				"scale_3d": 1.0,
+				"viewport": [
+					640,
+					360
+				]
+			},
+			"scale_3d": 1.0,
+			"screen_space_aa": 0,
+			"texture_metadata": "(214.0, 120.0)",
+			"window_size": [
+				640,
+				360
+			]
+		},
+		{
+			"expected_scale": 0.980736220111754,
+			"logical_viewport": "(1920.0, 1321.0)",
+			"msaa_3d": 0,
+			"profile": {
+				"fxaa": false,
+				"hud_native_resolution": true,
+				"msaa": 0,
+				"pixels_3d": 921600,
+				"scale_3d": 0.980736220111754,
+				"viewport": [
+					1180,
+					812
+				]
+			},
+			"scale_3d": 0.980736196041107,
+			"screen_space_aa": 0,
+			"texture_metadata": "(726.0, 500.0)",
+			"window_size": [
+				1180,
+				812
+			]
+		},
+		{
+			"expected_scale": 0.666666666666667,
+			"logical_viewport": "(1920.0, 1080.0)",
+			"msaa_3d": 0,
+			"profile": {
+				"fxaa": false,
+				"hud_native_resolution": true,
+				"msaa": 0,
+				"pixels_3d": 921600,
+				"scale_3d": 0.666666666666667,
+				"viewport": [
+					1920,
+					1080
+				]
+			},
+			"scale_3d": 0.666666686534882,
+			"screen_space_aa": 0,
+			"texture_metadata": "(1920.0, 1080.0)",
+			"window_size": [
+				1920,
+				1080
+			]
+		},
+		{
+			"expected_scale": 0.5,
+			"logical_viewport": "(1920.0, 1080.0)",
+			"msaa_3d": 0,
+			"profile": {
+				"fxaa": false,
+				"hud_native_resolution": true,
+				"msaa": 0,
+				"pixels_3d": 921600,
+				"scale_3d": 0.5,
+				"viewport": [
+					2560,
+					1440
+				]
+			},
+			"scale_3d": 0.5,
+			"screen_space_aa": 0,
+			"texture_metadata": "(3414.0, 1920.0)",
+			"window_size": [
+				2560,
+				1440
+			]
+		},
+		{
+			"expected_scale": 0.333333333333333,
+			"logical_viewport": "(1920.0, 1080.0)",
+			"msaa_3d": 0,
+			"profile": {
+				"fxaa": false,
+				"hud_native_resolution": true,
+				"msaa": 0,
+				"pixels_3d": 921600,
+				"scale_3d": 0.333333333333333,
+				"viewport": [
+					3840,
+					2160
+				]
+			},
+			"scale_3d": 0.333333343267441,
+			"screen_space_aa": 0,
+			"texture_metadata": "(7680.0, 4320.0)",
+			"window_size": [
+				3840,
+				2160
+			]
+		},
+		{
+			"expected_scale": 0.894427190999916,
+			"logical_viewport": "(1920.0, 4266.0)",
+			"msaa_3d": 0,
+			"profile": {
+				"fxaa": false,
+				"hud_native_resolution": true,
+				"msaa": 0,
+				"pixels_3d": 921600,
+				"scale_3d": 0.894427190999916,
+				"viewport": [
+					720,
+					1600
+				]
+			},
+			"scale_3d": 0.894427180290222,
+			"screen_space_aa": 0,
+			"texture_metadata": "(270.0, 601.0)",
+			"window_size": [
+				720,
+				1600
+			]
+		}
+	],
+	"renderer_method": "gl_compatibility",
+	"results": [
+		{
+			"name": "budget constant921600",
+			"pass": true
+		},
+		{
+			"name": "project default screen AA disabled",
+			"pass": true
+		},
+		{
+			"name": "project Web screen AA disabled",
+			"pass": true
+		},
+		{
+			"name": "project mobile screen AA requests FXAA",
+			"pass": true
+		},
+		{
+			"name": "actual HUD controls instantiated",
+			"pass": true
+		},
+		{
+			"name": "640x360 root Window.size retained",
+			"pass": true
+		},
+		{
+			"name": "640x360 production scale matches pixel budget",
+			"pass": true
+		},
+		{
+			"name": "640x360 profile uses root window pixels",
+			"pass": true
+		},
+		{
+			"name": "640x360 3D pixel count bounded",
+			"pass": true
+		},
+		{
+			"name": "640x360 MSAA disabled",
+			"pass": true
+		},
+		{
+			"name": "640x360 renderer-conditional AA state",
+			"pass": true
+		},
+		{
+			"name": "640x360 HUD logical viewport unchanged",
+			"pass": true
+		},
+		{
+			"name": "640x360 canvas/input stretch unchanged",
+			"pass": true
+		},
+		{
+			"name": "640x360 actual HUD geometry unchanged",
+			"pass": true
+		},
+		{
+			"name": "640x360 camera projection unchanged",
+			"pass": true
+		},
+		{
+			"name": "640x360 screen-to-world ray unchanged",
+			"pass": true
+		},
+		{
+			"name": "640x360 actual movement and mouse-plane mapping unchanged",
+			"pass": true
+		},
+		{
+			"name": "1180x812 root Window.size retained",
+			"pass": true
+		},
+		{
+			"name": "1180x812 production scale matches pixel budget",
+			"pass": true
+		},
+		{
+			"name": "1180x812 profile uses root window pixels",
+			"pass": true
+		},
+		{
+			"name": "1180x812 3D pixel count bounded",
+			"pass": true
+		},
+		{
+			"name": "1180x812 MSAA disabled",
+			"pass": true
+		},
+		{
+			"name": "1180x812 renderer-conditional AA state",
+			"pass": true
+		},
+		{
+			"name": "1180x812 HUD logical viewport unchanged",
+			"pass": true
+		},
+		{
+			"name": "1180x812 canvas/input stretch unchanged",
+			"pass": true
+		},
+		{
+			"name": "1180x812 actual HUD geometry unchanged",
+			"pass": true
+		},
+		{
+			"name": "1180x812 camera projection unchanged",
+			"pass": true
+		},
+		{
+			"name": "1180x812 screen-to-world ray unchanged",
+			"pass": true
+		},
+		{
+			"name": "1180x812 actual movement and mouse-plane mapping unchanged",
+			"pass": true
+		},
+		{
+			"name": "1920x1080 root Window.size retained",
+			"pass": true
+		},
+		{
+			"name": "1920x1080 production scale matches pixel budget",
+			"pass": true
+		},
+		{
+			"name": "1920x1080 profile uses root window pixels",
+			"pass": true
+		},
+		{
+			"name": "1920x1080 3D pixel count bounded",
+			"pass": true
+		},
+		{
+			"name": "1920x1080 MSAA disabled",
+			"pass": true
+		},
+		{
+			"name": "1920x1080 renderer-conditional AA state",
+			"pass": true
+		},
+		{
+			"name": "1920x1080 HUD logical viewport unchanged",
+			"pass": true
+		},
+		{
+			"name": "1920x1080 canvas/input stretch unchanged",
+			"pass": true
+		},
+		{
+			"name": "1920x1080 actual HUD geometry unchanged",
+			"pass": true
+		},
+		{
+			"name": "1920x1080 camera projection unchanged",
+			"pass": true
+		},
+		{
+			"name": "1920x1080 screen-to-world ray unchanged",
+			"pass": true
+		},
+		{
+			"name": "1920x1080 actual movement and mouse-plane mapping unchanged",
+			"pass": true
+		},
+		{
+			"name": "2560x1440 root Window.size retained",
+			"pass": true
+		},
+		{
+			"name": "2560x1440 production scale matches pixel budget",
+			"pass": true
+		},
+		{
+			"name": "2560x1440 profile uses root window pixels",
+			"pass": true
+		},
+		{
+			"name": "2560x1440 3D pixel count bounded",
+			"pass": true
+		},
+		{
+			"name": "2560x1440 MSAA disabled",
+			"pass": true
+		},
+		{
+			"name": "2560x1440 renderer-conditional AA state",
+			"pass": true
+		},
+		{
+			"name": "2560x1440 HUD logical viewport unchanged",
+			"pass": true
+		},
+		{
+			"name": "2560x1440 canvas/input stretch unchanged",
+			"pass": true
+		},
+		{
+			"name": "2560x1440 actual HUD geometry unchanged",
+			"pass": true
+		},
+		{
+			"name": "2560x1440 camera projection unchanged",
+			"pass": true
+		},
+		{
+			"name": "2560x1440 screen-to-world ray unchanged",
+			"pass": true
+		},
+		{
+			"name": "2560x1440 actual movement and mouse-plane mapping unchanged",
+			"pass": true
+		},
+		{
+			"name": "3840x2160 root Window.size retained",
+			"pass": true
+		},
+		{
+			"name": "3840x2160 production scale matches pixel budget",
+			"pass": true
+		},
+		{
+			"name": "3840x2160 profile uses root window pixels",
+			"pass": true
+		},
+		{
+			"name": "3840x2160 3D pixel count bounded",
+			"pass": true
+		},
+		{
+			"name": "3840x2160 MSAA disabled",
+			"pass": true
+		},
+		{
+			"name": "3840x2160 renderer-conditional AA state",
+			"pass": true
+		},
+		{
+			"name": "3840x2160 HUD logical viewport unchanged",
+			"pass": true
+		},
+		{
+			"name": "3840x2160 canvas/input stretch unchanged",
+			"pass": true
+		},
+		{
+			"name": "3840x2160 actual HUD geometry unchanged",
+			"pass": true
+		},
+		{
+			"name": "3840x2160 camera projection unchanged",
+			"pass": true
+		},
+		{
+			"name": "3840x2160 screen-to-world ray unchanged",
+			"pass": true
+		},
+		{
+			"name": "3840x2160 actual movement and mouse-plane mapping unchanged",
+			"pass": true
+		},
+		{
+			"name": "720x1600 root Window.size retained",
+			"pass": true
+		},
+		{
+			"name": "720x1600 production scale matches pixel budget",
+			"pass": true
+		},
+		{
+			"name": "720x1600 profile uses root window pixels",
+			"pass": true
+		},
+		{
+			"name": "720x1600 3D pixel count bounded",
+			"pass": true
+		},
+		{
+			"name": "720x1600 MSAA disabled",
+			"pass": true
+		},
+		{
+			"name": "720x1600 renderer-conditional AA state",
+			"pass": true
+		},
+		{
+			"name": "720x1600 HUD logical viewport unchanged",
+			"pass": true
+		},
+		{
+			"name": "720x1600 canvas/input stretch unchanged",
+			"pass": true
+		},
+		{
+			"name": "720x1600 actual HUD geometry unchanged",
+			"pass": true
+		},
+		{
+			"name": "720x1600 camera projection unchanged",
+			"pass": true
+		},
+		{
+			"name": "720x1600 screen-to-world ray unchanged",
+			"pass": true
+		},
+		{
+			"name": "720x1600 actual movement and mouse-plane mapping unchanged",
+			"pass": true
+		}
+	]
+}

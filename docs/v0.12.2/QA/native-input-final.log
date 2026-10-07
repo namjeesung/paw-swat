@@ -1,0 +1,44 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+WARNING: Property agent_height is ceiled to cell_height voxel units and loses precision.
+     at: generator_bake_from_source_geometry_data (modules/navigation_3d/3d/nav_mesh_generator_3d.cpp:366)
+     GDScript backtrace (most recent call first):
+         [0] _bake_boss_nav (res://scripts/world/level.gd:326)
+         [1] _bake_nav (res://scripts/world/level.gd:312)
+         [2] _ready (res://scripts/world/level.gd:151)
+         [3] _run (res://scripts/test/qa/input_mode_regression.gd:70)
+         [4] frames (res://scripts/test/qa/input_mode_regression.gd:30)
+[input-mode-native] PASS desktop starts without virtual controls
+[input-mode-native] PASS desktop input remains keyboard mouse owned
+[input-mode-native] PASS desktop ammo skills and crosshair visible
+[input-mode-native] PASS desktop hides touch-only pause options
+[input-mode-native] PASS desktop keyboard reaches production Player movement
+[input-mode-native] PASS desktop mouse reaches production Player shooting
+[input-mode-native] PASS mouse-emulated touch cannot force mobile
+[input-mode-native] PASS genuine touch activates virtual controls and player input
+[input-mode-native] PASS first actual touch and signed ID retained without replay
+[input-mode-native] PASS touch layout hides desktop widgets
+[input-mode-native] PASS hybrid activation exposes touch aim and vibration settings
+[input-mode-native] PASS multitouch virtual fire still works
+[input-mode-native] PASS engine emulated mouse preserves both touch sticks
+[input-mode-native] PASS real mouse restores desktop ownership mid-level
+[input-mode-native] PASS mode change cancels touch owners and pending burst
+[input-mode-native] PASS mode change clears stale virtual movement and firing
+[input-mode-native] PASS first real mouse press still reaches shooting after mode change
+[input-mode-native] PASS desktop HUD and pause options restored
+[input-mode-native] PASS narrow portrait resize does not select mobile
+[input-mode-native] PASS portrait desktop has no mobile rotate gate
+[input-mode-native] PASS touch can reactivate after desktop resize
+[input-mode-native] PASS touch resize keeps mode but clears obsolete coordinates
+[input-mode-native] PASS real keyboard switches back and moves on the first key
+[input-mode-native] PASS repeated switching reuses one virtual control overlay
+[input-mode-native] PASS switching does not rewrite action or controller mappings
+[input-mode-native] PASS freed target references rejected before typed helper calls
+[input-mode-native] PASS direct feed safely drops an actually freed Enemy
+[input-mode-native] PASS despawn clears touch lock candidate and player homing target
+[input-mode-native] PASS queued target deletion immediately excludes touch targeting
+[input-mode-native] PASS target deletion cannot leave a stale lock on the next frame
+[input-mode-native] PASS desktop switch clears stale orientation overlay immediately
+[input-mode-native] PASS test bot ownership preserved when virtual controls do not drive
+[input-mode-native] PASS explicit --touch preview remains forced
+[input-mode-native] RESULT {"checks":33,"failed":0,"mode":"Godot headless synthetic InputEvents; no hardware browser or score writes"}

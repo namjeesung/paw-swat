@@ -1,0 +1,340 @@
+{
+	"checks": [
+		{
+			"details": {
+				"arguments": []
+			},
+			"name": "no_god_arguments",
+			"passed": true
+		},
+		{
+			"details": {
+				"hp": 100.0
+			},
+			"name": "normal_initial_health",
+			"passed": true
+		},
+		{
+			"details": {
+				"damage": 5.0,
+				"hp": 95.0
+			},
+			"name": "damage_phase_0",
+			"passed": true
+		},
+		{
+			"details": {
+				"damage": 5.0,
+				"hp": 95.0
+			},
+			"name": "damage_phase_1",
+			"passed": true
+		},
+		{
+			"details": {
+				"damage": 5.0,
+				"hp": 95.0
+			},
+			"name": "damage_phase_2",
+			"passed": true
+		},
+		{
+			"details": {
+				"damage": 5.0,
+				"hp": 95.0
+			},
+			"name": "damage_phase_3",
+			"passed": true
+		},
+		{
+			"details": {
+				"damage": 5.0,
+				"hp": 95.0
+			},
+			"name": "damage_phase_4",
+			"passed": true
+		},
+		{
+			"details": {
+				"damage": 5.0,
+				"hp": 95.0
+			},
+			"name": "damage_phase_5",
+			"passed": true
+		},
+		{
+			"details": {
+				"hp": 95.0
+			},
+			"name": "post_hit_grace_blocks_burst",
+			"passed": true
+		},
+		{
+			"details": {
+				"hp": 90.0
+			},
+			"name": "post_hit_grace_expires",
+			"passed": true
+		},
+		{
+			"details": {
+				"hp": 100.0
+			},
+			"name": "existing_roll_protection",
+			"passed": true
+		},
+		{
+			"details": {
+				"hp": 100.0
+			},
+			"name": "existing_dash_protection",
+			"passed": true
+		},
+		{
+			"details": {
+				"expected_hp": 95.0,
+				"hp": 95.0
+			},
+			"name": "zombie_melee_damage",
+			"passed": true
+		},
+		{
+			"details": {
+				"expected_hp": 78.0,
+				"hp": 78.0
+			},
+			"name": "boss_melee_damage",
+			"passed": true
+		},
+		{
+			"details": {
+				"hp": 50.0
+			},
+			"name": "regen_waits_normal_5sec",
+			"passed": true
+		},
+		{
+			"details": {
+				"hp": 52.4,
+				"regen_rate": 12.0
+			},
+			"name": "regen_is_heal_not_immunity",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "fresh_shield_inactive",
+			"passed": true
+		},
+		{
+			"details": {
+				"remaining": 5.0
+			},
+			"name": "grant_shield_exact_5sec",
+			"passed": true
+		},
+		{
+			"details": {
+				"damage": 0.0,
+				"hp": 100.0
+			},
+			"name": "shield_blocks_damage_and_stat",
+			"passed": true
+		},
+		{
+			"details": {
+				"remaining": 3.0
+			},
+			"name": "shield_counts_down",
+			"passed": true
+		},
+		{
+			"details": {
+				"remaining": 3.0
+			},
+			"name": "active_shield_cannot_stack_or_refresh",
+			"passed": true
+		},
+		{
+			"details": {
+				"remaining": 0.9
+			},
+			"name": "shield_one_sec_warning",
+			"passed": true
+		},
+		{
+			"details": {
+				"hp": 100.0,
+				"remaining": 0.0099999999999999
+			},
+			"name": "shield_protects_until_deadline",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "shield_expiry_clears_visual",
+			"passed": true
+		},
+		{
+			"details": {
+				"hp": 95.0
+			},
+			"name": "damage_resumes_after_shield",
+			"passed": true
+		},
+		{
+			"details": {
+				"after": 4.75,
+				"before": 4.75
+			},
+			"name": "pause_freezes_shield_real_runtime",
+			"passed": true
+		},
+		{
+			"details": {
+				"after": 4.48333333333334,
+				"before": 4.75
+			},
+			"name": "resume_continues_countdown",
+			"passed": true
+		},
+		{
+			"details": {
+				"shield_elapsed": 0.599999999999998,
+				"timescale": 0.25
+			},
+			"name": "slowmo_does_not_extend_shield",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "one_ground_shield_detected",
+			"passed": true
+		},
+		{
+			"details": {
+				"remaining": 5.0,
+				"taken": true
+			},
+			"name": "pickup_grants_and_is_consumed",
+			"passed": true
+		},
+		{
+			"details": {
+				"remaining": 3.0,
+				"taken": false
+			},
+			"name": "active_shield_leaves_extra_loot_unconsumed",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "ground_shield_lives_below_12sec",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "ground_shield_expires_after_12sec",
+			"passed": true
+		},
+		{
+			"details": {
+				"ground_shields": 1
+			},
+			"name": "rare_opportunity_spawns_one_ground_shield",
+			"passed": true
+		},
+		{
+			"details": {
+				"banked_time": 0.0,
+				"ground_shields": 1
+			},
+			"name": "ground_shield_cap_skips_next_opportunity",
+			"passed": true
+		},
+		{
+			"details": {
+				"banked_time": 0.0,
+				"ground_shields": 0
+			},
+			"name": "active_shield_skips_drop_without_banking",
+			"passed": true
+		},
+		{
+			"details": {
+				"ground_shields": 0
+			},
+			"name": "skipped_opportunity_cannot_chain_on_expiry",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "finished_level_cannot_spawn_shield",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "finished_run_rejects_shield",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "death_clears_shield",
+			"passed": true
+		},
+		{
+			"details": {
+
+			},
+			"name": "dead_player_rejects_shield",
+			"passed": true
+		},
+		{
+			"details": {
+				"hp": 100.0,
+				"remaining": 0.0
+			},
+			"name": "new_run_resets_shield_and_hp",
+			"passed": true
+		},
+		{
+			"details": {
+				"hp": 100.0,
+				"paused": false,
+				"remaining": 0.0,
+				"timescale": 1.0
+			},
+			"name": "actual_restart_clears_shield_and_pause",
+			"passed": true
+		}
+	],
+	"engine": {
+		"build": "official",
+		"hash": "7d41c59c457bd5a245092b4e7eb2d833e3b3f8c3",
+		"hex": 263683,
+		"major": 4,
+		"minor": 6,
+		"patch": 3,
+		"status": "stable",
+		"string": "4.6.3-stable (official)",
+		"timestamp": 0
+	},
+	"failed": 0,
+	"passed": true
+}

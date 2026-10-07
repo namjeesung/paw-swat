@@ -1,0 +1,182 @@
+{
+  "checks": [
+    {
+      "name": "production_touch_controls_present",
+      "passed": true,
+      "details": {
+        "size": "(1920.0, 1920.0)",
+        "viewport": "(1920.0, 1920.0)"
+      }
+    },
+    {
+      "name": "signed_browser_touch_id_can_move",
+      "passed": false,
+      "details": {
+        "move": "(0.0, 0.0)",
+        "owner": -2147483647
+      }
+    },
+    {
+      "name": "minus_one_browser_touch_id_can_move",
+      "passed": false,
+      "details": {
+        "move": "(0.0, 0.0)",
+        "owner": -1
+      }
+    },
+    {
+      "name": "hidden_controls_cannot_drive_player",
+      "passed": false,
+      "details": {
+        "move": "(0.666667, -0.5)",
+        "owner": 8
+      }
+    },
+    {
+      "name": "simultaneous_move_and_fire_native_events",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "new_move_takes_over_after_lost_release",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "late_old_move_release_preserves_new_owners",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "new_fire_takes_over_after_lost_release",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "late_old_fire_release_preserves_new_owners",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "lock_mode_fire_cancel_preserves_move",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "move_cancel_releases_move",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "hidden_grenade_button_not_hit",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "hidden_grenade_position_falls_through_to_fire",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "available_grenade_button_is_hit",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "grenade_touch_queues_production_action",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "hidden_held_button_clears_owner",
+      "passed": false,
+      "details": {}
+    },
+    {
+      "name": "new_touch_after_grenade_hidden_uses_valid_fire_zone",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "hidden_weapon_button_not_hit",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "hidden_weapon_position_falls_through_to_fire",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "available_weapon_touch_queues_switch",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "hidden_interact_button_not_hit",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "hidden_interact_position_falls_through_to_fire",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "release_mode_hold_does_not_shoot",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "release_mode_cancel_does_not_fire_burst",
+      "passed": false,
+      "details": {
+        "burst_remaining": 0.35161,
+        "shoot": true
+      }
+    },
+    {
+      "name": "manual_native_back_notification_opens_pause",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "manual_native_back_notification_resumes",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "released_while_paused_does_not_resume_stale_input",
+      "passed": false,
+      "details": {
+        "fire_owner": 71,
+        "move": "(0.666667, -0.5)",
+        "move_owner": 70,
+        "shoot": true
+      }
+    },
+    {
+      "name": "manual_application_paused_notification_opens_pause",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "pause_menu_close_resumes_after_background_notification",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "focus_out_clears_both_owners_and_cache",
+      "passed": false,
+      "details": {
+        "fire_owner": 81,
+        "move": "(0.666667, -0.5)",
+        "move_owner": 80,
+        "shoot": true
+      }
+    }
+  ],
+  "passed": false,
+  "failed": 7,
+  "mode": "initial Linux headless synthetic input regression; original harness inherited default square viewport"
+}

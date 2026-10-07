@@ -1,0 +1,48 @@
+{
+  "scope": "v0.11 input patch; focused native tests run with baseline Level/Player and exact candidate controller/pause/Game input files",
+  "files": [
+    {
+      "path": "scripts/ui/touch_controls.gd",
+      "bytes": 23377,
+      "sha256": "926ac95e2fcc9ffefbd5a366f435b94cd521d566b76b08eb2c41777680df9456"
+    },
+    {
+      "path": "scripts/ui/pause_menu.gd",
+      "bytes": 10717,
+      "sha256": "de22d79d2e699c283f9fb0eae3b2aad0caa52bb25dc4feac4e0ab4a97bd52f8c"
+    },
+    {
+      "path": "scripts/autoload/game.gd",
+      "bytes": 15989,
+      "sha256": "5ad722bb92f247452697c4c49847b55b3327bc3945186a8480fc540cc7a3aeac"
+    },
+    {
+      "path": "web/head_include.html",
+      "bytes": 16831,
+      "sha256": "b041b9f8c00de75e64f1aaf31c15ef70fc514cf0289babf3793caa558f761658"
+    },
+    {
+      "path": "export_presets.cfg",
+      "bytes": 19214,
+      "sha256": "265088a8fd42e1f8a2e8eae48b49085135dc341e3311f492ed952faa0e922713"
+    }
+  ],
+  "runtime": {
+    "path": "build/v010-web/index.js",
+    "sha256": "e3f56ee40e6f84371053db06692cfac15e2c8659547b11c6b2dfa1996dabd981"
+  },
+  "tests": {
+    "native_before": {
+      "checks": 41,
+      "failed": 14
+    },
+    "native_after": {
+      "checks": 41,
+      "failed": 0
+    },
+    "dom_runtime_mock": {
+      "checks": 30,
+      "failed": 0
+    }
+  }
+}

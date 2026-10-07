@@ -1,0 +1,11 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+[boss-qa] PASS normal_left_inside_out {"damage":0.0,"difficulty":"normal","elapsed":2.97,"final":[{"collisions":[],"distance":2.54337477684021,"line_of_sight":true,"path":[[-1.526,0.5,9.158],[-2.75,0.5,10.25],[-3.878,0.5,11.107],[-4.0,0.5,11.2]],"path_index":1,"position":[-2.022,0.0,9.601],"velocity":[-1.567,0.0,1.398],"wind":0.0}],"reached":true,"wall_winds":0}
+[boss-qa] PASS normal_left_outside_in {"damage":0.0,"difficulty":"normal","elapsed":3.08,"final":[{"collisions":[],"distance":2.54742050170898,"line_of_sight":true,"path":[[-1.255,0.5,7.132],[-2.305,0.5,6.431],[-2.384,0.5,6.378],[-3.067,0.5,5.923],[-4.0,0.5,5.3]],"path_index":1,"position":[-1.881,0.0,6.714],"velocity":[-1.747,0.0,-1.166],"wind":0.0}],"reached":true,"wall_winds":0}
+[boss-qa] PASS near_wall_inside_out {"damage":0.0,"difficulty":"normal","elapsed":2.56,"final":[{"collisions":[],"distance":2.53954243659973,"line_of_sight":true,"path":[[-1.097,0.5,8.774],[-2.75,0.5,10.25],[-2.75,0.5,10.25],[-4.0,0.5,10.25],[-4.5,0.5,10.0],[-4.5,0.5,9.0]],"path_index":1,"position":[-1.462,0.0,9.101],"velocity":[-1.567,0.0,1.398],"wind":0.0}],"reached":true,"wall_winds":0}
+[boss-qa] PASS near_wall_outside_in {"damage":0.0,"difficulty":"normal","elapsed":2.57,"final":[{"collisions":[],"distance":2.41199588775635,"line_of_sight":true,"path":[[1.557,0.5,7.142],[4.0,0.5,7.0]],"path_index":1,"position":[1.592,0.0,7.14],"velocity":[2.096,0.0,-0.122],"wind":0.0}],"reached":true,"wall_winds":0}
+[boss-qa] RESULT {"cases":4,"failed":0,"lifecycle_failed":0,"report":"/workspace/scratch/b4c1b123f420/paw-swat-work/boss-qa/evidence/baseline-quick.json","wall_seconds":1.552}
+WARNING: ObjectDB instances leaked at exit (run with --verbose for details).
+   at: cleanup (core/object/object.cpp:2663)
+ERROR: 2 resources still in use at exit (run with --verbose for details).
+   at: clear (core/io/resource.cpp:810)

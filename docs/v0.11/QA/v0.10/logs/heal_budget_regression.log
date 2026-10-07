@@ -1,0 +1,212 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+[heal-qa] PASS no_god_arguments {"arguments":["--lb="]}
+WARNING: Property agent_height is ceiled to cell_height voxel units and loses precision.
+     at: generator_bake_from_source_geometry_data (modules/navigation_3d/3d/nav_mesh_generator_3d.cpp:366)
+     GDScript backtrace (most recent call first):
+         [0] _bake_boss_nav (res://scripts/world/level.gd:277)
+         [1] _bake_nav (res://scripts/world/level.gd:263)
+         [2] _ready (res://scripts/world/level.gd:130)
+         [3] start_level (res://scripts/test/qa/heal_budget_regression.gd:50)
+         [4] _run (res://scripts/test/qa/heal_budget_regression.gd:110)
+[heal-qa] PASS easy_captured_limit_1 {"limit":1,"spawned":0}
+[heal-qa] PASS easy_spawn_1_spends_budget {"ground":1,"spawned":1}
+[heal-qa] PASS easy_spawn_1_single_ground_cap {}
+[heal-qa] PASS easy_spawn_1_full_hp_keeps_loot {"spawned":1,"taken":false}
+[heal-qa] PASS easy_spawn_1_full_hp_notice_only_once {}
+[heal-qa] PASS easy_spawn_1_heals_once_35 {"expected_hp":175.0,"hp":175.0,"spawned":1}
+[heal-qa] PASS easy_spawn_1_feedback_actual_35 {"new_plus_35_labels":1}
+[heal-qa] PASS easy_spawn_1_repeated_collection_is_idempotent {"hp":175.0,"labels_after":37,"labels_before":37}
+[heal-qa] PASS easy_global_spawn_cap_exhausted {"limit":1,"spawned":1}
+[heal-qa] PASS easy_heal_cap_does_not_block_shield_or_weapon {}
+[heal-qa] PASS easy_shield_grant_independent_of_heal_budget {}
+WARNING: Property agent_height is ceiled to cell_height voxel units and loses precision.
+     at: generator_bake_from_source_geometry_data (modules/navigation_3d/3d/nav_mesh_generator_3d.cpp:366)
+     GDScript backtrace (most recent call first):
+         [0] _bake_boss_nav (res://scripts/world/level.gd:277)
+         [1] _bake_nav (res://scripts/world/level.gd:263)
+         [2] _ready (res://scripts/world/level.gd:130)
+         [3] start_level (res://scripts/test/qa/heal_budget_regression.gd:50)
+         [4] _run (res://scripts/test/qa/heal_budget_regression.gd:110)
+[heal-qa] PASS normal_captured_limit_2 {"limit":2,"spawned":0}
+[heal-qa] PASS normal_spawn_1_spends_budget {"ground":1,"spawned":1}
+[heal-qa] PASS normal_spawn_1_single_ground_cap {}
+[heal-qa] PASS normal_spawn_1_full_hp_keeps_loot {"spawned":1,"taken":false}
+[heal-qa] PASS normal_spawn_1_full_hp_notice_only_once {}
+[heal-qa] PASS normal_spawn_1_heals_once_35 {"expected_hp":75.0,"hp":75.0,"spawned":1}
+[heal-qa] PASS normal_spawn_1_feedback_actual_35 {"new_plus_35_labels":1}
+[heal-qa] PASS normal_spawn_1_repeated_collection_is_idempotent {"hp":75.0,"labels_after":41,"labels_before":41}
+[heal-qa] PASS normal_spawn_2_spends_budget {"ground":1,"spawned":2}
+[heal-qa] PASS normal_spawn_2_single_ground_cap {}
+[heal-qa] PASS normal_spawn_2_full_hp_keeps_loot {"spawned":2,"taken":false}
+[heal-qa] PASS normal_spawn_2_full_hp_notice_only_once {}
+[heal-qa] PASS normal_spawn_2_heals_once_35 {"expected_hp":75.0,"hp":75.0,"spawned":2}
+[heal-qa] PASS normal_spawn_2_feedback_actual_35 {"new_plus_35_labels":1}
+[heal-qa] PASS normal_spawn_2_repeated_collection_is_idempotent {"hp":75.0,"labels_after":43,"labels_before":43}
+[heal-qa] PASS normal_global_spawn_cap_exhausted {"limit":2,"spawned":2}
+[heal-qa] PASS normal_heal_cap_does_not_block_shield_or_weapon {}
+[heal-qa] PASS normal_shield_grant_independent_of_heal_budget {}
+WARNING: Property agent_height is ceiled to cell_height voxel units and loses precision.
+     at: generator_bake_from_source_geometry_data (modules/navigation_3d/3d/nav_mesh_generator_3d.cpp:366)
+     GDScript backtrace (most recent call first):
+         [0] _bake_boss_nav (res://scripts/world/level.gd:277)
+         [1] _bake_nav (res://scripts/world/level.gd:263)
+         [2] _ready (res://scripts/world/level.gd:130)
+         [3] start_level (res://scripts/test/qa/heal_budget_regression.gd:50)
+         [4] _run (res://scripts/test/qa/heal_budget_regression.gd:110)
+[heal-qa] PASS hard_captured_limit_3 {"limit":3,"spawned":0}
+[heal-qa] PASS hard_spawn_1_spends_budget {"ground":1,"spawned":1}
+[heal-qa] PASS hard_spawn_1_single_ground_cap {}
+[heal-qa] PASS hard_spawn_1_full_hp_keeps_loot {"spawned":1,"taken":false}
+[heal-qa] PASS hard_spawn_1_full_hp_notice_only_once {}
+[heal-qa] PASS hard_spawn_1_heals_once_35 {"expected_hp":105.0,"hp":105.0,"spawned":1}
+[heal-qa] PASS hard_spawn_1_feedback_actual_35 {"new_plus_35_labels":1}
+[heal-qa] PASS hard_spawn_1_repeated_collection_is_idempotent {"hp":105.0,"labels_after":51,"labels_before":51}
+[heal-qa] PASS hard_spawn_2_spends_budget {"ground":1,"spawned":2}
+[heal-qa] PASS hard_spawn_2_single_ground_cap {}
+[heal-qa] PASS hard_spawn_2_full_hp_keeps_loot {"spawned":2,"taken":false}
+[heal-qa] PASS hard_spawn_2_full_hp_notice_only_once {}
+[heal-qa] PASS hard_spawn_2_heals_once_35 {"expected_hp":105.0,"hp":105.0,"spawned":2}
+[heal-qa] PASS hard_spawn_2_feedback_actual_35 {"new_plus_35_labels":1}
+[heal-qa] PASS hard_spawn_2_repeated_collection_is_idempotent {"hp":105.0,"labels_after":53,"labels_before":53}
+[heal-qa] PASS hard_spawn_3_spends_budget {"ground":1,"spawned":3}
+[heal-qa] PASS hard_spawn_3_single_ground_cap {}
+[heal-qa] PASS hard_spawn_3_full_hp_keeps_loot {"spawned":3,"taken":false}
+[heal-qa] PASS hard_spawn_3_full_hp_notice_only_once {}
+[heal-qa] PASS hard_spawn_3_heals_once_35 {"expected_hp":105.0,"hp":105.0,"spawned":3}
+[heal-qa] PASS hard_spawn_3_feedback_actual_35 {"new_plus_35_labels":1}
+[heal-qa] PASS hard_spawn_3_repeated_collection_is_idempotent {"hp":105.0,"labels_after":55,"labels_before":55}
+[heal-qa] PASS hard_global_spawn_cap_exhausted {"limit":3,"spawned":3}
+[heal-qa] PASS hard_heal_cap_does_not_block_shield_or_weapon {}
+[heal-qa] PASS hard_shield_grant_independent_of_heal_budget {}
+WARNING: Property agent_height is ceiled to cell_height voxel units and loses precision.
+     at: generator_bake_from_source_geometry_data (modules/navigation_3d/3d/nav_mesh_generator_3d.cpp:366)
+     GDScript backtrace (most recent call first):
+         [0] _bake_boss_nav (res://scripts/world/level.gd:277)
+         [1] _bake_nav (res://scripts/world/level.gd:263)
+         [2] _ready (res://scripts/world/level.gd:130)
+         [3] start_level (res://scripts/test/qa/heal_budget_regression.gd:50)
+         [4] _run (res://scripts/test/qa/heal_budget_regression.gd:110)
+[heal-qa] PASS insane_captured_limit_4 {"limit":4,"spawned":0}
+[heal-qa] PASS insane_spawn_1_spends_budget {"ground":1,"spawned":1}
+[heal-qa] PASS insane_spawn_1_single_ground_cap {}
+[heal-qa] PASS insane_spawn_1_full_hp_keeps_loot {"spawned":1,"taken":false}
+[heal-qa] PASS insane_spawn_1_full_hp_notice_only_once {}
+[heal-qa] PASS insane_spawn_1_heals_once_35 {"expected_hp":65.0,"hp":65.0,"spawned":1}
+[heal-qa] PASS insane_spawn_1_feedback_actual_35 {"new_plus_35_labels":1}
+[heal-qa] PASS insane_spawn_1_repeated_collection_is_idempotent {"hp":65.0,"labels_after":65,"labels_before":65}
+[heal-qa] PASS insane_spawn_2_spends_budget {"ground":1,"spawned":2}
+[heal-qa] PASS insane_spawn_2_single_ground_cap {}
+[heal-qa] PASS insane_spawn_2_full_hp_keeps_loot {"spawned":2,"taken":false}
+[heal-qa] PASS insane_spawn_2_full_hp_notice_only_once {}
+[heal-qa] PASS insane_spawn_2_heals_once_35 {"expected_hp":65.0,"hp":65.0,"spawned":2}
+[heal-qa] PASS insane_spawn_2_feedback_actual_35 {"new_plus_35_labels":1}
+[heal-qa] PASS insane_spawn_2_repeated_collection_is_idempotent {"hp":65.0,"labels_after":67,"labels_before":67}
+[heal-qa] PASS insane_spawn_3_spends_budget {"ground":1,"spawned":3}
+[heal-qa] PASS insane_spawn_3_single_ground_cap {}
+[heal-qa] PASS insane_spawn_3_full_hp_keeps_loot {"spawned":3,"taken":false}
+[heal-qa] PASS insane_spawn_3_full_hp_notice_only_once {}
+[heal-qa] PASS insane_spawn_3_heals_once_35 {"expected_hp":65.0,"hp":65.0,"spawned":3}
+[heal-qa] PASS insane_spawn_3_feedback_actual_35 {"new_plus_35_labels":1}
+[heal-qa] PASS insane_spawn_3_repeated_collection_is_idempotent {"hp":65.0,"labels_after":69,"labels_before":69}
+[heal-qa] PASS insane_spawn_4_spends_budget {"ground":1,"spawned":4}
+[heal-qa] PASS insane_spawn_4_single_ground_cap {}
+[heal-qa] PASS insane_spawn_4_full_hp_keeps_loot {"spawned":4,"taken":false}
+[heal-qa] PASS insane_spawn_4_full_hp_notice_only_once {}
+[heal-qa] PASS insane_spawn_4_heals_once_35 {"expected_hp":65.0,"hp":65.0,"spawned":4}
+[heal-qa] PASS insane_spawn_4_feedback_actual_35 {"new_plus_35_labels":1}
+[heal-qa] PASS insane_spawn_4_repeated_collection_is_idempotent {"hp":65.0,"labels_after":71,"labels_before":71}
+[heal-qa] PASS insane_global_spawn_cap_exhausted {"limit":4,"spawned":4}
+[heal-qa] PASS insane_heal_cap_does_not_block_shield_or_weapon {}
+[heal-qa] PASS insane_shield_grant_independent_of_heal_budget {}
+WARNING: Property agent_height is ceiled to cell_height voxel units and loses precision.
+     at: generator_bake_from_source_geometry_data (modules/navigation_3d/3d/nav_mesh_generator_3d.cpp:366)
+     GDScript backtrace (most recent call first):
+         [0] _bake_boss_nav (res://scripts/world/level.gd:277)
+         [1] _bake_nav (res://scripts/world/level.gd:263)
+         [2] _ready (res://scripts/world/level.gd:130)
+         [3] start_level (res://scripts/test/qa/heal_budget_regression.gd:50)
+         [4] check_health_cap_and_feedback (res://scripts/test/qa/heal_budget_regression.gd:181)
+         [5] _run (res://scripts/test/qa/heal_budget_regression.gd:146)
+[heal-qa] PASS near_full_health_capped_at_max {"hp":100.0,"max_hp":100.0}
+[heal-qa] PASS near_full_feedback_reports_actual_10 {"new_plus_10_labels":1,"new_plus_35_labels":0}
+WARNING: Property agent_height is ceiled to cell_height voxel units and loses precision.
+     at: generator_bake_from_source_geometry_data (modules/navigation_3d/3d/nav_mesh_generator_3d.cpp:366)
+     GDScript backtrace (most recent call first):
+         [0] _bake_boss_nav (res://scripts/world/level.gd:277)
+         [1] _bake_nav (res://scripts/world/level.gd:263)
+         [2] _ready (res://scripts/world/level.gd:130)
+         [3] start_level (res://scripts/test/qa/heal_budget_regression.gd:50)
+         [4] check_mixed_sources (res://scripts/test/qa/heal_budget_regression.gd:193)
+         [5] _run (res://scripts/test/qa/heal_budget_regression.gd:147)
+[heal-qa] PASS periodic_source_spends_shared_budget {}
+[heal-qa] PASS boss_source_cannot_overlap_periodic_ground_loot {}
+[heal-qa] PASS boss_source_spends_same_global_budget {}
+[heal-qa] PASS future_central_source_cannot_overlap_boss_ground_loot {}
+[heal-qa] PASS future_central_source_uses_shared_budget {}
+[heal-qa] PASS periodic_source_reaches_four_spawn_cap {}
+[heal-qa] PASS all_sources_reject_after_global_budget_exhausted {"ground":0,"spawned":4}
+WARNING: Property agent_height is ceiled to cell_height voxel units and loses precision.
+     at: generator_bake_from_source_geometry_data (modules/navigation_3d/3d/nav_mesh_generator_3d.cpp:366)
+     GDScript backtrace (most recent call first):
+         [0] _bake_boss_nav (res://scripts/world/level.gd:277)
+         [1] _bake_nav (res://scripts/world/level.gd:263)
+         [2] _ready (res://scripts/world/level.gd:130)
+         [3] start_level (res://scripts/test/qa/heal_budget_regression.gd:50)
+         [4] check_spawn_not_collection (res://scripts/test/qa/heal_budget_regression.gd:216)
+         [5] _run (res://scripts/test/qa/heal_budget_regression.gd:148)
+[heal-qa] PASS uncollected_spawn_already_counts_against_budget {}
+[heal-qa] PASS discarded_uncollected_loot_does_not_refund_budget {}
+WARNING: Property agent_height is ceiled to cell_height voxel units and loses precision.
+     at: generator_bake_from_source_geometry_data (modules/navigation_3d/3d/nav_mesh_generator_3d.cpp:366)
+     GDScript backtrace (most recent call first):
+         [0] _bake_boss_nav (res://scripts/world/level.gd:277)
+         [1] _bake_nav (res://scripts/world/level.gd:263)
+         [2] _ready (res://scripts/world/level.gd:130)
+         [3] start_level (res://scripts/test/qa/heal_budget_regression.gd:50)
+         [4] check_pause_restart_and_capture (res://scripts/test/qa/heal_budget_regression.gd:225)
+         [5] _run (res://scripts/test/qa/heal_budget_regression.gd:149)
+[heal-qa] PASS pause_retains_spawn_budget_and_ground_loot {}
+[heal-qa] PASS resume_retains_spawn_budget {}
+[heal-qa] PASS midrun_difficulty_change_does_not_change_captured_budget {"limit":3,"run_difficulty":"hard","selected_difficulty":"insane"}
+WARNING: Property agent_height is ceiled to cell_height voxel units and loses precision.
+     at: generator_bake_from_source_geometry_data (modules/navigation_3d/3d/nav_mesh_generator_3d.cpp:366)
+     GDScript backtrace (most recent call first):
+         [0] _bake_boss_nav (res://scripts/world/level.gd:277)
+         [1] _bake_nav (res://scripts/world/level.gd:263)
+         [2] _ready (res://scripts/world/level.gd:130)
+         [3] _show (res://scripts/autoload/game.gd:380)
+         [4] goto (res://scripts/autoload/game.gd:355)
+         [5] _tape (res://scripts/autoload/game.gd:469)
+[heal-qa] PASS actual_restart_captures_selected_budget_and_resets_spawns {"ground":0,"limit":4,"paused":false,"spawned":0}
+WARNING: Property agent_height is ceiled to cell_height voxel units and loses precision.
+     at: generator_bake_from_source_geometry_data (modules/navigation_3d/3d/nav_mesh_generator_3d.cpp:366)
+     GDScript backtrace (most recent call first):
+         [0] _bake_boss_nav (res://scripts/world/level.gd:277)
+         [1] _bake_nav (res://scripts/world/level.gd:263)
+         [2] _ready (res://scripts/world/level.gd:130)
+         [3] start_level (res://scripts/test/qa/heal_budget_regression.gd:50)
+         [4] check_pause_restart_and_capture (res://scripts/test/qa/heal_budget_regression.gd:245)
+[heal-qa] PASS new_run_resets_selected_normal_budget {}
+WARNING: Property agent_height is ceiled to cell_height voxel units and loses precision.
+     at: generator_bake_from_source_geometry_data (modules/navigation_3d/3d/nav_mesh_generator_3d.cpp:366)
+     GDScript backtrace (most recent call first):
+         [0] _bake_boss_nav (res://scripts/world/level.gd:277)
+         [1] _bake_nav (res://scripts/world/level.gd:263)
+         [2] _ready (res://scripts/world/level.gd:130)
+         [3] start_level (res://scripts/test/qa/heal_budget_regression.gd:50)
+         [4] check_invalid_state_guards (res://scripts/test/qa/heal_budget_regression.gd:249)
+         [5] _run (res://scripts/test/qa/heal_budget_regression.gd:150)
+         [6] check_pause_restart_and_capture (res://scripts/test/qa/heal_budget_regression.gd:246)
+[heal-qa] PASS finished_state_rejects_new_heal_without_spending {}
+[heal-qa] PASS dead_player_rejects_new_heal_without_spending {}
+[heal-qa] PASS missing_player_rejects_new_heal_without_spending {}
+[heal-qa] PASS dead_player_cannot_collect_stale_heal {}
+[heal-qa] PASS finished_level_cannot_collect_stale_heal {}
+[heal-qa] PASS resumed_valid_state_collects_once_without_spending_again {}
+[heal-qa] PASS all_109_behavior_assertions_executed {"executed_behavior_assertions":109,"expected":109}
+[heal-qa] RESULT {"checks":110,"failed":0,"passed":true,"report":"/workspace/scratch/b4c1b123f420/paw-swat-work/boss-qa/regression-runtime/data/godot/app_userdata/爪爪特警 PAW S.W.A.T/heal-budget-regression-report.json"}
+WARNING: ObjectDB instances leaked at exit (run with --verbose for details).
+   at: cleanup (core/object/object.cpp:2663)
+ERROR: 4 resources still in use at exit (run with --verbose for details).
+   at: clear (core/io/resource.cpp:810)

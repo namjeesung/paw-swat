@@ -1,0 +1,12 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+[heal-tip-metrics] PASS easy_heal_tip_fits_production_body {"body_height":108.0,"body_width":422.0,"bold_size":22,"content_height":104,"font_size":21,"lines":3,"plain_text":"走近罐头最多回复 35 血。满血不消耗，受伤后再捡。本局最多1件，所有来源共用；地上最多一件。"}
+[heal-tip-metrics] PASS easy_fallback_tip_has_selected_budget {}
+[heal-tip-metrics] PASS normal_heal_tip_fits_production_body {"body_height":108.0,"body_width":422.0,"bold_size":22,"content_height":104,"font_size":21,"lines":3,"plain_text":"走近罐头最多回复 35 血。满血不消耗，受伤后再捡。本局最多2件，所有来源共用；地上最多一件。"}
+[heal-tip-metrics] PASS normal_fallback_tip_has_selected_budget {}
+[heal-tip-metrics] PASS hard_heal_tip_fits_production_body {"body_height":108.0,"body_width":422.0,"bold_size":22,"content_height":104,"font_size":21,"lines":3,"plain_text":"走近罐头最多回复 35 血。满血不消耗，受伤后再捡。本局最多3件，所有来源共用；地上最多一件。"}
+[heal-tip-metrics] PASS hard_fallback_tip_has_selected_budget {}
+[heal-tip-metrics] PASS insane_heal_tip_fits_production_body {"body_height":108.0,"body_width":422.0,"bold_size":22,"content_height":104,"font_size":21,"lines":3,"plain_text":"走近罐头最多回复 35 血。满血不消耗，受伤后再捡。本局最多4件，所有来源共用；地上最多一件。"}
+[heal-tip-metrics] PASS insane_fallback_tip_has_selected_budget {}
+[heal-tip-metrics] PASS tip_reads_captured_run_budget {"captured_limit":2,"selected_difficulty":"insane","tip":"走近罐头{最多回复 35 血}。{满血不消耗}，受伤后再捡。本局最多{2件}，所有来源共用；地上最多一件。"}
+[heal-tip-metrics] RESULT {"checks":9,"failed":0,"passed":true,"report":"/workspace/scratch/b4c1b123f420/paw_horde_fix/qa-home/data/godot/app_userdata/爪爪特警 PAW S.W.A.T/heal-tip-metrics-report.json"}

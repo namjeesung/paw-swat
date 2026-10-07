@@ -1,0 +1,9 @@
+name = "paw-swat-leaderboard"
+main = "src/index.js"
+compatibility_date = "2025-09-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "paw-swat"
+# 运行 `npx wrangler d1 create paw-swat` 后，把输出里的 database_id 填到这里
+database_id = "REPLACE_WITH_YOUR_DATABASE_ID"

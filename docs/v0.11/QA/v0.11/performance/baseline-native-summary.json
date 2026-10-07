@@ -1,0 +1,120 @@
+{
+  "native": true,
+  "platform_scope": "Cloud Linux gl_compatibility; not browser/phone",
+  "configuration": {
+    "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+    "viewport_size": "(1920.0, 1321.0)",
+    "physics_hz": 120,
+    "msaa3d": 2,
+    "scaling3d": 1.0,
+    "population": {
+      "bosses": 3,
+      "normal_zombies": 34
+    }
+  },
+  "phases": [
+    {
+      "phase": "inside",
+      "frames": 10,
+      "avg_ms": 1166.7422000000001,
+      "median_ms": 1052.3995,
+      "p95_ms": 3542.549,
+      "p99_ms": 3542.549,
+      "max_ms": 3542.549,
+      "observed_fps": 0.7976017709949723,
+      "hitches_over_50ms": 9,
+      "avg_drawcalls": 3831.7,
+      "avg_shadow_drawcalls": 0,
+      "avg_primitives": 550086.4,
+      "avg_objects": 3831.7,
+      "avg_process_ms": 2380.1417,
+      "avg_physics_ms": 37.5938,
+      "nodes_minmax": [
+        3126.0,
+        3163.0
+      ],
+      "resources_minmax": [
+        98.0,
+        98.0
+      ],
+      "physics_steps_per_wall_sec": 9.571221251939669,
+      "shots_per_wall_sec": 0.7976017709949723,
+      "counts": {
+        "clear_shot_queries": 0,
+        "interactable_queries": 10,
+        "interactable_query_us": 266,
+        "level_process_calls": 10,
+        "level_process_us": 743,
+        "lights_added": 5,
+        "line_of_sight_queries": 1,
+        "mesh_nodes_added": 30,
+        "nav_dir_calls": 2864,
+        "nav_dir_us": 6671,
+        "new_material_resource_ids": 0,
+        "new_mesh_resource_ids": 0,
+        "nodes_added": 54,
+        "particle_nodes_added": 9,
+        "repath_opportunities": 74,
+        "separate_calls": 2886,
+        "separate_us": 42863,
+        "target_queries": 0,
+        "target_query_us": 0,
+        "zombie_physics_calls": 4440,
+        "zombie_physics_us": 105980
+      }
+    },
+    {
+      "phase": "outside",
+      "frames": 11,
+      "avg_ms": 1016.8165454545455,
+      "median_ms": 971.766,
+      "p95_ms": 1652.377,
+      "p99_ms": 1652.377,
+      "max_ms": 1652.377,
+      "observed_fps": 0.8933570457364698,
+      "hitches_over_50ms": 10,
+      "avg_drawcalls": 3674.3636363636365,
+      "avg_shadow_drawcalls": 0,
+      "avg_primitives": 543780.7272727273,
+      "avg_objects": 3674.3636363636365,
+      "avg_process_ms": 1087.1278181818182,
+      "avg_physics_ms": 12.787818181818182,
+      "nodes_minmax": [
+        3137.0,
+        3172.0
+      ],
+      "resources_minmax": [
+        98.0,
+        98.0
+      ],
+      "physics_steps_per_wall_sec": 10.720284548837638,
+      "shots_per_wall_sec": 0.8121427688513362,
+      "counts": {
+        "clear_shot_queries": 0,
+        "interactable_queries": 11,
+        "interactable_query_us": 456,
+        "level_process_calls": 11,
+        "level_process_us": 1028,
+        "lights_added": 5,
+        "line_of_sight_queries": 0,
+        "mesh_nodes_added": 30,
+        "nav_dir_calls": 4450,
+        "nav_dir_us": 11766,
+        "new_material_resource_ids": 0,
+        "new_mesh_resource_ids": 0,
+        "nodes_added": 56,
+        "particle_nodes_added": 11,
+        "repath_opportunities": 110,
+        "separate_calls": 4847,
+        "separate_us": 71666,
+        "target_queries": 0,
+        "target_query_us": 0,
+        "zombie_physics_calls": 4884,
+        "zombie_physics_us": 179306
+      }
+    }
+  ],
+  "classification": "Preliminary rifle probe: harness did not equip intended Gatling. Preserve raw baseline-native.json; exclude from final matched Gatling comparison.",
+  "first_sample_note": "First process-boundary sample is invalid and near0ms; remove by phase-index for steady summaries. Raw data retained.",
+  "inference": "High draw workload and low measured Zombie/nav/separation function time indicate render-path dominance in this cloud renderer; no GPU timestamp or hardware blame."
+}

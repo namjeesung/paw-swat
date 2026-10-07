@@ -1,0 +1,41 @@
+[input-mode-web] PASS desktop Edge mouse only
+[input-mode-web] PASS desktop touch API exposed alone
+[input-mode-web] PASS Windows hybrid maxTouchPoints 10 with primary mouse
+[input-mode-web] PASS unknown capability-only maxTouchPoints
+[input-mode-web] PASS legacy msMaxTouchPoints does not force mobile
+[input-mode-web] PASS non-Edge Windows Chrome hybrid
+[input-mode-web] PASS Windows touch-primary tablet
+[input-mode-web] PASS Android mobile
+[input-mode-web] PASS iPhone without exposed touch APIs
+[input-mode-web] PASS iPad legacy UA
+[input-mode-web] PASS iPad desktop UA and multitouch
+[input-mode-web] PASS MacBook desktop UA without multitouch
+[input-mode-web] PASS UA client hints mobile
+[input-mode-web] PASS generic primary coarse no-hover
+[input-mode-web] PASS real hybrid touch enables controls immediately
+[input-mode-web] PASS capture mode set before original engine touch callback
+[input-mode-web] PASS touch-generated mouse cannot hide virtual controls
+[input-mode-web] PASS passive mouse movement does not flip touch mode
+[input-mode-web] PASS touch end retains mobile controls and normal release
+[input-mode-web] PASS real mouse switches hybrid back to keyboard mouse
+[input-mode-web] PASS portrait desktop resize never forces mobile
+[input-mode-web] PASS landscape desktop resize retains desktop
+[input-mode-web] PASS genuine touch fallback works without preceding pointerdown
+[input-mode-web] PASS diagnostic hotkey does not alter input mode
+[input-mode-web] PASS typing a name does not switch game controls
+[input-mode-web] PASS gameplay keyboard switches back to desktop
+[input-mode-web] PASS pen uses mouse-style aiming rather than fake touch sticks
+[input-mode-web] PASS existing blur cancellation survives mode detection
+[input-mode-web] PASS session touch reset preserves selected input mode
+[input-mode-web] PASS touch-selected mode survives rotation
+[input-mode-web] PASS legacy compatibility mouse ignored while touch held
+[input-mode-web] PASS legacy post-touch compatibility click ignored
+[input-mode-web] PASS legacy real mouse can switch after touch grace period
+[input-mode-web] PASS mode callback reset retains original new touch ownership
+[input-mode-web] PASS keyboard alternate roll key switches to desktop
+[input-mode-web] PASS cancellation semantics survive callback-driven mode reset
+[input-mode-web] PASS all canvas input observers remain capture-passive
+[input-mode-web] PASS no document touch interception introduced
+[input-mode-web] PASS reinitialization does not duplicate input listeners
+[input-mode-web] PASS export preset matches authoritative Web head exactly
+[input-mode-web] RESULT {"checks":40,"failed":0,"mode":"Node DOM mocks; not real Edge/device QA"}

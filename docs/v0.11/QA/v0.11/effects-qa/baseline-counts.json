@@ -1,0 +1,440 @@
+{
+	"assertions": [
+		{
+			"check": "spark pauses without recycling/freeing",
+			"pass": true
+		},
+		{
+			"check": "dust pauses without recycling/freeing",
+			"pass": true
+		},
+		{
+			"check": "muzzle pauses without recycling/freeing",
+			"pass": true
+		},
+		{
+			"check": "ring pauses without recycling/freeing",
+			"pass": true
+		},
+		{
+			"check": "ghost pauses without recycling/freeing",
+			"pass": true
+		},
+		{
+			"check": "popup pauses without recycling/freeing",
+			"pass": true
+		},
+		{
+			"check": "notice pauses without recycling/freeing",
+			"pass": true
+		},
+		{
+			"check": "all shells returned and level count restored",
+			"pass": true
+		},
+		{
+			"check": "pool teardown completed",
+			"pass": true
+		}
+	],
+	"bullets": {
+		"bullet": {
+			"estimated_geometry_passes": 100,
+			"labels": 0,
+			"lights": 0,
+			"meshes": 100,
+			"nodes": 201,
+			"particle_amount": 0,
+			"particle_emitters": 0,
+			"shadow_casting_geometry": 0,
+			"shadow_casting_particle_amount": 0,
+			"triangles_in_geometry": 1200,
+			"unique_material_resources": 1,
+			"unique_mesh_resources": 1,
+			"visible_nodes": 101
+		},
+		"enemy": {
+			"estimated_geometry_passes": 200,
+			"labels": 0,
+			"lights": 0,
+			"meshes": 200,
+			"nodes": 301,
+			"particle_amount": 0,
+			"particle_emitters": 0,
+			"shadow_casting_geometry": 0,
+			"shadow_casting_particle_amount": 0,
+			"triangles_in_geometry": 45200,
+			"unique_material_resources": 2,
+			"unique_mesh_resources": 2,
+			"visible_nodes": 301
+		},
+		"rocket": {
+			"estimated_geometry_passes": 300,
+			"labels": 0,
+			"lights": 0,
+			"meshes": 200,
+			"nodes": 301,
+			"particle_amount": 0,
+			"particle_emitters": 0,
+			"shadow_casting_geometry": 100,
+			"shadow_casting_particle_amount": 0,
+			"triangles_in_geometry": 119600,
+			"unique_material_resources": 201,
+			"unique_mesh_resources": 2,
+			"visible_nodes": 301
+		}
+	},
+	"failures": [],
+	"families": {
+		"dust": {
+			"burst": {
+				"estimated_geometry_passes": 100,
+				"labels": 0,
+				"lights": 0,
+				"meshes": 0,
+				"nodes": 101,
+				"particle_amount": 600,
+				"particle_emitters": 100,
+				"shadow_casting_geometry": 100,
+				"shadow_casting_particle_amount": 600,
+				"triangles_in_geometry": 48000,
+				"unique_material_resources": 1,
+				"unique_mesh_resources": 1,
+				"visible_nodes": 101
+			},
+			"expired": {
+				"estimated_geometry_passes": 0,
+				"labels": 0,
+				"lights": 0,
+				"meshes": 0,
+				"nodes": 1,
+				"particle_amount": 0,
+				"particle_emitters": 0,
+				"shadow_casting_geometry": 0,
+				"shadow_casting_particle_amount": 0,
+				"triangles_in_geometry": 0,
+				"unique_material_resources": 0,
+				"unique_mesh_resources": 0,
+				"visible_nodes": 1
+			}
+		},
+		"ghost": {
+			"burst": {
+				"estimated_geometry_passes": 200,
+				"labels": 0,
+				"lights": 0,
+				"meshes": 200,
+				"nodes": 301,
+				"particle_amount": 0,
+				"particle_emitters": 0,
+				"shadow_casting_geometry": 200,
+				"shadow_casting_particle_amount": 0,
+				"triangles_in_geometry": 119600,
+				"unique_material_resources": 100,
+				"unique_mesh_resources": 2,
+				"visible_nodes": 301
+			},
+			"expired": {
+				"estimated_geometry_passes": 0,
+				"labels": 0,
+				"lights": 0,
+				"meshes": 0,
+				"nodes": 1,
+				"particle_amount": 0,
+				"particle_emitters": 0,
+				"shadow_casting_geometry": 0,
+				"shadow_casting_particle_amount": 0,
+				"triangles_in_geometry": 0,
+				"unique_material_resources": 0,
+				"unique_mesh_resources": 0,
+				"visible_nodes": 1
+			}
+		},
+		"muzzle": {
+			"burst": {
+				"estimated_geometry_passes": 100,
+				"labels": 0,
+				"lights": 100,
+				"meshes": 100,
+				"nodes": 201,
+				"particle_amount": 0,
+				"particle_emitters": 0,
+				"shadow_casting_geometry": 0,
+				"shadow_casting_particle_amount": 0,
+				"triangles_in_geometry": 200,
+				"unique_material_resources": 1,
+				"unique_mesh_resources": 1,
+				"visible_nodes": 201
+			},
+			"expired": {
+				"estimated_geometry_passes": 0,
+				"labels": 0,
+				"lights": 0,
+				"meshes": 0,
+				"nodes": 1,
+				"particle_amount": 0,
+				"particle_emitters": 0,
+				"shadow_casting_geometry": 0,
+				"shadow_casting_particle_amount": 0,
+				"triangles_in_geometry": 0,
+				"unique_material_resources": 0,
+				"unique_mesh_resources": 0,
+				"visible_nodes": 1
+			}
+		},
+		"notice": {
+			"burst": {
+				"estimated_geometry_passes": 0,
+				"labels": 100,
+				"lights": 0,
+				"meshes": 0,
+				"nodes": 101,
+				"particle_amount": 0,
+				"particle_emitters": 0,
+				"shadow_casting_geometry": 0,
+				"shadow_casting_particle_amount": 0,
+				"triangles_in_geometry": 0,
+				"unique_material_resources": 0,
+				"unique_mesh_resources": 0,
+				"visible_nodes": 101
+			},
+			"expired": {
+				"estimated_geometry_passes": 0,
+				"labels": 0,
+				"lights": 0,
+				"meshes": 0,
+				"nodes": 1,
+				"particle_amount": 0,
+				"particle_emitters": 0,
+				"shadow_casting_geometry": 0,
+				"shadow_casting_particle_amount": 0,
+				"triangles_in_geometry": 0,
+				"unique_material_resources": 0,
+				"unique_mesh_resources": 0,
+				"visible_nodes": 1
+			}
+		},
+		"popup": {
+			"burst": {
+				"estimated_geometry_passes": 0,
+				"labels": 100,
+				"lights": 0,
+				"meshes": 0,
+				"nodes": 101,
+				"particle_amount": 0,
+				"particle_emitters": 0,
+				"shadow_casting_geometry": 0,
+				"shadow_casting_particle_amount": 0,
+				"triangles_in_geometry": 0,
+				"unique_material_resources": 0,
+				"unique_mesh_resources": 0,
+				"visible_nodes": 101
+			},
+			"expired": {
+				"estimated_geometry_passes": 0,
+				"labels": 0,
+				"lights": 0,
+				"meshes": 0,
+				"nodes": 1,
+				"particle_amount": 0,
+				"particle_emitters": 0,
+				"shadow_casting_geometry": 0,
+				"shadow_casting_particle_amount": 0,
+				"triangles_in_geometry": 0,
+				"unique_material_resources": 0,
+				"unique_mesh_resources": 0,
+				"visible_nodes": 1
+			}
+		},
+		"ring": {
+			"burst": {
+				"estimated_geometry_passes": 100,
+				"labels": 0,
+				"lights": 0,
+				"meshes": 100,
+				"nodes": 101,
+				"particle_amount": 0,
+				"particle_emitters": 0,
+				"shadow_casting_geometry": 0,
+				"shadow_casting_particle_amount": 0,
+				"triangles_in_geometry": 200,
+				"unique_material_resources": 100,
+				"unique_mesh_resources": 100,
+				"visible_nodes": 101
+			},
+			"expired": {
+				"estimated_geometry_passes": 0,
+				"labels": 0,
+				"lights": 0,
+				"meshes": 0,
+				"nodes": 1,
+				"particle_amount": 0,
+				"particle_emitters": 0,
+				"shadow_casting_geometry": 0,
+				"shadow_casting_particle_amount": 0,
+				"triangles_in_geometry": 0,
+				"unique_material_resources": 0,
+				"unique_mesh_resources": 0,
+				"visible_nodes": 1
+			}
+		},
+		"shell": {
+			"burst": {
+				"estimated_geometry_passes": 36,
+				"labels": 0,
+				"lights": 0,
+				"meshes": 36,
+				"nodes": 37,
+				"particle_amount": 0,
+				"particle_emitters": 0,
+				"shadow_casting_geometry": 0,
+				"shadow_casting_particle_amount": 0,
+				"triangles_in_geometry": 1296,
+				"unique_material_resources": 1,
+				"unique_mesh_resources": 1,
+				"visible_nodes": 37
+			},
+			"expired": {
+				"estimated_geometry_passes": 0,
+				"labels": 0,
+				"lights": 0,
+				"meshes": 0,
+				"nodes": 1,
+				"particle_amount": 0,
+				"particle_emitters": 0,
+				"shadow_casting_geometry": 0,
+				"shadow_casting_particle_amount": 0,
+				"triangles_in_geometry": 0,
+				"unique_material_resources": 0,
+				"unique_mesh_resources": 0,
+				"visible_nodes": 1
+			}
+		},
+		"spark": {
+			"burst": {
+				"estimated_geometry_passes": 100,
+				"labels": 0,
+				"lights": 0,
+				"meshes": 0,
+				"nodes": 101,
+				"particle_amount": 700,
+				"particle_emitters": 100,
+				"shadow_casting_geometry": 100,
+				"shadow_casting_particle_amount": 700,
+				"triangles_in_geometry": 8400,
+				"unique_material_resources": 1,
+				"unique_mesh_resources": 1,
+				"visible_nodes": 101
+			},
+			"expired": {
+				"estimated_geometry_passes": 0,
+				"labels": 0,
+				"lights": 0,
+				"meshes": 0,
+				"nodes": 1,
+				"particle_amount": 0,
+				"particle_emitters": 0,
+				"shadow_casting_geometry": 0,
+				"shadow_casting_particle_amount": 0,
+				"triangles_in_geometry": 0,
+				"unique_material_resources": 0,
+				"unique_mesh_resources": 0,
+				"visible_nodes": 1
+			}
+		}
+	},
+	"kind": "headless structural and lifecycle QA",
+	"models": {
+		"boss_zombie": {
+			"estimated_geometry_passes": 60,
+			"labels": 0,
+			"lights": 0,
+			"meshes": 34,
+			"nodes": 42,
+			"particle_amount": 0,
+			"particle_emitters": 0,
+			"shadow_casting_geometry": 34,
+			"shadow_casting_particle_amount": 0,
+			"triangles_in_geometry": 8936,
+			"unique_material_resources": 16,
+			"unique_mesh_resources": 20,
+			"visible_nodes": 41
+		},
+		"hamster": {
+			"estimated_geometry_passes": 35,
+			"labels": 0,
+			"lights": 0,
+			"meshes": 20,
+			"nodes": 26,
+			"particle_amount": 0,
+			"particle_emitters": 0,
+			"shadow_casting_geometry": 20,
+			"shadow_casting_particle_amount": 0,
+			"triangles_in_geometry": 7944,
+			"unique_material_resources": 10,
+			"unique_mesh_resources": 11,
+			"visible_nodes": 26
+		},
+		"raccoon": {
+			"estimated_geometry_passes": 62,
+			"labels": 0,
+			"lights": 0,
+			"meshes": 34,
+			"nodes": 44,
+			"particle_amount": 0,
+			"particle_emitters": 0,
+			"shadow_casting_geometry": 34,
+			"shadow_casting_particle_amount": 0,
+			"triangles_in_geometry": 13500,
+			"unique_material_resources": 16,
+			"unique_mesh_resources": 24,
+			"visible_nodes": 43
+		},
+		"rat": {
+			"estimated_geometry_passes": 54,
+			"labels": 0,
+			"lights": 0,
+			"meshes": 29,
+			"nodes": 39,
+			"particle_amount": 0,
+			"particle_emitters": 0,
+			"shadow_casting_geometry": 29,
+			"shadow_casting_particle_amount": 0,
+			"triangles_in_geometry": 11624,
+			"unique_material_resources": 14,
+			"unique_mesh_resources": 18,
+			"visible_nodes": 38
+		},
+		"shiba": {
+			"estimated_geometry_passes": 61,
+			"labels": 1,
+			"lights": 0,
+			"meshes": 33,
+			"nodes": 43,
+			"particle_amount": 0,
+			"particle_emitters": 0,
+			"shadow_casting_geometry": 33,
+			"shadow_casting_particle_amount": 0,
+			"triangles_in_geometry": 9456,
+			"unique_material_resources": 14,
+			"unique_mesh_resources": 26,
+			"visible_nodes": 43
+		},
+		"zombie": {
+			"estimated_geometry_passes": 48,
+			"labels": 0,
+			"lights": 0,
+			"meshes": 28,
+			"nodes": 36,
+			"particle_amount": 0,
+			"particle_emitters": 0,
+			"shadow_casting_geometry": 28,
+			"shadow_casting_particle_amount": 0,
+			"triangles_in_geometry": 8788,
+			"unique_material_resources": 14,
+			"unique_mesh_resources": 18,
+			"visible_nodes": 35
+		}
+	},
+	"result": "PASS"
+}

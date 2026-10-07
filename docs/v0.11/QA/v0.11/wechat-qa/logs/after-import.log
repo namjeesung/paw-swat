@@ -1,0 +1,263 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+ERROR: Cannot open file 'res://.godot/imported/NotoSansSC-Medium.ttf-b9fc0864eb5f89a2c92385a10052b365.fontdata'.
+   at: load (core/io/resource_format_binary.cpp:1220)
+ERROR: Failed loading resource: res://.godot/imported/NotoSansSC-Medium.ttf-b9fc0864eb5f89a2c92385a10052b365.fontdata.
+   at: _load (core/io/resource_loader.cpp:343)
+ERROR: Failed loading resource: res://assets/fonts/NotoSansSC-Medium.ttf.
+   at: _load (core/io/resource_loader.cpp:343)
+ERROR: Error loading custom project font 'res://assets/fonts/NotoSansSC-Medium.ttf'
+   at: initialize_theme (scene/theme/theme_db.cpp:79)
+Unable to open Android 'build-tools' directory.
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Started Project initialization (5 steps)[39m[0m
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Scanning file structure...[39m[0m
+[  16% ] [90m[1mfirst_scan_filesystem[22m | Loading global class names...[39m[0m
+[  33% ] [90m[1mfirst_scan_filesystem[22m | Verifying GDExtensions...[39m[0m
+[  50% ] [90m[1mfirst_scan_filesystem[22m | Creating autoload scripts...[39m[0m
+SCRIPT ERROR: Parse Error: Cannot infer the type of "canceled" variable because the value doesn't have a set type.
+          at: GDScript::reload (res://scripts/ui/touch_controls.gd:180)
+SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
+          at: GDScript::reload (res://scripts/ui/hud.gd:0)
+SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
+          at: GDScript::reload (res://scripts/ui/pause_menu.gd:0)
+SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
+          at: GDScript::reload (res://scripts/world/level.gd:0)
+SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
+          at: GDScript::reload (res://scripts/autoload/game.gd:0)
+ERROR: Failed to load script "res://scripts/autoload/game.gd" with error "Parse error".
+   at: load (modules/gdscript/gdscript.cpp:2907)
+[  66% ] [90m[1mfirst_scan_filesystem[22m | Initializing plugins...[39m[0m
+[  83% ] [90m[1mfirst_scan_filesystem[22m | Starting file scan...[39m[0m
+[92m[ DONE ][39m [1mfirst_scan_filesystem[22m
+[0m
+[   0% ] [90m[1mupdate_scripts_classes[22m | Started Registering global classes... (46 steps)[39m[0m
+[   0% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   2% ] [90m[1mupdate_scripts_classes[22m | Actor[39m[0m
+[   4% ] [90m[1mupdate_scripts_classes[22m | Bullet[39m[0m
+[   6% ] [90m[1mupdate_scripts_classes[22m | Enemy[39m[0m
+[   8% ] [90m[1mupdate_scripts_classes[22m | Grenade[39m[0m
+[  10% ] [90m[1mupdate_scripts_classes[22m | Hostage[39m[0m
+[  12% ] [90m[1mupdate_scripts_classes[22m | Player[39m[0m
+[  14% ] [90m[1mupdate_scripts_classes[22m | Zombie[39m[0m
+[  17% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  19% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  21% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  23% ] [90m[1mupdate_scripts_classes[22m | CharModel[39m[0m
+[  25% ] [90m[1mupdate_scripts_classes[22m | Fx[39m[0m
+[  27% ] [90m[1mupdate_scripts_classes[22m | Models[39m[0m
+[  29% ] [90m[1mupdate_scripts_classes[22m | Pal[39m[0m
+[  31% ] [90m[1mupdate_scripts_classes[22m | Style[39m[0m
+[  34% ] [90m[1mupdate_scripts_classes[22m | Tips[39m[0m
+[  36% ] [90m[1mupdate_scripts_classes[22m | Toon[39m[0m
+[  38% ] [90m[1mupdate_scripts_classes[22m | Weapons[39m[0m
+[  40% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  42% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  44% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  46% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  48% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  51% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  53% ] [90m[1mupdate_scripts_classes[22m | Briefing[39m[0m
+[  55% ] [90m[1mupdate_scripts_classes[22m | CaseCard[39m[0m
+[  57% ] [90m[1mupdate_scripts_classes[22m | Cutscene[39m[0m
+[  59% ] [90m[1mupdate_scripts_classes[22m | Hud[39m[0m
+[  61% ] [90m[1mupdate_scripts_classes[22m | HudWidgets[39m[0m
+[  63% ] [90m[1mupdate_scripts_classes[22m | LeaderboardScreen[39m[0m
+[  65% ] [90m[1mupdate_scripts_classes[22m | MainMenu[39m[0m
+[  68% ] [90m[1mupdate_scripts_classes[22m | PauseMenu[39m[0m
+[  70% ] [90m[1mupdate_scripts_classes[22m | Portrait[39m[0m
+[  72% ] [90m[1mupdate_scripts_classes[22m | Radio[39m[0m
+[  74% ] [90m[1mupdate_scripts_classes[22m | Results[39m[0m
+[  76% ] [90m[1mupdate_scripts_classes[22m | StickerButton[39m[0m
+[  78% ] [90m[1mupdate_scripts_classes[22m | TipCards[39m[0m
+[  80% ] [90m[1mupdate_scripts_classes[22m | TouchControls[39m[0m
+[  82% ] [90m[1mupdate_scripts_classes[22m | Door[39m[0m
+[  85% ] [90m[1mupdate_scripts_classes[22m | GameCamera[39m[0m
+[  87% ] [90m[1mupdate_scripts_classes[22m | GroundGuide[39m[0m
+[  89% ] [90m[1mupdate_scripts_classes[22m | Level[39m[0m
+[  91% ] [90m[1mupdate_scripts_classes[22m | MapBuilder[39m[0m
+[  93% ] [90m[1mupdate_scripts_classes[22m | Pickup[39m[0m
+[  95% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[92m[ DONE ][39m [1mupdate_scripts_classes[22m
+[0m
+[   0% ] [90m[1m_update_scan_actions[22m | Started Scanning actions... (55 steps)[39m[0m
+[   0% ] [90m[1m_update_scan_actions[22m | Bungee-Regular.ttf[39m[0m
+[   1% ] [90m[1m_update_scan_actions[22m | NotoSansSC-Black.ttf[39m[0m
+[   3% ] [90m[1m_update_scan_actions[22m | NotoSansSC-Medium.ttf[39m[0m
+[   5% ] [90m[1m_update_scan_actions[22m | ZCOOLKuaiLe-Regular.ttf[39m[0m
+[   7% ] [90m[1m_update_scan_actions[22m | alarm.wav[39m[0m
+[   8% ] [90m[1m_update_scan_actions[22m | alert.wav[39m[0m
+[  10% ] [90m[1m_update_scan_actions[22m | bite.wav[39m[0m
+[  12% ] [90m[1m_update_scan_actions[22m | block.wav[39m[0m
+[  14% ] [90m[1m_update_scan_actions[22m | bonk.wav[39m[0m
+[  16% ] [90m[1m_update_scan_actions[22m | breach.wav[39m[0m
+[  17% ] [90m[1m_update_scan_actions[22m | chime.wav[39m[0m
+[  19% ] [90m[1m_update_scan_actions[22m | clank.wav[39m[0m
+[  21% ] [90m[1m_update_scan_actions[22m | cuff.wav[39m[0m
+[  23% ] [90m[1m_update_scan_actions[22m | dash.wav[39m[0m
+[  25% ] [90m[1m_update_scan_actions[22m | dodge.wav[39m[0m
+[  26% ] [90m[1m_update_scan_actions[22m | empty.wav[39m[0m
+[  28% ] [90m[1m_update_scan_actions[22m | enemy_shot.wav[39m[0m
+[  30% ] [90m[1m_update_scan_actions[22m | explosion.wav[39m[0m
+[  32% ] [90m[1m_update_scan_actions[22m | fail.wav[39m[0m
+[  33% ] [90m[1m_update_scan_actions[22m | groan.wav[39m[0m
+[  35% ] [90m[1m_update_scan_actions[22m | heartbeat.wav[39m[0m
+[  37% ] [90m[1m_update_scan_actions[22m | hit.wav[39m[0m
+[  39% ] [90m[1m_update_scan_actions[22m | hit_player.wav[39m[0m
+[  41% ] [90m[1m_update_scan_actions[22m | jam.wav[39m[0m
+[  42% ] [90m[1m_update_scan_actions[22m | laser.wav[39m[0m
+[  44% ] [90m[1m_update_scan_actions[22m | music_combat.wav[39m[0m
+[  46% ] [90m[1m_update_scan_actions[22m | music_menu.wav[39m[0m
+[  48% ] [90m[1m_update_scan_actions[22m | music_wave.wav[39m[0m
+[  50% ] [90m[1m_update_scan_actions[22m | paper.wav[39m[0m
+[  51% ] [90m[1m_update_scan_actions[22m | perfect.wav[39m[0m
+[  53% ] [90m[1m_update_scan_actions[22m | pickup.wav[39m[0m
+[  55% ] [90m[1m_update_scan_actions[22m | powerup.wav[39m[0m
+[  57% ] [90m[1m_update_scan_actions[22m | radio.wav[39m[0m
+[  58% ] [90m[1m_update_scan_actions[22m | reload_done.wav[39m[0m
+[  60% ] [90m[1m_update_scan_actions[22m | reload_start.wav[39m[0m
+[  62% ] [90m[1m_update_scan_actions[22m | rocket.wav[39m[0m
+[  64% ] [90m[1m_update_scan_actions[22m | roll.wav[39m[0m
+[  66% ] [90m[1m_update_scan_actions[22m | score.wav[39m[0m
+[  67% ] [90m[1m_update_scan_actions[22m | shot.wav[39m[0m
+[  69% ] [90m[1m_update_scan_actions[22m | shotgun.wav[39m[0m
+[  71% ] [90m[1m_update_scan_actions[22m | shot_buff.wav[39m[0m
+[  73% ] [90m[1m_update_scan_actions[22m | shout_fire.wav[39m[0m
+[  75% ] [90m[1m_update_scan_actions[22m | slowmo.wav[39m[0m
+[  76% ] [90m[1m_update_scan_actions[22m | splat.wav[39m[0m
+[  78% ] [90m[1m_update_scan_actions[22m | stamp.wav[39m[0m
+[  80% ] [90m[1m_update_scan_actions[22m | swing.wav[39m[0m
+[  82% ] [90m[1m_update_scan_actions[22m | telegraph.wav[39m[0m
+[  83% ] [90m[1m_update_scan_actions[22m | transform.wav[39m[0m
+[  85% ] [90m[1m_update_scan_actions[22m | type.wav[39m[0m
+[  87% ] [90m[1m_update_scan_actions[22m | ui_click.wav[39m[0m
+[  89% ] [90m[1m_update_scan_actions[22m | ui_deny.wav[39m[0m
+[  91% ] [90m[1m_update_scan_actions[22m | ui_hover.wav[39m[0m
+[  92% ] [90m[1m_update_scan_actions[22m | victory.wav[39m[0m
+[  94% ] [90m[1m_update_scan_actions[22m | wake.wav[39m[0m
+[  96% ] [90m[1m_update_scan_actions[22m | icon.svg[39m[0m
+[92m[ DONE ][39m [1m_update_scan_actions[22m
+[0m
+[   0% ] [90m[1mreimport[22m | Started (Re)Importing Assets (55 steps)[39m[0m
+[   0% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[   1% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[   3% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[   5% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[   7% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[   8% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  10% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  12% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  14% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  16% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  17% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  19% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  21% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  23% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  25% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  26% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  28% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  30% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  32% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  33% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  35% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  37% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  39% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  41% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  42% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  44% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  46% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  48% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  50% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  51% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  53% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  55% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  57% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  58% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  60% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  62% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  64% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  66% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  67% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  69% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  71% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  73% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  75% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  76% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  78% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  80% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  82% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  83% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  85% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  87% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  89% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  91% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  92% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  94% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  96% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[   0% ] [90m[1mreimport[22m | Executing pre-reimport operations...[39m[0m
+[   0% ] [90m[1mreimport[22m | Bungee-Regular.ttf[39m[0m
+[   1% ] [90m[1mreimport[22m | NotoSansSC-Black.ttf[39m[0m
+[   3% ] [90m[1mreimport[22m | NotoSansSC-Medium.ttf[39m[0m
+[   5% ] [90m[1mreimport[22m | ZCOOLKuaiLe-Regular.ttf[39m[0m
+[   7% ] [90m[1mreimport[22m | icon.svg[39m[0m
+[   8% ] [90m[1mreimport[22m | Bungee-Regular.ttf[39m[0m
+[  10% ] [90m[1mreimport[22m | NotoSansSC-Black.ttf[39m[0m
+[  12% ] [90m[1mreimport[22m | NotoSansSC-Medium.ttf[39m[0m
+[  14% ] [90m[1mreimport[22m | ZCOOLKuaiLe-Regular.ttf[39m[0m
+[  16% ] [90m[1mreimport[22m | icon.svg[39m[0m
+[  17% ] [90m[1mreimport[22m | pickup.wav[39m[0m
+[  19% ] [90m[1mreimport[22m | powerup.wav[39m[0m
+[  21% ] [90m[1mreimport[22m | radio.wav[39m[0m
+[  23% ] [90m[1mreimport[22m | reload_done.wav[39m[0m
+[  25% ] [90m[1mreimport[22m | reload_start.wav[39m[0m
+[  26% ] [90m[1mreimport[22m | rocket.wav[39m[0m
+[  28% ] [90m[1mreimport[22m | roll.wav[39m[0m
+[  30% ] [90m[1mreimport[22m | score.wav[39m[0m
+[  32% ] [90m[1mreimport[22m | shot.wav[39m[0m
+[  33% ] [90m[1mreimport[22m | shotgun.wav[39m[0m
+[  35% ] [90m[1mreimport[22m | shot_buff.wav[39m[0m
+[  37% ] [90m[1mreimport[22m | shout_fire.wav[39m[0m
+[  39% ] [90m[1mreimport[22m | slowmo.wav[39m[0m
+[  41% ] [90m[1mreimport[22m | splat.wav[39m[0m
+[  42% ] [90m[1mreimport[22m | stamp.wav[39m[0m
+[  44% ] [90m[1mreimport[22m | swing.wav[39m[0m
+[  46% ] [90m[1mreimport[22m | telegraph.wav[39m[0m
+[  48% ] [90m[1mreimport[22m | transform.wav[39m[0m
+[  50% ] [90m[1mreimport[22m | type.wav[39m[0m
+[  51% ] [90m[1mreimport[22m | ui_click.wav[39m[0m
+[  53% ] [90m[1mreimport[22m | ui_deny.wav[39m[0m
+[  55% ] [90m[1mreimport[22m | ui_hover.wav[39m[0m
+[  57% ] [90m[1mreimport[22m | victory.wav[39m[0m
+[  58% ] [90m[1mreimport[22m | wake.wav[39m[0m
+[  60% ] [90m[1mreimport[22m | alarm.wav[39m[0m
+[  62% ] [90m[1mreimport[22m | alert.wav[39m[0m
+[  64% ] [90m[1mreimport[22m | bite.wav[39m[0m
+[  66% ] [90m[1mreimport[22m | block.wav[39m[0m
+[  67% ] [90m[1mreimport[22m | bonk.wav[39m[0m
+[  69% ] [90m[1mreimport[22m | breach.wav[39m[0m
+[  71% ] [90m[1mreimport[22m | chime.wav[39m[0m
+[  73% ] [90m[1mreimport[22m | clank.wav[39m[0m
+[  75% ] [90m[1mreimport[22m | cuff.wav[39m[0m
+[  76% ] [90m[1mreimport[22m | dash.wav[39m[0m
+[  78% ] [90m[1mreimport[22m | dodge.wav[39m[0m
+[  80% ] [90m[1mreimport[22m | empty.wav[39m[0m
+[  82% ] [90m[1mreimport[22m | enemy_shot.wav[39m[0m
+[  83% ] [90m[1mreimport[22m | explosion.wav[39m[0m
+[  85% ] [90m[1mreimport[22m | fail.wav[39m[0m
+[  87% ] [90m[1mreimport[22m | groan.wav[39m[0m
+[  89% ] [90m[1mreimport[22m | heartbeat.wav[39m[0m
+[  91% ] [90m[1mreimport[22m | hit.wav[39m[0m
+[  92% ] [90m[1mreimport[22m | hit_player.wav[39m[0m
+[  94% ] [90m[1mreimport[22m | jam.wav[39m[0m
+[  96% ] [90m[1mreimport[22m | laser.wav[39m[0m
+[  98% ] [90m[1mreimport[22m | Finalizing Asset Import...[39m[0m
+[92m[ DONE ][39m [1mreimport[22m
+[0m
+[   0% ] [90m[1mreimport[22m | Started (Re)Importing Assets (55 steps)[39m[0m
+[   0% ] [90m[1mreimport[22m | Executing post-reimport operations...[39m[0m
+[92m[ DONE ][39m [1mreimport[22m
+[0m
+[   0% ] [90m[1mloading_editor_layout[22m | Started Loading editor (5 steps)[39m[0m
+[   0% ] [90m[1mloading_editor_layout[22m | Loading editor layout...[39m[0m
+[  16% ] [90m[1mloading_editor_layout[22m | Loading docks...[39m[0m
+[92m[ DONE ][39m [1mloading_editor_layout[22m
+[0m

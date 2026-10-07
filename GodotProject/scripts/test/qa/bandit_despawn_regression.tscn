@@ -1,0 +1,4 @@
+[gd_scene load_steps=2 format=3]
+[ext_resource type="Script" path="res://scripts/test/qa/bandit_despawn_regression.gd" id="1"]
+[node name="BanditDespawnQa" type="Node"]
+script = ExtResource("1")

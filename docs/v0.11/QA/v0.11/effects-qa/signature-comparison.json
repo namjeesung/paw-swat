@@ -1,0 +1,20 @@
+{
+  "dust": {
+    "appearance_parameters_identical": true
+  },
+  "ghost": {
+    "appearance_parameters_identical": true
+  },
+  "muzzle": {
+    "appearance_parameters_identical": true
+  },
+  "popup": {
+    "appearance_parameters_identical": true
+  },
+  "ring": {
+    "appearance_parameters_identical": true
+  },
+  "spark": {
+    "appearance_parameters_identical": true
+  }
+}

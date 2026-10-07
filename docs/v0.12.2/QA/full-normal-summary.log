@@ -1,0 +1,4 @@
+[boss] #1 at wave_t=26.0
+[autotest] OUTCOME {"success":true}
+[autotest] RESULT {"boss":true,"cuffs":11,"damage":120.0,"difficulty":"normal","dodges":1,"downs":11,"heal_drops":2,"hits":283,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":84638,"score":6080,"shots":655,"time":81.8757516844285,"zombies":114}
+[autotest] FINAL {"accuracy":0.43206106870229,"rating":"S","score":6792,"time_bonus":436}

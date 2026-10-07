@@ -1,0 +1,128 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+[packed-qa] Using external Node harness; production res:// resources come from the loaded PCK
+WARNING: Property agent_height is ceiled to cell_height voxel units and loses precision.
+     at: generator_bake_from_source_geometry_data (modules/navigation_3d/3d/nav_mesh_generator_3d.cpp:366)
+     GDScript backtrace (most recent call first):
+         [0] _bake_boss_nav (res://scripts/world/level.gd:303)
+         [1] _bake_nav (res://scripts/world/level.gd:289)
+         [2] _ready (res://scripts/world/level.gd:140)
+         [3] setup (/workspace/scratch/b4c1b123f420/paw-swat-work/v011/checkpoints/packed_loot_fixture.gd:61)
+         [4] grenade_sources (/workspace/scratch/b4c1b123f420/paw-swat-work/v011/checkpoints/packed_loot_fixture.gd:95)
+         [5] run_all (/workspace/scratch/b4c1b123f420/paw-swat-work/v011/checkpoints/packed_loot_fixture.gd:243)
+[loot-qa] PASS central_caps_and_interval {}
+[loot-qa] PASS first_grenade_roll_guaranteed_without_spending {}
+[loot-qa] PASS full_inventory_rejects_spawn_without_spending {}
+[loot-qa] PASS burst_enemy_drops_one_successful_crate {"enemies_down":6,"ground":1,"spawned":1}
+[loot-qa] PASS duplicate_ground_spawn_does_not_spend {}
+[loot-qa] PASS enemy_airdrop_overlap_shares_ground_and_budget {}
+[loot-qa] PASS first_grenade_collection_gives_two_without_refund {}
+[loot-qa] PASS later_enemy_roll_is_rare_and_nonspending {"successes_in_10000_seeded_rolls":1178}
+[loot-qa] PASS airdrop_spends_second_shared_successful_spawn {}
+[loot-qa] PASS existing_crate_left_on_ground_when_inventory_full {}
+[loot-qa] PASS partial_inventory_collection_caps_at_three {}
+[loot-qa] PASS all_sources_stop_at_two_even_after_use {}
+WARNING: Property agent_height is ceiled to cell_height voxel units and loses precision.
+     at: generator_bake_from_source_geometry_data (modules/navigation_3d/3d/nav_mesh_generator_3d.cpp:366)
+     GDScript backtrace (most recent call first):
+         [0] _bake_boss_nav (res://scripts/world/level.gd:303)
+         [1] _bake_nav (res://scripts/world/level.gd:289)
+         [2] _ready (res://scripts/world/level.gd:140)
+         [3] setup (/workspace/scratch/b4c1b123f420/paw-swat-work/v011/checkpoints/packed_loot_fixture.gd:61)
+         [4] grenade_sources (/workspace/scratch/b4c1b123f420/paw-swat-work/v011/checkpoints/packed_loot_fixture.gd:138)
+         [5] teardown (/workspace/scratch/b4c1b123f420/paw-swat-work/v011/checkpoints/packed_loot_fixture.gd:72)
+         [6] frames (/workspace/scratch/b4c1b123f420/paw-swat-work/v011/checkpoints/packed_loot_fixture.gd:37)
+[loot-qa] PASS airdrop_not_before_24_seconds {}
+[loot-qa] PASS airdrop_after_24_seconds {}
+WARNING: Property agent_height is ceiled to cell_height voxel units and loses precision.
+     at: generator_bake_from_source_geometry_data (modules/navigation_3d/3d/nav_mesh_generator_3d.cpp:366)
+     GDScript backtrace (most recent call first):
+         [0] _bake_boss_nav (res://scripts/world/level.gd:303)
+         [1] _bake_nav (res://scripts/world/level.gd:289)
+         [2] _ready (res://scripts/world/level.gd:140)
+         [3] setup (/workspace/scratch/b4c1b123f420/paw-swat-work/v011/checkpoints/packed_loot_fixture.gd:61)
+         [4] weapon_and_essential_caps (/workspace/scratch/b4c1b123f420/paw-swat-work/v011/checkpoints/packed_loot_fixture.gd:147)
+         [5] run_all (/workspace/scratch/b4c1b123f420/paw-swat-work/v011/checkpoints/packed_loot_fixture.gd:244)
+         [6] grenade_sources (/workspace/scratch/b4c1b123f420/paw-swat-work/v011/checkpoints/packed_loot_fixture.gd:144)
+         [7] teardown (/workspace/scratch/b4c1b123f420/paw-swat-work/v011/checkpoints/packed_loot_fixture.gd:72)
+         [8] frames (/workspace/scratch/b4c1b123f420/paw-swat-work/v011/checkpoints/packed_loot_fixture.gd:37)
+[loot-qa] PASS optional_weapon_1_spends_successful_spawn {}
+[loot-qa] PASS optional_weapon_1_ground_rejection_nonspending {}
+[loot-qa] PASS optional_weapon_1_collect_keeps_budget {}
+[loot-qa] PASS optional_weapon_2_spends_successful_spawn {}
+[loot-qa] PASS optional_weapon_2_ground_rejection_nonspending {}
+[loot-qa] PASS optional_weapon_2_collect_keeps_budget {}
+[loot-qa] PASS optional_weapon_3_spends_successful_spawn {}
+[loot-qa] PASS optional_weapon_3_ground_rejection_nonspending {}
+[loot-qa] PASS optional_weapon_3_collect_keeps_budget {}
+[loot-qa] PASS optional_weapon_cap_three {}
+WARNING: Property agent_height is ceiled to cell_height voxel units and loses precision.
+     at: generator_bake_from_source_geometry_data (modules/navigation_3d/3d/nav_mesh_generator_3d.cpp:366)
+     GDScript backtrace (most recent call first):
+         [0] _bake_boss_nav (res://scripts/world/level.gd:303)
+         [1] _bake_nav (res://scripts/world/level.gd:289)
+         [2] _ready (res://scripts/world/level.gd:140)
+         [3] setup (/workspace/scratch/b4c1b123f420/paw-swat-work/v011/checkpoints/packed_loot_fixture.gd:61)
+         [4] weapon_and_essential_caps (/workspace/scratch/b4c1b123f420/paw-swat-work/v011/checkpoints/packed_loot_fixture.gd:156)
+         [5] teardown (/workspace/scratch/b4c1b123f420/paw-swat-work/v011/checkpoints/packed_loot_fixture.gd:72)
+         [6] frames (/workspace/scratch/b4c1b123f420/paw-swat-work/v011/checkpoints/packed_loot_fixture.gd:37)
+[loot-qa] PASS four_type_optional_ground_cap_reached {}
+[loot-qa] PASS full_optional_cap_rejects_without_spending {}
+[loot-qa] PASS essential_gatling_bypasses_full_optional_cap {}
+[loot-qa] PASS essential_gatling_no_ttl_and_no_optional_budget {}
+WARNING: Property agent_height is ceiled to cell_height voxel units and loses precision.
+     at: generator_bake_from_source_geometry_data (modules/navigation_3d/3d/nav_mesh_generator_3d.cpp:366)
+     GDScript backtrace (most recent call first):
+         [0] _bake_boss_nav (res://scripts/world/level.gd:303)
+         [1] _bake_nav (res://scripts/world/level.gd:289)
+         [2] _ready (res://scripts/world/level.gd:140)
+         [3] setup (/workspace/scratch/b4c1b123f420/paw-swat-work/v011/checkpoints/packed_loot_fixture.gd:61)
+         [4] ttl_and_pause (/workspace/scratch/b4c1b123f420/paw-swat-work/v011/checkpoints/packed_loot_fixture.gd:173)
+         [5] run_all (/workspace/scratch/b4c1b123f420/paw-swat-work/v011/checkpoints/packed_loot_fixture.gd:245)
+         [6] weapon_and_essential_caps (/workspace/scratch/b4c1b123f420/paw-swat-work/v011/checkpoints/packed_loot_fixture.gd:170)
+         [7] teardown (/workspace/scratch/b4c1b123f420/paw-swat-work/v011/checkpoints/packed_loot_fixture.gd:72)
+         [8] frames (/workspace/scratch/b4c1b123f420/paw-swat-work/v011/checkpoints/packed_loot_fixture.gd:37)
+[loot-qa] PASS grenade_ttl_survives_before_deadline {}
+[loot-qa] PASS grenade_ttl_erases_pickup_list_at_deadline {}
+[loot-qa] PASS grenade_ttl_node_freed {}
+[loot-qa] PASS weapon_ttl_survives_before_deadline {}
+[loot-qa] PASS weapon_ttl_erases_pickup_list_at_deadline {}
+[loot-qa] PASS weapon_ttl_node_freed {}
+[loot-qa] PASS shield_ttl_survives_before_deadline {}
+[loot-qa] PASS shield_ttl_erases_pickup_list_at_deadline {}
+[loot-qa] PASS shield_ttl_node_freed {}
+[loot-qa] PASS expiration_does_not_refund_spawn_budgets {}
+[loot-qa] PASS heal_and_essential_remain_persistent {}
+[loot-qa] PASS falling_pickup_ttl_waits_for_landing {}
+[loot-qa] PASS actual_pause_freezes_ground_ttl {}
+[loot-qa] PASS actual_slowmo_does_not_extend_ground_ttl {"ground_t_elapsed":1.0,"timescale":0.25}
+WARNING: Property agent_height is ceiled to cell_height voxel units and loses precision.
+     at: generator_bake_from_source_geometry_data (modules/navigation_3d/3d/nav_mesh_generator_3d.cpp:366)
+     GDScript backtrace (most recent call first):
+         [0] _bake_boss_nav (res://scripts/world/level.gd:303)
+         [1] _bake_nav (res://scripts/world/level.gd:289)
+         [2] _ready (res://scripts/world/level.gd:140)
+         [3] setup (/workspace/scratch/b4c1b123f420/paw-swat-work/v011/checkpoints/packed_loot_fixture.gd:61)
+         [4] rejection_and_restart (/workspace/scratch/b4c1b123f420/paw-swat-work/v011/checkpoints/packed_loot_fixture.gd:211)
+         [5] run_all (/workspace/scratch/b4c1b123f420/paw-swat-work/v011/checkpoints/packed_loot_fixture.gd:246)
+         [6] ttl_and_pause (/workspace/scratch/b4c1b123f420/paw-swat-work/v011/checkpoints/packed_loot_fixture.gd:208)
+         [7] teardown (/workspace/scratch/b4c1b123f420/paw-swat-work/v011/checkpoints/packed_loot_fixture.gd:72)
+         [8] frames (/workspace/scratch/b4c1b123f420/paw-swat-work/v011/checkpoints/packed_loot_fixture.gd:37)
+[loot-qa] PASS finished_rejections_spend_no_budget {}
+[loot-qa] PASS dead_player_rejections_spend_no_budget {}
+[loot-qa] PASS pre_restart_budgets_are_spent {}
+WARNING: Property agent_height is ceiled to cell_height voxel units and loses precision.
+     at: generator_bake_from_source_geometry_data (modules/navigation_3d/3d/nav_mesh_generator_3d.cpp:366)
+     GDScript backtrace (most recent call first):
+         [0] _bake_boss_nav (res://scripts/world/level.gd:303)
+         [1] _bake_nav (res://scripts/world/level.gd:289)
+         [2] _ready (res://scripts/world/level.gd:140)
+         [3] _show (res://scripts/autoload/game.gd:387)
+         [4] goto (res://scripts/autoload/game.gd:362)
+         [5] _tape (res://scripts/autoload/game.gd:479)
+[loot-qa] PASS actual_restart_clears_budgets_and_ground_loot {}
+[loot-qa] RESULT {"checks":46,"failed":0,"report":"user://loot-report.json"}
+WARNING: ObjectDB instances leaked at exit (run with --verbose for details).
+   at: cleanup (core/object/object.cpp:2663)
+ERROR: 3 resources still in use at exit (run with --verbose for details).
+   at: clear (core/io/resource.cpp:810)

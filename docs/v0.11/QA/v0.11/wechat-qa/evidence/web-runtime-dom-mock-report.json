@@ -1,0 +1,157 @@
+{
+  "mode": "Node DOM mocks executing unchanged shipped Godot 4.6.3 Web handlers and candidate canvas observer; not Chromium, WeChat, hardware or browser process QA",
+  "checks": [
+    {
+      "name": "observer_listeners_are_canvas_capture_passive",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "no_document_touchmove_or_dblclick_interception",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "observer_preserves_touchstart_propagation_2",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "runtime_and_observer_preserve_extreme_signed_ids",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "actual_runtime_canvas_css_to_pixel_mapping",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "observer_preserves_touchmove_propagation_5",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "multifinger_drag_keeps_untouched_fire_contact",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "observer_preserves_touchcancel_propagation_7",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "actual_runtime_maps_cancel_to_release_but_observer_recovers_it",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "observer_preserves_touchend_propagation_9",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "ordinary_release_is_not_cancellation",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "observer_preserves_touchstart_propagation_11",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "observer_preserves_touchstart_propagation_12",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "live_contact_list_repairs_missing_old_end",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "observer_preserves_touchend_propagation_14",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "late_old_end_preserves_new_contact",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "observer_preserves_touchcancel_propagation_16",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "observer_preserves_touchstart_propagation_17",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "reused_contact_id_clears_old_cancel_marker",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "blur_cancels_all_active_contacts_and_changes_revision",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "observer_preserves_touchstart_propagation_20",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "hidden_document_cancels_contacts",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "observer_preserves_touchstart_propagation_22",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "new_session_clears_active_cancel_and_seen_state",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "observer_preserves_touchmove_propagation_24",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "missing_targetTouches_does_not_kill_held_contact",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "maxTouchPoints_detection_handles_missing_mobile_UA_and_ontouchstart",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "audio_head_prefix_is_unchanged",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "buffered_old_cancel_survives_new_same_id_DOM_press",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "new_same_id_ordinary_release_is_not_old_cancel",
+      "passed": true,
+      "details": {}
+    }
+  ],
+  "passed": true,
+  "failed": 0
+}

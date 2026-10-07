@@ -1,0 +1,584 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+[autotest] start
+[autotest] step to_brief at 1.6
+[autotest] step brief at 1.9
+[hitch] 53.7ms @ brief
+[autotest] step to_level at 4.5
+[autotest] step level_wait at 4.9
+WARNING: Property agent_height is ceiled to cell_height voxel units and loses precision.
+     at: generator_bake_from_source_geometry_data (modules/navigation_3d/3d/nav_mesh_generator_3d.cpp:366)
+     GDScript backtrace (most recent call first):
+         [0] _bake_boss_nav (res://scripts/world/level.gd:303)
+         [1] _bake_nav (res://scripts/world/level.gd:289)
+         [2] _ready (res://scripts/world/level.gd:140)
+         [3] _show (res://scripts/autoload/game.gd:387)
+         [4] goto (res://scripts/autoload/game.gd:362)
+         [5] _tape (res://scripts/autoload/game.gd:479)
+[hitch] 211.6ms @ level_wait
+[autotest] step play at 6.3
+[autotest] mouse check screen=(1532.351, 1084.443) world=(-14.50214, 0.719997, 12.49264) target=(3.0, 0.72, 12.5) err=17.5
+[tip] show move at 6.3
+[hitch] 221.6ms @ play phase=1 t=2.5 wave_t=0.0 zombies=0
+[pickup] grenade  want=(4.82,6.52) at=(4.27,5.97)
+[autotest] grenade x2 at 8.1
+[tip] hide after 2.0s
+[tip] show fire at 8.3
+[hitch] 173.6ms @ play phase=1 t=3.0 wave_t=0.0 zombies=0
+[pickup] grenade  want=(1.73,5.61) at=(1.73,5.61)
+    enemy raccoon combat at (-0.2, 0.0, 1.8)
+    enemy raccoon combat at (-0.8, 0.0, 3.0)
+    enemy rat combat at (-0.8, 0.0, 1.2)
+    enemy rat idle at (-10.8, 0.0, 5.5)
+    enemy raccoon combat at (7.6, 0.0, 3.7)
+[autotest] t=10 phase=1 pos=(2.0, 0.0, 5.7) hp=89 paused=false ts=1.0
+[autotest] grenade x3 at 10.6
+[tip] hide after 2.5s
+[tip] show laser at 10.8
+[hitch] 55.7ms @ play phase=1 t=6.0 wave_t=0.0 zombies=0
+[pickup] weapon shotgun want=(-0.71,4.31) at=(-0.71,4.31)
+[autotest] switch from shotgun owned=["rifle", "shotgun"]
+[autotest] grenade x2 at 14.4
+[tip] hide after 3.7s
+[tip] show cuff at 14.5
+[pickup] weapon laser want=(4.76,4.53) at=(4.07,5.22)
+[tip] hide after 3.0s
+[tip] show grenade at 17.5
+[autotest] grenade x1 at 17.8
+[autotest] switch from laser owned=["rifle", "shotgun", "laser"]
+[tip] hide after 2.4s
+[tip] show roll at 20.0
+[autotest] t=20 phase=3 pos=(8.6, 0.0, 1.6) hp=76 paused=false ts=0.25
+[hitch] 183.9ms @ play phase=3 t=14.6 wave_t=0.0 zombies=0
+[hitch] 86.7ms @ play phase=3 t=14.6 wave_t=0.0 zombies=0
+[tip] hide after 1.1s
+[tip] show reload at 21.1
+[pickup] weapon rocket want=(9.92,-6.42) at=(10.00,-6.42)
+[autotest] switch from rocket owned=["rifle", "shotgun", "laser", "rocket"]
+[tip] hide after 2.8s
+[tip] show weapon at 24.0
+[evac] hostage reached the car after 4.9s at (-4.9, 11.2)
+[pickup] weapon gatling want=(8.13,2.63) at=(8.70,2.42)
+[autotest] t=30 phase=5 pos=(8.7, 0.0, 2.4) hp=100 paused=true ts=1.0
+[tip] STUCK weapon
+[autotest] t=40 phase=5 pos=(8.7, 0.0, 2.4) hp=100 paused=true ts=1.0
+[autotest] t=50 phase=5 pos=(8.7, 0.0, 2.4) hp=100 paused=true ts=1.0
+[autotest] t=60 phase=5 pos=(8.7, 0.0, 2.4) hp=100 paused=true ts=1.0
+[autotest] t=70 phase=5 pos=(8.7, 0.0, 2.4) hp=100 paused=true ts=1.0
+[autotest] t=80 phase=5 pos=(8.7, 0.0, 2.4) hp=100 paused=true ts=1.0
+[autotest] t=90 phase=5 pos=(8.7, 0.0, 2.4) hp=100 paused=true ts=1.0
+[autotest] t=100 phase=5 pos=(8.7, 0.0, 2.4) hp=100 paused=true ts=1.0
+[autotest] t=110 phase=5 pos=(8.7, 0.0, 2.4) hp=100 paused=true ts=1.0
+[autotest] t=120 phase=5 pos=(8.7, 0.0, 2.4) hp=100 paused=true ts=1.0
+[autotest] t=130 phase=5 pos=(8.7, 0.0, 2.4) hp=100 paused=true ts=1.0
+[autotest] t=140 phase=5 pos=(8.7, 0.0, 2.4) hp=100 paused=true ts=1.0
+[autotest] t=150 phase=5 pos=(8.7, 0.0, 2.4) hp=100 paused=true ts=1.0
+[autotest] t=160 phase=5 pos=(8.7, 0.0, 2.4) hp=100 paused=true ts=1.0
+[autotest] t=170 phase=5 pos=(8.7, 0.0, 2.4) hp=100 paused=true ts=1.0
+[autotest] t=180 phase=5 pos=(8.7, 0.0, 2.4) hp=100 paused=true ts=1.0
+[autotest] t=190 phase=5 pos=(8.7, 0.0, 2.4) hp=100 paused=true ts=1.0
+[autotest] t=200 phase=5 pos=(8.7, 0.0, 2.4) hp=100 paused=true ts=1.0
+[autotest] switch from gatling owned=["rifle", "shotgun", "laser", "rocket", "gatling"]
+[tip] hide after 184.3s
+[tip] show switch at 208.3
+[autotest] t=210 phase=5 pos=(1.4, 0.0, 8.900001) hp=100 paused=false ts=1.0
+[tip] hide after 2.8s
+[tip] show cover at 211.1
+[autotest] switch from rifle owned=["rifle", "shotgun", "laser", "rocket", "gatling"]
+[tip] hide after 4.9s
+[tip] show skill at 216.0
+[autotest] switch from shotgun owned=["rifle", "shotgun", "laser", "rocket", "gatling"]
+[pickup] heal  want=(-4.47,-3.40) at=(-4.73,-3.66)
+    enemy rat combat at (-2.1, 0.0, 4.2)
+    enemy rat combat at (3.5, 0.0, 4.9)
+[autotest] t=220 phase=5 pos=(-5.4, 0.0, -2.4) hp=100 paused=false ts=1.0
+[tip] hide after 5.1s
+[tip] show hostage at 221.1
+[autotest] switch from laser owned=["rifle", "shotgun", "laser", "rocket", "gatling"]
+[tip] hide after 4.6s
+[tip] show wave at 225.8
+[autotest] switch from rocket owned=["rifle", "shotgun", "laser", "rocket", "gatling"]
+[pickup] shield  want=(-2.59,4.80) at=(-2.59,4.80)
+[autotest] t=230 phase=5 pos=(-2.4, 0.0, 3.6) hp=100 paused=false ts=1.0
+[tip] hide after 4.6s
+[tip] show heal at 230.4
+[autotest] switch from gatling owned=["rifle", "shotgun", "laser", "rocket", "gatling"]
+[boss] #1 at wave_t=26.0
+[tip] hide after 5.7s
+[tip] show shield at 236.1
+[autotest] switch from rifle owned=["rifle", "shotgun", "laser", "rocket", "gatling"]
+    enemy raccoon combat at (4.8, 0.0, 6.2)
+[autotest] t=240 phase=5 pos=(0.4, 0.0, 4.3) hp=89 paused=false ts=1.0
+[tip] hide after 6.2s
+[autotest] switch from gatling owned=["rifle", "laser", "rocket", "gatling"]
+[autotest] switch from rifle owned=["rifle", "laser", "rocket", "gatling"]
+[hitch] 54.3ms @ play phase=5 t=63.2 wave_t=42.1 zombies=16
+[hitch] 145.3ms @ play phase=5 t=63.7 wave_t=42.6 zombies=14
+[hitch] 92.6ms @ play phase=5 t=63.8 wave_t=42.7 zombies=13
+[autotest] t=250 phase=5 pos=(2.1, 0.0, 4.5) hp=31 paused=false ts=1.0
+[pickup] shield  want=(-0.03,6.69) at=(-0.03,6.69)
+[autotest] switch from gatling owned=["rifle", "rocket", "gatling"]
+[autotest] switch from rifle owned=["rifle", "rocket", "gatling"]
+[autotest] t=260 phase=5 pos=(2.6, 0.0, 5.0) hp=61 paused=false ts=1.0
+[autotest] switch from gatling owned=["rifle", "gatling"]
+[hitch] 51.7ms @ play phase=5 t=81.1 wave_t=60.0 zombies=0
+[hitch] 79.5ms @ play
+[autotest] step results_wait at 269.7
+[hitch] 65.6ms @ results_wait
+[hitch] 94.1ms @ results_wait
+[hitch] 59.3ms @ results_wait
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17816 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 275.7
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17817 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 275.7
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17818 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 275.8
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17819 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 275.8
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17820 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 275.8
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17821 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 275.8
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17822 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 275.8
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17823 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 275.8
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17824 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 275.9
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17825 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 275.9
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17826 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 275.9
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17827 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 275.9
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17828 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 275.9
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17829 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 275.9
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17830 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 276.0
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17831 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 276.0
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17832 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 276.0
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17833 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 276.0
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17834 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 276.0
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17835 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 276.0
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17836 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 276.1
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17837 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 276.1
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17838 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 276.1
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17839 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 276.1
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17840 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 276.1
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17841 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 276.1
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17842 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 276.2
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17843 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 276.2
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17844 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 276.2
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17845 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 276.2
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17846 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 276.2
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17847 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 276.2
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17848 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 276.3
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17849 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 276.3
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17850 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 276.3
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17851 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 276.3
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17852 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 276.3
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17853 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 276.3
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17854 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 276.4
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17855 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 276.4
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17856 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 276.4
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17857 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 276.4
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17858 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 276.4
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17859 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 276.4
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17860 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 276.5
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17861 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 276.5
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17862 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 276.5
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17863 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 276.5
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17864 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 276.5
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17865 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 276.5
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17866 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 276.6
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17867 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 276.6
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17868 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 276.6
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17869 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 276.6
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17870 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 276.6
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17871 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 276.6
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17872 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 276.7
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17873 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 276.7
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17874 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 276.7
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17875 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 276.7
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17876 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 276.7
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17877 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 276.7
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17878 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 276.8
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17879 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 276.8
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17880 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 276.8
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17881 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 276.8
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17882 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 276.8
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17883 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 276.8
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17884 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 276.9
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17885 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 276.9
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17886 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 276.9
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17887 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 276.9
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17888 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 276.9
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17889 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 276.9
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17890 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 277.0
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17891 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 277.0
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17892 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 277.0
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17893 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 277.0
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17894 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 277.0
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17895 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 277.0
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17896 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 277.1
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17897 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 277.1
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17898 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 277.1
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17899 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 277.1
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17900 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 277.1
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17901 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 277.1
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17902 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 277.2
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17903 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 277.2
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17904 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 277.2
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17905 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 277.2
+[autotest] RESULT {"boss":true,"cuffs":4,"damage":168.0,"difficulty":"normal","dodges":2,"downs":36,"heal_drops":1,"hits":315,"hostage_hits":0,"perfect":7,"rescued":true,"run_ms":19201,"score":7210,"shots":711,"time":81.1023333333299,"zombies":112}
+[autotest] FINAL {"accuracy":0.443037974683544,"rating":"S","score":8112,"time_bonus":437}
+[leaderboard] time=0:19.20 | 中级最佳 0:19.20 · 本机第 1 名 | 云端排行榜未开启（只记录本机成绩） | badge=新纪录！
+[perf] frames=17906 hitches(>50ms)=15 worst=221.6ms
+[autotest] step done at 277.2

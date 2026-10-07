@@ -1,0 +1,14 @@
+{
+  "engine": "Godot 4.6.3.stable.official.7d41c59c4",
+  "physics_hz": 60,
+  "fixed_fps": 60,
+  "production_zombie_matches_test": true,
+  "production_zombie_sha256": "5b6a54a74e1dc2c36ae0bba5663267126c0e5c4661f2ed8532cfb6cde1d8376c",
+  "fixture_harness_sha256": "978b01ec48af24a50a44fd83e6ee20d6072b5554e8dbf54565726356a913bed4",
+  "tested_level_sha256": "a3c1ead1f9015d0a33c0c7d16b5f597af08356914f8954b58baacd6d629b2886",
+  "checks": 33,
+  "failures": 0,
+  "wall_seconds": 14.108,
+  "runtime_script_errors": 0,
+  "shutdown_retained_resources": false
+}

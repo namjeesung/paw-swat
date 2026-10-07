@@ -1,0 +1,19 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+WARNING: Property agent_height is ceiled to cell_height voxel units and loses precision.
+     at: generator_bake_from_source_geometry_data (modules/navigation_3d/3d/nav_mesh_generator_3d.cpp:366)
+     GDScript backtrace (most recent call first):
+         [0] _bake_boss_nav (res://scripts/world/level.gd:277)
+         [1] _bake_nav (res://scripts/world/level.gd:263)
+         [2] _ready (res://scripts/world/level.gd:130)
+         [3] setup_level (res://qa/boss_navigation_fixture.gd:50)
+         [4] _run (res://qa/boss_navigation_fixture.gd:175)
+[boss-qa] PASS normal_left_inside_out {"damage":0.0,"difficulty":"normal","elapsed":3.0,"final":[{"collisions":[],"distance":2.54935216903687,"line_of_sight":true,"path":[[-1.587,0.5,9.24],[-2.75,0.5,10.25],[-2.97,0.5,10.417],[-2.974,0.5,10.42],[-3.08,0.5,10.501],[-3.086,0.5,10.505],[-3.189,0.5,10.584],[-3.198,0.5,10.591],[-3.877,0.5,11.106],[-3.889,0.5,11.116],[-3.926,0.5,11.144],[-3.973,0.5,11.179],[-4.0,0.5,11.2]],"path_index":1,"position":[-2.01,0.0,9.607],"velocity":[-1.585,0.0,1.377],"wind":0.0}],"reached":true,"wall_winds":0}
+[boss-qa] PASS normal_left_outside_in {"damage":0.0,"difficulty":"normal","elapsed":3.12,"final":[{"collisions":[],"distance":2.53768587112427,"line_of_sight":true,"path":[[-1.851,0.5,6.714],[-3.006,0.5,5.954],[-3.069,0.5,5.913],[-3.104,0.5,5.89],[-3.142,0.5,5.865],[-3.273,0.5,5.778],[-3.516,0.5,5.619],[-3.722,0.5,5.483],[-3.902,0.5,5.364],[-4.0,0.5,5.3]],"path_index":1,"position":[-1.88,0.0,6.695],"velocity":[-1.754,0.0,-1.155],"wind":0.0}],"reached":true,"wall_winds":0}
+[boss-qa] PASS near_wall_inside_out {"damage":0.0,"difficulty":"normal","elapsed":2.6,"final":[{"collisions":[],"distance":2.54105305671692,"line_of_sight":true,"path":[[-1.011,0.5,8.753],[-1.018,0.5,8.759],[-2.75,0.5,10.25],[-2.95,0.5,10.35],[-3.05,0.5,10.4],[-3.15,0.5,10.45],[-4.0,0.5,10.45],[-4.052,0.5,10.424],[-4.1,0.5,10.4],[-4.2,0.5,10.35],[-4.3,0.5,10.3],[-4.4,0.5,10.25],[-4.5,0.5,10.15],[-4.6,0.5,9.95],[-4.65,0.5,9.85],[-4.7,0.5,9.75],[-4.7,0.5,9.0]],"path_index":2,"position":[-1.462,0.0,9.134],"velocity":[-1.587,0.0,1.376],"wind":0.0}],"reached":true,"wall_winds":0}
+[boss-qa] PASS near_wall_outside_in {"damage":0.0,"difficulty":"normal","elapsed":2.52,"final":[{"collisions":[],"distance":2.54704594612122,"line_of_sight":true,"path":[[1.288,0.5,7.153],[1.293,0.5,7.15],[1.294,0.5,7.15],[1.4,0.5,7.1],[1.7,0.5,7.088],[1.79,0.5,7.085],[4.0,0.5,7.0]],"path_index":4,"position":[1.455,0.0,7.112],"velocity":[2.09,0.0,-0.204],"wind":0.0}],"reached":true,"wall_winds":0}
+[boss-qa] RESULT {"cases":4,"failed":0,"lifecycle_failed":0,"report":"/workspace/scratch/b4c1b123f420/paw-swat-work/boss-qa/evidence/prototype-ready-mobile-quick.json","wall_seconds":1.417}
+WARNING: ObjectDB instances leaked at exit (run with --verbose for details).
+   at: cleanup (core/object/object.cpp:2663)
+ERROR: 2 resources still in use at exit (run with --verbose for details).
+   at: clear (core/io/resource.cpp:810)

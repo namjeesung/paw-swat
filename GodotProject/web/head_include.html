@@ -1,0 +1,569 @@
+<style>
+body { -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; -webkit-tap-highlight-color: transparent; overscroll-behavior: none; }
+canvas { touch-action: none; }
+#paw-audio-status { position: fixed; z-index: 20; top: max(8px, env(safe-area-inset-top)); left: max(8px, env(safe-area-inset-left)); max-width: min(320px, 75vw); padding: 6px 10px; border-radius: 8px; color: #fff5dd; background: #142236e8; font: 12px/1.5 system-ui, sans-serif; pointer-events: none; }
+#paw-audio-status[hidden] { display: none; }
+#paw-audio-diagnostic { position: fixed; z-index: 20; top: max(8px, env(safe-area-inset-top)); right: max(8px, env(safe-area-inset-right)); max-width: min(310px, 75vw); padding: 7px 10px; border-radius: 8px; color: #fff5dd; background: #142236ed; font: 11px/1.5 system-ui, sans-serif; white-space: pre-wrap; pointer-events: none; }
+#paw-audio-diagnostic[hidden] { display: none; }
+</style>
+<script>
+/* Passive audio observation only: never cancel, replay or manufacture game input.
+   Godot's default shell initializes the engine before the game menu is usable.
+   A real player gesture resumes any context blocked by the browser's policy.
+   Respect saved bus levels and the device mute policy: no playback audioSession,
+   hidden HTML audio loop, replacement sound, gain boost or unmute workaround. */
+(function () {
+  'use strict';
+  if (window.pawAudio) return;
+  var contexts = new Map();
+  var wrappers = new Map();
+  var supported = false;
+  var ready = false;
+  var mix = { sfx: 1, music: 1 };
+  var notice = null;
+  var version = '0.11';
+  var diagnostic = null;
+  var debugEnabled = /(?:[?&])debug=audio(?:&|$)/.test(window.location ? window.location.search : '');
+  var requestId = 0;
+  var gestureCount = 0;
+  var lastGesture = '';
+  var hidden = document.visibilityState === 'hidden';
+
+  function activeEntries() {
+    return Array.from(contexts.values()).filter(function (entry) { return entry.context.state !== 'closed'; });
+  }
+  function blocked() {
+    var entries = activeEntries();
+    return (ready && supported && entries.length === 0) || entries.some(function (entry) { return entry.context.state !== 'running'; });
+  }
+  function render() {
+    if (!notice && document.body) {
+      notice = document.createElement('div');
+      notice.id = 'paw-audio-status';
+      notice.setAttribute('role', 'status');
+      notice.setAttribute('aria-live', 'polite');
+      document.body.appendChild(notice);
+    }
+    if (!notice) return;
+    var entries = activeEntries();
+    var muted = mix.sfx <= 0.001 && mix.music <= 0.001;
+    var waiting = entries.some(function (entry) { return entry.pending !== 0; });
+    var failed = entries.some(function (entry) { return entry.error !== ''; });
+    var text = '';
+    if (ready && !hidden && !muted) {
+      if (!supported) text = '浏览器不支持游戏音频';
+      else if (entries.length === 0) text = '正在准备声音；稍后点击或按键开启';
+      else if (blocked()) text = waiting ? '正在开启声音…' : failed ? '声音未开启，再点一下或按键重试' : '点击或按键开启声音';
+    }
+    notice.textContent = text;
+    notice.hidden = text === '';
+    renderDiagnostic();
+    window.dispatchEvent(new Event('paw-audio-state'));
+  }
+  function renderDiagnostic() {
+    if (!diagnostic && debugEnabled && document.body) {
+      diagnostic = document.createElement('div');
+      diagnostic.id = 'paw-audio-diagnostic';
+      diagnostic.setAttribute('aria-label', 'PAW audio diagnostic');
+      document.body.appendChild(diagnostic);
+    }
+    if (!diagnostic) return;
+    diagnostic.hidden = !debugEnabled;
+    if (!debugEnabled) return;
+    var lines = ['PAW S.W.A.T. v' + version + ' · 音频诊断（F8关闭）',
+      '音效 ' + Math.round(mix.sfx * 100) + '% / 音乐 ' + Math.round(mix.music * 100) + '%'];
+    if (!contexts.size) lines.push(supported ? '上下文：尚未创建' : '音频：浏览器不支持');
+    Array.from(contexts.values()).forEach(function (entry, index) {
+      lines.push('上下文 ' + (index + 1) + '：' + entry.context.state + ' / 恢复 ' + entry.successes + '/' + entry.attempts);
+      if (entry.error) lines.push(entry.error);
+      if (!entry.worklet.supported) lines.push('Worklet：接口不可用');
+      else if (entry.worklet.observer !== 'observed') lines.push('Worklet：无法观察');
+      else if (!entry.modules.length) lines.push('Worklet：尚未请求模块');
+      entry.modules.forEach(function (module) { lines.push('Worklet ' + module.name + '：' + module.state + (module.error ? ' / ' + module.error : '')); });
+    });
+    lines.push('上下文 running 仅表示运行，尚不证明设备出声');
+    diagnostic.textContent = lines.join('\n');
+  }
+  function observeWorklets(entry) {
+    var worklet = entry.context.audioWorklet;
+    entry.worklet = { supported: !!worklet && typeof worklet.addModule === 'function', observer: 'unavailable' };
+    entry.modules = [];
+    if (!entry.worklet.supported) return;
+    var nativeAddModule = worklet.addModule;
+    var observedAddModule = function () {
+      var args = Array.from(arguments);
+      var name = String(args[0] || '').split(/[?#]/)[0].split('/').pop();
+      var module = { name: name, state: 'pending', error: '' };
+      entry.modules.push(module);
+      var request;
+      try { request = Reflect.apply(nativeAddModule, this, args); }
+      catch (error) {
+        module.state = 'rejected'; module.error = String(error && error.message || error);
+        render(); throw error;
+      }
+      // Observe the original Promise and return it unchanged. No driver choice,
+      // fallback, retry, gain change or replacement worklet is introduced here.
+      Promise.resolve(request).then(function () { module.state = 'fulfilled'; render(); }, function (error) {
+        module.state = 'rejected'; module.error = String(error && error.message || error); render();
+      });
+      render();
+      return request;
+    };
+    try {
+      worklet.addModule = observedAddModule;
+      if (worklet.addModule === observedAddModule) entry.worklet.observer = 'observed';
+    } catch (_) { /* Read-only APIs still work; diagnostic observation is optional. */ }
+  }
+  function recordError(entry, error) {
+    var text = error && error.name ? error.name + ': ' + (error.message || '') : String(error || 'Audio request failed');
+    if (entry.error !== text) console.warn('[PAW audio] ' + text);
+    entry.error = text;
+  }
+  function suspend(entry) {
+    if (entry.context.state === 'closed' || entry.context.state === 'suspended') return;
+    try {
+      Promise.resolve(entry.context.suspend()).catch(function (error) { recordError(entry, error); render(); });
+    } catch (error) { recordError(entry, error); }
+  }
+  function track(context) {
+    if (contexts.has(context)) return context;
+    var entry = { context: context, attempts: 0, successes: 0, pending: 0, error: '', timeout: null };
+    contexts.set(context, entry);
+    observeWorklets(entry);
+    // The standard Godot engine also calls resume() and discards its Promise.
+    // Observe rejection for those calls too, while returning the same Promise
+    // so our own gesture attempts can still distinguish success from failure.
+    var nativeResume = context.resume.bind(context);
+    context.resume = function () {
+      var request;
+      try { request = Promise.resolve(nativeResume()); }
+      catch (error) { request = Promise.reject(error); }
+      request.then(function () {
+        if (context.state === 'running') entry.error = '';
+        if (hidden) suspend(entry);
+        render();
+      }, function (error) { recordError(entry, error); render(); });
+      return request;
+    };
+    context.addEventListener('statechange', function () {
+      if (context.state === 'running') {
+        entry.error = '';
+        if (hidden) suspend(entry);
+      }
+      render();
+    });
+    if (hidden) suspend(entry);
+    render();
+    return context;
+  }
+  ['AudioContext', 'webkitAudioContext'].forEach(function (name) {
+    var Native = window[name];
+    if (typeof Native !== 'function') return;
+    supported = true;
+    if (!wrappers.has(Native)) {
+      wrappers.set(Native, new Proxy(Native, {
+        construct: function (target, args, newTarget) { return track(Reflect.construct(target, args, newTarget)); }
+      }));
+    }
+    window[name] = wrappers.get(Native);
+  });
+  function resume(entry) {
+    var context = entry.context;
+    if (hidden || entry.pending || context.state === 'running' || context.state === 'closed') return;
+    var id = ++requestId;
+    entry.pending = id;
+    entry.attempts++;
+    entry.error = '';
+    // A blocked browser may leave resume pending instead of rejecting it.
+    // Release this attempt so the next genuine gesture can retry.
+    entry.timeout = setTimeout(function () {
+      if (entry.pending !== id) return;
+      entry.pending = 0;
+      entry.error = 'AudioContext.resume remained pending; retry with a gesture';
+      render();
+    }, 1800);
+    function settle(error) {
+      if (entry.pending !== id) return;
+      clearTimeout(entry.timeout);
+      entry.pending = 0;
+      if (error) recordError(entry, error);
+      else if (context.state === 'running') { entry.successes++; entry.error = ''; }
+      else entry.error = 'AudioContext is still ' + context.state;
+      if (hidden) suspend(entry);
+      render();
+    }
+    try { Promise.resolve(context.resume()).then(function () { settle(null); }, settle); }
+    catch (error) { settle(error); }
+  }
+  function gesture(event) {
+    if (event.isTrusted === false || hidden || (event.type === 'keydown' && event.repeat)) return;
+    gestureCount++;
+    lastGesture = event.type;
+    activeEntries().forEach(resume);
+    render();
+  }
+  // Observe both press and release: touch Safari may grant activation on release.
+  ['pointerdown', 'pointerup', 'touchend', 'click', 'keydown'].forEach(function (type) {
+    window.addEventListener(type, gesture, { capture: true, passive: true });
+  });
+  window.addEventListener('keydown', function (event) {
+    if (event.isTrusted === false || event.repeat || (event.code !== 'F8' && event.key !== 'F8')) return;
+    debugEnabled = !debugEnabled;
+    render();
+  }, { capture: true, passive: true });
+  document.addEventListener('DOMContentLoaded', render, { once: true });
+  document.addEventListener('visibilitychange', function () {
+    hidden = document.visibilityState === 'hidden';
+    if (hidden) activeEntries().forEach(suspend);
+    render();
+  });
+  window.addEventListener('pagehide', function () { hidden = true; activeEntries().forEach(suspend); render(); });
+  window.addEventListener('pageshow', function () { hidden = document.visibilityState === 'hidden'; render(); });
+  // Preserve the existing local zoom protection; do not intercept touchmove.
+  document.addEventListener('gesturestart', function (event) { event.preventDefault(); }, { passive: false });
+  window.pawAudio = {
+    setReady: function () { ready = true; render(); },
+    setMix: function (levels) { mix.sfx = levels.sfx; mix.music = levels.music; render(); },
+    blocked: blocked,
+    snapshot: function () {
+      var entries = activeEntries();
+      return { version: version, diagnosticVisible: debugEnabled, contextRunning: entries.length > 0 && entries.every(function (entry) { return entry.context.state === 'running'; }), outputVerified: false, supported: supported, ready: ready, hidden: hidden, mix: { sfx: mix.sfx, music: mix.music }, gestures: gestureCount, lastGesture: lastGesture,
+        contexts: Array.from(contexts.values()).map(function (entry) {
+          return { state: entry.context.state, attempts: entry.attempts, successes: entry.successes, pending: !!entry.pending, error: entry.error, sampleRate: entry.context.sampleRate,
+            worklet: { supported: entry.worklet.supported, observer: entry.worklet.observer, modules: entry.modules.map(function (module) { return { name: module.name, state: module.state, error: module.error }; }) } };
+        }) };
+    }
+  };
+  window.__pawAudioDebug = function () { return window.pawAudio.snapshot(); };
+  render();
+})();
+</script>
+<script>
+/* Canvas-only input observation. Keep the engine's genuine touch events intact:
+   no stopPropagation, document touchmove trap, replay or synthetic mouse events.
+   Godot 4.6 forwards touchcancel as touchend, losing the cancel distinction. */
+(function () {
+  'use strict';
+  if (window.pawInput) return;
+  var active = new Map();
+  var canceled = new Map();
+  var pendingEnds = new Map();
+  var seen = false;
+  var revision = 0;
+  var recent = [];
+  var modeCallback = null;
+  var lastTouchAt = -Infinity;
+  function media(query) {
+    return typeof window.matchMedia === 'function' && window.matchMedia(query).matches;
+  }
+  function defaultTouchMode() {
+    var ua = String(navigator.userAgent || '');
+    var points = Number(navigator.maxTouchPoints || navigator.msMaxTouchPoints || 0);
+    // iPadOS desktop UAs need the Mac+multitouch combination. Touch APIs or
+    // maxTouchPoints by themselves also occur on ordinary Windows desktops.
+    var mobile = (navigator.userAgentData && navigator.userAgentData.mobile === true)
+      || /Android|iPhone|iPad|iPod|Mobile/i.test(ua);
+    var ipad = (/Macintosh/i.test(ua) || navigator.platform === 'MacIntel') && points > 1;
+    if (mobile || ipad) return true;
+    return media('(pointer: coarse)') && media('(hover: none)');
+  }
+  var touchMode = defaultTouchMode();
+  var modeSource = touchMode ? 'touch-primary' : 'mouse-primary';
+  function selectMode(enabled, source) {
+    modeSource = source;
+    if (touchMode === enabled) return;
+    touchMode = enabled;
+    if (modeCallback) modeCallback(touchMode);
+  }
+  function pointerMode(event) {
+    if (event.pointerType === 'touch') {
+      lastTouchAt = Date.now();
+      selectMode(true, 'touch');
+    } else if (event.pointerType === 'mouse' || event.pointerType === 'pen') {
+      if (event.sourceCapabilities && event.sourceCapabilities.firesTouchEvents) return;
+      selectMode(false, event.pointerType);
+    }
+  }
+  function legacyMouseMode(event) {
+    // Touch-generated compatibility clicks must never hide mobile controls.
+    if (active.size || Date.now() - lastTouchAt < 800
+      || (event.sourceCapabilities && event.sourceCapabilities.firesTouchEvents)) return;
+    selectMode(false, 'mouse');
+  }
+  function keyboardMode(event) {
+    var target = event.target;
+    if (event.repeat || event.ctrlKey || event.metaKey || event.altKey
+      || (target && (target.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(target.tagName)))) return;
+    if (/^(Key[WASDRQEFGXP]|Arrow(Up|Down|Left|Right)|Shift(Left|Right)|Space|Tab|Escape|Enter|NumpadEnter)$/.test(event.code || '')) {
+      selectMode(false, 'keyboard');
+    }
+  }
+  function id(value) { return Number(value) | 0; }
+  function remember(type, ids) {
+    recent.push({ type: type, ids: ids });
+    if (recent.length > 8) recent.shift();
+  }
+  function markCanceled(value) {
+    canceled.set(id(value), true);
+    // Menu/background cancels may never be consumed by a game touch controller.
+    if (canceled.size > 32) canceled.delete(canceled.keys().next().value);
+  }
+  function observe(event) {
+    lastTouchAt = Date.now();
+    // Capture switches the HUD before the engine gets this same real contact.
+    if (event.type === 'touchstart') selectMode(true, 'touch');
+    seen = true;
+    revision++;
+    var changed = Array.from(event.changedTouches || []);
+    var ids = changed.map(function (touch) { return id(touch.identifier); });
+    if (event.type === 'touchstart') ids.forEach(function (value) { canceled.delete(value); });
+    if (event.type === 'touchcancel') ids.forEach(markCanceled);
+    if (event.type === 'touchend' || event.type === 'touchcancel') ids.forEach(function (value) {
+      var queue = pendingEnds.get(value) || [];
+      queue.push(event.type === 'touchcancel');
+      if (queue.length > 8) queue.shift();
+      pendingEnds.set(value, queue);
+      if (pendingEnds.size > 32) pendingEnds.delete(pendingEnds.keys().next().value);
+    });
+    // targetTouches is authoritative for contacts that began on this canvas.
+    // A later event also repairs a missing old touchend without dropping a
+    // second finger which is still present in the live contact list.
+    var live = new Map(active);
+    if (event.targetTouches) {
+      live.clear();
+      Array.from(event.targetTouches).forEach(function (touch) { live.set(id(touch.identifier), true); });
+    } else {
+      // Some embedded hosts omit targetTouches. Retain changed-contact tracking
+      // rather than interpreting a missing list as "all fingers released".
+      ids.forEach(function (value) {
+        if (event.type === 'touchstart' || event.type === 'touchmove') live.set(value, true);
+        else live.delete(value);
+      });
+    }
+    active.forEach(function (_, value) {
+      if (!live.has(value) && ids.indexOf(value) === -1) markCanceled(value);
+    });
+    active = live;
+    remember(event.type, ids);
+  }
+  function interrupt(event) {
+    revision++;
+    active.forEach(function (_, value) { markCanceled(value); });
+    active.clear();
+    remember(event.type, []);
+  }
+  function setup() {
+    var canvas = document.getElementById('canvas');
+    if (!canvas || canvas.dataset.pawInputObserved) return;
+    canvas.dataset.pawInputObserved = 'true';
+    canvas.addEventListener('pointerdown', pointerMode, { capture: true, passive: true });
+    if (!window.PointerEvent) canvas.addEventListener('mousedown', legacyMouseMode, { capture: true, passive: true });
+    ['touchstart', 'touchmove', 'touchend', 'touchcancel'].forEach(function (type) {
+      // Capture sees cancellation before the engine's bubbling callback.
+      canvas.addEventListener(type, observe, { capture: true, passive: true });
+    });
+  }
+  window.pawInput = {
+    usesTouch: function () { return touchMode; },
+    onModeChange: function (callback) { modeCallback = callback; },
+    revision: function () { return revision; },
+    observed: function () { return seen; },
+    reset: function () { active.clear(); canceled.clear(); pendingEnds.clear(); seen = false; revision++; },
+    isActive: function (value) { return active.has(id(value)); },
+    consumeCancel: function (value) {
+      value = id(value);
+      // Buffered Godot input can deliver old cancel then a reused-ID press in
+      // one frame. Keep terminal kinds in order across DOM touchstart events.
+      var queue = pendingEnds.get(value);
+      var result = queue && queue.length ? queue.shift() : canceled.has(value);
+      if (queue && !queue.length) pendingEnds.delete(value);
+      canceled.delete(value);
+      return result;
+    },
+    snapshot: function () {
+      return { observed: seen, active: Array.from(active.keys()), canceled: Array.from(canceled.keys()),
+        touchMode: touchMode, modeSource: modeSource,
+        maxTouchPoints: Number(navigator.maxTouchPoints || navigator.msMaxTouchPoints || 0),
+        touchEventAvailable: 'ontouchstart' in window, recent: recent.slice() };
+    }
+  };
+  window.__pawInputDebug = function () { return window.pawInput.snapshot(); };
+  document.addEventListener('DOMContentLoaded', setup, { once: true });
+  document.addEventListener('keydown', keyboardMode, { capture: true, passive: true });
+  window.addEventListener('blur', interrupt, { passive: true });
+  window.addEventListener('pagehide', interrupt, { passive: true });
+  document.addEventListener('visibilitychange', function (event) {
+    if (document.visibilityState === 'hidden') interrupt(event);
+  }, { passive: true });
+  setup();
+})();
+</script>
+<!-- PAW_TOY_ADAPTER -->
+<script>
+/* PAW Toy adapter. Official SDK contracts and offline test provenance:
+   docs/v0.12.1/TOY-RANKING.md. No cloud saves or synthetic public rows.
+   Board mapping and score encoding are persistent protocol: do not change them
+   on an existing Toy without creating a new ranking season/protocol. */
+(function (root) {
+  'use strict';
+  if (root.pawToy) return;
+  const BOARDS = Object.freeze({ easy: 1, normal: 2, hard: 3, insane: 4 });
+  const SCORE_BASE = 16777215;
+  const cache = new Map(), flights = new Map(), submissions = new Map();
+  const tickets = new Map();
+  let nextTicket = 0, sdkPromise = null, profileCache = null;
+  let blockedUntil = 0, rateFailures = 0;
+  function failure(error) {
+    const type = error && error.type;
+    const code = error && error.code;
+    if (code === 307044 || code === '307044') {
+      rateFailures = Math.min(rateFailures + 1, 5);
+      blockedUntil = Date.now() + Math.min(30000, 1000 * Math.pow(2, rateFailures));
+      return { error: 'toy_rate_limited', retry_after: Math.ceil((blockedUntil - Date.now()) / 1000) };
+    }
+    if (type === 'not_logged_in' || code === -101) return { error: 'not_logged_in' };
+    if (type === 'timeout') return { error: 'toy_timeout' };
+    if (type === 'unsupported') return { error: 'toy_unavailable' };
+    return { error: type === 'user_denied' ? 'toy_cancelled' : 'toy_network' };
+  }
+  function checkCooldown() {
+    return Date.now() < blockedUntil ? { error: 'toy_rate_limited', retry_after: Math.ceil((blockedUntil - Date.now()) / 1000) } : null;
+  }
+  async function sdk() {
+    if (root.toy) return root.toy;
+    if (!sdkPromise) sdkPromise = new Promise((resolve, reject) => {
+      // Load the official runtime, never a mock fallback or custom account.
+      const script = root.document.createElement('script');
+      script.src = 'https://s1.hdslb.com/bfs/seed/toy/app/sdk/toy-sdk.js';
+      script.async = true;
+      script.onload = () => root.toy ? resolve(root.toy) : reject({ type: 'unsupported' });
+      script.onerror = () => { sdkPromise = null; reject({ type: 'network_error' }); };
+      root.document.head.appendChild(script);
+    });
+    return sdkPromise;
+  }
+  function bounded(promise, milliseconds = 12000) {
+    let timer;
+    return Promise.race([promise, new Promise((_, reject) => {
+      timer = setTimeout(() => reject({ type: 'timeout' }), milliseconds);
+    })]).finally(() => clearTimeout(timer));
+  }
+  function boardOf(p) { return BOARDS[p.difficulty]; }
+  function timeToScore(ms) {
+    if (!Number.isInteger(ms) || ms < 1 || ms > SCORE_BASE) throw new Error('invalid_time');
+    return SCORE_BASE - ms;
+  }
+  function scoreToTime(score) {
+    if (!Number.isInteger(score) || score < 0 || score >= SCORE_BASE) throw new Error('invalid_score');
+    return SCORE_BASE - score;
+  }
+  function normalizeProfile(raw) {
+    // The current SDK wraps HTTP profile as {data:{face,uname,toyOpenId}};
+    // official reference also documents the direct {nickname,avatar,...} shape.
+    const p = raw && raw.data && typeof raw.data === 'object' ? raw.data : raw;
+    if (!p || typeof p !== 'object') throw new Error('bad_profile');
+    const nickname = typeof p.nickname === 'string' ? p.nickname : p.uname;
+    const avatar = typeof p.avatar === 'string' ? p.avatar : p.face;
+    if (typeof nickname !== 'string' || !nickname) throw new Error('bad_profile');
+    // Do not expose toyOpenId in public UI, logs or analytics.
+    return { nickname, avatar: typeof avatar === 'string' ? avatar : '' };
+  }
+  async function profile(force) {
+    if (force) cache.clear();
+    if (!force && profileCache) return Object.assign({ cached: true }, profileCache);
+    const cooldown = checkCooldown(); if (cooldown) return cooldown;
+    if (flights.has('profile')) return flights.get('profile');
+    const task = (async () => {
+      try {
+        const api = await bounded(sdk());
+        const raw = await bounded(api.getUserProfile());
+        try { profileCache = normalizeProfile(raw); } catch (_) { return { error: 'toy_bad_response' }; }
+        return profileCache;
+      } catch (e) { profileCache = null; return failure(e); }
+      finally { flights.delete('profile'); }
+    })();
+    flights.set('profile', task); return task;
+  }
+  async function board(p) {
+    const id = boardOf(p); if (!id) return { error: 'toy_bad_response' };
+    if (!p.force && cache.has(id)) return Object.assign({}, cache.get(id), { cached: true });
+    const cooldown = checkCooldown(); if (cooldown) return cooldown;
+    const key = 'board:' + id; if (flights.has(key)) return flights.get(key);
+    const task = (async () => {
+      try {
+        const api = await bounded(sdk());
+        const raw = await bounded(api.getRankList({ board: id, period: 'all', limit: Math.min(50, p.limit || 50) }));
+        if (!Array.isArray(raw)) return { error: 'toy_bad_response' };
+        const entries = [];
+        try {
+          for (const row of raw) {
+            if (!row || !Number.isInteger(row.rank) || row.rank < 1 || typeof row.nickname !== 'string') throw new Error('bad_row');
+            entries.push({ rank: row.rank, nickname: row.nickname, avatar: typeof row.avatar === 'string' ? row.avatar : '', time_ms: scoreToTime(row.score), me: false });
+          }
+        } catch (_) { return { error: 'toy_bad_response' }; }
+        // Public rows do not contain a UID or Toy open ID. Only a confirmed own
+        // rank may highlight our row; never compare nickname or invent IDs.
+        let my = null;
+        try { my = await bounded(api.getMyRank({ board: id, period: 'all' })); }
+        catch (e) { if (e && e.code === 307044) failure(e); }
+        if (my && my.ranked === true && Number.isInteger(my.rank) && Number.isInteger(my.score)) {
+          const matching = entries.filter(row => row.rank === my.rank && row.time_ms === SCORE_BASE - my.score);
+          if (matching.length === 1) matching[0].me = true;
+        }
+        const result = { entries, cached: false };
+        cache.set(id, result); return result;
+      } catch (e) { return failure(e); }
+      finally { flights.delete(key); }
+    })();
+    flights.set(key, task); return task;
+  }
+  async function submit(p) {
+    const id = boardOf(p); let score;
+    if (!id || typeof p.run_id !== 'string') return { error: 'toy_bad_response' };
+    try { score = timeToScore(p.time_ms); } catch (_) { return { error: 'toy_invalid_time' }; }
+    const key = p.run_id;
+    const previous = submissions.get(key);
+    if (previous) {
+      if (previous.board !== id || previous.score !== score) return { error: 'toy_bad_response' };
+      if (previous.success) return previous.success;
+      if (previous.promise) return previous.promise;
+    }
+    const cooldown = checkCooldown(); if (cooldown) return cooldown;
+    const state = previous || { board: id, score, promise: null, success: null };
+    submissions.set(key, state);
+    state.promise = (async () => {
+      try {
+        const api = await bounded(sdk());
+        // Do not time out / resend an outstanding submit: official SDK may be
+        // waiting for a login dialog. All retries join this same promise.
+        const result = await api.submitScore({ board: id, score });
+        if (!result || !Number.isInteger(result.score) || result.score < score || result.score >= SCORE_BASE) return { error: 'toy_bad_response' };
+        state.success = { ok: true, provider: 'toy', best_ms: scoreToTime(result.score) };
+        cache.delete(id);
+        return state.success;
+      } catch (e) { return failure(e); }
+      finally { state.promise = null; }
+    })();
+    return state.promise;
+  }
+  root.pawToy = {
+    start(op, json) {
+      const ticket = String(++nextTicket);
+      let p; try { p = JSON.parse(json); } catch (_) { tickets.set(ticket, JSON.stringify({ error: 'toy_bad_response' })); return ticket; }
+      let work;
+      if (op === 'profile') work = profile(Boolean(p.force));
+      else if (op === 'board') work = board(p);
+      else if (op === 'submit') work = submit(p);
+      else work = Promise.resolve({ error: 'toy_bad_response' });
+      Promise.resolve(work).then(result => tickets.set(ticket, JSON.stringify(result)), e => tickets.set(ticket, JSON.stringify(failure(e))));
+      return ticket;
+    },
+    poll(ticket) {
+      const value = tickets.get(String(ticket));
+      if (value === undefined) return '';
+      tickets.delete(String(ticket)); return value;
+    }
+  };
+})(window);
+
+</script>

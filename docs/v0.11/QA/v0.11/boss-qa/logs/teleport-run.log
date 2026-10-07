@@ -1,0 +1,303 @@
+WorkerThreadPool: 9 threads, 2 max low-priority.
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+TextServer: Added interface "Dummy"
+TextServer: Added interface "ICU / HarfBuzz / Graphite (Built-in)"
+Unrecognized output string "misc2" in mapping:
+030000008a2e0000dd10000011010000,Hand Held Legend GC Ultimate,a:b0,b:b2,back:b17,dpdown:b5,dpleft:b6,dpright:b7,dpup:b4,guide:b18,leftshoulder:b10,leftstick:b8,lefttrigger:a3,leftx:a0,lefty:a1,misc1:b19,misc2:b24,paddle1:b13,paddle2:b12,rightshoulder:b11,rightstick:b9,righttrigger:a4,rightx:a2,righty:a5,start:b16,x:b1,y:b3,platform:Linux,
+Unrecognized output string "misc2" in mapping:
+030000000d0f0000ab01000011010000,Horipad Steam,a:b0,b:b1,back:b10,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,guide:b12,leftshoulder:b6,leftstick:b13,lefttrigger:a5,leftx:a0,lefty:a1,misc2:b2,paddle1:b19,paddle2:b18,paddle3:b15,paddle4:b5,rightshoulder:b7,rightstick:b14,righttrigger:a4,rightx:a2,righty:a3,start:b11,x:b3,y:b4,platform:Linux,
+Unrecognized output string "misc2" in mapping:
+050000000d0f00009601000091000000,Horipad Steam,a:b0,b:b1,back:b10,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,guide:b12,leftshoulder:b6,leftstick:b13,lefttrigger:a5,leftx:a0,lefty:a1,misc2:b2,paddle1:b19,paddle2:b18,paddle3:b15,paddle4:b5,rightshoulder:b7,rightstick:b14,righttrigger:a4,rightx:a2,righty:a3,start:b11,x:b3,y:b4,platform:Linux,
+Unrecognized output string "misc2" in mapping:
+030000007e0500006920000011010000,Nintendo Switch 2 Pro Controller,a:b0,b:b1,back:b14,dpdown:b8,dpleft:b10,dpright:b9,dpup:b11,guide:b16,leftshoulder:b12,leftstick:b15,lefttrigger:b13,leftx:a0,lefty:a1~,misc1:b17,misc2:b20,paddle1:b18,paddle2:b19,rightshoulder:b4,rightstick:b7,righttrigger:b5,rightx:a2,righty:a3~,start:b6,x:b2,y:b3,platform:Linux,
+SDL: Init OK!
+Using "default" pen tablet driver...
+
+TextServer: Primary interface set to: "ICU / HarfBuzz / Graphite (Built-in)".
+Loading resource: res://assets/fonts/NotoSansSC-Medium.ttf
+Loading resource: res://.godot/imported/NotoSansSC-Medium.ttf-b9fc0864eb5f89a2c92385a10052b365.fontdata
+CORE API HASH: 2475187701
+EDITOR API HASH: 3867286884
+SceneTreeFTI: traversal method DEFAULT
+Loading resource: res://scripts/autoload/sfx.gd
+Loading resource: res://scripts/autoload/game.gd
+Loaded system CA certificates
+Loading resource: res://qa/teleport_fixture.tscn
+Loading resource: res://qa/teleport_fixture.gd
+Loading resource: res://assets/sfx/alarm.wav
+Loading resource: res://.godot/imported/alarm.wav-d57df3f8b578b49d63857da3f35cc292.sample
+Loading resource: res://assets/sfx/alert.wav
+Loading resource: res://.godot/imported/alert.wav-3dd697df27fe09f6592f29b818e2bebf.sample
+Loading resource: res://assets/sfx/bite.wav
+Loading resource: res://.godot/imported/bite.wav-386405616b11c4fb04450642d148fc91.sample
+Loading resource: res://assets/sfx/block.wav
+Loading resource: res://.godot/imported/block.wav-2d854fc34b16ad676447facc7ed2c76b.sample
+Loading resource: res://assets/sfx/bonk.wav
+Loading resource: res://.godot/imported/bonk.wav-0db2f847544d2084f4f97b6782d47dd0.sample
+Loading resource: res://assets/sfx/breach.wav
+Loading resource: res://.godot/imported/breach.wav-8ad5c586744f6197ae5226ffc8c77b43.sample
+Loading resource: res://assets/sfx/chime.wav
+Loading resource: res://.godot/imported/chime.wav-f3dc92c41bdf3da275dd07bf607b7bbc.sample
+Loading resource: res://assets/sfx/clank.wav
+Loading resource: res://.godot/imported/clank.wav-ca29ecba43328d54311fbdc64264eba4.sample
+Loading resource: res://assets/sfx/cuff.wav
+Loading resource: res://.godot/imported/cuff.wav-951989c74ef7c2b5c59a8bef7bc95691.sample
+Loading resource: res://assets/sfx/dash.wav
+Loading resource: res://.godot/imported/dash.wav-ce142ca535368506390abc631f4a13c7.sample
+Loading resource: res://assets/sfx/dodge.wav
+Loading resource: res://.godot/imported/dodge.wav-d3086b73c33a551d0fdc3a95490d5bc4.sample
+Loading resource: res://assets/sfx/empty.wav
+Loading resource: res://.godot/imported/empty.wav-cb8034dbacdc0855b6db2fd11f8045d6.sample
+Loading resource: res://assets/sfx/enemy_shot.wav
+Loading resource: res://.godot/imported/enemy_shot.wav-ae2ab4dcb48faf3bf3785006e98a0a46.sample
+Loading resource: res://assets/sfx/explosion.wav
+Loading resource: res://.godot/imported/explosion.wav-e1f35b1a1dc4bf25a23a1f22f1673be5.sample
+Loading resource: res://assets/sfx/fail.wav
+Loading resource: res://.godot/imported/fail.wav-4ad9d137b9d821dc0b80a8a466a2b194.sample
+Loading resource: res://assets/sfx/groan.wav
+Loading resource: res://.godot/imported/groan.wav-ed851c8fc07c87a8b1e0ead721d655dd.sample
+Loading resource: res://assets/sfx/heartbeat.wav
+Loading resource: res://.godot/imported/heartbeat.wav-7218cb5d0b6b2efe508c0d0e469a062c.sample
+Loading resource: res://assets/sfx/hit.wav
+Loading resource: res://.godot/imported/hit.wav-05253ad92e646c999917577a1dc2124f.sample
+Loading resource: res://assets/sfx/hit_player.wav
+Loading resource: res://.godot/imported/hit_player.wav-2f03e77dca56e3ab9504e6ca15ea70b8.sample
+Loading resource: res://assets/sfx/jam.wav
+Loading resource: res://.godot/imported/jam.wav-771eb6ea2628c92a0dca1ac5025a4f55.sample
+Loading resource: res://assets/sfx/laser.wav
+Loading resource: res://.godot/imported/laser.wav-78b15818b49fd52d8b28fa67d9b6d801.sample
+Loading resource: res://assets/sfx/music_combat.wav
+Loading resource: res://.godot/imported/music_combat.wav-b81629c233370cb4d579546323fe8ed9.sample
+Loading resource: res://assets/sfx/music_menu.wav
+Loading resource: res://.godot/imported/music_menu.wav-55e6e6fe71255475151c5562a7fb3dc1.sample
+Loading resource: res://assets/sfx/music_wave.wav
+Loading resource: res://.godot/imported/music_wave.wav-fb1a95286dd87fd9bb6bf67452d15015.sample
+Loading resource: res://assets/sfx/paper.wav
+Loading resource: res://.godot/imported/paper.wav-6151d9f8cd01b0f0fc53bad62ebaff01.sample
+Loading resource: res://assets/sfx/perfect.wav
+Loading resource: res://.godot/imported/perfect.wav-82db1cf8e06b15e528bc85d0e18e4860.sample
+Loading resource: res://assets/sfx/pickup.wav
+Loading resource: res://.godot/imported/pickup.wav-2aad7c0550afa96cbe4815c7cdbd1e30.sample
+Loading resource: res://assets/sfx/powerup.wav
+Loading resource: res://.godot/imported/powerup.wav-a5c9705696a52b0b097a1fbfb0ff0338.sample
+Loading resource: res://assets/sfx/radio.wav
+Loading resource: res://.godot/imported/radio.wav-cea1081814412b1a9d67a0a82bb8acc6.sample
+Loading resource: res://assets/sfx/reload_done.wav
+Loading resource: res://.godot/imported/reload_done.wav-456e2450a443e9270ff931429f01c849.sample
+Loading resource: res://assets/sfx/reload_start.wav
+Loading resource: res://.godot/imported/reload_start.wav-67a84a5beb050843a2958e90b3645813.sample
+Loading resource: res://assets/sfx/rocket.wav
+Loading resource: res://.godot/imported/rocket.wav-2e689979db59b113073e894dc213905e.sample
+Loading resource: res://assets/sfx/roll.wav
+Loading resource: res://.godot/imported/roll.wav-1e2fdea0c9feb17626e5054987016dd3.sample
+Loading resource: res://assets/sfx/score.wav
+Loading resource: res://.godot/imported/score.wav-9ee4f86e81ed0c3778f00d78576fb71d.sample
+Loading resource: res://assets/sfx/shot.wav
+Loading resource: res://.godot/imported/shot.wav-178e84ee474a987715212f9fdb1f9ff4.sample
+Loading resource: res://assets/sfx/shot_buff.wav
+Loading resource: res://.godot/imported/shot_buff.wav-3311102488381fd1a5ac24c2fb9f1bc7.sample
+Loading resource: res://assets/sfx/shotgun.wav
+Loading resource: res://.godot/imported/shotgun.wav-022bc434f510240c49b6977e4664108e.sample
+Loading resource: res://assets/sfx/shout_fire.wav
+Loading resource: res://.godot/imported/shout_fire.wav-9b25e565fdf9f73360a3bb1aaea0fce5.sample
+Loading resource: res://assets/sfx/slowmo.wav
+Loading resource: res://.godot/imported/slowmo.wav-6dd713e93726b5a6da79043eeb7fc497.sample
+Loading resource: res://assets/sfx/splat.wav
+Loading resource: res://.godot/imported/splat.wav-9cc505e1a91cd0306b952ac45663bfc1.sample
+Loading resource: res://assets/sfx/stamp.wav
+Loading resource: res://.godot/imported/stamp.wav-439ed95cff0d86682f23ea092636398c.sample
+Loading resource: res://assets/sfx/swing.wav
+Loading resource: res://.godot/imported/swing.wav-fe2e8b66c8d91a80f67819c457004ece.sample
+Loading resource: res://assets/sfx/telegraph.wav
+Loading resource: res://.godot/imported/telegraph.wav-c5842a1d980b501402b354a904a5cac3.sample
+Loading resource: res://assets/sfx/transform.wav
+Loading resource: res://.godot/imported/transform.wav-8659bf0405b23de9d3099f2800d0c1ff.sample
+Loading resource: res://assets/sfx/type.wav
+Loading resource: res://.godot/imported/type.wav-5c7927cf203fe19ac0221ea09379c214.sample
+Loading resource: res://assets/sfx/ui_click.wav
+Loading resource: res://.godot/imported/ui_click.wav-9a142c8bec8b6ef8f54b0d7148efc53b.sample
+Loading resource: res://assets/sfx/ui_deny.wav
+Loading resource: res://.godot/imported/ui_deny.wav-6147bcdbf1ae0deb5f521a5ebb1a9f7c.sample
+Loading resource: res://assets/sfx/ui_hover.wav
+Loading resource: res://.godot/imported/ui_hover.wav-5df8a96f9e36b3dd44f6ced480a5a16a.sample
+Loading resource: res://assets/sfx/victory.wav
+Loading resource: res://.godot/imported/victory.wav-2f965510375d66ebd3a42ae30de2cb60.sample
+Loading resource: res://assets/sfx/wake.wav
+Loading resource: res://.godot/imported/wake.wav-a7cf899052432a51cccef8984c880228.sample
+Loading resource: res://shaders/tape.gdshader
+Loading resource: res://assets/fonts/ZCOOLKuaiLe-Regular.ttf
+Loading resource: res://.godot/imported/ZCOOLKuaiLe-Regular.ttf-514cd62e906f01188e726a933201eba0.fontdata
+Loading resource: res://assets/fonts/NotoSansSC-Black.ttf
+Loading resource: res://.godot/imported/NotoSansSC-Black.ttf-ad03b1db769b4667842863e71ae11aee.fontdata
+Loading resource: res://assets/fonts/Bungee-Regular.ttf
+Loading resource: res://.godot/imported/Bungee-Regular.ttf-58cdcdfae0aef1a05fd8c473aa98fdbe.fontdata
+WARNING: Property agent_height is ceiled to cell_height voxel units and loses precision.
+     at: generator_bake_from_source_geometry_data (modules/navigation_3d/3d/nav_mesh_generator_3d.cpp:366)
+     GDScript backtrace (most recent call first):
+         [0] _bake_boss_nav (res://scripts/world/level.gd:302)
+         [1] _bake_nav (res://scripts/world/level.gd:288)
+         [2] _ready (res://scripts/world/level.gd:140)
+         [3] setup (res://qa/teleport_fixture.gd:54)
+         [4] blocked_recovery (res://qa/teleport_fixture.gd:136)
+         [5] run_all (res://qa/teleport_fixture.gd:353)
+Loading resource: res://shaders/screen_fx.gdshader
+Loading resource: res://shaders/blur.gdshader
+[teleport-qa] PASS initial_exact_capsule_clear {}
+[teleport-qa] PASS stationary_blockage_repaths_then_warns {"forced_repaths":3,"warning_seconds":2.65}
+[teleport-qa] PASS one_second_visible_marker {}
+[teleport-qa] PASS warning_no_early_jump {}
+[teleport-qa] PASS warning_has_no_invulnerability {}
+[teleport-qa] PASS lands_beside_player_clear_and_reachable {"destination":[-2.6,0.0,16.0],"distance":2.59999990463257,"landing":[-2.6,0.0,16.0]}
+[teleport-qa] PASS teleport_preserves_hp_speed_sets_cooldown {}
+[teleport-qa] PASS recovery_has_no_invulnerability {}
+[teleport-qa] PASS recovery_prevents_attack_for_half_second {}
+[teleport-qa] PASS attacks_resume_after_brief_recovery {}
+WARNING: Property agent_height is ceiled to cell_height voxel units and loses precision.
+     at: generator_bake_from_source_geometry_data (modules/navigation_3d/3d/nav_mesh_generator_3d.cpp:366)
+     GDScript backtrace (most recent call first):
+         [0] _bake_boss_nav (res://scripts/world/level.gd:302)
+         [1] _bake_nav (res://scripts/world/level.gd:288)
+         [2] _ready (res://scripts/world/level.gd:140)
+         [3] setup (res://qa/teleport_fixture.gd:54)
+         [4] moving_and_blocked_landing (res://qa/teleport_fixture.gd:175)
+         [5] run_all (res://qa/teleport_fixture.gd:354)
+         [6] blocked_recovery (res://qa/teleport_fixture.gd:172)
+         [7] teardown (res://qa/teleport_fixture.gd:73)
+         [8] step (res://qa/teleport_fixture.gd:46)
+Loading resource: res://shaders/screen_fx.gdshader
+Loading resource: res://shaders/blur.gdshader
+[teleport-qa] PASS moving_target_initial_warning {}
+[teleport-qa] PASS warning_expiry_revalidates_player_position {}
+[teleport-qa] PASS retarget_after_cancel_gets_new_warning {}
+[teleport-qa] PASS warning_expiry_revalidates_new_wall {}
+[teleport-qa] PASS moving_target_recovery_eventually_safe {}
+WARNING: Property agent_height is ceiled to cell_height voxel units and loses precision.
+     at: generator_bake_from_source_geometry_data (modules/navigation_3d/3d/nav_mesh_generator_3d.cpp:366)
+     GDScript backtrace (most recent call first):
+         [0] _bake_boss_nav (res://scripts/world/level.gd:302)
+         [1] _bake_nav (res://scripts/world/level.gd:288)
+         [2] _ready (res://scripts/world/level.gd:140)
+         [3] setup (res://qa/teleport_fixture.gd:54)
+         [4] no_safe_spot (res://qa/teleport_fixture.gd:196)
+         [5] run_all (res://qa/teleport_fixture.gd:355)
+         [6] moving_and_blocked_landing (res://qa/teleport_fixture.gd:193)
+         [7] teardown (res://qa/teleport_fixture.gd:73)
+         [8] step (res://qa/teleport_fixture.gd:46)
+Loading resource: res://shaders/screen_fx.gdshader
+Loading resource: res://shaders/blur.gdshader
+[teleport-qa] PASS no_safe_destination_never_forces_teleport {"forced_repaths":12,"position":[-7.85,0.0,16.0]}
+[teleport-qa] PASS invalid_player_overlap_wall_infinite_spots_rejected {}
+WARNING: Property agent_height is ceiled to cell_height voxel units and loses precision.
+     at: generator_bake_from_source_geometry_data (modules/navigation_3d/3d/nav_mesh_generator_3d.cpp:366)
+     GDScript backtrace (most recent call first):
+         [0] _bake_boss_nav (res://scripts/world/level.gd:302)
+         [1] _bake_nav (res://scripts/world/level.gd:288)
+         [2] _ready (res://scripts/world/level.gd:140)
+         [3] setup (res://qa/teleport_fixture.gd:54)
+         [4] oscillation (res://qa/teleport_fixture.gd:206)
+         [5] run_all (res://qa/teleport_fixture.gd:356)
+         [6] no_safe_spot (res://qa/teleport_fixture.gd:203)
+         [7] teardown (res://qa/teleport_fixture.gd:73)
+         [8] step (res://qa/teleport_fixture.gd:46)
+Loading resource: res://shaders/screen_fx.gdshader
+Loading resource: res://shaders/blur.gdshader
+[teleport-qa] PASS oscillation_detected_by_net_progress {"net":0.29981517791748,"travelled":2.20163059234619,"warning":true}
+WARNING: Property agent_height is ceiled to cell_height voxel units and loses precision.
+     at: generator_bake_from_source_geometry_data (modules/navigation_3d/3d/nav_mesh_generator_3d.cpp:366)
+     GDScript backtrace (most recent call first):
+         [0] _bake_boss_nav (res://scripts/world/level.gd:302)
+         [1] _bake_nav (res://scripts/world/level.gd:288)
+         [2] _ready (res://scripts/world/level.gd:140)
+         [3] setup (res://qa/teleport_fixture.gd:54)
+         [4] cooldown (res://qa/teleport_fixture.gd:225)
+         [5] run_all (res://qa/teleport_fixture.gd:357)
+         [6] oscillation (res://qa/teleport_fixture.gd:222)
+         [7] teardown (res://qa/teleport_fixture.gd:73)
+         [8] step (res://qa/teleport_fixture.gd:46)
+Loading resource: res://shaders/screen_fx.gdshader
+Loading resource: res://shaders/blur.gdshader
+[teleport-qa] PASS cooldown_prevents_repeat_teleport_for_seven_seconds {}
+[teleport-qa] PASS cooldown_allows_later_warned_recovery {"warning_after_seven_seconds":1.06666666666667,"warning_duration":1.0}
+WARNING: Property agent_height is ceiled to cell_height voxel units and loses precision.
+     at: generator_bake_from_source_geometry_data (modules/navigation_3d/3d/nav_mesh_generator_3d.cpp:366)
+     GDScript backtrace (most recent call first):
+         [0] _bake_boss_nav (res://scripts/world/level.gd:302)
+         [1] _bake_nav (res://scripts/world/level.gd:288)
+         [2] _ready (res://scripts/world/level.gd:140)
+         [3] setup (res://qa/teleport_fixture.gd:54)
+         [4] suppressed_states (res://qa/teleport_fixture.gd:240)
+         [5] run_all (res://qa/teleport_fixture.gd:358)
+         [6] cooldown (res://qa/teleport_fixture.gd:237)
+         [7] teardown (res://qa/teleport_fixture.gd:73)
+         [8] step (res://qa/teleport_fixture.gd:46)
+Loading resource: res://shaders/screen_fx.gdshader
+Loading resource: res://shaders/blur.gdshader
+[teleport-qa] PASS attack_windup_never_counts_as_stuck {}
+[teleport-qa] PASS stun_never_counts_as_stuck {}
+[teleport-qa] PASS rise_never_counts_as_stuck {}
+[teleport-qa] PASS pause_preserves_warning_without_jump {}
+[teleport-qa] PASS stun_cancels_pending_warning {}
+[teleport-qa] PASS player_death_cancels_pending_warning {}
+[teleport-qa] PASS level_finish_cancels_pending_warning {}
+[teleport-qa] PASS boss_death_cancels_pending_warning {}
+WARNING: Property agent_height is ceiled to cell_height voxel units and loses precision.
+     at: generator_bake_from_source_geometry_data (modules/navigation_3d/3d/nav_mesh_generator_3d.cpp:366)
+     GDScript backtrace (most recent call first):
+         [0] _bake_boss_nav (res://scripts/world/level.gd:302)
+         [1] _bake_nav (res://scripts/world/level.gd:288)
+         [2] _ready (res://scripts/world/level.gd:140)
+         [3] setup (res://qa/teleport_fixture.gd:54)
+         [4] suppressed_states (res://qa/teleport_fixture.gd:278)
+         [5] teardown (res://qa/teleport_fixture.gd:73)
+         [6] step (res://qa/teleport_fixture.gd:46)
+Loading resource: res://shaders/screen_fx.gdshader
+Loading resource: res://shaders/blur.gdshader
+[teleport-qa] PASS new_actor_resets_recovery_state {}
+WARNING: Property agent_height is ceiled to cell_height voxel units and loses precision.
+     at: generator_bake_from_source_geometry_data (modules/navigation_3d/3d/nav_mesh_generator_3d.cpp:366)
+     GDScript backtrace (most recent call first):
+         [0] _bake_boss_nav (res://scripts/world/level.gd:302)
+         [1] _bake_nav (res://scripts/world/level.gd:288)
+         [2] _ready (res://scripts/world/level.gd:140)
+         [3] setup (res://qa/teleport_fixture.gd:54)
+         [4] normal_and_door (res://qa/teleport_fixture.gd:284)
+         [5] run_all (res://qa/teleport_fixture.gd:359)
+         [6] suppressed_states (res://qa/teleport_fixture.gd:281)
+         [7] teardown (res://qa/teleport_fixture.gd:73)
+         [8] step (res://qa/teleport_fixture.gd:46)
+Loading resource: res://shaders/screen_fx.gdshader
+Loading resource: res://shaders/blur.gdshader
+[teleport-qa] PASS ordinary_stall_repaths_without_teleport {}
+WARNING: Property agent_height is ceiled to cell_height voxel units and loses precision.
+     at: generator_bake_from_source_geometry_data (modules/navigation_3d/3d/nav_mesh_generator_3d.cpp:366)
+     GDScript backtrace (most recent call first):
+         [0] _bake_boss_nav (res://scripts/world/level.gd:302)
+         [1] _bake_nav (res://scripts/world/level.gd:288)
+         [2] _ready (res://scripts/world/level.gd:140)
+         [3] setup (res://qa/teleport_fixture.gd:54)
+         [4] normal_and_door (res://qa/teleport_fixture.gd:290)
+         [5] teardown (res://qa/teleport_fixture.gd:73)
+         [6] step (res://qa/teleport_fixture.gd:46)
+Loading resource: res://shaders/screen_fx.gdshader
+Loading resource: res://shaders/blur.gdshader
+[teleport-qa] PASS unblocked_door_route_walks_normally {"position":[-1.997,0.0,9.598],"travelled":6.57814664510079}
+WARNING: Property agent_height is ceiled to cell_height voxel units and loses precision.
+     at: generator_bake_from_source_geometry_data (modules/navigation_3d/3d/nav_mesh_generator_3d.cpp:366)
+     GDScript backtrace (most recent call first):
+         [0] _bake_boss_nav (res://scripts/world/level.gd:302)
+         [1] _bake_nav (res://scripts/world/level.gd:288)
+         [2] _ready (res://scripts/world/level.gd:140)
+         [3] setup (res://qa/teleport_fixture.gd:54)
+         [4] continuous_moving_player (res://qa/teleport_fixture.gd:305)
+         [5] run_all (res://qa/teleport_fixture.gd:360)
+         [6] normal_and_door (res://qa/teleport_fixture.gd:302)
+         [7] teardown (res://qa/teleport_fixture.gd:73)
+         [8] step (res://qa/teleport_fixture.gd:46)
+Loading resource: res://shaders/screen_fx.gdshader
+Loading resource: res://shaders/blur.gdshader
+[teleport-qa] PASS continuous_physical_player_door_pursuit {"boss_position":[0.303,0.0,7.521],"boss_travelled":26.5288456743583,"crossed_inside":true,"crossed_outside":true,"player_travelled":44.0884338058531,"teleports":0,"unsafe_landings":0}
+[teleport-qa] PASS normal_progress_does_not_false_teleport {}
+[teleport-qa] RESULT {"checks":33,"failed":0,"report":"/workspace/scratch/b4c1b123f420/paw-swat-work/v011/boss-qa/evidence/teleport-report.json"}
+XR: Clearing primary interface
+XR: Removed interface "Native mobile"
+XR: Removed interface "OpenXR"

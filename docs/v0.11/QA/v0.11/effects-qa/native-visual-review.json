@@ -1,0 +1,17 @@
+{
+  "kind": "review of actual matched native Gatling combat screenshots",
+  "images": [
+    "../perf-v011/reports/baseline-gatling-shots/inside.png",
+    "../perf-v011/reports/candidate-shots/inside.png",
+    "../perf-v011/reports/baseline-gatling-shots/outside.png",
+    "../perf-v011/reports/candidate-shots/outside.png"
+  ],
+  "checks": {
+    "zombie_boss_silhouettes_preserved": true,
+    "eyes_ears_stitches_crown_arms_feet_tail_retained": true,
+    "outline_visual_language_retained": true,
+    "visible_hit_flashes_and_damage_labels_retained": true,
+    "no_obvious_missing_batched_parts_or_material_errors": true
+  },
+  "limitation": "Frames contain active white hit flashes and different simulation timestamps; static palette equivalence comes from geometry/material signatures, not a pixel-identical comparison. This review makes no device-FPS claim."
+}

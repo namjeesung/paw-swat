@@ -1,0 +1,15 @@
+{
+  "audio_head_prefix_unchanged": true,
+  "toy_adapter_tail_unchanged": true,
+  "files": {
+    "scripts/autoload/game.gd": "c924d750c38f703196f185c659ec3a9140e0006c8aa1c6038d0c84c1708a2a2b",
+    "scripts/ui/hud.gd": "3fc53f96810da2e93f9a043b51511aaed17cc19a5ec8c1b60f2bcb7c169d13bf",
+    "scripts/ui/touch_controls.gd": "14bf540067bb143fdc6a53c8e4c3c9ec9c897397f4965c6d54f65cfb1e9894f7",
+    "scripts/ui/pause_menu.gd": "82d81b95aa046a2e51e0869d54c7c63c9cc01df2f7b9dd38d353a78c9bb997b8",
+    "web/head_include.html": "b3ab84e81ac62bd45d7ac2801917c687a846af41b95e45abb8bde0305571c5c4",
+    "export_presets.cfg": "5e6c71b8ce4cf4c34a6e17672f5f0102b054e274c4993a8edf4e119b62ee8913",
+    "scripts/test/qa/input_mode_regression.gd": "a9a7996765c42ff8703f9b0e2d90dabb2d2360957e72190f3e5f93b1599110a9",
+    "scripts/test/qa/input_mode_regression.tscn": "b2e7adf8cfa516aec19903ccba9f85551077be468e23988308b634287d12bfb8",
+    "scripts/test/qa/web_input_mode_test.cjs": "9a1a4df9e95d4674cfb8318e8a8260f35af86b8641f533ebdef5ee1acd11e646"
+  }
+}

@@ -1,0 +1,5 @@
+爪爪特警 PAW S.W.A.T. v0.9
+
+本包包含Web构建与可编辑Godot工程，不含APK。
+请先阅读上一级 README-中文.md；定向测试、真实运行截图与未测平台见 Docs/TEST-REPORT.md。
+原工程保留4.5声明，本次用官方Godot4.6.3及匹配Web模板验证/导出。

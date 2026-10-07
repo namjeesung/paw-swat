@@ -1,0 +1,290 @@
+{
+	"checks": [
+		{
+			"detail": {
+
+			},
+			"id": "initial_exact_capsule_clear",
+			"passed": true
+		},
+		{
+			"detail": {
+				"forced_repaths": 3,
+				"warning_seconds": 2.65
+			},
+			"id": "stationary_blockage_repaths_then_warns",
+			"passed": true
+		},
+		{
+			"detail": {
+
+			},
+			"id": "one_second_visible_marker",
+			"passed": true
+		},
+		{
+			"detail": {
+
+			},
+			"id": "warning_no_early_jump",
+			"passed": true
+		},
+		{
+			"detail": {
+
+			},
+			"id": "warning_has_no_invulnerability",
+			"passed": true
+		},
+		{
+			"detail": {
+				"destination": [
+					-2.6,
+					0.0,
+					16.0
+				],
+				"distance": 2.59999990463257,
+				"landing": [
+					-2.6,
+					0.0,
+					16.0
+				]
+			},
+			"id": "lands_beside_player_clear_and_reachable",
+			"passed": true
+		},
+		{
+			"detail": {
+
+			},
+			"id": "teleport_preserves_hp_speed_sets_cooldown",
+			"passed": true
+		},
+		{
+			"detail": {
+
+			},
+			"id": "recovery_has_no_invulnerability",
+			"passed": true
+		},
+		{
+			"detail": {
+
+			},
+			"id": "recovery_prevents_attack_for_half_second",
+			"passed": true
+		},
+		{
+			"detail": {
+
+			},
+			"id": "attacks_resume_after_brief_recovery",
+			"passed": true
+		},
+		{
+			"detail": {
+
+			},
+			"id": "moving_target_initial_warning",
+			"passed": true
+		},
+		{
+			"detail": {
+
+			},
+			"id": "warning_expiry_revalidates_player_position",
+			"passed": true
+		},
+		{
+			"detail": {
+
+			},
+			"id": "retarget_after_cancel_gets_new_warning",
+			"passed": true
+		},
+		{
+			"detail": {
+
+			},
+			"id": "warning_expiry_revalidates_new_wall",
+			"passed": true
+		},
+		{
+			"detail": {
+
+			},
+			"id": "moving_target_recovery_eventually_safe",
+			"passed": true
+		},
+		{
+			"detail": {
+				"forced_repaths": 12,
+				"position": [
+					-7.85,
+					0.0,
+					16.0
+				]
+			},
+			"id": "no_safe_destination_never_forces_teleport",
+			"passed": true
+		},
+		{
+			"detail": {
+
+			},
+			"id": "invalid_player_overlap_wall_infinite_spots_rejected",
+			"passed": true
+		},
+		{
+			"detail": {
+				"net": 0.29981517791748,
+				"travelled": 2.20163059234619,
+				"warning": true
+			},
+			"id": "oscillation_detected_by_net_progress",
+			"passed": true
+		},
+		{
+			"detail": {
+
+			},
+			"id": "cooldown_prevents_repeat_teleport_for_seven_seconds",
+			"passed": true
+		},
+		{
+			"detail": {
+				"warning_after_seven_seconds": 1.06666666666667,
+				"warning_duration": 1.0
+			},
+			"id": "cooldown_allows_later_warned_recovery",
+			"passed": true
+		},
+		{
+			"detail": {
+
+			},
+			"id": "attack_windup_never_counts_as_stuck",
+			"passed": true
+		},
+		{
+			"detail": {
+
+			},
+			"id": "stun_never_counts_as_stuck",
+			"passed": true
+		},
+		{
+			"detail": {
+
+			},
+			"id": "rise_never_counts_as_stuck",
+			"passed": true
+		},
+		{
+			"detail": {
+
+			},
+			"id": "pause_preserves_warning_without_jump",
+			"passed": true
+		},
+		{
+			"detail": {
+
+			},
+			"id": "stun_cancels_pending_warning",
+			"passed": true
+		},
+		{
+			"detail": {
+
+			},
+			"id": "player_death_cancels_pending_warning",
+			"passed": true
+		},
+		{
+			"detail": {
+
+			},
+			"id": "level_finish_cancels_pending_warning",
+			"passed": true
+		},
+		{
+			"detail": {
+
+			},
+			"id": "boss_death_cancels_pending_warning",
+			"passed": true
+		},
+		{
+			"detail": {
+
+			},
+			"id": "new_actor_resets_recovery_state",
+			"passed": true
+		},
+		{
+			"detail": {
+
+			},
+			"id": "ordinary_stall_repaths_without_teleport",
+			"passed": true
+		},
+		{
+			"detail": {
+				"position": [
+					-1.997,
+					0.0,
+					9.598
+				],
+				"travelled": 6.57814664510079
+			},
+			"id": "unblocked_door_route_walks_normally",
+			"passed": true
+		},
+		{
+			"detail": {
+				"boss_position": [
+					0.303,
+					0.0,
+					7.521
+				],
+				"boss_travelled": 26.5288456743583,
+				"crossed_inside": true,
+				"crossed_outside": true,
+				"player_travelled": 44.0884338058531,
+				"teleports": 0,
+				"unsafe_landings": 0
+			},
+			"id": "continuous_physical_player_door_pursuit",
+			"passed": true
+		},
+		{
+			"detail": {
+
+			},
+			"id": "normal_progress_does_not_false_teleport",
+			"passed": true
+		}
+	],
+	"failed": 0,
+	"scope": "Live production Zombie CharacterBody3D physics at 60Hz; real Level boss navmap; stationary, oscillating and moving targets; dynamic blocker fixtures; frozen player/other AI; no performance or real-phone claim",
+	"traces": [
+		{
+			"case": "blocked_recovery",
+			"hp": 43.0,
+			"landing": [
+				-2.6,
+				0.0,
+				16.0
+			],
+			"origin": [
+				-8.0,
+				0.0,
+				16.0
+			],
+			"speed": 2.1,
+			"warn_seconds": 2.65
+		}
+	],
+	"wall_seconds": 14.108
+}

@@ -1,0 +1,128 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+WARNING: Property agent_height is ceiled to cell_height voxel units and loses precision.
+     at: generator_bake_from_source_geometry_data (modules/navigation_3d/3d/nav_mesh_generator_3d.cpp:366)
+     GDScript backtrace (most recent call first):
+         [0] _bake_boss_nav (res://scripts/world/level.gd:277)
+         [1] _bake_nav (res://scripts/world/level.gd:263)
+         [2] _ready (res://scripts/world/level.gd:130)
+         [3] setup (res://qa/victory_fixture.gd:68)
+         [4] run_difficulty (res://qa/victory_fixture.gd:118)
+         [5] run_all (res://qa/victory_fixture.gd:220)
+[victory-qa] PASS easy_new_level_reset {"required":1}
+[victory-qa] PASS easy_failed_spawn_stays_pending {}
+[victory-qa] PASS easy_deadline_caps_stops_spawns_supplies {}
+[victory-qa] PASS easy_deadline_hud_remaining_zero_timer {"progress":"剩余 1 只 · 00秒","title":"消灭剩余鼠王"}
+[victory-qa] PASS easy_skipped_schedule_retries_all_configured {"spawned":1,"zombies":1}
+[victory-qa] PASS easy_expiry_alive_boss_no_finale_or_result {}
+[victory-qa] PASS easy_death_1_counted_once {"defeated":1,"duplicate_score_delta":500}
+[victory-qa] PASS easy_rescue_prerequisite {}
+[victory-qa] PASS easy_dead_player_cannot_win {}
+[victory-qa] PASS easy_all_real_boss_deaths_enable_finish {}
+[victory-qa] PASS easy_finale_starts_once {}
+[victory-qa-route] {"data":{"success":true},"screen":"results"}
+[victory-qa] PASS easy_results_success_exactly_once {"routes":[{"data":{"success":true},"screen":"results"}]}
+[victory-qa] PASS easy_cleanup_excludes_every_boss {"boss_cleanup_requests":0,"ordinary_cleanup_requests":1}
+WARNING: Property agent_height is ceiled to cell_height voxel units and loses precision.
+     at: generator_bake_from_source_geometry_data (modules/navigation_3d/3d/nav_mesh_generator_3d.cpp:366)
+     GDScript backtrace (most recent call first):
+         [0] _bake_boss_nav (res://scripts/world/level.gd:277)
+         [1] _bake_nav (res://scripts/world/level.gd:263)
+         [2] _ready (res://scripts/world/level.gd:130)
+         [3] setup (res://qa/victory_fixture.gd:68)
+         [4] run_difficulty (res://qa/victory_fixture.gd:118)
+         [5] run_all (res://qa/victory_fixture.gd:221)
+         [6] run_difficulty (res://qa/victory_fixture.gd:193)
+         [7] teardown (res://qa/victory_fixture.gd:87)
+         [8] frames (res://qa/victory_fixture.gd:59)
+[victory-qa] PASS normal_new_level_reset {"required":1}
+[victory-qa] PASS normal_failed_spawn_stays_pending {}
+[victory-qa] PASS normal_deadline_caps_stops_spawns_supplies {}
+[victory-qa] PASS normal_deadline_hud_remaining_zero_timer {"progress":"剩余 1 只 · 00秒","title":"消灭剩余鼠王"}
+[victory-qa] PASS normal_skipped_schedule_retries_all_configured {"spawned":1,"zombies":1}
+[victory-qa] PASS normal_expiry_alive_boss_no_finale_or_result {}
+[victory-qa] PASS pause_holds_wave_and_boss_counts {}
+[victory-qa] PASS resume_advances_without_reset {"wave_t":58.5}
+[victory-qa] PASS normal_death_1_counted_once {"defeated":1,"duplicate_score_delta":500}
+[victory-qa] PASS early_boss_clear_waits_for_timer {}
+[victory-qa] PASS normal_rescue_prerequisite {}
+[victory-qa] PASS normal_dead_player_cannot_win {}
+[victory-qa] PASS normal_all_real_boss_deaths_enable_finish {}
+[victory-qa] PASS normal_finale_starts_once {}
+[victory-qa-route] {"data":{"success":true},"screen":"results"}
+[victory-qa] PASS normal_results_success_exactly_once {"routes":[{"data":{"success":true},"screen":"results"}]}
+[victory-qa] PASS normal_cleanup_excludes_every_boss {"boss_cleanup_requests":0,"ordinary_cleanup_requests":1}
+WARNING: Property agent_height is ceiled to cell_height voxel units and loses precision.
+     at: generator_bake_from_source_geometry_data (modules/navigation_3d/3d/nav_mesh_generator_3d.cpp:366)
+     GDScript backtrace (most recent call first):
+         [0] _bake_boss_nav (res://scripts/world/level.gd:277)
+         [1] _bake_nav (res://scripts/world/level.gd:263)
+         [2] _ready (res://scripts/world/level.gd:130)
+         [3] setup (res://qa/victory_fixture.gd:68)
+         [4] run_difficulty (res://qa/victory_fixture.gd:118)
+         [5] run_all (res://qa/victory_fixture.gd:222)
+         [6] run_difficulty (res://qa/victory_fixture.gd:193)
+         [7] teardown (res://qa/victory_fixture.gd:87)
+         [8] frames (res://qa/victory_fixture.gd:59)
+[victory-qa] PASS hard_new_level_reset {"required":2}
+[victory-qa] PASS hard_failed_spawn_stays_pending {}
+[victory-qa] PASS hard_deadline_caps_stops_spawns_supplies {}
+[victory-qa] PASS hard_deadline_hud_remaining_zero_timer {"progress":"剩余 2 只 · 00秒","title":"消灭剩余鼠王"}
+[victory-qa] PASS hard_skipped_schedule_retries_all_configured {"spawned":2,"zombies":2}
+[victory-qa] PASS hard_expiry_alive_boss_no_finale_or_result {}
+[victory-qa] PASS hard_death_1_counted_once {"defeated":1,"duplicate_score_delta":500}
+[victory-qa] PASS hard_partial_boss_clear_no_win {}
+[victory-qa] PASS hard_death_2_counted_once {"defeated":2,"duplicate_score_delta":500}
+[victory-qa] PASS hard_rescue_prerequisite {}
+[victory-qa] PASS hard_dead_player_cannot_win {}
+[victory-qa] PASS hard_all_real_boss_deaths_enable_finish {}
+[victory-qa] PASS hard_finale_starts_once {}
+[victory-qa-route] {"data":{"success":true},"screen":"results"}
+[victory-qa] PASS hard_results_success_exactly_once {"routes":[{"data":{"success":true},"screen":"results"}]}
+[victory-qa] PASS hard_cleanup_excludes_every_boss {"boss_cleanup_requests":0,"ordinary_cleanup_requests":1}
+WARNING: Property agent_height is ceiled to cell_height voxel units and loses precision.
+     at: generator_bake_from_source_geometry_data (modules/navigation_3d/3d/nav_mesh_generator_3d.cpp:366)
+     GDScript backtrace (most recent call first):
+         [0] _bake_boss_nav (res://scripts/world/level.gd:277)
+         [1] _bake_nav (res://scripts/world/level.gd:263)
+         [2] _ready (res://scripts/world/level.gd:130)
+         [3] setup (res://qa/victory_fixture.gd:68)
+         [4] run_difficulty (res://qa/victory_fixture.gd:118)
+         [5] run_all (res://qa/victory_fixture.gd:223)
+         [6] run_difficulty (res://qa/victory_fixture.gd:193)
+         [7] teardown (res://qa/victory_fixture.gd:87)
+         [8] frames (res://qa/victory_fixture.gd:59)
+[victory-qa] PASS insane_new_level_reset {"required":3}
+[victory-qa] PASS insane_failed_spawn_stays_pending {}
+[victory-qa] PASS insane_deadline_caps_stops_spawns_supplies {}
+[victory-qa] PASS insane_deadline_hud_remaining_zero_timer {"progress":"剩余 3 只 · 00秒","title":"消灭剩余鼠王"}
+[victory-qa] PASS insane_skipped_schedule_retries_all_configured {"spawned":3,"zombies":3}
+[victory-qa] PASS insane_expiry_alive_boss_no_finale_or_result {}
+[victory-qa] PASS insane_death_1_counted_once {"defeated":1,"duplicate_score_delta":500}
+[victory-qa] PASS insane_partial_boss_clear_no_win {}
+[victory-qa] PASS insane_death_2_counted_once {"defeated":2,"duplicate_score_delta":500}
+[victory-qa] PASS insane_partial_boss_clear_no_win {}
+[victory-qa] PASS insane_death_3_counted_once {"defeated":3,"duplicate_score_delta":500}
+[victory-qa] PASS insane_rescue_prerequisite {}
+[victory-qa] PASS insane_dead_player_cannot_win {}
+[victory-qa] PASS insane_all_real_boss_deaths_enable_finish {}
+[victory-qa] PASS insane_finale_starts_once {}
+[victory-qa-route] {"data":{"success":true},"screen":"results"}
+[victory-qa] PASS insane_results_success_exactly_once {"routes":[{"data":{"success":true},"screen":"results"}]}
+[victory-qa] PASS insane_cleanup_excludes_every_boss {"boss_cleanup_requests":0,"ordinary_cleanup_requests":1}
+WARNING: Property agent_height is ceiled to cell_height voxel units and loses precision.
+     at: generator_bake_from_source_geometry_data (modules/navigation_3d/3d/nav_mesh_generator_3d.cpp:366)
+     GDScript backtrace (most recent call first):
+         [0] _bake_boss_nav (res://scripts/world/level.gd:277)
+         [1] _bake_nav (res://scripts/world/level.gd:263)
+         [2] _ready (res://scripts/world/level.gd:130)
+         [3] setup (res://qa/victory_fixture.gd:68)
+         [4] run_failure (res://qa/victory_fixture.gd:196)
+         [5] run_all (res://qa/victory_fixture.gd:224)
+         [6] run_difficulty (res://qa/victory_fixture.gd:193)
+         [7] teardown (res://qa/victory_fixture.gd:87)
+         [8] frames (res://qa/victory_fixture.gd:59)
+[victory-qa] PASS failure_before_victory_locks_success_gate {}
+[victory-qa-route] {"data":{"reason":"被僵尸鼠淹没了","success":false},"screen":"results"}
+[victory-qa] PASS player_death_routes_failure_only {"routes":[{"data":{"reason":"被僵尸鼠淹没了","success":false},"screen":"results"}]}
+[victory-qa] RESULT {"checks":63,"failed":0,"report":"/workspace/scratch/b4c1b123f420/paw-swat-work/boss-qa/victory-qa/evidence/victory-report.json"}

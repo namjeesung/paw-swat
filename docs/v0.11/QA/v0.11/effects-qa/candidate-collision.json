@@ -1,0 +1,47 @@
+{
+	"checks": [
+		{
+			"check": "shooter excluded; player damage exactly 1.25",
+			"pass": true
+		},
+		{
+			"check": "low cover within 1.8m is passed",
+			"pass": true
+		},
+		{
+			"check": "distant low cover blocks the shot",
+			"pass": true
+		},
+		{
+			"check": "world walls block shots",
+			"pass": true
+		},
+		{
+			"check": "pierce=2 damages exactly three unique targets",
+			"pass": true
+		},
+		{
+			"check": "hostage collision safe=true",
+			"pass": true
+		},
+		{
+			"check": "hostage collision safe=false",
+			"pass": true
+		},
+		{
+			"check": "invulnerable target is excluded and ray continues",
+			"pass": true
+		},
+		{
+			"check": "enemy mask ignores enemies and hits player",
+			"pass": true
+		},
+		{
+			"check": "rocket max range calls unchanged explosion radius and damage",
+			"pass": true
+		}
+	],
+	"failures": [],
+	"kind": "headless deterministic collision regression",
+	"result": "PASS"
+}

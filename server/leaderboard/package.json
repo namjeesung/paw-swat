@@ -1,0 +1,14 @@
+{
+  "name": "paw-swat-leaderboard",
+  "private": true,
+  "scripts": {
+    "dev": "wrangler dev",
+    "db:init:local": "wrangler d1 execute paw-swat --local --file schema.sql",
+    "db:init": "wrangler d1 execute paw-swat --remote --file schema.sql",
+    "deploy": "wrangler deploy",
+    "db:migrate": "wrangler d1 execute paw-swat --remote --file migrate_v05.sql"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}

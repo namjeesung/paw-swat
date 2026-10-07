@@ -1,0 +1,61 @@
+{
+  "engine": "Godot 4.6.3.stable.official.7d41c59c4",
+  "fixed_fps": 60,
+  "production_files": {
+    "scripts/world/level.gd": {
+      "tested_sha256": "8f25bebb29162f7b30c6496542b099533bef31a540bbb6ffe682385e07b01539",
+      "matches_current_production": true
+    },
+    "scripts/world/pickup.gd": {
+      "tested_sha256": "45fdbc633bc17912bb81e2659758da5c201f781771ebe697d5159c4da106e6e2",
+      "matches_current_production": true
+    },
+    "scripts/actors/enemy.gd": {
+      "tested_sha256": "07cdba5c9420f2c58cace94048d8515c08ca689f3c8e83b541351f9d5276c33e",
+      "matches_current_production": true
+    },
+    "scripts/actors/player.gd": {
+      "tested_sha256": "f5ed425393a58257eb87f7a01a5a24339509e11330a198b62631fc773bc6f307",
+      "matches_current_production": true
+    },
+    "scripts/actors/zombie.gd": {
+      "tested_sha256": "5b6a54a74e1dc2c36ae0bba5663267126c0e5c4661f2ed8532cfb6cde1d8376c",
+      "matches_current_production": true
+    }
+  },
+  "reports": {
+    "loot": {
+      "checks": 46,
+      "failed": 0,
+      "runtime_script_errors": 0,
+      "engine_errors": 0,
+      "shutdown_objectdb_warning": false
+    },
+    "healing": {
+      "checks": 110,
+      "failed": 0,
+      "runtime_script_errors": 0,
+      "engine_errors": 0,
+      "shutdown_objectdb_warning": false
+    },
+    "shield": {
+      "checks": 43,
+      "failed": 0,
+      "runtime_script_errors": 0,
+      "engine_errors": 0,
+      "shutdown_objectdb_warning": true
+    },
+    "victory": {
+      "checks": 70,
+      "failed": 0,
+      "runtime_script_errors": 0,
+      "engine_errors": 0,
+      "shutdown_objectdb_warning": false
+    }
+  },
+  "fixture_only_changes": [
+    "Game.qa_record_routes flag and recorder, disabled by default; enabled only for victory fixture",
+    "Report destinations redirected into isolated evidence directory; no behavior assertion edits"
+  ],
+  "legacy_shield_shutdown_warning": true
+}

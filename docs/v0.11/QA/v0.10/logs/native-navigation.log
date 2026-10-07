@@ -1,0 +1,43 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.
+     at: set_use_vsync (platform/linuxbsd/x11/gl_manager_x11.cpp:364)
+OpenGL API 4.5 (Core Profile) Mesa 25.0.7-2+deb13u1 - Compatibility - Using Device: Mesa - llvmpipe (LLVM 19.1.7, 256 bits)
+ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+ALSA lib conf.c:5205:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5205:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1342:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5205:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5728:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2722:(snd_pcm_open_noupdate) Unknown PCM default
+ERROR: Condition "status < 0" is true. Returning: ERR_CANT_OPEN
+   at: init_output_device (drivers/alsa/audio_driver_alsa.cpp:90)
+WARNING: All audio drivers failed, falling back to the dummy driver.
+     at: initialize (servers/audio/audio_server.cpp:247)
+
+WARNING: Property agent_height is ceiled to cell_height voxel units and loses precision.
+     at: generator_bake_from_source_geometry_data (modules/navigation_3d/3d/nav_mesh_generator_3d.cpp:366)
+     GDScript backtrace (most recent call first):
+         [0] _bake_boss_nav (res://scripts/world/level.gd:277)
+         [1] _bake_nav (res://scripts/world/level.gd:263)
+         [2] _ready (res://scripts/world/level.gd:130)
+         [3] setup_level (res://qa/boss_navigation_fixture.gd:56)
+         [4] _run (res://qa/boss_navigation_fixture.gd:204)
+[boss-qa] NATIVE IMAGE {"error":0,"height":812,"label":"native_inside_outside_initial","path":"/workspace/scratch/b4c1b123f420/paw-swat-work/boss-qa/evidence/native-shots/01_native_inside_outside_initial.png","width":1180}
+[boss-qa] NATIVE IMAGE {"error":0,"height":812,"label":"native_inside_outside_near_entrance","path":"/workspace/scratch/b4c1b123f420/paw-swat-work/boss-qa/evidence/native-shots/02_native_inside_outside_near_entrance.png","width":1180}
+[boss-qa] NATIVE IMAGE {"error":0,"height":812,"label":"native_inside_outside_reached","path":"/workspace/scratch/b4c1b123f420/paw-swat-work/boss-qa/evidence/native-shots/03_native_inside_outside_reached.png","width":1180}
+[boss-qa] PASS native_inside_outside {"damage":0.0,"difficulty":"normal","elapsed":2.47,"final":[{"collisions":[],"distance":1.97598719596863,"line_of_sight":true,"path":[[-0.495,0.5,8.6],[-0.493,0.5,8.61],[-0.485,0.5,8.65],[-0.477,0.5,8.687],[-0.472,0.5,8.712],[-0.464,0.5,8.75],[-0.462,0.5,8.763],[-0.459,0.5,8.775],[-0.457,0.5,8.785],[-0.322,0.5,9.441],[-0.312,0.5,9.486],[-0.083,0.5,10.598],[-0.046,0.5,10.779],[0.0,0.5,11.0]],"path_index":9,"position":[-0.399,0.0,9.065],"velocity":[0.121,0.0,0.588],"wind":0.65}],"reached":true,"wall_winds":0}
+[boss-qa] NATIVE IMAGE {"error":0,"height":812,"label":"native_outside_inside_initial","path":"/workspace/scratch/b4c1b123f420/paw-swat-work/boss-qa/evidence/native-shots/04_native_outside_inside_initial.png","width":1180}
+[boss-qa] NATIVE IMAGE {"error":0,"height":812,"label":"native_outside_inside_near_entrance","path":"/workspace/scratch/b4c1b123f420/paw-swat-work/boss-qa/evidence/native-shots/05_native_outside_inside_near_entrance.png","width":1180}
+[boss-qa] NATIVE IMAGE {"error":0,"height":812,"label":"native_outside_inside_reached","path":"/workspace/scratch/b4c1b123f420/paw-swat-work/boss-qa/evidence/native-shots/06_native_outside_inside_reached.png","width":1180}
+[boss-qa] PASS native_outside_inside {"damage":22.0,"difficulty":"normal","elapsed":3.4,"final":[{"collisions":[],"distance":1.49623131752014,"line_of_sight":true,"path":[[0.386,0.5,6.926],[0.0,0.5,5.3]],"path_index":1,"position":[0.346,0.0,6.756],"velocity":[-0.485,0.0,-2.043],"wind":-0.000000000000000506539254985228}],"reached":true,"wall_winds":0}
+[boss-qa] RESULT {"cases":2,"failed":0,"lifecycle_failed":0,"report":"/workspace/scratch/b4c1b123f420/paw-swat-work/boss-qa/evidence/native-navigation.json","wall_seconds":24.049}
+ERROR: Texture with GL ID of 22: leaked 8520 bytes.
+   at: ~Utilities (drivers/gles3/storage/utilities.cpp:77)
+ERROR: Texture with GL ID of 23: leaked 8520 bytes.
+   at: ~Utilities (drivers/gles3/storage/utilities.cpp:77)
+ERROR: Parameter "RenderingServer::get_singleton()" is null.
+   at: ~ImageTexture (scene/resources/image_texture.cpp:230)
+ERROR: Parameter "RenderingServer::get_singleton()" is null.
+   at: ~ImageTexture (scene/resources/image_texture.cpp:230)
+ERROR: 2 RID allocations of type 'N5GLES37TextureE' were leaked at exit.

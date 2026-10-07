@@ -1,0 +1,43 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+WARNING: Property agent_height is ceiled to cell_height voxel units and loses precision.
+     at: generator_bake_from_source_geometry_data (modules/navigation_3d/3d/nav_mesh_generator_3d.cpp:366)
+     GDScript backtrace (most recent call first):
+         [0] _bake_boss_nav (res://scripts/world/level.gd:326)
+         [1] _bake_nav (res://scripts/world/level.gd:312)
+         [2] _ready (res://scripts/world/level.gd:151)
+         [3] run_all (res://scripts/test/qa/bandit_despawn_regression.gd:28)
+[bandit-qa] PASS first lethal hit accepted
+[bandit-qa] PASS terminal defeat state immediately
+[bandit-qa] PASS no attack or cuff interaction
+[bandit-qa] PASS no collision participation
+[bandit-qa] PASS movement and knockback stop immediately
+[bandit-qa] PASS actor callbacks stopped
+[bandit-qa] PASS navigation and attacks cleared
+[bandit-qa] PASS actor registry and targeting cleared
+[bandit-qa] PASS player target cleared before free
+[bandit-qa] PASS one defeat plus permanent subdue recorded
+[bandit-qa] PASS stable mission denominator
+[bandit-qa] PASS single designated weapon drop consumed
+[bandit-qa] PASS repeat damage rejected
+[bandit-qa] PASS no duplicate reward or loot
+[bandit-qa] PASS duplicate completion event ignored
+[bandit-qa] PASS bandit cannot count as zombie or boss
+[bandit-qa] PASS despawn check runs during active slow motion
+[bandit-qa] PASS whole enemy freed on real-time dissolve during slow motion
+[bandit-qa] PASS in-flight bullet safely forgets freed shooter
+[bandit-qa] PASS clearing front opens breach objective
+[bandit-qa] PASS front progress retained after actor removal
+[bandit-qa] PASS breach still targets hostage taker
+[bandit-qa] PASS taker defeat releases hostage and advances mission
+[bandit-qa] PASS no dangling taker reference
+[bandit-qa] PASS guide follows hostage rather than freed taker
+[bandit-qa] PASS all enemy registrations removed
+[bandit-qa] PASS all-subdued bonus retained exactly once
+[bandit-qa] PASS taker node also freed
+[bandit-qa] PASS zero hidden enemy corpses or countdown nodes
+[bandit-qa] PASS rescue starts existing horde sequence
+[bandit-qa] PASS bandit clears cannot bypass required boss kills
+[bandit-qa] RESULT checks=31 failed=0
+WARNING: ObjectDB instances leaked at exit (run with --verbose for details).
+   at: cleanup (core/object/object.cpp:2663)

@@ -1,0 +1,439 @@
+[boss] #1 at wave_t=26.0
+[boss] #2 at wave_t=38.0
+[boss] #3 at wave_t=48.0
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 150.9
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 150.9
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 150.9
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 150.9
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 150.9
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 150.9
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 150.9
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 150.9
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 150.9
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 150.9
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.0
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.0
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.0
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.0
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.0
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.0
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.0
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.0
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.0
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.0
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.0
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.0
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.0
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.0
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.1
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.1
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.1
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.1
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.1
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.1
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.1
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.1
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.1
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.1
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.1
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.1
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.1
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.1
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.1
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.2
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.2
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.2
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.2
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.2
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.2
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.2
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.2
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.2
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.2
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.2
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.2
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.2
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.2
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.3
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.3
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.3
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.3
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.3
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.3
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.3
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.3
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.3
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.3
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.3
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.3
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.3
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.3
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.3
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.4
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.4
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.4
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.4
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.4
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.4
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.4
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.4
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.4
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.4
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.4
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.4
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.4
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.4
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.5
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.5
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.5
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.5
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.5
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.5
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.5
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.5
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.5
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.5
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.5
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.5
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.5
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.5
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.5
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.6
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.6
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.6
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.6
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.6
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.6
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.6
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.6
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.6
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.6
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.6
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.6
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.6
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.6
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.7
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.7
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.7
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.7
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.7
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.7
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.7
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.7
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.7
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.7
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.7
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.7
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.7
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.7
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.7
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.8
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.8
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.8
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.8
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.8
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.8
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.8
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.8
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.8
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.8
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.8
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.8
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.8
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.8
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.9
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.9
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.9
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.9
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.9
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.9
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.9
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.9
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.9
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.9
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.9
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.9
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.9
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.9
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 151.9
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 152.0
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 152.0
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 152.0
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 152.0
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 152.0
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 152.0
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 152.0
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 152.0
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 152.0
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 152.0
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 152.0
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 152.0
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 152.0
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 152.0
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 152.1
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 152.1
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 152.1
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 152.1
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 152.1
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 152.1
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 152.1
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 152.1
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 152.1
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 152.1
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 152.1
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 152.1
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 152.1
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 152.1
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 152.1
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 152.2
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 152.2
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 152.2
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 152.2
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 152.2
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 152.2
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 152.2
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 152.2
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 152.2
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 152.2
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 152.2
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 152.2
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 152.2
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 152.2
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 152.3
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 152.3
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 152.3
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 152.3
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 152.3
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 152.3
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 152.3
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 152.3
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 152.3
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 152.3
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 152.3
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 152.3
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 152.3
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 152.3
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 152.3
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 152.4
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 152.4
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 152.4
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 152.4
+[autotest] OUTCOME {"success":true}
+[autotest] step done at 152.4
