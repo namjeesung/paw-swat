@@ -8,6 +8,8 @@
 
 当前源码版本：**v0.18** · Godot **4.6.3** · 序章：键鼠与触屏 · 第二章：仅 Windows 键鼠 · 自定义非商业源码许可
 
+**Windows 电脑版下载**：到 [Releases](https://github.com/namjeesung/paw-swat/releases/latest) 下载 `PAW-SWAT-v0.18-Windows.7z`，解压后双击 `PAW-SWAT.exe` 即可，无需安装。旧版 v0.12.2 源码保留在标签 [`v0.12.2`](https://github.com/namjeesung/paw-swat/tree/v0.12.2)。
+
 ## v0.18 新增：第二章「雾港码头」
 
 主菜单点 **CASE #002**，先在简报页选难度（初级 / 中级 / 高级 / 鬼畜）。一局 3–5 分钟，关键词：爽、解压、越打越强、满屏清场。
@@ -113,7 +115,7 @@
 godot --path GodotProject -- --touch
 ```
 
-仓库提供可编辑源码、Web/Android 导出预设和开发文档。自行导出需安装相应 Godot 导出模板；Android 还需配置 SDK 和自己的签名。**本次 GitHub 上传未新增可执行安装包，也未部署网页或排行榜服务器。**
+仓库提供可编辑源码、Web/Android 导出预设和开发文档。自行导出需安装相应 Godot 导出模板；Android 还需配置 SDK 和自己的签名。v0.18 的 Windows 版放在 [Releases](https://github.com/namjeesung/paw-swat/releases/latest)；本仓库未部署网页或排行榜服务器。
 
 ## 通关排行榜
 
