@@ -30,7 +30,7 @@ func _ready() -> void:
 	help.position = Vector2(126, 320)
 	help.pressed.connect(_open_help)
 	_bg.add_child(help)
-	var tips := Style.label("小贴士：击倒匪徒即永久制服，并会迅速消散。\n翻滚有无敌帧，子弹时间里你比世界更快。", 24, Color(Pal.CREAM, 0.55), Style.body_font())
+	var tips := Style.label("小贴士：被打晕的匪徒 14 秒后会醒来，记得及时上铐！\n翻滚有无敌帧，子弹时间里你比世界更快。", 24, Color(Pal.CREAM, 0.55), Style.body_font())
 	tips.position = Vector2(126, 860)
 	_bg.add_child(tips)
 
@@ -94,7 +94,7 @@ func _build_device() -> void:
 	vb.add_child(b1)
 	_first = b1
 	var b2 := StickerButton.new("重新开始", "secondary", 30)
-	b2.pressed.connect(func(): Game.goto("level"))
+	b2.pressed.connect(func(): Game.goto(level.restart_screen() if level else "level"))
 	vb.add_child(b2)
 	var b3 := StickerButton.new("返回任务板", "secondary", 30)
 	b3.pressed.connect(func(): Game.goto("menu"))
@@ -117,29 +117,25 @@ func _build_device() -> void:
 	shake.add_theme_color_override("font_pressed_color", Pal.CREAM)
 	shake.toggled.connect(func(on): Game.settings.shake = 1.0 if on else 0.0)
 	opts.add_child(shake)
-	var touch_opts := VBoxContainer.new()
-	touch_opts.name = "TouchOptions"
-	touch_opts.visible = Game.touch
-	opts.add_child(touch_opts)
-	Game.input_mode_changed.connect(func(enabled: bool): touch_opts.visible = enabled)
-	var mode := CheckButton.new()
-	mode.text = "松手射击（荒野乱斗式）"
-	mode.button_pressed = Game.settings.get("aim_mode", "lock") == "release"
-	mode.add_theme_font_override("font", Style.title_font())
-	mode.add_theme_font_size_override("font_size", 26)
-	mode.add_theme_color_override("font_color", Pal.CREAM)
-	mode.add_theme_color_override("font_pressed_color", Pal.YELLOW)
-	mode.toggled.connect(func(on): Game.settings.aim_mode = "release" if on else "lock")
-	touch_opts.add_child(mode)
-	var vib := CheckButton.new()
-	vib.text = "震动反馈"
-	vib.button_pressed = bool(Game.settings.vibrate)
-	vib.add_theme_font_override("font", Style.title_font())
-	vib.add_theme_font_size_override("font_size", 26)
-	vib.add_theme_color_override("font_color", Pal.CREAM)
-	vib.add_theme_color_override("font_pressed_color", Pal.CREAM)
-	vib.toggled.connect(func(on): Game.settings.vibrate = on)
-	touch_opts.add_child(vib)
+	if Game.touch:
+		var mode := CheckButton.new()
+		mode.text = "松手射击（荒野乱斗式）"
+		mode.button_pressed = Game.settings.get("aim_mode", "lock") == "release"
+		mode.add_theme_font_override("font", Style.title_font())
+		mode.add_theme_font_size_override("font_size", 26)
+		mode.add_theme_color_override("font_color", Pal.CREAM)
+		mode.add_theme_color_override("font_pressed_color", Pal.YELLOW)
+		mode.toggled.connect(func(on): Game.settings.aim_mode = "release" if on else "lock")
+		opts.add_child(mode)
+		var vib := CheckButton.new()
+		vib.text = "震动反馈"
+		vib.button_pressed = bool(Game.settings.vibrate)
+		vib.add_theme_font_override("font", Style.title_font())
+		vib.add_theme_font_size_override("font_size", 26)
+		vib.add_theme_color_override("font_color", Pal.CREAM)
+		vib.add_theme_color_override("font_pressed_color", Pal.CREAM)
+		vib.toggled.connect(func(on): Game.settings.vibrate = on)
+		opts.add_child(vib)
 
 
 func _slider(text: String, key: String, bus: String) -> Control:

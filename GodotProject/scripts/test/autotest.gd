@@ -1,6 +1,6 @@
 extends Node
 ## 自动测试：用 --autotest 启动（可加 --shots=目录 截图）。
-## 机器人走完整个流程：菜单 → 简报 → 关卡（清场/破门/救人质）→ 结算，然后退出。
+## 机器人走完整个流程：菜单 → 简报 → 关卡（清场/上铐/破门/救人质）→ 结算，然后退出。
 
 var _step := "boot"
 var _t := 0.0
@@ -94,11 +94,68 @@ func _process(delta: float) -> void:
 		"boot":
 			if _t > 1.6:
 				_shot("menu")
-				if OS.get_cmdline_user_args().has("--lbshot"):
+				if OS.get_cmdline_user_args().has("--harbor"):
+					Game.brief_case = 2
+					Game.goto("briefing")
+					_next("harbor_brief")
+				elif OS.get_cmdline_user_args().has("--lbshot"):
 					Game.goto("leaderboard")
 					_next("lbshot")
 				else:
 					_next("to_brief")
+		"harbor_brief":
+			if _t > 2.4:
+				_shot("harbor_briefing")
+				Game.goto("harbor")
+				_next("harbor_wait")
+		"harbor_wait":
+			if Game.current is HarborLevel and _t > 1.4:
+				_level = Game.current
+				_shot("harbor_start")
+				if OS.get_cmdline_user_args().has("--perfprobe"):
+					var pp: Node = load("res://scripts/test/perf_probe.gd").new()
+					pp.set("level", _level)
+					add_child(pp)
+				_level.player.bot_enabled = true
+				if _level.hud.touch:
+					_level.hud.touch.drive = false
+				_next("harbor_play")
+		"harbor_play":
+			var hl := _level as HarborLevel
+			var god := OS.get_cmdline_user_args().has("--god")
+			if god and not hl.player.dead:
+				hl.player.hp = hl.player.max_hp
+			_harbor_bot(delta)
+			if hl.t > 4.0:
+				_shot("harbor_step1")
+			if hl.step == 1 and hl._step_t > 3.0:
+				_shot("harbor_evidence")
+			if hl.step == 2 and hl._step_t > 2.5:
+				_shot("harbor_oil")
+			if hl.level_n >= 3 and hl.hhud._up_box and is_instance_valid(hl.hhud._up_box):
+				_shot("harbor_upgrade")
+			if hl.support.gunship_t > 0.0 and hl.support.gunship_t < 10.0:
+				_shot("harbor_gunship")
+			if hl.support.used >= 2:
+				_shot("harbor_support")
+			if hl.step == 5 and hl._step_t > 2.5:
+				_shot("harbor_evac")
+			if hl.rampage_t > 0.0 and hl.rampage_t < 8.5:
+				_shot("harbor_rampage")
+			for z in hl.zombies:
+				if z.boss and z.global_position.distance_to(hl.player.global_position) < 6.5:
+					_shot("harbor_boss")
+			if hl.t > 60.0:
+				_shot("harbor_late")
+			if hl.stage == "over":
+				_next("harbor_summary")
+		"harbor_summary":
+			if _t > 6.5:
+				_shot("harbor_summary")
+				var hl2 := _level as HarborLevel
+				print("[harbor] RESULT cans=%d kills=%d smashed=%d breakables_left=%d loose=%d zombies_alive=%d" % [hl2.cans, hl2.kills, hl2.smashed, hl2.breakables.size(), hl2.loose_loot, hl2.zombies.size()])
+				print("[perf] frames=", _perf_frames, " hitches(>50ms)=", _perf_hitches, " worst=", snappedf(_perf_max, 0.1), "ms")
+				get_tree().quit(0 if hl2.cans > 0 and hl2.kills > 0 else 1)
 		"lbshot":
 			if _t > 4.0:
 				_shot("leaderboard")
@@ -134,7 +191,7 @@ func _process(delta: float) -> void:
 					_level.player.global_position = Vector3(1.0, 0, 5.5)
 					_level.player.reset_physics_interpolation()
 					_level.cam.snap()
-					for e in _level.enemies.duplicate():
+					for e in _level.enemies:
 						e.drop = ""
 						e.take_hit(99.0, Vector3.FORWARD, Vector3.ZERO, null)
 					_level.door.breachable = true
@@ -188,7 +245,6 @@ func _process(delta: float) -> void:
 				if Game.current.get("_lb_line2") != null:
 					await get_tree().create_timer(1.5).timeout
 					_shot("results_lb")
-				print("[autotest] OUTCOME ", JSON.stringify((Game.current as Results).data))
 				var r := Game.run
 				print("[autotest] RESULT ", JSON.stringify(r))
 				print("[autotest] FINAL ", JSON.stringify(Game.final_score()))
@@ -199,7 +255,7 @@ func _process(delta: float) -> void:
 				_next("done")
 		"done":
 			if _t > 0.5:
-				get_tree().quit(0 if Game.current is Results and bool((Game.current as Results).data.get("success", false)) else 1)
+				get_tree().quit(0 if bool(Game.run.get("rescued", false)) else 1)
 
 
 func _next(s: String) -> void:
@@ -293,7 +349,7 @@ func _physics_process(delta: float) -> void:
 			var other := _nearest(func(e: Enemy): return e.zone == "staff" and e.is_active() and e != tk)
 			if other and _can_shoot(p, other):
 				shoot_at = other
-			elif is_instance_valid(tk) and tk.is_active():
+			elif tk.is_active():
 				if _can_shoot(p, tk):
 					shoot_at = tk
 					bot["aim"] = true
@@ -492,3 +548,118 @@ func _touch_test() -> void:
 	await _wait(0.5)
 	print("[touch] RESULT ", "PASS" if ok else "FAIL")
 	get_tree().quit(0 if ok else 3)
+
+
+# ------------------------------------------------------------------ 第二章：搜刮机器人
+
+var _skip := {}
+var _cur_target := 0
+var _cur_target_t := 0.0
+
+## 打最近的僵尸鼠（没有就打最近的箱子）；僵尸贴太近就往反方向跑（风筝）；没危险时去捡罐头 / 找箱子。
+## 狂暴（巨型机甲）时直接冲进僵尸堆里踩。
+func _harbor_bot(delta: float) -> void:
+	var lv := _level as HarborLevel
+	var p := lv.player
+	var bot := {"move": Vector2.ZERO, "shoot": false, "aim": false, "aim_point": p.global_position + p.facing * 3.0}
+	if lv.stage != "play" or p.dead:
+		p.bot = bot
+		return
+	var pp := p.global_position
+	var near_z: Zombie = null
+	var nz := 1e9
+	var away := Vector3.ZERO
+	for z in lv.zombies:
+		if z.dead:
+			continue
+		var d := z.global_position.distance_to(pp)
+		if d < nz:
+			nz = d
+			near_z = z
+		if d < 5.0:
+			var v := pp - z.global_position
+			v.y = 0
+			away += v.normalized() * (5.0 - d)
+	var aim := Vector3.INF
+	var goal: Node3D = lv.hud._markers.target
+	if goal and not is_instance_valid(goal):
+		goal = null
+	var gd := goal.global_position.distance_to(pp) if goal else 1e9
+	if near_z and nz < 7.0:
+		aim = near_z.global_position + Vector3(0, 0.4, 0)
+	elif goal and gd < 11.0 and lv.step != 5:
+		aim = goal.global_position + Vector3(0, 0.6, 0)
+	elif near_z and nz < 13.0:
+		aim = near_z.global_position + Vector3(0, 0.4, 0)
+	var near_b: Breakable = null
+	var nb := 1e9
+	for b in lv.breakables:
+		if b.broken or b.position.y > 0.5:
+			continue
+		var d := b.global_position.distance_to(pp)
+		if d < nb:
+			nb = d
+			near_b = b
+	if aim == Vector3.INF and near_b and nb < 9.0:
+		aim = near_b.global_position + Vector3(0, 0.5, 0)
+	# 支援攒满就用（准星对着最近的僵尸鼠）
+	if lv.support and near_z and nz < 12.0:
+		for si in 3:
+			if lv.support.is_ready_slot(si):
+				p.aim_point = near_z.global_position
+				lv.support.call_support(si)
+				break
+	var move := Vector3.ZERO
+	# 模拟真人躲鼠王技能：看到蓄力就横着跑开，偶尔翻滚
+	var dodge := Vector3.ZERO
+	for rk in lv.kings:
+		if is_instance_valid(rk) and is_instance_valid(rk.z) and rk.skill_name != "" and rk.z.global_position.distance_to(pp) < 9.0:
+			var v := pp - rk.z.global_position
+			v.y = 0
+			dodge += Vector3(-v.z, 0, v.x).normalized() * 2.0 + v.normalized()
+	if dodge.length() > 0.1 and not p.giant:
+		move = dodge
+		if randf() < 0.04:
+			bot["just_roll"] = true
+	elif p.giant and near_z:
+		move = (near_z.global_position - pp)
+	elif away.length() > 0.4 and not (lv.step == 5 and goal):
+		move = away
+		if goal and lv.step in [1, 2]:
+			move = away * 0.5 + _follow(p, goal.global_position) * 2.0
+	elif goal and (gd > (3.5 if goal is Breakable and (goal as Breakable).kind == "container" else 6.0) or lv.step == 5):
+		move = _follow(p, goal.global_position) * 3.0
+	else:
+		var best_l: Node3D = null
+		var bl := 10.0
+		for c in lv.get_children():
+			if c is Loot:
+				var d := (c as Node3D).global_position.distance_to(pp)
+				if d > lv.magnet_radius() - 0.5 and d < bl:
+					bl = d
+					best_l = c
+		if best_l:
+			move = best_l.global_position - pp
+		elif near_b and nb > 5.0:
+			move = _follow(p, near_b.global_position) * 3.0
+	move.y = 0
+	if aim != Vector3.INF:
+		bot["aim_point"] = aim
+		bot["shoot"] = true
+	if move.length() > 0.1:
+		var dir := move.normalized()
+		bot["move"] = lv.cam.ground_to_screen(dir)
+		if aim == Vector3.INF:
+			bot["aim_point"] = pp + dir * 4.0
+		if pp.distance_to(_last_pos) < 0.02:
+			_stuck_t += delta
+			if _stuck_t > 0.5:
+				_stuck_t = 0.0
+				bot["just_roll"] = true
+				_path_goal = Vector3.INF
+		else:
+			_stuck_t = 0.0
+	if p.hp < p.max_hp * 0.4 and randf() < 0.03:
+		bot["just_roll"] = true
+	_last_pos = pp
+	p.bot = bot

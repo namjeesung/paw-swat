@@ -4,7 +4,7 @@ extends Control
 
 const CASES := [
 	{"no": "#001", "title": "序章 · 午夜便利店", "scene": "store", "locked": false, "pos": Vector2(96, 400), "rot": -4.0},
-	{"no": "#002", "title": "雾港码头", "scene": "dock", "locked": true, "pos": Vector2(440, 448), "rot": 3.0},
+	{"no": "#002", "title": "雾港码头", "scene": "dock", "locked": false, "pos": Vector2(440, 448), "rot": 3.0},
 	{"no": "#003", "title": "宠物医院人质事件", "scene": "hospital", "locked": true, "pos": Vector2(784, 384), "rot": -2.0},
 	{"no": "#004", "title": "地铁追击", "scene": "subway", "locked": true, "pos": Vector2(1128, 452), "rot": 4.0},
 	{"no": "#005", "title": "金罐储备库", "scene": "vault", "locked": true, "pos": Vector2(1472, 420), "rot": -3.0},
@@ -139,12 +139,12 @@ func _build_note() -> void:
 	note.add_child(t)
 	var lines := [
 		["WASD", "移动"], ["鼠标", "瞄准 / 左键射击"], ["右键", "精准瞄准"], ["空格", "翻滚（无敌）"],
-		["R", "换弹 · 黄区再按 = 完美"], ["Q", "破门冲撞"], ["E", "破门 / 救人"],
+		["R", "换弹 · 黄区再按 = 完美"], ["Q", "破门冲撞"], ["E", "破门 / 上铐 / 救人"],
 	]
 	if Game.touch:
 		lines = [
 			["左手", "按住拖动 = 移动"], ["开火", "按住 = 自动瞄准射击"], ["拖动", "开火键拖动 = 手动瞄准"],
-			["翻滚", "无敌闪避子弹"], ["换弹", "黄区再点 = 完美换弹"], ["冲撞", "撞飞匪徒 / 撞开门"], ["互动", "破门 / 救人"],
+			["翻滚", "无敌闪避子弹"], ["换弹", "黄区再点 = 完美换弹"], ["冲撞", "撞飞匪徒 / 撞开门"], ["互动", "破门 / 上铐 / 救人"],
 		]
 	for i in lines.size():
 		var row := HBoxContainer.new()
@@ -216,6 +216,7 @@ func _on_case(card: CaseCard) -> void:
 	if card.locked:
 		_show_toast("「%s」档案尚未解锁 —— 先完成序章！" % card.title)
 		return
+	Game.brief_case = 2 if card.scene == "dock" else 1
 	Game.goto("briefing")
 
 

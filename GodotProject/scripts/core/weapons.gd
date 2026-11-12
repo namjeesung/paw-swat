@@ -3,8 +3,9 @@ class_name Weapons
 
 const DATA := {
 	"rifle": {"name": "P-30 突击步枪", "short": "步枪", "desc": "", "ammo": 0, "interval": 0.1, "color": Color("FFF4E0")},
-	"shotgun": {"name": "喵喵散弹", "short": "散弹", "desc": "扇形 8 连发 · 一枪击退一片 · 不伤人质", "ammo": 18, "interval": 0.5, "color": Color("FF7A1A")},
-	"laser": {"name": "罐头激光", "short": "激光", "desc": "贯穿一整排敌人", "ammo": 110, "interval": 0.06, "color": Color("3DD6C6")},
+	"shotgun": {"name": "喵喵散弹", "short": "散弹", "desc": "扇形 8 连发 · 一枪击退一片 · 不伤人质", "ammo": 24, "interval": 0.5, "color": Color("FF7A1A")},
+	"laser": {"name": "罐头激光", "short": "激光", "desc": "贯穿一整排敌人 · 射程超远 · 伤害翻倍", "ammo": 140, "interval": 0.05, "color": Color("3DD6C6")},
+	"smg": {"name": "喵喵冲锋枪", "short": "冲锋", "desc": "超高射速 · 边跑边扫", "ammo": 320, "interval": 0.05, "color": Color("7CFFB2")},
 	"rocket": {"name": "肉垫火箭", "short": "火箭", "desc": "爆炸范围伤害", "ammo": 10, "interval": 0.7, "color": Color("E63946")},
 	"gatling": {"name": "神器 · 罐头加特林", "short": "神器", "desc": "超高射速 · 子弹贯穿", "ammo": 1400, "interval": 0.045, "color": Color("FFC93C")},
 }
@@ -31,6 +32,10 @@ static func model(id: String) -> Node3D:
 			_p(root, Models.cyl(0.13, 0.13, 0.32), accent, Vector3(0, 0, -0.1), Vector3(90, 0, 0))
 			_p(root, Models.box(Vector3(0.12, 0.12, 0.55)), dark, Vector3(0, 0, 0.25))
 			_p(root, Models.sphere(0.07), Toon.glow(c, 2.5), Vector3(0, 0, 0.55))
+		"smg":
+			_p(root, Models.box(Vector3(0.14, 0.18, 0.5)), dark, Vector3.ZERO)
+			_p(root, Models.box(Vector3(0.08, 0.3, 0.1)), accent, Vector3(0, -0.2, 0.05))
+			_p(root, Models.cyl(0.04, 0.04, 0.25), accent, Vector3(0, 0.03, 0.35), Vector3(90, 0, 0))
 		"rocket":
 			_p(root, Models.cyl(0.14, 0.14, 0.8), dark, Vector3.ZERO, Vector3(90, 0, 0))
 			_p(root, Models.sphere(0.13), accent, Vector3(0, 0, 0.42))

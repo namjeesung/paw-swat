@@ -7,7 +7,7 @@ extends Control
 ##       · 不拖动：自动锁定目标开火（锁定后不乱跳，敌人脚下有锁定框）
 ##       · 拖动：手动精准瞄准（透视已修正，指哪打哪；带轻微吸附）
 ##   点屏幕上的敌人      = 切换锁定目标
-##   翻滚 / 冲撞 / 换弹 / 互动（破门、解救有目标时出现）/ 暂停
+##   翻滚 / 冲撞 / 换弹 / 互动（有目标时出现）/ 暂停
 ##
 ## 两种操作方案（暂停菜单切换）：
 ##   lock    智能锁定（默认）：按住即射，拖动手动瞄准时持续射击
@@ -59,18 +59,6 @@ func _ready() -> void:
 	_dbg = Game.touch_debug
 	if OS.has_feature("web"):
 		_web_input = JavaScriptBridge.get_interface("pawInput")
-
-
-func set_enabled(enabled: bool) -> void:
-	release_all()
-	visible = enabled
-	set_process(enabled)
-	if drive and level and level.player:
-		level.player.bot_enabled = enabled
-		level.player.lock_target = null
-	lock = null
-	_cand = null
-	_cand_t = 0.0
 
 
 func _dbg_event(t: String) -> void:
@@ -151,11 +139,6 @@ func _in_fire_zone(p: Vector2) -> bool:
 
 
 func _input(event: InputEvent) -> void:
-	# Native hybrid fallback. Activate before processing the first genuine
-	# contact, without replaying it or turning emulated mouse touches into mobile.
-	if not Game.touch and event is InputEventScreenTouch and event.pressed \
-		and event.device != InputEvent.DEVICE_ID_EMULATION:
-		Game.set_touch_mode(true)
 	if level == null or level.player == null or get_tree().paused or not drive \
 		or not is_visible_in_tree() or level.finished or level.player.dead \
 		or size.y > size.x * 1.05:
@@ -272,9 +255,6 @@ func _burst_len() -> float:
 
 
 func release_all() -> void:
-	lock = null
-	_cand = null
-	_cand_t = 0.0
 	_move_active = false
 	_fire_active = false
 	_move_idx = -1
@@ -288,7 +268,6 @@ func release_all() -> void:
 		_web_input.reset()
 	# Pausable nodes do not process while paused: clear action cache now.
 	if drive and level and level.player:
-		level.player.lock_target = null
 		var b := level.player.bot
 		b["move"] = Vector2.ZERO
 		b["shoot"] = false
@@ -316,8 +295,6 @@ func _process(delta: float) -> void:
 	if level.finished or level.player.dead or not is_visible_in_tree() or size.y > size.x * 1.05:
 		release_all()
 		return
-	if not is_instance_valid(_cand) or _cand.is_queued_for_deletion():
-		_cand = null
 	_prune_buttons()
 	if _web_input:
 		# One integer read per rendered frame; owner reconciliation only after
@@ -384,10 +361,8 @@ func _feed() -> void:
 	_just.clear()
 
 
-func _valid(e: Variant) -> bool:
-	# A despawned target is a freed Object, which cannot be passed to a typed
-	# Node3D argument. Validate the Variant before any cast or method call.
-	if not is_instance_valid(e) or not e is Node3D or e.is_queued_for_deletion() or not e.is_active():
+func _valid(e: Node3D) -> bool:
+	if e == null or not is_instance_valid(e) or not e.is_active():
 		return false
 	if e is Enemy and not level.zone_active((e as Enemy).zone):
 		return false
@@ -397,18 +372,18 @@ func _valid(e: Variant) -> bool:
 ## 锁定方向：已有锁定且仍可打 → 继续打它；否则挑一个新的
 func _lock_dir() -> Vector3:
 	var p := level.player
-	if not _valid(lock) or not _can_hit(lock):
-		lock = _pick_target()
-	if _valid(lock) and _can_hit(lock):
+	if lock == null or not _can_hit(lock):
+		var nl := _pick_target()
+		if nl:
+			lock = nl
+	if lock and _can_hit(lock):
 		var d := lock.global_position - p.global_position
 		d.y = 0
 		return d.normalized()
 	return p.facing
 
 
-func _can_hit(e: Variant) -> bool:
-	if not _valid(e):
-		return false
+func _can_hit(e: Node3D) -> bool:
 	var p := level.player
 	return level.clear_shot(p.global_position + Vector3(0, Bullet.HEIGHT, 0), e.global_position + Vector3(0, Bullet.HEIGHT, 0)) \
 		and _hostage_safe(e)
@@ -500,7 +475,7 @@ func _draw() -> void:
 	var cam := level.cam.cam
 	var firing := _fire_active or _burst_t > 0.0
 	# 锁定框：开火时红色实框，平时淡淡提示“下一个会打谁”
-	if _valid(lock) and firing and not _manual:
+	if lock and _valid(lock) and firing and not _manual:
 		_reticle(lock, Pal.RED, true)
 	elif not firing:
 		# 候选目标每 0.15 秒算一次（射线检测较多）
@@ -508,10 +483,8 @@ func _draw() -> void:
 		if _cand_t <= 0.0:
 			_cand_t = 0.15
 			_cand = lock if _valid(lock) and _can_hit(lock) else _pick_target()
-		if _valid(_cand):
+		if _cand and _valid(_cand):
 			_reticle(_cand, Color(1, 1, 1, 0.55), false)
-		else:
-			_cand = null
 	# 瞄准线
 	if (_fire_active and _manual) or (_burst_t > 0.0 and not _burst_lock):
 		var dir := _aim_dir
@@ -603,6 +576,8 @@ func _draw() -> void:
 		var lbl := "互动"
 		if it is Door:
 			lbl = "破门!" if en else "锁住"
+		elif it is Enemy:
+			lbl = "上铐"
 		elif it is Hostage:
 			lbl = "解救"
 		var r: float = float(RADII.interact) * (1.0 + sin(_t * 8.0) * 0.06 if en else 1.0)

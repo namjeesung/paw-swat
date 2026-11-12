@@ -59,12 +59,6 @@ const DOOR_POS := Vector3(8.8, 0, 0)
 
 var player: Player
 var enemies: Array[Enemy] = []
-var _bandits_total := 0
-var _bandits_defeated := 0
-var _front_total := 0
-var _front_defeated := 0
-var _taker_defeated := false
-var _all_bandits_bonus := false
 var hostage: Hostage
 var taker: Enemy
 var door: Door
@@ -129,6 +123,15 @@ var run_ms := 0.0
 var _run_last := 0
 
 
+func case_name() -> String:
+	return "案件 #001 · 午夜便利店"
+
+
+## 暂停菜单「重新开始」回到哪个界面
+func restart_screen() -> String:
+	return "level"
+
+
 func _enter_tree() -> void:
 	# 物理插值只给在物理帧里移动的角色 / 子弹用（它们自己打开），其他节点每帧直接更新
 	physics_interpolation_mode = Node.PHYSICS_INTERPOLATION_MODE_OFF
@@ -175,7 +178,6 @@ func _ready() -> void:
 	if not Game.touch:
 		Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 	_prewarm()
-	hud.prewarm_transition_text()
 	Game.bullet_time_changed.connect(_on_bullet_time)
 	Sfx.music("combat")
 	_set_phase(0)
@@ -260,13 +262,6 @@ func _build_env() -> void:
 	env.ambient_light_color = Color("6A7CB0")
 	# 流畅画质没有点光源，环境光提亮补偿
 	env.ambient_light_energy = 0.82 if Game.lite else 0.55
-	# Keep the same fog shader variant from the first rendered frame.
-	# Enabling fog at the horde used to invalidate the no-fog prewarm.
-	# Zero density is visually clear; the existing horde tween adds the fog.
-	env.fog_enabled = true
-	env.fog_density = 0.0
-	env.fog_height_density = 0.0
-	env.fog_light_color = Color("3E7A55")
 	env.tonemap_mode = Environment.TONE_MAPPER_FILMIC
 	env.tonemap_exposure = 1.05
 	env.glow_enabled = true
@@ -371,9 +366,6 @@ func _spawn() -> void:
 		e.drop = s[4]
 		add_child(e)
 		enemies.append(e)
-		_bandits_total += 1
-		if e.zone != "staff":
-			_front_total += 1
 		if s[0] == "taker":
 			taker = e
 	hostage = Hostage.new()
@@ -468,7 +460,7 @@ func guide_target() -> Vector3:
 		2:
 			return DOOR_POS + Vector3(0, 0, 1.0)
 		3:
-			return taker.global_position if is_instance_valid(taker) and taker.is_active() else Vector3.INF
+			return taker.global_position if taker.is_active() else Vector3.INF
 		4:
 			return hostage.global_position
 		5:
@@ -571,13 +563,23 @@ func laser(origin: Vector3, dir: Vector3, max_d: float, dmg: float, src: Node) -
 
 
 ## 爆炸：范围伤害（不伤人质，也不伤自己）
-func explode(pos: Vector3, radius: float, dmg: float, src: Node) -> void:
+func explode(pos: Vector3, radius: float, dmg: float, src: Node, quiet := false) -> void:
 	for t in targets():
 		var d: float = t.global_position.distance_to(pos)
 		if d < radius:
 			var dir: Vector3 = t.global_position - pos
 			dir.y = 0
 			t.take_hit(dmg * (1.0 - 0.5 * d / radius), dir.normalized() * 2.5, pos, src)
+	if quiet:
+		# 第二章机甲踩地：只要伤害和一圈光，不要每一步都爆炸声 + 震屏
+		Fx.ring(self, pos, Pal.ORANGE, radius * 1.1, 0.3)
+		return
+	if radius < 2.0:
+		# 爆炸弹的小爆炸：轻一点的特效和声音，不震屏
+		Fx.ring(self, pos, Pal.ORANGE, radius * 1.2, 0.25)
+		Fx.spark(self, pos + Vector3(0, 0.3, 0), Vector3.UP, Pal.ORANGE, 6, 5.0)
+		Sfx.play("hit", -10.0, 0.7, 0.1)
+		return
 	Fx.ring(self, pos, Pal.ORANGE, radius * 1.15, 0.4)
 	Fx.dust(self, pos, 14, Color(1.0, 0.85, 0.6, 0.85), 4.0, 0.35)
 	Fx.spark(self, pos + Vector3(0, 0.4, 0), Vector3.UP, Pal.ORANGE, 20, 9.0)
@@ -751,6 +753,9 @@ func noise(pos: Vector3, radius: float) -> void:
 
 func interactables() -> Array:
 	var list: Array = []
+	for e in enemies:
+		if e.state == "downed":
+			list.append(e)
 	if door and not door.done:
 		list.append(door)
 	if hostage:
@@ -798,9 +803,6 @@ func _set_phase(p: int) -> void:
 			cam.focus(DOOR_POS, 1.6)
 		3:
 			_door_marker.visible = false
-			if _taker_defeated:
-				_set_phase(4)
-				return
 			hud.set_objective("制服劫持者", "")
 			hud.set_target(taker)
 		4:
@@ -823,8 +825,13 @@ func _front_enemies() -> Array[Enemy]:
 
 
 func _update_clear_objective() -> void:
-	hud.set_objective("清除店内匪徒", "%d/%d" % [_front_defeated, _front_total])
-	if _front_total > 0 and _front_defeated >= _front_total and phase == 1:
+	var fe := _front_enemies()
+	var down := 0
+	for e in fe:
+		if e.is_neutralized():
+			down += 1
+	hud.set_objective("清除店内匪徒", "%d/%d" % [down, fe.size()])
+	if down >= fe.size() and phase == 1:
 		_set_phase(2)
 		hud.radio.say("chief", "店面清理完毕！员工休息室里有动静……人质就在里面。")
 		hud.radio.say("shiba", "交给我！")
@@ -836,33 +843,35 @@ func on_enemy_alerted(e: Enemy) -> void:
 		_set_phase(1)
 	if not _alerted_once:
 		_alerted_once = true
-		hud.radio.say("chief", "发现匪徒！[color=#FFB347]击倒即可永久制服[/color]，注意人质。")
+		hud.radio.say("chief", "发现匪徒！[color=#FFB347]能铐就铐[/color]，别下狠手。")
 		tip("fire")
 		get_tree().create_timer(9.0, false).timeout.connect(func(): tip("skill"))
 
 
 func on_enemy_down(e: Enemy) -> void:
-	# Lifetime-independent counters; no freed bandit remains in actor queries.
-	if not enemies.has(e):
-		return
-	var was_taker := e == taker
-	enemies.erase(e)
-	_bandits_defeated += 1
-	if e.zone != "staff":
-		_front_defeated += 1
-	if player.lock_target == e:
-		player.lock_target = null
-	if was_taker:
-		_taker_defeated = true
-		taker = null
 	if phase == 1:
 		_update_clear_objective()
-	if was_taker and phase == 3:
+	if e == taker and phase == 3:
 		_set_phase(4)
-		hud.radio.say("chief", "劫持者已制服！快去解救人质！")
-	if not _all_bandits_bonus and _bandits_defeated == _bandits_total:
-		_all_bandits_bonus = true
-		hud.score_popup("全员制服", 300)
+		hud.radio.say("chief", "劫持者倒下了！快去解救人质！")
+	tip("downed")
+
+
+func on_enemy_woke(e: Enemy) -> void:
+	if phase == 1 and e.zone != "staff":
+		_update_clear_objective()
+	tip("woke")
+
+
+func on_enemy_cuffed(_e: Enemy) -> void:
+	if phase == 1:
+		_update_clear_objective()
+	var all := true
+	for e in enemies:
+		if e.state != "cuffed":
+			all = false
+	if all:
+		hud.score_popup("全员落网", 300)
 		Game.add_score(300)
 
 
@@ -934,6 +943,12 @@ func tip(id: String) -> void:
 	match id:
 		"damage":
 			hud.tip("roll")
+		"downed":
+			hud.tip("cuff")
+		"woke":
+			if not _tips.has(id):
+				_tips[id] = true
+				hud.toast("有匪徒醒过来了！晕倒的要及时上铐")
 		_:
 			hud.tip(id)
 
@@ -971,7 +986,9 @@ func _start_wave() -> void:
 	# 灯光变成诡异的绿色
 	var et := create_tween().set_parallel()
 	et.tween_property(_env, "ambient_light_color", Color("6E9E86"), 1.5)
-	# Do not toggle fog_enabled here: only change uniforms, not shaders.
+	_env.fog_enabled = true
+	_env.fog_light_color = Color("3E7A55")
+	_env.fog_density = 0.0
 	et.tween_property(_env, "fog_density", 0.004, 2.0)
 	wave_on = true
 	await get_tree().create_timer(1.6, false).timeout
@@ -1186,7 +1203,7 @@ func _finale() -> void:
 	Sfx.play("victory", -2.0, 1.0, 0.0)
 	hud.mission_banner(true, "僵尸潮清除 · 小米安全")
 	hud.radio.say("hamster", "哇 —— 豆包哥哥好帅！", 1.8)
-	if _taker_defeated:
+	if taker:
 		hud.radio.say("raccoon", "哼……你们什么都不知道。老K 会来接我的。", 2.6)
 	await get_tree().create_timer(6.0, true, false, true).timeout
 	Game.goto("results", {"success": true})

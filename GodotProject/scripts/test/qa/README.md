@@ -39,18 +39,3 @@ Additional v0.9 healing checks (whole-package root):
     godot --headless --path GodotProject res://scripts/test/qa/heal_tip_metrics.tscn
 
 These cover the shared1/2/3/4 spawn budget, one-ground limit, full-HP preservation, capped actual healing, idempotent collection, pause/restart and production-font layout. They do not verify browser audio output.
-
-v0.12.1 horde transition regression (37 assertions):
-
-    godot --headless --path GodotProject res://scripts/test/qa/horde_transition_regression.tscn -- --lite
-
-Verifies staged font-cache preparation, cancellation on scene removal, constant fog-enabled state, original horde onset and density tween, artifact drop, timer and boss gate. Headless frame timings are CPU-only; they are not browser/mobile GPU evidence. transition_probe.tscn measures cold/warm glyph CPU cost only. The full autotest now uses Results.data.success for its exit status instead of merely checking hostage rescue.
-
-Desktop/hybrid input-mode regression:
-
-    node GodotProject/scripts/test/qa/web_input_mode_test.cjs
-    godot --headless --path GodotProject res://scripts/test/qa/input_mode_regression.tscn -- --lite
-
-The Web bridge test executes the exact production input-observer script with deterministic DOM mocks (40 assertions): desktop Edge/Chrome, Windows touch-capable hybrids, Android, iPhone, iPad desktop UA, primary coarse/no-hover devices, real touch/mouse/keyboard changes, compatibility-mouse suppression, cancellation, callback ordering and resize. It also verifies that the export preset contains the authoritative Web head unchanged.
-
-The Godot test uses the production HUD, Player, TouchControls and pause menu (33 assertions): desktop ownership, first genuine touch, simultaneous sticks, mouse/keyboard return, stale-action cleanup, resize/orientation, pause-option layout, repeated switching, forced --touch, test-bot ownership and actually freed/queued Enemy targeting references. It never finishes a run or writes a score. These are logic and engine-state tests, not real Edge, browser rendering, touchscreen/controller hardware or audio-output evidence.

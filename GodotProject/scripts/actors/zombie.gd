@@ -13,6 +13,12 @@ const BOSS_TELEPORT_RECOVERY := 0.6
 const PROGRESS_SAMPLE_TIME := 0.25
 
 var boss := false
+## 第二章越到后面越强：咬人伤害倍率
+var dmg_mult := 1.0
+## 外部技能接管（第二章鼠王的冲撞 / 蓄力）：>0 时按 skill_vel 移动，不追人不咬人
+var skill_lock := 0.0
+var no_ghost := false            # 第二章机甲 Boss：死的时候不飘出僵尸鼠的魂
+var skill_vel := Vector3.ZERO
 var speed := 3.0
 var dead := false
 var _attack_cd := 0.6
@@ -121,6 +127,17 @@ func _physics_process(delta: float) -> void:
 		_cancel_teleport()
 		_reset_progress()
 		return
+	if skill_lock > 0.0:
+		skill_lock -= delta
+		_cancel_teleport()
+		_reset_progress()
+		velocity = skill_vel
+		_move()
+		knock = knock.move_toward(Vector3.ZERO, 20.0 * delta)
+		if skill_vel.length() > 0.5:
+			face_toward(skill_vel.normalized(), delta, 14.0)
+		model.animate(delta, clampf(skill_vel.length() / maxf(speed, 0.1), 0.0, 1.0))
+		return
 	var to := p.global_position - global_position
 	to.y = 0
 	var dist := to.length()
@@ -162,7 +179,7 @@ func _physics_process(delta: float) -> void:
 				Game.shake(0.45)
 				Sfx.play("bonk", -2.0, 0.5)
 			if dist < _reach() + 0.35 and not p.dead and (not boss or level.line_of_sight(center(), p.center())):
-				p.take_hit(22.0 if boss else 5.0, dir, global_position, self)
+				p.take_hit((22.0 if boss else 5.0) * dmg_mult, dir, global_position, self)
 	elif dist < _reach() and _attack_cd <= 0.0 and _attack_recovery <= 0.0 and not p.dead and (not boss or level.line_of_sight(center(), p.center())):
 		_reset_progress()
 		_wind = 0.7 if boss else 0.45
@@ -457,14 +474,15 @@ func _die(silent := false) -> void:
 	Fx.dust(level, c, 5 if not boss else 24, Color(0.75, 1.0, 0.8, 0.85), 2.6, 0.22 if not boss else 0.5)
 	if boss:
 		Fx.spark(level, c, Vector3.UP, Color(0.55, 1.0, 0.65), 30, 5.0)
-	var g := Models.ghost()
-	level.add_child(g)
-	g.global_position = c
-	g.scale = Vector3.ONE * (1.0 if not boss else 2.5)
-	var gt := g.create_tween()
-	gt.tween_property(g, "global_position:y", c.y + 2.2, 1.0).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_SINE)
-	gt.parallel().tween_property(g, "scale", Vector3.ONE * 0.2, 1.0).set_ease(Tween.EASE_IN)
-	gt.tween_callback(g.queue_free)
+	if not no_ghost:
+		var g := Models.ghost()
+		level.add_child(g)
+		g.global_position = c
+		g.scale = Vector3.ONE * (1.0 if not boss else 2.5)
+		var gt := g.create_tween()
+		gt.tween_property(g, "global_position:y", c.y + 2.2, 1.0).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_SINE)
+		gt.parallel().tween_property(g, "scale", Vector3.ONE * 0.2, 1.0).set_ease(Tween.EASE_IN)
+		gt.tween_callback(g.queue_free)
 	if not silent:
 		Sfx.play("splat", -6.0 if not boss else 0.0, randf_range(0.9, 1.3) if not boss else 0.6, 0.0)
 	level.on_zombie_killed(self)

@@ -179,7 +179,7 @@ func _stats(success: bool) -> void:
 		["行动用时", "%02d:%02d" % [int(tt / 60.0), int(fmod(tt, 60.0))]],
 		["命中率", "%d%%" % int(round(float(_final.accuracy) * 100.0))],
 		["击倒匪徒", "%d 次" % int(r.downs)],
-		["永久制服", "%d 名" % int(r.cuffs)],
+		["成功上铐", "%d 名" % int(r.cuffs)],
 		["完美换弹", "%d 次" % int(r.perfect)],
 		["翻滚闪避", "%d 次" % int(r.dodges)],
 		["承受伤害", "%d" % int(r.damage)],
@@ -319,7 +319,6 @@ var _lb_time: Label
 var _lb_line1: Label
 var _lb_line2: Label
 var _lb_badge: Label
-var _lb_retry: Button
 
 
 func _build_lb_panel() -> void:
@@ -369,21 +368,6 @@ func _build_lb_panel() -> void:
 	_lb_badge.position = Vector2(232, 20)
 	box.add_child(_lb_badge)
 	_lb_badge.set_meta("bg", bb)
-	if Online.toy_mode():
-		_lb_retry = StickerButton.new("查询 / 重试提交", "secondary", 24)
-		_lb_retry.position = Vector2(1490, 430)
-		_lb_retry.custom_minimum_size = Vector2(390, 60)
-		_lb_retry.visible = false
-		_lb_retry.pressed.connect(func():
-			_lb_retry.disabled = true
-			_lb_line2.text = "正在查询 / 提交…"
-			var response := await Online.retry_toy_submission()
-			if not is_instance_valid(self):
-				return
-			_show_cloud_result(response, Game.diff_info(String(Game.run.get("difficulty", Game.difficulty))).name)
-			_lb_retry.disabled = false
-		)
-		board.add_child(_lb_retry)
 
 
 func _submit() -> void:
@@ -397,28 +381,21 @@ func _submit() -> void:
 	var dname: String = Game.diff_info(String(stats.difficulty)).name
 	_lb_line1.text = "%s最佳 %s · 本机第 %d 名" % [dname, Online.fmt_time(Online.local_best(String(stats.difficulty))), int(res.local_rank)]
 	var cloud: Dictionary = res.cloud
-	_show_cloud_result(cloud, dname)
+	if cloud.get("ok", false):
+		_lb_line2.text = "%s榜 全球第 %d 名\n昵称：%s" % [dname, int(cloud.rank), Online.nickname]
+		_lb_line2.add_theme_color_override("font_color", Pal.TEAL)
+	else:
+		_lb_line2.text = Online.error_text(String(cloud.get("error", "offline")))
 	var newbest: bool = res.new_local_best or bool(cloud.get("new_best", false))
 	if newbest:
 		_lb_badge.text = "新纪录！"
 		(_lb_badge.get_meta("bg") as Control).visible = true
 		Sfx.play("perfect", -2.0, 1.1, 0.0)
-	if not Online.toy_mode() and not Online.nick_confirmed and not Game.autotest:
+	if not Online.nick_confirmed and not Game.autotest:
 		_nick_dialog()
 
 
-func _show_cloud_result(cloud: Dictionary, dname: String) -> void:
-	if cloud.get("ok", false):
-		var rank := int(cloud.get("rank", 0))
-		_lb_line2.text = "%s · %s\n成绩已提交%s" % [Online.board_name(), dname, " · 第 %d 名" % rank if rank > 0 else "，可打开榜单查看"]
-		_lb_line2.add_theme_color_override("font_color", Pal.TEAL)
-	else:
-		_lb_line2.text = Online.error_text(String(cloud.get("error", "offline")))
-	if is_instance_valid(_lb_retry):
-		_lb_retry.visible = Online.has_pending_toy()
-
-
-## 第一次本机记录：起个昵称（默认给一个随机名字）
+## 第一次上榜：起个昵称（默认给一个随机名字）
 func _nick_dialog() -> void:
 	var dim := ColorRect.new()
 	dim.color = Color(0, 0, 0, 0.6)

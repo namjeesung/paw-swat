@@ -11,10 +11,6 @@ var _diff := "normal"
 var _diff_btns := {}
 var _nick_label: Label
 var _code_label: Label
-var _load_generation := 0
-var _force_refresh := false
-var _toy_avatar: TextureRect
-var _avatar_url := ""
 
 
 func _ready() -> void:
@@ -48,7 +44,7 @@ func _ready() -> void:
 	board.add_child(panel)
 	var x := 110.0
 	_tab = "global" if Online.online() else "local"
-	for t in [["global", Online.board_name()], ["local", "本机记录"]]:
+	for t in [["global", "全球榜"], ["local", "本机记录"]]:
 		var b := StickerButton.new(t[1], "primary" if t[0] == _tab else "secondary", 28)
 		b.position = Vector2(x, 210)
 		b.custom_minimum_size = Vector2(200, 60)
@@ -89,14 +85,6 @@ func _ready() -> void:
 	_list.add_theme_constant_override("separation", 8)
 	scroll.add_child(_list)
 
-	var refresh := StickerButton.new("手动刷新", "ghost", 22)
-	refresh.position = Vector2(890, 275)
-	refresh.custom_minimum_size = Vector2(210, 42)
-	refresh.pressed.connect(func():
-		_force_refresh = true
-		_switch(_tab)
-	)
-	board.add_child(refresh)
 	_build_profile()
 	var back := StickerButton.new("返回任务板", "secondary", 30)
 	back.position = Vector2(1500, 960)
@@ -120,9 +108,6 @@ func _unhandled_input(event: InputEvent) -> void:
 # ------------------------------------------------------------------ 我的特警证
 
 func _build_profile() -> void:
-	if Online.toy_mode():
-		_build_toy_profile()
-		return
 	var card := Control.new()
 	card.position = Vector2(1200, 190)
 	card.size = Vector2(620, 720)
@@ -180,100 +165,11 @@ func _build_profile() -> void:
 	restore.position = Vector2(270, 540)
 	restore.pressed.connect(_restore_dialog)
 	card.add_child(restore)
-	if Online.server_url == "":
-		ct.text = "本机身份"
-		note.text = "当前只保存本机记录。\nToy 公共榜请打开 B站网页版。"
-		copy.hide()
-		restore.hide()
 	card.set_meta("best", best)
 	_refresh_profile()
 
 
-func _build_toy_profile() -> void:
-	var card := Style.panel(Pal.NAVY, 20, 4, Pal.INK)
-	card.position = Vector2(1200, 190)
-	card.size = Vector2(620, 720)
-	board.add_child(card)
-	var title := Style.label("B站账号 · Toy", 42, Pal.YELLOW, Style.title_font())
-	title.position = Vector2(30, 28)
-	card.add_child(title)
-	_toy_avatar = TextureRect.new()
-	_toy_avatar.position = Vector2(480, 26)
-	_toy_avatar.size = Vector2(90, 90)
-	_toy_avatar.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-	_toy_avatar.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-	card.add_child(_toy_avatar)
-	_nick_label = Style.label("读取平台身份…", 36, Pal.CREAM, Style.title_font())
-	_nick_label.position = Vector2(30, 120)
-	_nick_label.size = Vector2(550, 55)
-	_nick_label.clip_text = true
-	card.add_child(_nick_label)
-	_code_label = Style.label("", 22, Pal.CREAM, Style.body_font())
-	_code_label.position = Vector2(30, 185)
-	_code_label.size = Vector2(550, 180)
-	_code_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	card.add_child(_code_label)
-	var note := Style.label("公共榜使用平台昵称和身份。\n本机昵称不会替换你的 B站昵称。\n四种难度分别排名，仅记录成功通关。\nAPK / 站外运行仍可保存本机成绩。", 23, Pal.CREAM, Style.body_font())
-	note.position = Vector2(30, 390)
-	card.add_child(note)
-	var account := StickerButton.new("刷新账号状态", "secondary", 24)
-	account.position = Vector2(30, 580)
-	account.pressed.connect(func():
-		account.disabled = true
-		await Online.refresh_toy_profile(true)
-		if is_instance_valid(account):
-			account.disabled = false
-	)
-	card.add_child(account)
-	Online.refresh_toy_profile()
-
-
-func _load_toy_avatar(url: String) -> void:
-	if Game.autotest or url == _avatar_url or not is_instance_valid(_toy_avatar):
-		return
-	_avatar_url = url
-	_toy_avatar.texture = null
-	if url.begins_with("//"):
-		url = "https:" + url
-	if not url.begins_with("https://"):
-		return
-	var original := _avatar_url
-	var request := HTTPRequest.new()
-	request.timeout = 8.0
-	request.body_size_limit = 1024 * 1024
-	add_child(request)
-	if request.request(url) != OK:
-		request.queue_free()
-		return
-	var response: Array = await request.request_completed
-	request.queue_free()
-	if not is_instance_valid(self) or not is_instance_valid(_toy_avatar) or original != _avatar_url:
-		return
-	if int(response[0]) != HTTPRequest.RESULT_SUCCESS or int(response[1]) != 200:
-		return
-	var picture := Image.new()
-	var bytes: PackedByteArray = response[3]
-	var error := picture.load_png_from_buffer(bytes)
-	if error != OK:
-		error = picture.load_jpg_from_buffer(bytes)
-	if error != OK:
-		error = picture.load_webp_from_buffer(bytes)
-	if error == OK:
-		_toy_avatar.texture = ImageTexture.create_from_image(picture)
-
-
 func _refresh_profile() -> void:
-	if Online.toy_mode():
-		if not is_instance_valid(_nick_label):
-			return
-		_nick_label.text = Online.platform_name() if Online.platform_name() != "" else "尚未取得 B站账号"
-		var info: Dictionary = Online.toy_profile
-		if info.has("error"):
-			_code_label.text = Online.error_text(String(info.error))
-		else:
-			_code_label.text = "已读取 B站身份。\n公共榜显示平台昵称，不公开真实 UID。"
-			_load_toy_avatar(String(info.get("avatar", "")))
-		return
 	if not is_instance_valid(_nick_label):
 		return
 	_nick_label.text = Online.nickname
@@ -294,10 +190,6 @@ func _refresh_profile() -> void:
 
 func _switch(tab: String) -> void:
 	_tab = tab
-	_load_generation += 1
-	var generation := _load_generation
-	var force := _force_refresh
-	_force_refresh = false
 	# 选中的标签用橙色贴纸样式，另一个用深色
 	for k in _tab_btns:
 		var old: StickerButton = _tab_btns[k]
@@ -333,22 +225,22 @@ func _switch(tab: String) -> void:
 		return
 	if not Online.online():
 		_status.text = ""
-		_message("当前版本未连接独立服务器。\n\nToy 公共榜请使用 B站上的网页版。\n此设备的通关成绩在「本机记录」中。")
+		_message("云端排行榜还没开启。\n\n部署服务器后（见 server/leaderboard/README.md），\n把网址填进 leaderboard.cfg 重新导出即可。\n\n现在可以先看「本机记录」。")
 		return
 	_status.text = "加载中…"
 	var want := _diff
-	var res: Dictionary = await Online.fetch_board(want, 50, force)
-	if not is_instance_valid(self) or _tab != "global" or _diff != want or generation != _load_generation:
+	var res: Dictionary = await Online.fetch_board(want, 50)
+	if not is_instance_valid(self) or _tab != "global" or _diff != want:
 		return
 	if res.has("error"):
 		_status.text = ""
-		_message(Online.error_text(String(res.error)))
+		_message("网络连接失败，请稍后再试。")
 		return
 	var rows2: Array = []
 	var my := Online.player_id.substr(0, 8)
 	for e in res.get("entries", []):
-		rows2.append({"nickname": e.nickname, "time_ms": int(e.time_ms), "rating": e.get("rating", ""), "rank": e.get("rank", rows2.size() + 1), "pid": e.get("pid", ""), "me": e.get("me", false) if Online.toy_mode() else my != "" and e.get("pid", "") == my})
-	_status.text = "%s · %s · 显示 %d 人%s" % [Online.board_name(), dname, rows2.size(), "（缓存）" if res.get("cached", false) else ""]
+		rows2.append({"nickname": e.nickname, "time_ms": int(e.time_ms), "rating": e.get("rating", ""), "me": my != "" and e.get("pid", "") == my})
+	_status.text = "%s榜 · 共 %d 名特警上榜" % [dname, rows2.size()]
 	_fill(rows2, false)
 
 
@@ -378,13 +270,11 @@ func _fill(rows: Array, local: bool) -> void:
 		hb.add_theme_constant_override("separation", 18)
 		row.add_child(hb)
 		var medal_col: Color = [Pal.YELLOW, Color("D9E2EC"), Color("E0A060")][i] if i < 3 else Color(Pal.CREAM, 0.6)
-		var rank := Style.label("%d" % int(r.get("rank", i + 1)), 40 if i < 3 else 32, medal_col, Style.num_font(), 6)
+		var rank := Style.label("%d" % (i + 1), 40 if i < 3 else 32, medal_col, Style.num_font(), 6)
 		rank.custom_minimum_size = Vector2(80, 0)
 		rank.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 		hb.add_child(rank)
-		var shown_name := String(r.nickname) + ("（我）" if me else "")
-		var nm := Style.label(shown_name, 32, Pal.CREAM, Style.title_font())
-		nm.tooltip_text = shown_name
+		var nm := Style.label(String(r.nickname) + ("（我）" if me else ""), 32, Pal.CREAM, Style.title_font())
 		nm.custom_minimum_size = Vector2(440, 0)
 		nm.clip_text = true
 		hb.add_child(nm)

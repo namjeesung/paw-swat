@@ -1,7 +1,7 @@
 class_name Tips
 ## 新手说明文案（触屏 / 键鼠两套措辞）。游戏中首次遇到时弹提示卡片，暂停菜单「操作说明」里可随时查看。
 
-const ORDER := ["move", "fire", "laser", "cuff", "roll", "skill", "reload", "cover", "grenade", "door", "hostage", "weapon", "switch", "wave", "shield", "heal"]
+const ORDER := ["move", "fire", "laser", "cuff", "roll", "skill", "reload", "cover", "grenade", "door", "hostage", "weapon", "switch", "wave", "shield", "heal", "smash", "levelup", "rampage", "support"]
 
 
 const KEY_COLOR := "#FF5C5C"
@@ -24,7 +24,9 @@ static func get_tip(id: String) -> Array:
 			return ["warn", "红色激光 = 马上开枪",
 				"浣熊开枪前会亮起{红色激光}，看到就{翻滚}躲开！"]
 		"cuff":
-			return ["cuff", "击倒即制服", "匪徒被击倒后即{永久制服}并迅速消散，不会醒来，也不需要上铐。"]
+			return ["cuff", "给匪徒上铐",
+				"被打晕的匪徒头上冒星星，{头顶倒计时}结束就会醒来！走到旁边点{【上铐】}把他铐住：永久制服，{+150 分}。" if t
+				else "被打晕的匪徒头上冒星星，{头顶倒计时}结束就会醒来！走到旁边按 {E} 把他铐住：永久制服，{+150 分}。"]
 		"roll":
 			return ["roll", "翻滚",
 				"点{【翻滚】}：翻滚的瞬间{无敌}，子弹会直接穿过你。被围住时翻滚突围！" if t
@@ -61,9 +63,23 @@ static func get_tip(id: String) -> Array:
 				else "捡到的神装都会留着，按 {Tab} / {X} 或{滚轮}在步枪和各把神装之间{来回切换}。弹药打完才会消失。"]
 		"heal":
 			var limit := int(Game.current.heal_drop_limit) if Game.current is Level else int(Game.dv("heal_drops"))
+			if Game.current is HarborLevel:
+				return ["cover", "回血补给", "走近罐头{最多回复 35 血}。{满血不消耗}。打碎箱子隔一阵会掉一个，{空投补给}里也有。"]
 			return ["cover", "回血补给", "走近罐头{最多回复 35 血}。{满血不消耗}，受伤后再捡。本局最多{%d件}，所有来源共用；地上最多一件。" % limit]
 		"shield":
 			return ["cover", "临时护盾", "{蓝色光柱}是护盾，走近自动拾取。{无敌 5 秒}，倒计时结束恢复受伤；{不能刷新或叠加}。暂停时倒计时停住，地面护盾 12 秒后消失。"]
+		"smash":
+			return ["fire", "箱子都能打碎！",
+				"{黄色箭头}指的就是目标。码头上的{箱子、油桶、集装箱}全都能{开枪打碎}，掉出的罐头会{自己飞过来}。"]
+		"levelup":
+			return ["weapon", "自动升级",
+				"罐头攒满上方的条就{自动升级}，随机获得一个强化（{连发、散射、爆炸弹}……），能叠加，越打越强。"]
+		"support":
+			return ["dash", "连杀支援",
+				"击退僵尸鼠攒支援点：{20 杀}按 {1} 空投补给，{45 杀}按 {2} 空袭，{80 杀}按 {3} 炮艇。空袭会炸准星那条线！"]
+		"rampage":
+			return ["dash", "罐头狂暴",
+				"底部的条吸满 {100 罐}就变身{巨型罐头机甲} 10 秒：{无敌}、走到哪炸到哪，结束时还有一记{大冲击波}！"]
 		"wave":
 			return ["zombie", "坚守 60 秒",
 				"{按住开火}尽情扫射，神器子弹会{贯穿}敌人！地上的{补给罐头}可以回血，被围住就翻滚突围。"]
@@ -141,3 +157,19 @@ static func draw_icon(ci: CanvasItem, c: Vector2, r: float, icon: String) -> voi
 			ci.draw_colored_polygon(PackedVector2Array([a1 + Vector2(-r * 0.2, -r * 0.05), a1 + Vector2(r * 0.12, -r * 0.05), a1 + Vector2(-r * 0.04, r * 0.22)]), ink)
 			var a2 := c + Vector2(cos(PI * 0.9), sin(PI * 0.9)) * r * 0.45
 			ci.draw_colored_polygon(PackedVector2Array([a2 + Vector2(r * 0.2, r * 0.05), a2 + Vector2(-r * 0.12, r * 0.05), a2 + Vector2(r * 0.04, -r * 0.22)]), Pal.ORANGE)
+		"magnet":
+			ci.draw_arc(c + Vector2(0, -r * 0.05), r * 0.38, PI, TAU, 16, Pal.RED, r * 0.22)
+			ci.draw_rect(Rect2(c + Vector2(-r * 0.49, -r * 0.08), Vector2(r * 0.22, r * 0.4)), Pal.RED)
+			ci.draw_rect(Rect2(c + Vector2(r * 0.27, -r * 0.08), Vector2(r * 0.22, r * 0.4)), Pal.RED)
+			ci.draw_rect(Rect2(c + Vector2(-r * 0.49, r * 0.24), Vector2(r * 0.22, r * 0.14)), Color("C9D1DC"))
+			ci.draw_rect(Rect2(c + Vector2(r * 0.27, r * 0.24), Vector2(r * 0.22, r * 0.14)), Color("C9D1DC"))
+		"heart":
+			ci.draw_circle(c + Vector2(-r * 0.2, -r * 0.1), r * 0.26, Pal.RED)
+			ci.draw_circle(c + Vector2(r * 0.2, -r * 0.1), r * 0.26, Pal.RED)
+			ci.draw_colored_polygon(PackedVector2Array([c + Vector2(-r * 0.45, 0), c + Vector2(r * 0.45, 0), c + Vector2(0, r * 0.5)]), Pal.RED)
+		"cat":
+			ci.draw_circle(c + Vector2(0, r * 0.08), r * 0.42, Color("2E2E38"))
+			ci.draw_colored_polygon(PackedVector2Array([c + Vector2(-r * 0.4, -r * 0.1), c + Vector2(-r * 0.3, -r * 0.55), c + Vector2(-r * 0.08, -r * 0.25)]), Color("2E2E38"))
+			ci.draw_colored_polygon(PackedVector2Array([c + Vector2(r * 0.4, -r * 0.1), c + Vector2(r * 0.3, -r * 0.55), c + Vector2(r * 0.08, -r * 0.25)]), Color("2E2E38"))
+			ci.draw_circle(c + Vector2(-r * 0.15, r * 0.02), r * 0.08, Color("FFE066"))
+			ci.draw_circle(c + Vector2(r * 0.15, r * 0.02), r * 0.08, Color("FFE066"))

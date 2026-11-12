@@ -204,12 +204,14 @@ class AmmoPanel extends Control:
 		HudWidgets.text(self, nf, Vector2(32 + sw, 92), "/%d" % mag, 22, Color(Pal.CREAM, 0.5))
 		HudWidgets.text(self, Style.body_font(), Vector2(28, 128), "P-30 突击步枪", 18, Color(Pal.CREAM, 0.7))
 		# 罐头弹药
-		for i in mag:
+		var shown := mini(mag, 30)
+		var lit := int(ceil(ammo * shown / float(maxi(mag, 1))))
+		for i in shown:
 			var row := i / 10
 			var c := i % 10
 			var p := Vector2(214 + c * 18.0, 22 + row * 31.0)
 			var body := Rect2(p, Vector2(13, 22))
-			if i < ammo:
+			if i < lit:
 				var can_col := Pal.RED if buff else Pal.ORANGE
 				draw_rect(body, can_col)
 				draw_rect(Rect2(p + Vector2(0, 7), Vector2(13, 7)), Pal.CREAM)
@@ -462,10 +464,12 @@ class Markers extends Control:
 			_arrow(ep, dir, 14.0, Color("B07CFF"))
 		# 任务目标
 		if target and is_instance_valid(target):
-			var wp := target.global_position + Vector3(0, 2.2 if not (target is Door) else 2.8, 0)
+			var wp := target.global_position + Vector3(0, float(target.get_meta("mark_h", 2.2 if not (target is Door) else 2.8)), 0)
 			var sp2 := cam.unproject_position(wp)
 			var lbl := "目标"
-			if target is Door:
+			if target.has_meta("mark"):
+				lbl = String(target.get_meta("mark"))
+			elif target is Door:
 				lbl = "破门"
 			elif target is Hostage:
 				lbl = "人质"

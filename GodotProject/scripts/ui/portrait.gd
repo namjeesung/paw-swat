@@ -13,6 +13,7 @@ const SPECIES := {
 	"hamster": {"fur": Color("E9B872"), "face": Color("FFF1DC"), "ear": "round", "inner": Color("FFAABB"), "nose": Color("FF8FA6")},
 	"raccoon": {"fur": Color("9EA3AD"), "face": Color("F4F4F6"), "ear": "round", "inner": Color("25222D"), "nose": Color("17181D")},
 	"rat": {"fur": Color("9A8A7A"), "face": Color("D9CBB8"), "ear": "big", "inner": Color("FF9DB0"), "nose": Color("FF8FA6")},
+	"boss_k": {"fur": Color("6F7380"), "face": Color("E6E6EA"), "ear": "round", "inner": Color("25222D"), "nose": Color("17181D")},
 	"cat_black": {"fur": Color("2E2E38"), "face": Color("3A3A46"), "ear": "pointy", "inner": Color("FF9DB0"), "nose": Color("FF8FA6")},
 	"golden": {"fur": Color("E7B65C"), "face": Color("F7DDA8"), "ear": "floppy", "inner": Color("D49A3C"), "nose": Color("17181D")},
 	"calico": {"fur": Color("FFF8EE"), "face": Color("FFF8EE"), "ear": "pointy", "inner": Color("FF9DB0"), "nose": Color("FF8FA6")},
@@ -81,7 +82,7 @@ static func draw_face(ci: CanvasItem, c: Vector2, r: float, species: String, moo
 			_ell(ci, c + Vector2(0.86 * r * s, 0.05 * r), 0.26 * r, 0.5 * r, inner, ol, -0.25 * s)
 	# 脸下半部 / 口鼻
 	_ell(ci, c + Vector2(0, 0.36 * r), 0.56 * r, 0.42 * r, face)
-	if species == "raccoon":
+	if species in ["raccoon", "boss_k"]:
 		_ell(ci, c + Vector2(0, -0.04 * r), 0.86 * r, 0.24 * r, Color("25222D"))
 	if species == "hamster":
 		for s in [-1.0, 1.0]:
@@ -90,7 +91,7 @@ static func draw_face(ci: CanvasItem, c: Vector2, r: float, species: String, moo
 	# 眼睛
 	for s in [-1.0, 1.0]:
 		var e := c + Vector2(0.34 * r * s, -0.04 * r)
-		if species == "raccoon":
+		if species in ["raccoon", "boss_k"]:
 			_ell(ci, e, 0.14 * r, 0.14 * r, Color.WHITE)
 			_ell(ci, e + Vector2(0.02 * r, 0.02 * r), 0.07 * r, 0.07 * r, Pal.INK)
 			ci.draw_line(e + Vector2(-0.16 * r * s, -0.16 * r), e + Vector2(0.14 * r * s, -0.27 * r), Pal.INK, maxf(2.0, r * 0.07))
@@ -125,6 +126,15 @@ static func draw_face(ci: CanvasItem, c: Vector2, r: float, species: String, moo
 		ci.draw_rect(Rect2(cap_c + Vector2(-w * r, 0), Vector2(w * 2 * r, 0.16 * r)), Pal.NAVY)
 		ci.draw_line(cap_c + Vector2(-w * r * 1.08, 0.17 * r), cap_c + Vector2(w * r * 1.08, 0.17 * r), Pal.INK, ol * 1.4)
 		ci.draw_colored_polygon(Style.star_points(cap_c + Vector2(0, -0.02 * r), 0.15 * r, 0.065 * r), Pal.YELLOW)
+	if species == "boss_k":
+		# 老K：黑色船长帽 + 金色帽徽 + 脸上一道疤
+		var hc := c + Vector2(0, -0.72 * r)
+		_ell(ci, hc, 0.86 * r, 0.32 * r, Color("1B1D26"), ol)
+		ci.draw_rect(Rect2(hc + Vector2(-0.95 * r, 0.12 * r), Vector2(1.9 * r, 0.14 * r)), Color("1B1D26"))
+		ci.draw_rect(Rect2(hc + Vector2(-0.86 * r, 0.02 * r), Vector2(1.72 * r, 0.08 * r)), Pal.YELLOW)
+		_ell(ci, hc + Vector2(0, -0.12 * r), 0.13 * r, 0.11 * r, Pal.YELLOW, ol * 0.5)
+		ci.draw_line(c + Vector2(0.18 * r, -0.3 * r), c + Vector2(0.5 * r, 0.12 * r), Color("E05555"), maxf(2.0, r * 0.06))
+		ci.draw_line(c + Vector2(0.26 * r, -0.16 * r), c + Vector2(0.42 * r, -0.2 * r), Color("E05555"), maxf(1.5, r * 0.04))
 	if species == "raccoon":
 		var bc := c + Vector2(0, -0.7 * r)
 		_ell(ci, bc, 0.8 * r, 0.38 * r, Pal.PURPLE_DARK, ol)

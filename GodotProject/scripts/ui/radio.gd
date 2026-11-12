@@ -7,6 +7,8 @@ const SPEAKERS := {
 	"shiba": ["豆包", Color("FFB46B")],
 	"hamster": ["店员 · 小米", Pal.TEAL],
 	"raccoon": ["劫持者", Color("B07CFF")],
+	"cat_black": ["卧底 · 夜影", Color("C59BFF")],
+	"boss_k": ["黑眼圈帮 · 老K", Color("FF5A5A")],
 }
 const W := 680.0
 const H := 136.0
@@ -93,7 +95,7 @@ func _start(item: Dictionary) -> void:
 	var sb := _name_box.get_theme_stylebox("panel") as StyleBoxFlat
 	sb.bg_color = sp[1]
 	_portrait.species = item.who
-	_portrait.bg = Pal.NAVY_LIGHT if item.who != "raccoon" else Pal.PURPLE_DARK
+	_portrait.bg = Pal.NAVY_LIGHT if not item.who in ["raccoon", "boss_k"] else Pal.PURPLE_DARK
 	_portrait.queue_redraw()
 	var total := _text.get_total_character_count()
 	_hold = float(item.hold) if float(item.hold) > 0.0 else 1.1 + total * 0.035

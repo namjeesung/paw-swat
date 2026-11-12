@@ -7,6 +7,11 @@ const LINES := [
 	"凌晨两点，喵喵便利店被[color=#B07CFF]黑眼圈帮[/color]洗劫，店员[color=#3DD6C6]小米[/color]被困在员工休息室。",
 	"先清理店面，再破门救人。记住 —— 我们是特警，不是打手。[color=#FFB347]能铐就铐！[/color]",
 ]
+const LINES2 := [
+	"豆包，便利店那批「实验罐头」查到源头了：[color=#B07CFF]黑眼圈帮[/color]的老大[color=#FF5A5A]老K[/color]，今晚 5 点要从雾港 7 号码头开船。",
+	"我们的卧底[color=#C59BFF]夜影[/color]已经在码头潜伏三天了。她会告诉你账本藏在哪——[color=#FF5A5A]红色集装箱[/color]。",
+	"老K 在船上藏了一台[color=#FF5A5A]罐头蟹机甲[/color]，会冲撞、跺地、开罐头炮。[color=#FF5A5A]地上一红就翻滚！[/color]拿到证据、炸掉实验罐头，撤离艇会来接你。",
+]
 
 var board: Control
 var _speech: RichTextLabel
@@ -17,9 +22,19 @@ var _card: OfficerCard
 var _threat: Label
 var _intel_count: Control
 var _picker: DiffPicker
+var case_no := 1
+
+
+func _lines() -> Array:
+	return LINES2 if case_no == 2 else LINES
+
+
+func _go() -> void:
+	Game.goto("harbor" if case_no == 2 else "level")
 
 
 func _ready() -> void:
+	case_no = Game.brief_case
 	Style.full_rect(self)
 	Sfx.music("menu")
 	var bg := ColorRect.new()
@@ -48,6 +63,7 @@ func _ready() -> void:
 	_card.position = Vector2(1400, -64)
 	board.add_child(_card)
 	_picker = DiffPicker.new()
+	_picker.case_no = case_no
 	_picker.position = Vector2(1380, 452)
 	_picker.changed.connect(_on_diff)
 	board.add_child(_picker)
@@ -76,20 +92,21 @@ func _build_screen() -> void:
 	var p := Style.panel(Color("16233F"), 12, 4, Color("2C4170"))
 	p.size = scr.size
 	scr.add_child(p)
-	var no := Style.label("案件 #001  ·  紧急出勤", 26, Pal.ORANGE, Style.title_font())
+	var c2 := case_no == 2
+	var no := Style.label("案件 #002  ·  追查源头" if c2 else "案件 #001  ·  紧急出勤", 26, Pal.ORANGE, Style.title_font())
 	no.position = Vector2(44, 26)
 	scr.add_child(no)
-	var t := Style.label("午夜便利店", 76, Pal.CREAM, Style.title_font())
+	var t := Style.label("雾港码头" if c2 else "午夜便利店", 76, Pal.CREAM, Style.title_font())
 	t.position = Vector2(40, 56)
 	scr.add_child(t)
-	var meta := Style.label("毛绒市 樱花街 17 号  ·  凌晨 02:13  ·  威胁等级", 24, Color(Pal.CREAM, 0.65), Style.body_font())
+	var meta := Style.label(("毛绒市 雾港 7 号码头  ·  凌晨 04:00  ·  威胁等级" if c2 else "毛绒市 樱花街 17 号  ·  凌晨 02:13  ·  威胁等级"), 24, Color(Pal.CREAM, 0.65), Style.body_font())
 	meta.position = Vector2(44, 150)
 	scr.add_child(meta)
 	_threat = Style.label("", 24, Pal.YELLOW, Style.body_font())
 	_threat.position = Vector2(560, 150)
 	scr.add_child(_threat)
 	_update_threat()
-	var map := MapSchematic.new()
+	var map: Control = HarborSchematic.new() if c2 else MapSchematic.new()
 	map.position = Vector2(40, 200)
 	map.size = Vector2(700, 480)
 	scr.add_child(map)
@@ -104,17 +121,29 @@ func _build_screen() -> void:
 	_intel_count = _bullet("", Color("B07CFF"))
 	intel.add_child(_intel_count)
 	_update_threat()
-	intel.add_child(_bullet("浣熊开枪前会亮起[红色激光]", Pal.RED))
-	intel.add_child(_bullet("人质：店员 · 仓鼠小米（员工休息室）", Pal.TEAL))
-	intel.add_child(_bullet("员工休息室门已反锁", Pal.ORANGE))
-	var sp := Control.new()
-	sp.custom_minimum_size = Vector2(0, 8)
-	intel.add_child(sp)
-	intel.add_child(_head("行动目标"))
-	intel.add_child(_bullet("① 清除店面与仓库的匪徒", Pal.CREAM))
-	intel.add_child(_bullet("② 破门进入员工休息室", Pal.CREAM))
-	intel.add_child(_bullet("③ 制服劫持者，解救人质", Pal.CREAM))
-	intel.add_child(_bullet("加分：制服匪徒、完美换弹、零误伤", Pal.YELLOW))
+	if c2:
+		intel.add_child(_bullet("箱子、油桶、集装箱都能开枪打碎", Pal.YELLOW))
+		intel.add_child(_bullet("罐头蟹出招前地上会亮[红色预警]", Pal.RED))
+		var sp2 := Control.new()
+		sp2.custom_minimum_size = Vector2(0, 8)
+		intel.add_child(sp2)
+		intel.add_child(_head("行动目标"))
+		intel.add_child(_bullet("① 打碎货箱，轰开 3 个红色集装箱找账本", Pal.CREAM))
+		intel.add_child(_bullet("② 引爆油罐区藏实验罐头的红油桶", Pal.CREAM))
+		intel.add_child(_bullet("③ 打爆老K的罐头蟹，坚守到撤离艇来", Pal.CREAM))
+		intel.add_child(_bullet("加分：越快通关越高、罐头狂暴", Pal.YELLOW))
+	else:
+		intel.add_child(_bullet("浣熊开枪前会亮起[红色激光]", Pal.RED))
+		intel.add_child(_bullet("人质：店员 · 仓鼠小米（员工休息室）", Pal.TEAL))
+		intel.add_child(_bullet("员工休息室门已反锁", Pal.ORANGE))
+		var sp := Control.new()
+		sp.custom_minimum_size = Vector2(0, 8)
+		intel.add_child(sp)
+		intel.add_child(_head("行动目标"))
+		intel.add_child(_bullet("① 清除店面与仓库的匪徒", Pal.CREAM))
+		intel.add_child(_bullet("② 破门进入员工休息室", Pal.CREAM))
+		intel.add_child(_bullet("③ 制服劫持者，解救人质", Pal.CREAM))
+		intel.add_child(_bullet("加分：上铐、完美换弹、零误伤", Pal.YELLOW))
 	var scan := Style.shader_rect("res://shaders/scanlines.gdshader")
 	scr.add_child(scan)
 
@@ -124,7 +153,10 @@ func _update_threat() -> void:
 	_threat.text = "★".repeat(n) + "☆".repeat(5 - n) + ("  鬼畜!!" if n == 5 else "")
 	_threat.add_theme_color_override("font_color", Game.diff_info().color)
 	if _intel_count:
-		(_intel_count.get_child(1) as Label).text = "匪徒约 %d 名：老鼠小毛贼 + 浣熊打手" % Level.bandit_count(Game.difficulty)
+		if case_no == 2:
+			(_intel_count.get_child(1) as Label).text = "目标人物：黑眼圈帮老大 · 老K（浣熊，船长帽）"
+		else:
+			(_intel_count.get_child(1) as Label).text = "匪徒约 %d 名：老鼠小毛贼 + 浣熊打手" % Level.bandit_count(Game.difficulty)
 
 
 func _on_diff(d: String) -> void:
@@ -202,7 +234,7 @@ func _build_speech() -> void:
 
 func _show_line(i: int) -> void:
 	_line = i
-	_speech.text = LINES[i]
+	_speech.text = _lines()[i]
 	_speech.visible_characters = 0
 	_chars = 0.0
 
@@ -212,7 +244,7 @@ func _advance() -> void:
 		_chars = 9999.0
 		_speech.visible_characters = -1
 		return
-	if _line < LINES.size() - 1:
+	if _line < _lines().size() - 1:
 		Sfx.play("ui_click", -8.0)
 		_show_line(_line + 1)
 
@@ -221,7 +253,7 @@ func _build_buttons() -> void:
 	var go := StickerButton.new("出发！", "primary", 56)
 	go.position = Vector2(1400, 790)
 	go.custom_minimum_size = Vector2(440, 110)
-	go.pressed.connect(func(): Game.goto("level"))
+	go.pressed.connect(_go)
 	board.add_child(go)
 	var k := Style.label("" if Game.touch else "Enter", 20, Color(Pal.CREAM, 0.5), Style.num_font())
 	k.position = Vector2(1400, 912)
@@ -263,7 +295,7 @@ func _input(event: InputEvent) -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("confirm"):
-		Game.goto("level")
+		_go()
 	elif event.is_action_pressed("pause"):
 		Game.goto("menu")
 
@@ -370,9 +402,80 @@ class MapSchematic extends Control:
 		HudWidgets.text(self, Style.body_font(), Vector2(196, ly), "锁门", 18, Color(Pal.CREAM, 0.7))
 
 
+## 第二章的码头平面图：仓库、集装箱、油罐区、大船，标出任务顺序 ①–⑥
+class HarborSchematic extends Control:
+	var _t := 0.0
+
+	func _ready() -> void:
+		mouse_filter = Control.MOUSE_FILTER_IGNORE
+
+	func _process(d: float) -> void:
+		_t += d
+		queue_redraw()
+
+	func _w(x: float, z: float) -> Vector2:
+		var sc := 9.2
+		return Vector2(size.x * 0.5 + x * 1.4 * sc, 18 + (z + 26.0) * sc)
+
+	func _rect(x0: float, z0: float, x1: float, z1: float, c: Color) -> void:
+		var a := _w(x0, z0)
+		var b := _w(x1, z1)
+		draw_rect(Rect2(a, b - a), c)
+
+	func _num(p: Vector2, n: String, c: Color) -> void:
+		draw_circle(p, 15, Pal.INK)
+		draw_circle(p, 12, c)
+		HudWidgets.text(self, Style.num_font(), p + Vector2(-12, 8), n, 20, Pal.INK, HORIZONTAL_ALIGNMENT_CENTER, 24)
+
+	func _draw() -> void:
+		draw_style_box(Style.box(Color("0E1830"), 10, 2, Color("2C4170")), Rect2(Vector2.ZERO, size))
+		for i in range(1, 24):
+			draw_line(Vector2(i * 30, 0), Vector2(i * 30, size.y), Color(1, 1, 1, 0.04), 1)
+		for j in range(1, 16):
+			draw_line(Vector2(0, j * 30), Vector2(size.x, j * 30), Color(1, 1, 1, 0.04), 1)
+		var f := Style.title_font()
+		# 海 + 大船
+		_rect(-23, -26, 23, -16, Color(0.3, 0.5, 0.9, 0.12))
+		_rect(-11, -27, 19, -20, Color(1, 1, 1, 0.16))
+		HudWidgets.text(self, f, _w(-2, -21.5), "黑眼圈帮的船", 20, Color(Pal.CREAM, 0.6))
+		# 码头
+		_rect(-23, -16, 23, 18, Color(1, 1, 1, 0.05))
+		draw_line(_w(-23, -16), _w(23, -16), Pal.CREAM, 3)
+		# 仓库
+		_rect(-6, -5, 6, 5, Color(0.5, 0.7, 1.0, 0.14))
+		HudWidgets.text(self, f, _w(-3.6, 1.0), "7号仓库", 20, Color(Pal.CREAM, 0.7))
+		# 集装箱迷宫
+		for m in HarborBuilder.MAZE:
+			var hx := 3.2 if not m[2] else 1.4
+			var hz := 1.4 if not m[2] else 3.2
+			_rect(m[0] - hx, m[1] - hz, m[0] + hx, m[1] + hz, Color(1, 1, 1, 0.18))
+		# 油罐区
+		_rect(-21.5, -12.5, -10, -2, Color(1.0, 0.35, 0.3, 0.14))
+		HudWidgets.text(self, f, _w(-20.5, -3.4), "油罐区", 20, Color(Pal.RED, 0.8))
+		# 证物集装箱（红，闪）
+		var blink := 0.6 + 0.4 * sin(_t * 6.0)
+		for e in HarborLevel.EVIDENCE:
+			_rect(e.x - 2.1, e.z - 1.2, e.x + 2.1, e.z + 1.2, Color(Pal.RED, blink))
+		# 顺序
+		var start := _w(0, 8.5)
+		draw_circle(start, 9, Pal.ORANGE)
+		HudWidgets.text(self, f, start + Vector2(14, 8), "你在这里", 20, Pal.ORANGE)
+		_num(_w(3.5, 11.5), "1", Pal.YELLOW)
+		_num(_w(HarborLevel.EVIDENCE[2].x, HarborLevel.EVIDENCE[2].z + 2.6), "2", Pal.RED)
+		_num(_w(-16, -7), "3", Pal.RED)
+		_num(_w(HarborLevel.BOSS_POS.x, HarborLevel.BOSS_POS.z), "4", Pal.YELLOW)
+		_num(_w(-2, -1), "5", Color("7CFFB2"))
+		for bp in HarborLevel.BOAT_SPOTS:
+			draw_circle(_w(bp.x, bp.z), 12 + 3 * sin(_t * 5.0), Color("7CFFB2", 0.35))
+		_num(_w(HarborLevel.BOAT_SPOTS[0].x, HarborLevel.BOAT_SPOTS[0].z), "6", Color("7CFFB2"))
+		var ly := size.y - 22
+		HudWidgets.text(self, Style.body_font(), Vector2(16, ly), "1 货箱 · 2 红色证物集装箱 · 3 油桶 · 4 罐头蟹 · 5 坚守 · 6 撤离艇", 18, Color(Pal.CREAM, 0.7))
+
+
 ## 难度选择：初级 / 中级 / 高级（鬼畜）
 class DiffPicker extends Control:
 	signal changed(d: String)
+	var case_no := 1
 	const BW := 116.0
 	const BH := 100.0
 	const GAP := 8.0
@@ -452,7 +555,7 @@ class DiffPicker extends Control:
 			HudWidgets.text(self, tf, r.position + Vector2(0, 84), tag, 22, Color(fg, 0.75), HORIZONTAL_ALIGNMENT_CENTER, r.size.x)
 			if sel:
 				draw_colored_polygon(Style.star_points(r.position + Vector2(r.size.x - 6, 6), 16, 7), Pal.CREAM)
-		var info2: Dictionary = Game.diff_info()
+		var info2: Dictionary = Game.diff_info() if case_no != 2 else HarborLevel.hdiff()
 		var y := 186.0
 		for l in info2.desc:
 			HudWidgets.text(self, Style.body_font(), Vector2(4, y), "· " + String(l), 21, Color(Pal.CREAM, 0.88))

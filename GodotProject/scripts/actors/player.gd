@@ -22,6 +22,7 @@ const SHIELD_DURATION := 5.0
 const HIT_GRACE := 0.4
 
 var ammo := MAG
+var mag_size := MAG               # 第二章「扩容弹匣」升级会加大
 var reloading := false
 var reload_t := 0.0
 var reload_dur := RELOAD_TIME
@@ -59,6 +60,7 @@ var _face_aim_t := 0.0
 
 ## 当前武器（rifle 无限弹药；神装打空自动换回步枪）
 var weapon := "rifle"
+var regen_mult := 1.0             # 第二章按难度压低自动回血
 var special_ammo := 0
 ## 已拥有的神装 → 剩余弹药（当前手上那把的弹药在 special_ammo 里）。神装之间可以随时切换
 var arsenal := {}
@@ -67,6 +69,11 @@ var grenades := 0
 var _grenade_cd := 0.0
 ## 触屏锁定的目标：子弹会轻微追踪它
 var lock_target: Node3D
+## 第二章「罐头狂暴」的升级加成（序章里保持默认值，不影响序章）
+var mods := {"fire": 1.0, "multi": 0, "explode": 0.0, "pierce": 0, "dmg": 1.0, "speed": 1.0}
+var infinite_ammo := false
+## 罐头机甲（狂暴）：变大、无敌、更快
+var giant := false
 var _beam: MeshInstance3D
 var _beam_t := 0.0
 var _laser_snd := 0.0
@@ -157,7 +164,7 @@ func _physics_process(delta: float) -> void:
 		action_lock -= d
 		velocity = velocity.move_toward(Vector3.ZERO, ACCEL * d)
 	else:
-		var spd := SPEED * (0.55 if aiming else 1.0)
+		var spd := SPEED * (0.55 if aiming else 1.0) * float(mods.speed) * (1.35 if giant else 1.0)
 		velocity = velocity.move_toward(wish * spd, ACCEL * d)
 		if _just("roll") and roll_cd <= 0.0:
 			_start_roll(wish if wish.length() > 0.2 else aim_dir)
@@ -180,7 +187,7 @@ func _physics_process(delta: float) -> void:
 	if _just("reload") and weapon == "rifle":
 		if reloading:
 			_try_perfect()
-		elif ammo < MAG:
+		elif ammo < mag_size:
 			_start_reload()
 
 	# 朝向：开火/精瞄时（及之后一小会儿）朝准星，否则朝移动方向
@@ -225,7 +232,7 @@ func _tick_timers(d: float) -> void:
 	if not _held("shoot") or reloading:
 		bloom = move_toward(bloom, 0.0, 10.0 * d)
 	if since_damage > Game.dv("regen_delay") and hp < max_hp:
-		hp = minf(max_hp, hp + Game.dv("regen_rate") * d)
+		hp = minf(max_hp, hp + Game.dv("regen_rate") * regen_mult * d)
 	if reloading:
 		reload_t += d
 		if reload_t >= reload_dur:
@@ -258,13 +265,24 @@ func current_spread() -> float:
 
 
 func _fire() -> void:
-	fire_cd = FIRE_INTERVAL
-	ammo -= 1
+	fire_cd = FIRE_INTERVAL * float(mods.fire) * (0.6 if giant else 1.0)
+	if not infinite_ammo:
+		ammo -= 1
 	Game.run.shots = int(Game.run.shots) + 1
 	var spread := current_spread()
 	var dir := aim_dir.rotated(Vector3.UP, randf_range(-spread, spread))
 	var hot := buff_t > 0.0
-	level.spawn_bullet(global_position + Vector3(0, Bullet.HEIGHT, 0), dir, true, 1.5 if hot else 1.0, self, {"homing": lock_target})
+	# 散射：多发子弹呈扇形；穿透 / 爆炸弹来自升级
+	var n := 1 + int(mods.multi)
+	var origin := global_position + Vector3(0, Bullet.HEIGHT * (2.2 if giant else 1.0), 0)
+	for i in n:
+		var off := (i - (n - 1) * 0.5) * deg_to_rad(8.0)
+		var opts := {"homing": lock_target}
+		if int(mods.pierce) > 0:
+			opts["pierce"] = int(mods.pierce)
+		if float(mods.explode) > 0.0:
+			opts["explode"] = float(mods.explode)
+		level.spawn_bullet(origin, dir.rotated(Vector3.UP, off), true, (1.5 if hot else 1.0) * float(mods.dmg), self, opts)
 	bloom = minf(bloom + 0.9, 6.5)
 	model.gun_kick = 0.13
 	var mp := model.muzzle.global_position
@@ -276,6 +294,8 @@ func _fire() -> void:
 	level.cam.kick(-dir * 0.14)
 	level.noise(global_position, 10.0)
 	level.hud.on_shot()
+	if infinite_ammo:
+		return
 	if ammo == 0:
 		_start_reload()
 	elif ammo == 8:
@@ -385,12 +405,13 @@ func _fire_special() -> void:
 	var origin := global_position + Vector3(0, Bullet.HEIGHT, 0)
 	var mp := model.muzzle.global_position
 	var col: Color = w.color
+	var dm := float(mods.dmg)   # 第二章的「重拳」升级也加成神装
 	Game.run.shots = int(Game.run.shots) + 1
 	match weapon:
 		"shotgun":
 			for i in 8:
 				var a := deg_to_rad(-17.0 + 34.0 * i / 7.0 + randf_range(-2, 2))
-				level.spawn_bullet(origin, aim_dir.rotated(Vector3.UP, a), true, 1.4, self, {"max_dist": 11.0, "knock": 2.6, "color": col, "safe": true})
+				level.spawn_bullet(origin, aim_dir.rotated(Vector3.UP, a), true, 1.4 * dm, self, {"max_dist": 11.0, "knock": 2.6, "color": col, "safe": true})
 			Sfx.play("shotgun", -3.0)
 			Fx.muzzle(level, mp, col, 1.6)
 			Game.shake(0.28)
@@ -399,7 +420,7 @@ func _fire_special() -> void:
 			model.gun_kick = 0.25
 			Game.run.shots = int(Game.run.shots) + 7
 		"laser":
-			var end := level.laser(origin, aim_dir, 20.0, 0.6, self)
+			var end := level.laser(origin, aim_dir, 26.0, 1.2 * dm, self)
 			_show_beam(mp, end + Vector3(0, mp.y - end.y, 0), col)
 			_laser_snd -= float(w.interval)
 			if _laser_snd <= 0.0:
@@ -408,7 +429,7 @@ func _fire_special() -> void:
 			Game.shake(0.04)
 			model.gun_kick = 0.05
 		"rocket":
-			level.spawn_bullet(origin, aim_dir, true, 5.0, self, {"kind": "rocket", "speed": 24.0, "explode": 3.4, "max_dist": 26.0, "safe": true})
+			level.spawn_bullet(origin, aim_dir, true, 5.0 * dm, self, {"kind": "rocket", "speed": 24.0, "explode": 3.4, "max_dist": 26.0, "safe": true})
 			Sfx.play("rocket", -2.0)
 			Fx.muzzle(level, mp, col, 1.8)
 			Game.shake(0.3)
@@ -418,7 +439,7 @@ func _fire_special() -> void:
 		"gatling":
 			var spread := deg_to_rad(4.0)
 			var dir := aim_dir.rotated(Vector3.UP, randf_range(-spread, spread))
-			level.spawn_bullet(origin, dir, true, 1.3, self, {"pierce": 2, "color": col, "homing": lock_target, "safe": true})
+			level.spawn_bullet(origin, dir, true, 1.3 * dm, self, {"pierce": 2, "color": col, "homing": lock_target, "safe": true})
 			_shot_n += 1
 			Fx.muzzle(level, mp, col, 1.1, _shot_n % 4 == 0)
 			if _shot_n % 3 == 0:
@@ -426,6 +447,16 @@ func _fire_special() -> void:
 			Sfx.play("shot", -10.0, 1.25, 0.1)
 			Game.shake(0.07)
 			model.gun_kick = 0.1
+		"smg":
+			var sp2 := deg_to_rad(6.0)
+			for k in 1 + int(mods.multi):
+				var d2 := aim_dir.rotated(Vector3.UP, randf_range(-sp2, sp2) + (k - int(mods.multi) * 0.5) * deg_to_rad(7.0))
+				level.spawn_bullet(origin, d2, true, 0.9 * dm, self, {"color": col, "safe": true, "pierce": int(mods.pierce)})
+			_shot_n += 1
+			Fx.muzzle(level, mp, col, 0.9, _shot_n % 3 == 0)
+			Sfx.play("shot", -11.0, 1.45, 0.1)
+			Game.shake(0.05)
+			model.gun_kick = 0.08
 	level.noise(global_position, 10.0)
 	level.hud.on_shot()
 	special_ammo -= 1
@@ -457,7 +488,7 @@ func _show_beam(from: Vector3, to: Vector3, col: Color) -> void:
 
 
 func _start_reload() -> void:
-	if reloading or ammo >= MAG:
+	if reloading or ammo >= mag_size:
 		return
 	reloading = true
 	reload_t = 0.0
@@ -491,7 +522,9 @@ func _try_perfect() -> void:
 
 func _finish_reload(perfect: bool) -> void:
 	reloading = false
-	ammo = MAG
+	ammo = mag_size
+	if level.has_method("on_reload_done"):
+		level.on_reload_done(perfect)
 	if perfect:
 		buff_t = 4.0
 		Sfx.play("perfect", -2.0, 1.0, 0.0)
@@ -517,7 +550,7 @@ func _start_roll(dir: Vector3) -> void:
 
 
 func invulnerable() -> bool:
-	return shield_t > 0.0 or roll_t > 0.03 or dash_t > 0.0
+	return giant or shield_t > 0.0 or roll_t > 0.03 or dash_t > 0.0
 
 
 func _start_dash(dir: Vector3) -> void:
@@ -591,8 +624,6 @@ func kick_door(door: Door) -> void:
 
 
 func do_cuff(e: Enemy) -> void:
-	if not is_instance_valid(e) or not e.can_interact(self):
-		return
 	action_lock = 0.3
 	var to := e.global_position - global_position
 	face_toward(to, 1.0, 100.0)

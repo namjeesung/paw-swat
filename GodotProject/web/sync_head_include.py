@@ -6,12 +6,6 @@ import re
 
 project = Path(__file__).resolve().parent.parent
 head = (project / "web/head_include.html").read_text(encoding="utf-8")
-adapter = (project / "web/toy_bridge.js").read_text(encoding="utf-8")
-marker = "<!-- PAW_TOY_ADAPTER -->"
-if marker in head:
-    head = head.split(marker)[0].rstrip() + "\n"
-head += marker + "\n<script>\n" + adapter + "\n</script>\n"
-(project / "web/head_include.html").write_text(head, encoding="utf-8")
 preset = project / "export_presets.cfg"
 text = preset.read_text(encoding="utf-8")
 text, count = re.subn(

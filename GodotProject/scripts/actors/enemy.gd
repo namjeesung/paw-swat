@@ -4,9 +4,9 @@ extends Actor
 ## rat    老鼠小毛贼：成群冲锋，近身蓄力扑咬
 ## raccoon 浣熊打手：保持距离，开枪前红色激光预警，三连发
 ## taker  劫持者：挟持人质原地不动，两连发
-## 血量归零即永久制服；立即停止战斗，短暂消散后释放整个节点。
+## 被打空血量会“晕倒”冒星星，一段时间后醒来；按 E 上铐即永久制服。
 
-const DESPAWN_TIME := 0.25
+const DOWN_TIME := 14.0
 
 var kind := "raccoon"
 var zone := "shop"
@@ -21,6 +21,7 @@ var drop := ""
 var _gave_grenade := false
 var _clear_t := 0.0
 var _clear_cache := false
+var _tag_sec := -1
 
 var _path := PackedVector3Array()
 var _path_i := 0
@@ -41,7 +42,9 @@ var _bite_done := false
 var _look_t := 0.0
 var _idle_yaw := 0.0
 var _laser: MeshInstance3D
+var _stars: Node3D
 var _mark: Label3D
+var _cuff_tag: Label3D
 
 
 func setup(k: String, z: String, face: Vector3) -> void:
@@ -79,7 +82,22 @@ func _ready() -> void:
 	model.tail_wag = 0.25
 	add_blob_shadow(0.48 if kind != "rat" else 0.4)
 	_build_laser()
+	_build_stars()
 	_build_mark()
+	_cuff_tag = Label3D.new()
+	_cuff_tag.font = Style.title_font()
+	_cuff_tag.font_size = 56
+	_cuff_tag.pixel_size = 0.006
+	_cuff_tag.modulate = Pal.TEAL
+	_cuff_tag.outline_size = 14
+	_cuff_tag.outline_modulate = Pal.INK
+	_cuff_tag.billboard = BaseMaterial3D.BILLBOARD_ENABLED
+	_cuff_tag.no_depth_test = true
+	_cuff_tag.render_priority = 18
+	_cuff_tag.outline_render_priority = 17
+	_cuff_tag.position = Vector3(0, 1.75 if kind != "rat" else 1.5, 0)
+	_cuff_tag.visible = false
+	add_child(_cuff_tag)
 	_attack_cd = randf_range(0.5, 1.2)
 
 
@@ -91,6 +109,22 @@ func _build_laser() -> void:
 	_laser.top_level = true
 	_laser.visible = false
 	add_child(_laser)
+
+
+func _build_stars() -> void:
+	_stars = Node3D.new()
+	_stars.position = Vector3(0, 1.05 if kind != "rat" else 0.85, 0)
+	add_child(_stars)
+	var m := Toon.glow(Pal.YELLOW, 1.6)
+	for i in 3:
+		var s := MeshInstance3D.new()
+		s.mesh = Models.star(0.13, 0.055, 0.04)
+		s.material_override = m
+		var a := TAU * i / 3.0
+		s.position = Vector3(cos(a) * 0.38, 0.05 * sin(a * 2.0), sin(a) * 0.38)
+		s.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+		_stars.add_child(s)
+	_stars.visible = false
 
 
 func _build_mark() -> void:
@@ -112,7 +146,7 @@ func _build_mark() -> void:
 
 
 func is_active() -> bool:
-	return state in ["idle", "combat", "stunned"]
+	return state != "downed" and state != "cuffed"
 
 
 func is_neutralized() -> bool:
@@ -122,7 +156,7 @@ func is_neutralized() -> bool:
 # ------------------------------------------------------------------ 主循环
 
 func _physics_process(delta: float) -> void:
-	if level == null or not is_active():
+	if level == null:
 		return
 	if level.finished:
 		_laser.visible = false
@@ -130,6 +164,11 @@ func _physics_process(delta: float) -> void:
 		return
 	_bite_cd -= delta
 	match state:
+		"cuffed":
+			model.animate(delta, 0.0)
+			return
+		"downed":
+			_tick_down(delta)
 		"stunned":
 			_stun -= delta
 			velocity = velocity.move_toward(Vector3.ZERO, 25.0 * delta)
@@ -149,7 +188,9 @@ func _physics_process(delta: float) -> void:
 				_tick_gunner(delta)
 	if is_active():
 		_separate()
-	_move()
+	# 晕倒后不动了就不再做碰撞移动（场上常躺着十几个，省掉每帧的 move_and_slide）
+	if state != "downed" or knock.length_squared() > 0.0001 or velocity.length_squared() > 0.0001:
+		_move()
 	knock = knock.move_toward(Vector3.ZERO, 22.0 * delta)
 	var sp := maxf(speed, 0.1)
 	model.animate(delta, clampf(velocity.length() / sp, 0.0, 1.0) if is_active() else 0.0)
@@ -395,42 +436,30 @@ func stun(t: float) -> void:
 	_laser.visible = false
 
 
-func _go_down(_dir: Vector3) -> void:
-	if not is_active():
-		return
-	state = "defeated"
-	hp = 0.0
-	down_t = 0.0
+func _go_down(dir: Vector3) -> void:
+	state = "downed"
+	down_t = DOWN_TIME
 	_tele = 0.0
 	_burst = 0
-	_burst_cd = 0.0
 	_bite_wind = 0.0
 	_lunge = 0.0
-	_stun = 0.0
-	_path.clear()
-	_path_i = 0
 	_laser.visible = false
-	_mark.visible = false
 	collision_layer = 0
-	collision_mask = 0
 	velocity = Vector3.ZERO
-	knock = Vector3.ZERO
-	set_physics_process(false)
-	set_process(false)
-	for child in get_children():
-		if child is CollisionShape3D:
-			child.set_deferred("disabled", true)
+	knock = dir * 6.0
 	model.crouch = 0.0
-	model.tail_wag = 0.0
+	var tw := create_tween()
+	tw.tween_property(model.pose, "rotation:x", -PI / 2, 0.3).set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
+	tw.parallel().tween_property(model.pose, "position:y", 0.3, 0.3)
+	_stars.visible = true
 	Sfx.play("bonk", -3.0)
 	Game.hitstop(0.07)
 	Game.shake(0.3)
-	Fx.dust(level, global_position, 4)
+	Fx.popup(level, global_position + Vector3(0, 1.9, 0), "击倒!", Pal.YELLOW, 72, true)
+	Fx.dust(level, global_position, 8)
 	Game.run.downs = int(Game.run.downs) + 1
-	# Retain the previous defeat + permanent-subdue score, without an E step.
-	Game.run.cuffs = int(Game.run.cuffs) + 1
-	Game.add_score(250)
-	level.hud.score_popup("制服匪徒", 250)
+	Game.add_score(100)
+	level.hud.score_popup("击倒匪徒", 100)
 	level.hud.add_kill()
 	if drop != "":
 		# 往玩家那边掉，别掉进墙角
@@ -449,27 +478,102 @@ func _go_down(_dir: Vector3) -> void:
 		hostage.release()
 		hostage = null
 	level.on_enemy_down(self)
-	# One small transform tween; no corpse, countdown, ghost mesh or new shader.
-	var tw := create_tween().set_ignore_time_scale(true)
-	tw.tween_property(self, "scale", Vector3.ONE * 0.01, DESPAWN_TIME).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
-	tw.tween_callback(queue_free)
 
 
-## Legacy interaction hooks are inert; defeated bandits never wake or reward twice.
+func _tick_down(delta: float) -> void:
+	down_t -= delta
+	_stars.rotation.y += delta * 5.0
+	_stars.visible = down_t > 3.0 or fmod(down_t, 0.3) > 0.12
+	_cuff_tag.visible = true
+	# 文字每秒才变一次：只在变化时改（Label3D 改字会重建网格）
+	var sec := ceili(down_t)
+	if down_t > 4.0:
+		if sec != _tag_sec:
+			_tag_sec = sec
+			_cuff_tag.text = "可上铐 %ds" % sec
+			_cuff_tag.modulate = Pal.TEAL
+	else:
+		if sec != _tag_sec:
+			_tag_sec = sec
+			_cuff_tag.text = "快醒了! %ds" % sec
+		_cuff_tag.modulate = Pal.RED if fmod(down_t, 0.4) > 0.2 else Pal.YELLOW
+	velocity = velocity.move_toward(Vector3.ZERO, 20.0 * delta)
+	if down_t <= 0.0:
+		_wake()
+
+
+func _wake() -> void:
+	_cuff_tag.visible = false
+	state = "combat"
+	alerted = true
+	hp = max_hp * 0.5
+	collision_layer = Bullet.LAYER_ENEMY
+	_stars.visible = false
+	var tw := create_tween()
+	tw.tween_property(model.pose, "rotation:x", 0.0, 0.25).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+	tw.parallel().tween_property(model.pose, "position:y", 0.0, 0.25)
+	Sfx.play("wake", -4.0)
+	Fx.popup(level, global_position + Vector3(0, 1.9, 0), "醒了!", Color("C59BFF"), 64, true)
+	_attack_cd = 1.0
+	level.on_enemy_woke(self)
+
+
 func cuff() -> void:
-	pass
+	if state != "downed":
+		return
+	_cuff_tag.visible = false
+	state = "cuffed"
+	_stars.visible = false
+	model.handcuffs.visible = true
+	model.tail_wag = 0.0
+	var tw := create_tween()
+	tw.tween_property(model.pose, "rotation:x", 0.0, 0.25).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+	tw.parallel().tween_property(model.pose, "position:y", -0.1, 0.25)
+	model.crouch = 1.0
+	model.set_outline(Color("55607A"))
+	model.flash(Pal.TEAL, 0.8)
+	Sfx.play("cuff", -2.0)
+	Fx.popup(level, global_position + Vector3(0, 1.7, 0), "上铐!", Pal.TEAL, 72, true)
+	Fx.ring(level, global_position, Pal.TEAL, 1.8)
+	Game.run.cuffs = int(Game.run.cuffs) + 1
+	Game.add_score(150)
+	level.hud.score_popup("上铐", 150)
+	level.on_enemy_cuffed(self)
+	# 3 秒后被增援警员押走：不再绘制、不再运算（省性能，也让场面干净）
+	get_tree().create_timer(3.0, false).timeout.connect(_taken_away)
 
+
+func _taken_away() -> void:
+	if state != "cuffed" or not is_inside_tree() or level.finished:
+		return
+	Fx.popup(level, global_position + Vector3(0, 1.4, 0), "押走", Color(0.75, 0.8, 0.9), 44, true, 0.6, 0.5)
+	Fx.dust(level, global_position, 5)
+	var tw := create_tween()
+	tw.tween_property(model, "scale", Vector3.ONE * 0.01, 0.3).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
+	tw.tween_callback(_hide_taken)
+
+
+func _hide_taken() -> void:
+	visible = false
+	process_mode = Node.PROCESS_MODE_DISABLED
+
+
+# 互动接口
 func can_interact(_p: Player) -> bool:
-	return false
+	return state == "downed"
+
 
 func interact_enabled() -> bool:
-	return false
+	return true
+
 
 func interact_text() -> String:
-	return ""
+	return "上铐  %ds" % int(ceil(down_t))
+
 
 func interact_pos() -> Vector3:
 	return global_position
 
-func interact(_p: Player) -> void:
-	pass
+
+func interact(p: Player) -> void:
+	p.do_cuff(self)

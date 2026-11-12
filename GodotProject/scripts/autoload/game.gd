@@ -3,7 +3,6 @@ extends Node
 
 signal shake_requested(amount: float)
 signal bullet_time_changed(active: bool)
-signal input_mode_changed(touch_enabled: bool)
 
 const BT_SCALE := 0.25          # 子弹时间里世界的速度
 const BT_PLAYER_SPEED := 0.6    # 子弹时间里玩家的相对速度
@@ -57,9 +56,6 @@ const SETTINGS_FILE := "user://settings.cfg"
 var difficulty := "normal"
 ## 触屏模式：手机/平板自动开启，电脑上可用 -- --touch 预览
 var touch := false
-var _forced_touch := false
-var _web_input_mode: JavaScriptObject
-var _web_mode_callback: JavaScriptObject
 ## 触摸调试叠层（网页 ?debug=touch / 命令行 --touchdebug）
 var touch_debug := false
 ## 流畅画质：手机和网页默认开启。关掉实时阴影、SSAO、动态点光源（用自发光和环境光代替），
@@ -69,6 +65,8 @@ var lite := false
 var run := {}
 var autotest := false
 var shots_dir := ""
+## 简报页显示哪个案件（1 = 序章便利店，2 = 雾港码头）
+var brief_case := 1
 
 var _bt_left := 0.0
 var _hitstop_left := 0.0
@@ -90,17 +88,9 @@ func _ready() -> void:
 	Sfx.set_volume("Music", settings.music)
 	var args := OS.get_cmdline_user_args()
 	autotest = args.has("--autotest")
-	# Touch capability is not the active input mode: Windows hybrids can expose
-	# touch APIs while using a mouse. The Web bridge observes real input changes.
-	_forced_touch = args.has("--touch")
-	if OS.has_feature("web"):
-		_web_input_mode = JavaScriptBridge.get_interface("pawInput")
-		touch = _forced_touch or _web_has_touch()
-		if _web_input_mode:
-			_web_mode_callback = JavaScriptBridge.create_callback(_on_web_input_mode)
-			_web_input_mode.onModeChange(_web_mode_callback)
-	else:
-		touch = _forced_touch or OS.has_feature("mobile")
+	# 手机/平板（含 iPhone、安卓浏览器里的网页版）自动开启触屏操作
+	touch = OS.has_feature("mobile") or OS.has_feature("web_android") or OS.has_feature("web_ios") \
+		or (OS.has_feature("web") and _web_has_touch()) or args.has("--touch")
 	_load_settings()
 	touch_debug = args.has("--touchdebug")
 	lite = OS.has_feature("web") or OS.has_feature("mobile") or args.has("--lite")
@@ -170,41 +160,11 @@ func boot(c: Node) -> void:
 	_show("menu", {})
 
 
-# The bridge combines primary-pointer/mobile hints, then real input. Never use
-# DisplayServer touch availability or maxTouchPoints alone as a mobile flag.
+# WebView/iPad desktop UAs may omit both a mobile UA and ontouchstart.
 func _web_has_touch() -> bool:
-	if _web_input_mode:
-		return bool(_web_input_mode.usesTouch())
-	return OS.has_feature("web_android") or OS.has_feature("web_ios")
-
-
-func _on_web_input_mode(arguments: Array) -> void:
-	if not arguments.is_empty():
-		set_touch_mode(bool(arguments[0]))
-
-
-func set_touch_mode(enabled: bool) -> void:
-	if _forced_touch or touch == enabled:
-		return
-	touch = enabled
-	input_mode_changed.emit(touch)
-	_check_rotate()
-	if current is Level and not get_tree().paused and not (current as Level).finished:
-		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE if touch else Input.MOUSE_MODE_HIDDEN
-
-
-func _input(event: InputEvent) -> void:
-	# Web mode changes happen in DOM capture before Godot receives the original
-	# event. Do not mistake the browser's compatibility mouse event for a mouse.
-	if _web_input_mode or event.device == InputEvent.DEVICE_ID_EMULATION:
-		return
-	if event is InputEventScreenTouch and event.pressed:
-		set_touch_mode(true)
-	elif event is InputEventMouseButton and event.pressed:
-		set_touch_mode(false)
-	elif event is InputEventKey and event.pressed and not event.echo:
-		if event.physical_keycode in [KEY_W, KEY_A, KEY_S, KEY_D, KEY_UP, KEY_DOWN, KEY_LEFT, KEY_RIGHT, KEY_SPACE, KEY_SHIFT, KEY_R, KEY_Q, KEY_E, KEY_F, KEY_G, KEY_TAB, KEY_X, KEY_ESCAPE, KEY_P, KEY_ENTER, KEY_KP_ENTER]:
-			set_touch_mode(false)
+	if DisplayServer.is_touchscreen_available():
+		return true
+	return bool(JavaScriptBridge.eval("Number(navigator.maxTouchPoints || navigator.msMaxTouchPoints || 0) > 0", true))
 
 
 # ------------------------------------------------------------------ 输入
@@ -219,6 +179,9 @@ func _setup_input() -> void:
 	_key("skill", [KEY_Q])
 	_key("interact", [KEY_E, KEY_F])
 	_key("grenade", [KEY_G])
+	_key("support_1", [KEY_1, KEY_KP_1])
+	_key("support_2", [KEY_2, KEY_KP_2])
+	_key("support_3", [KEY_3, KEY_KP_3])
 	_key("switch", [KEY_TAB, KEY_X])
 	_mouse("switch", MOUSE_BUTTON_WHEEL_DOWN)
 	_key("pause", [KEY_ESCAPE, KEY_P])
@@ -434,6 +397,8 @@ func _show(screen: String, data: Dictionary) -> void:
 			current = LeaderboardScreen.new()
 		"level":
 			current = Level.new()
+		"harbor":
+			current = HarborLevel.new()
 		"results":
 			var r := Results.new()
 			r.data = data
@@ -465,10 +430,7 @@ func _build_rotate_hint() -> void:
 
 
 func _check_rotate() -> void:
-	if _rotate == null:
-		return
-	if not touch:
-		_rotate.visible = false
+	if _rotate == null or not touch:
 		return
 	var s := get_viewport().get_visible_rect().size
 	var portrait := s.y > s.x * 1.05

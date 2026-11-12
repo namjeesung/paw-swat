@@ -95,9 +95,6 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	# Bandits now despawn while their earlier projectiles may still be flying.
-	if not is_instance_valid(shooter):
-		shooter = null
 	var d := delta * (Game.player_time_mult() if from_player else 1.0)
 	# 子弹吸附：朝锁定目标轻微转向（只在偏差很小时生效，不会“拐弯”）
 	if homing and is_instance_valid(homing) and homing.has_method("is_active") and homing.is_active():

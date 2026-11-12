@@ -40,8 +40,6 @@ var _bt_target := 0.0
 var _hurt := 0.0
 var _heart := 0.0
 var _pulse := 0.0
-var _esc_label: Control
-var _case_label: Control
 
 
 func _anchor(c: Control, ax: float, ay: float, x: float, y: float, w: float, h: float) -> Control:
@@ -91,14 +89,12 @@ func _ready() -> void:
 	_timer.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
 	root.add_child(_anchor(_timer, 1, 0, -330, 30, 300, 44))
 	var di := Game.diff_info()
-	var case_l := Style.label("案件 #001 · 午夜便利店 · ", 20, Color(Pal.CREAM, 0.7), Style.body_font(), 8)
-	_case_label = case_l
+	var case_l := Style.label(level.case_name() + " · ", 20, Color(Pal.CREAM, 0.7), Style.body_font(), 8)
 	case_l.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
 	root.add_child(_anchor(case_l, 1, 0, -540, 76, 400, 30))
 	diff_l = Style.label("%s·%s" % [di.name, di.tag], 22, di.color, Style.title_font(), 8)
 	root.add_child(_anchor(diff_l, 1, 0, -136, 74, 110, 30))
 	var esc := Style.label("ESC 暂停", 18, Color(Pal.CREAM, 0.45), Style.body_font(), 6)
-	_esc_label = esc
 	esc.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
 	root.add_child(_anchor(esc, 1, 0, -230, 104, 200, 26))
 
@@ -139,41 +135,30 @@ func _ready() -> void:
 	_flash_rect.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	Style.full_rect(_flash_rect)
 	root.add_child(_flash_rect)
+	if Game.touch:
+		_touch_layout(esc, case_l)
+
+
+## 手机 / 平板布局：底部两角留给拇指，信息集中到顶部
+func _touch_layout(esc: Control, case_l: Control) -> void:
+	_anchor(_tag, 0, 0, 24, 18, 460, 170)
+	_tag.scale = Vector2.ONE * 0.8
+	_anchor(radio, 0, 0, 28, 176, Radio.W, Radio.H)
+	_anchor(_tips, 0, 0, 30, 332, TipCards.W, TipCards.H)
+	_ammo.visible = false
+	_skills.visible = false
+	_cross.visible = false
+	esc.visible = false
+	_anchor(_timer, 1, 0, -470, 30, 300, 44)
+	# 右上角有暂停按钮：案件名 + 难度整体左移
+	_anchor(case_l, 1, 0, -700, 76, 400, 30)
+	_anchor(diff_l, 1, 0, -296, 74, 110, 30)
+	_anchor(_feed, 1, 0.5, -440, -400, 390, 230)
+	_prompt_key.get_parent().visible = false
 	touch = TouchControls.new()
 	touch.level = level
 	Style.full_rect(touch)
 	root.add_child(touch)
-	Game.input_mode_changed.connect(_apply_input_mode)
-	_apply_input_mode(Game.touch)
-
-
-## 手机 / 平板布局：底部两角留给拇指，信息集中到顶部
-func _apply_input_mode(enabled: bool) -> void:
-	touch.set_enabled(enabled)
-	_ammo.visible = not enabled
-	_skills.visible = not enabled
-	_cross.visible = not enabled
-	_esc_label.visible = not enabled
-	_prompt_key.get_parent().visible = not enabled
-	_tag.scale = Vector2.ONE * (0.8 if enabled else 1.0)
-	if enabled:
-		_anchor(_tag, 0, 0, 24, 18, 460, 170)
-		_anchor(radio, 0, 0, 28, 176, Radio.W, Radio.H)
-		_anchor(_tips, 0, 0, 30, 332, TipCards.W, TipCards.H)
-		_anchor(_timer, 1, 0, -470, 30, 300, 44)
-		_anchor(_case_label, 1, 0, -700, 76, 400, 30)
-		_anchor(diff_l, 1, 0, -296, 74, 110, 30)
-		_anchor(_feed, 1, 0.5, -440, -400, 390, 230)
-		_anchor(_combo_label.get_parent(), 0, 0.5, 40, -16, 300, 140)
-	else:
-		_anchor(_tag, 0, 1, 64, -206, 460, 170)
-		_anchor(radio, 0, 0, 28, 40, Radio.W, Radio.H)
-		_anchor(_tips, 0, 0, 30, 200, TipCards.W, TipCards.H)
-		_anchor(_timer, 1, 0, -330, 30, 300, 44)
-		_anchor(_case_label, 1, 0, -540, 76, 400, 30)
-		_anchor(diff_l, 1, 0, -136, 74, 110, 30)
-		_anchor(_feed, 1, 0.5, -420, -260, 390, 230)
-		_anchor(_combo_label.get_parent(), 1, 0.5, -330, -20, 300, 140)
 
 
 func _build_prompt() -> void:
@@ -244,6 +229,7 @@ func _process(delta: float) -> void:
 	_tag.in_cover = p.in_cover
 	_tag.buff = p.buff_t > 0.0
 	_ammo.ammo = p.ammo
+	_ammo.mag = p.mag_size
 	_ammo.reloading = p.reloading
 	_ammo.reload_p = p.reload_progress()
 	_ammo.window = p.perfect_window()
@@ -504,21 +490,6 @@ func weapon_banner(id: String) -> void:
 	tw.tween_interval(1.8)
 	tw.tween_property(box, "modulate:a", 0.0, 0.3)
 	tw.tween_callback(box.queue_free)
-
-
-## Prepared during ordinary level entry, long before the rescue/horde.
-## Keep these exact text/size/outline combinations in sync with wave_banner,
-## fire_shout and Cutscene.PixelCanvas._texts. Nothing is shown or played.
-func prewarm_transition_text() -> void:
-	Style.prewarm_text(self, [
-		[Style.title_font(), "僵尸鼠来袭！", 110, 22],
-		[Style.title_font(), "实验罐头泄漏 · 保护小米", 30, 8],
-		[Style.num_font(), "FIRE!", 220, 40],
-		[Style.title_font(), "神器组装中...", 18, 6, 1.0],
-		[Style.title_font(), "神器装备！", 24, 8, 1.0],
-		[Style.title_font(), "罐头加特林", 22, 8, 1.0],
-		[Style.num_font(), "FIRE!", 52, 12, 1.0],
-	])
 
 
 ## 僵尸来袭横幅

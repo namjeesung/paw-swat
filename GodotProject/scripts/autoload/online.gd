@@ -1,5 +1,5 @@
 extends Node
-## 排行榜：Toy 公共榜（网页版）/ 独立服务器（可选）/ 本机记录。
+## 排行榜：游客身份（游客 ID + 昵称 + 恢复码）+ 本机记录 + 云端最速通关榜。
 ## 服务器地址读取 res://leaderboard.cfg（也可用命令行 -- --lb=网址 覆盖）。
 ## 同一浏览器 / 同一台手机自动保留身份；换设备用“恢复码”找回。
 
@@ -15,15 +15,6 @@ var nickname := ""
 var nick_confirmed := false
 var local_runs: Array = []
 var run_token := ""
-var toy_profile: Dictionary = {}
-var _toy_bridge: JavaScriptObject
-var _run_sequence := 0
-var _finished_sequence := -1
-var _finish_busy := false
-var _finish_result: Dictionary = {}
-var _pending_toy: Dictionary = {}
-const TOY_BOARDS := {"easy": 1, "normal": 2, "hard": 3, "insane": 4}
-
 
 
 func _ready() -> void:
@@ -34,69 +25,13 @@ func _ready() -> void:
 	for a in OS.get_cmdline_user_args():
 		if a.begins_with("--lb="):
 			server_url = a.substr(5).strip_edges().trim_suffix("/")
-	if OS.has_feature("web"):
-		_toy_bridge = JavaScriptBridge.get_interface("pawToy")
 	_load()
 	if nickname == "":
 		nickname = random_nick()
 
 
 func online() -> bool:
-	return toy_mode() or server_url != ""
-
-
-func toy_mode() -> bool:
-	# A configured independent server remains an explicit opt-in alternative.
-	return OS.has_feature("web") and server_url == ""
-
-
-func board_name() -> String:
-	return "Toy 公共榜" if toy_mode() else ("独立服务器榜" if server_url != "" else "联网榜未启用")
-
-
-func platform_name() -> String:
-	return String(toy_profile.get("nickname", ""))
-
-
-func _toy_call(op: String, payload: Dictionary = {}) -> Dictionary:
-	if not toy_mode() or _toy_bridge == null:
-		return {"error": "toy_unavailable"}
-	if Game.autotest and not OS.get_cmdline_user_args().has("--lbtest"):
-		return {"error": "test_offline"}
-	var ticket := str(_toy_bridge.start(op, JSON.stringify(payload)))
-	var begun := Time.get_ticks_msec()
-	while Time.get_ticks_msec() - begun < 26000:
-		var result := str(_toy_bridge.poll(ticket))
-		if result != "":
-			var parsed = JSON.parse_string(result)
-			return parsed if parsed is Dictionary else {"error": "toy_bad_response"}
-		await get_tree().process_frame
-	return {"error": "toy_pending" if op == "submit" else "toy_timeout"}
-
-
-func refresh_toy_profile(force := false) -> Dictionary:
-	var response := await _toy_call("profile", {"force": force})
-	if not response.has("error"):
-		toy_profile = response
-	else:
-		toy_profile = {"error": response.error}
-	profile_changed.emit()
-	return response
-
-
-func retry_toy_submission() -> Dictionary:
-	if _pending_toy.is_empty():
-		return {"error": "no_pending_score"}
-	var pending_id := str(_pending_toy.get("run_id", ""))
-	var response := await _toy_call("submit", _pending_toy)
-	if response.get("ok", false) and str(_pending_toy.get("run_id", "")) == pending_id:
-		_pending_toy = {}
-	return response
-
-
-func has_pending_toy() -> bool:
-	return not _pending_toy.is_empty()
-
+	return server_url != ""
 
 
 func registered() -> bool:
@@ -153,7 +88,7 @@ func local_best(diff: String) -> int:
 # ------------------------------------------------------------------ 网络
 
 func _request(method: HTTPClient.Method, path: String, body := {}) -> Dictionary:
-	if server_url == "":
+	if not online():
 		return {"error": "offline"}
 	var http := HTTPRequest.new()
 	http.timeout = 10.0
@@ -202,7 +137,7 @@ func set_nickname(n: String) -> String:
 		n = n.substr(0, 12)
 	nickname = n
 	nick_confirmed = true
-	if registered() and server_url != "":
+	if registered():
 		var r := await _request(HTTPClient.METHOD_POST, "/api/rename", _cred().merged({"nickname": n}))
 		if r.has("error") and r.error != "offline":
 			_save()
@@ -229,12 +164,7 @@ func restore(code: String) -> String:
 
 ## 每局开始：向服务器领本局令牌（服务器记录开局时间，用于校验成绩）
 func start_run() -> void:
-	_run_sequence += 1
-	_finish_result = {}
-	_pending_toy = {}
 	run_token = ""
-	if toy_mode():
-		return
 	if not online() or Game.autotest and not OS.get_cmdline_user_args().has("--lbtest"):
 		return
 	if not await ensure_registered():
@@ -245,13 +175,6 @@ func start_run() -> void:
 
 ## 通关：记本机成绩，并提交到云端（如果开启）
 func finish_run(time_ms: int, stats: Dictionary) -> Dictionary:
-	# Re-entering a results screen must not save or submit the same run twice.
-	while _finish_busy:
-		await get_tree().process_frame
-	if _finished_sequence == _run_sequence:
-		return _finish_result
-	_finish_busy = true
-	var sequence := _run_sequence
 	var diff := String(stats.get("difficulty", Game.difficulty))
 	var prev_best := local_best(diff)
 	local_runs.append({"time_ms": time_ms, "rating": stats.get("rating", "C"), "date": Time.get_date_string_from_system(), "nick": nickname, "diff": diff})
@@ -273,49 +196,21 @@ func finish_run(time_ms: int, stats: Dictionary) -> Dictionary:
 			local_rank = i + 1
 			break
 	var out := {"local_rank": local_rank, "new_local_best": prev_best == 0 or time_ms < prev_best, "cloud": {}}
-	if toy_mode():
-		_pending_toy = {"run_id": str(sequence), "difficulty": diff, "time_ms": time_ms}
-		out.cloud = await retry_toy_submission()
-	elif run_token != "":
+	if run_token != "":
 		out.cloud = await _request(HTTPClient.METHOD_POST, "/api/run/finish",
 			_cred().merged({"run_token": run_token, "time_ms": time_ms, "stats": stats}))
 		run_token = ""
 	elif online():
 		out.cloud = {"error": "no_token"}
-	_finish_result = out
-	_finished_sequence = sequence
-	_finish_busy = false
 	return out
 
 
-func fetch_board(diff: String, limit := 50, force := false) -> Dictionary:
-	if toy_mode():
-		return await _toy_call("board", {"difficulty": diff, "limit": limit, "force": force})
+func fetch_board(diff: String, limit := 50) -> Dictionary:
 	return await _request(HTTPClient.METHOD_GET, "/api/leaderboard?limit=%d&difficulty=%s" % [limit, diff])
 
 
 static func error_text(code: String) -> String:
 	match code:
-		"toy_unavailable":
-			return "请在 B站 Toy 页面打开；当前仅保留本机成绩"
-		"not_logged_in":
-			return "请先登录 B站，再手动重试提交"
-		"307044", "toy_rate_limited":
-			return "Toy 请求较多，请稍等再手动刷新或重试"
-		"toy_pending":
-			return "Toy 仍在处理提交；可稍后点击查询 / 重试，不会重复提交"
-		"toy_timeout":
-			return "Toy 连接超时，请稍后手动重试"
-		"toy_cancelled":
-			return "平台操作已取消，成绩仅保存在本机"
-		"toy_network":
-			return "Toy 连接失败，成绩已保存在本机；可手动重试"
-		"toy_bad_response":
-			return "Toy 返回格式异常，未显示为成功，请稍后重试"
-		"toy_invalid_time":
-			return "本局用时不在 Toy 榜范围内，仅保存在本机"
-		"test_offline":
-			return "测试模式：不连接公共排行榜"
 		"offline":
 			return "云端排行榜未开启（只记录本机成绩）"
 		"network":
